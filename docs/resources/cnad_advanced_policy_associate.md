@@ -2,7 +2,7 @@
 subcategory: "Cloud Native Anti-DDoS Advanced"
 ---
 
-# huaweicloud_cnad_advanced_policy_associate
+# hcso_cnad_advanced_policy_associate
 
 Manages a CNAD advanced policy associate resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "protected_object_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_cnad_advanced_policy_associate" "test" {
+resource "hcso_cnad_advanced_policy_associate" "test" {
   policy_id            = var.policy_id
   instance_id          = var.instance_id
   protected_object_ids = var.protected_object_ids
@@ -27,7 +27,7 @@ resource "huaweicloud_cnad_advanced_policy_associate" "test" {
 The following arguments are supported:
 
 * `instance_id` - (Required, String, ForceNew) Specifies the instance ID. You can find it through data source
-  `huaweicloud_cnad_advanced_instances`.
+  `hcso_cnad_advanced_instances`.
 
   Changing this parameter will create a new resource.
 
@@ -37,7 +37,7 @@ The following arguments are supported:
   Changing this parameter will create a new resource.
 
 * `protected_object_ids` - (Required, List) Specifies the protected object IDs to associate. The protected object must
-  have no binding policy. You can find it through data source `huaweicloud_cnad_advanced_protected_objects`.
+  have no binding policy. You can find it through data source `hcso_cnad_advanced_protected_objects`.
 
 ## Attribute Reference
 
@@ -89,5 +89,5 @@ The `protected_objects` block supports:
 The CNAD advanced policy associate can be imported using the `policy_id` and `instance_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_cnad_advanced_policy_associate.test <policy_id>/<instance_id>
+$ terraform import hcso_cnad_advanced_policy_associate.test <policy_id>/<instance_id>
 ```

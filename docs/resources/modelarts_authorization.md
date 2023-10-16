@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_authorization
+# hcso_modelarts_authorization
 
 Manages a ModelArts authorization resource within HuaweiCloud.  
 
@@ -13,7 +13,7 @@ Manages a ModelArts authorization resource within HuaweiCloud.
 ```hcl
 variable "user_id" {}
 
-resource "huaweicloud_modelarts_authorization" "test" {
+resource "hcso_modelarts_authorization" "test" {
   user_id     = var.user_id
   type        = "agency"
   agency_name = "ma_agency_userName"
@@ -23,7 +23,7 @@ resource "huaweicloud_modelarts_authorization" "test" {
 ### Authorized to all IAM users
 
 ```hcl
-resource "huaweicloud_modelarts_authorization" "test" {
+resource "hcso_modelarts_authorization" "test" {
   user_id     = "all-users"
   type        = "agency"
   agency_name = "modelarts_agency"
@@ -65,5 +65,5 @@ In addition to all arguments above, the following attributes are exported:
 The ModelArts authorization can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_modelarts_authorization.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_modelarts_authorization.test 0ce123456a00f2591fabc00385ff1234
 ```

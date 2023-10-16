@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_users
+# hcso_identity_users
 
 Use this data source to query the IAM user list within HuaweiCloud.
 
@@ -11,9 +11,9 @@ Use this data source to query the IAM user list within HuaweiCloud.
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identity_users" "all" {}
+data "hcso_identity_users" "all" {}
 
-data "huaweicloud_identity_users" "one" {
+data "hcso_identity_users" "one" {
   name = "user_name"
 }
 ```

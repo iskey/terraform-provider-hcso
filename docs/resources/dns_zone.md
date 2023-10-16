@@ -2,7 +2,7 @@
 subcategory: "Domain Name Service (DNS)"
 ---
 
-# huaweicloud_dns_zone
+# hcso_dns_zone
 
 Manages a DNS zone in the HuaweiCloud DNS Service.
 
@@ -11,7 +11,7 @@ Manages a DNS zone in the HuaweiCloud DNS Service.
 ### Create a public DNS zone
 
 ```hcl
-resource "huaweicloud_dns_zone" "my_public_zone" {
+resource "hcso_dns_zone" "my_public_zone" {
   name        = "example.com."
   email       = "jdoe@example.com"
   description = "An example zone"
@@ -23,7 +23,7 @@ resource "huaweicloud_dns_zone" "my_public_zone" {
 ### Create a private DNS zone
 
 ```hcl
-resource "huaweicloud_dns_zone" "my_private_zone" {
+resource "hcso_dns_zone" "my_private_zone" {
   name        = "1.example.com."
   email       = "jdoe@example.com"
   description = "An example zone"
@@ -90,5 +90,5 @@ This resource provides the following timeouts configuration options:
 This resource can be imported by specifying the zone ID:
 
 ```
-$ terraform import huaweicloud_dns_zone.zone_1 <zone_id>
+$ terraform import hcso_dns_zone.zone_1 <zone_id>
 ```

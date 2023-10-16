@@ -2,7 +2,7 @@
 subcategory: "Simple Message Notification (SMN)"
 ---
 
-# huaweicloud_smn_message_template
+# hcso_smn_message_template
 
 Manages a SMN message template resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a SMN message template resource within HuaweiCloud.
 variable "name" {}
 variable "protocol" {}
 
-resource "huaweicloud_smn_message_template" "test"{
+resource "hcso_smn_message_template" "test"{
   name     = var.name
   protocol = var.protocol
   content  = "this content contains {content1}, {content2}, {content3}"
@@ -62,5 +62,5 @@ In addition to all arguments above, the following attributes are exported:
 The SMN message template can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_smn_message_template.test <message_template_id>
+$ terraform import hcso_smn_message_template.test <message_template_id>
 ```

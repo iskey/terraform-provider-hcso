@@ -2,7 +2,7 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_backup
+# hcso_dds_backup
 
 Manages a DDS backup resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a DDS backup resource within HuaweiCloud.
 variable "dds_instance_id" {}
 variable "name" {}
 
-resource "huaweicloud_dds_backup" "test"{
+resource "hcso_dds_backup" "test"{
   instance_id = var.dds_instance_id
   name        = var.name
 }
@@ -84,5 +84,5 @@ This resource provides the following timeouts configuration options:
 The DDS backup can be imported using the instance ID and the backup ID separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_dds_backup.test 6fb8b99944c7459da32f751f0edea756br02/0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_dds_backup.test 6fb8b99944c7459da32f751f0edea756br02/0ce123456a00f2591fabc00385ff1234
 ```

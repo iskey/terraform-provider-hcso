@@ -4,8 +4,8 @@ subcategory: "Deprecated"
 
 # huaweicloud\_dms\_instance
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_dms_kafka_instance` or
-`huaweicloud_dms_rabbitmq_instance` instead.
+!> **WARNING:** It has been deprecated, use `hcso_dms_kafka_instance` or
+`hcso_dms_rabbitmq_instance` instead.
 
 Manages a DMS instance in the huaweicloud DMS Service.
 
@@ -14,31 +14,31 @@ Manages a DMS instance in the huaweicloud DMS Service.
 ### Automatically detect the correct network
 
 ```hcl
-data "huaweicloud_dms_az" "az_1" {
+data "hcso_dms_az" "az_1" {
 }
-data "huaweicloud_dms_product" "product_1" {
+data "hcso_dms_product" "product_1" {
   engine        = "rabbitmq"
   instance_type = "single"
   version       = "3.7.17"
 }
 
-resource "huaweicloud_networking_secgroup" "secgroup_1" {
+resource "hcso_networking_secgroup" "secgroup_1" {
   name        = "secgroup_1"
   description = "secgroup_1"
 }
-resource "huaweicloud_dms_instance" "instance_1" {
+resource "hcso_dms_instance" "instance_1" {
   name              = var.instance_name
   engine            = "rabbitmq"
   access_user       = "user"
   password          = "Dmstest@123"
   vpc_id            = var.vpc_id
   subnet_id         = var.subnet_id
-  security_group_id = huaweicloud_networking_secgroup.secgroup_1.id
-  available_zones   = [data.huaweicloud_dms_az.az_1.id]
-  product_id        = data.huaweicloud_dms_product.product_1.id
-  engine_version    = data.huaweicloud_dms_product.product_1.version
-  storage_space     = data.huaweicloud_dms_product.product_1.storage
-  storage_spec_code = data.huaweicloud_dms_product.product_1.storage_spec_code
+  security_group_id = hcso_networking_secgroup.secgroup_1.id
+  available_zones   = [data.hcso_dms_az.az_1.id]
+  product_id        = data.hcso_dms_product.product_1.id
+  engine_version    = data.hcso_dms_product.product_1.version
+  storage_space     = data.hcso_dms_product.product_1.storage
+  storage_spec_code = data.hcso_dms_product.product_1.storage_spec_code
 }
 ```
 

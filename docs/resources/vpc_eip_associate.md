@@ -2,7 +2,7 @@
 subcategory: "Elastic IP (EIP)"
 ---
 
-# huaweicloud_vpc_eip_associate
+# hcso_vpc_eip_associate
 
 Associates an EIP to a specified IP address or port.
 
@@ -14,7 +14,7 @@ Associates an EIP to a specified IP address or port.
 variable "public_address" {}
 variable "network_id" {}
 
-resource "huaweicloud_vpc_eip_associate" "associated" {
+resource "hcso_vpc_eip_associate" "associated" {
   public_ip  = var.public_address
   network_id = var.network_id
   fixed_ip   = "192.168.0.100"
@@ -26,12 +26,12 @@ resource "huaweicloud_vpc_eip_associate" "associated" {
 ```hcl
 variable "network_id" {}
 
-data "huaweicloud_networking_port" "myport" {
+data "hcso_networking_port" "myport" {
   network_id = var.network_id
   fixed_ip   = "192.168.0.100"
 }
 
-resource "huaweicloud_vpc_eip" "myeip" {
+resource "hcso_vpc_eip" "myeip" {
   publicip {
     type = "5_bgp"
   }
@@ -43,9 +43,9 @@ resource "huaweicloud_vpc_eip" "myeip" {
   }
 }
 
-resource "huaweicloud_vpc_eip_associate" "associated" {
-  public_ip = huaweicloud_vpc_eip.myeip.address
-  port_id   = data.huaweicloud_networking_port.myport.id
+resource "hcso_vpc_eip_associate" "associated" {
+  public_ip = hcso_vpc_eip.myeip.address
+  port_id   = data.hcso_networking_port.myport.id
 }
 ```
 
@@ -87,5 +87,5 @@ This resource provides the following timeouts configuration options:
 EIP associations can be imported using the `id` of the EIP, e.g.
 
 ```
-$ terraform import huaweicloud_vpc_eip_associate.eip 2c7f39f3-702b-48d1-940c-b50384177ee1
+$ terraform import hcso_vpc_eip_associate.eip 2c7f39f3-702b-48d1-940c-b50384177ee1
 ```

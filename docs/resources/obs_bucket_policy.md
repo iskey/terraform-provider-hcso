@@ -2,7 +2,7 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_bucket_policy
+# hcso_obs_bucket_policy
 
 Attaches a policy to an OBS bucket resource.
 
@@ -13,12 +13,12 @@ Attaches a policy to an OBS bucket resource.
 ### Policy with OBS format
 
 ```hcl
-resource "huaweicloud_obs_bucket" "bucket" {
+resource "hcso_obs_bucket" "bucket" {
   bucket = "my-test-bucket"
 }
 
-resource "huaweicloud_obs_bucket_policy" "policy" {
-  bucket = huaweicloud_obs_bucket.bucket.id
+resource "hcso_obs_bucket_policy" "policy" {
+  bucket = hcso_obs_bucket.bucket.id
   policy = <<POLICY
 {
   "Statement": [
@@ -38,12 +38,12 @@ POLICY
 ### Policy with S3 format
 
 ```hcl
-resource "huaweicloud_obs_bucket" "bucket" {
+resource "hcso_obs_bucket" "bucket" {
   bucket = "my-test-bucket"
 }
 
-resource "huaweicloud_obs_bucket_policy" "s3_policy" {
-  bucket        = huaweicloud_obs_bucket.bucket.id
+resource "hcso_obs_bucket_policy" "s3_policy" {
+  bucket        = hcso_obs_bucket.bucket.id
   policy_format = "s3"
   policy        = <<POLICY
 {
@@ -93,11 +93,11 @@ In addition to all arguments above, the following attributes are exported:
 OBS format bucket policy can be imported using the `<bucket>`, e.g.
 
 ```
-$ terraform import huaweicloud_obs_bucket_policy.policy <bucket-name>
+$ terraform import hcso_obs_bucket_policy.policy <bucket-name>
 ```
 
 S3 foramt bucket policy can be imported using the `<bucket>` and "s3" by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_obs_bucket_policy.s3_policy <bucket-name>/s3
+$ terraform import hcso_obs_bucket_policy.s3_policy <bucket-name>/s3
 ```

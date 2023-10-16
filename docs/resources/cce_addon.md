@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_addon
+# hcso_cce_addon
 
 Provides a CCE add-on resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Provides a CCE add-on resource within HuaweiCloud.
 ```hcl
 variable "cluster_id" {}
 
-resource "huaweicloud_cce_addon" "addon_test" {
+resource "hcso_cce_addon" "addon_test" {
   cluster_id    = var.cluster_id
   template_name = "metrics-server"
   version       = "1.0.0"
@@ -82,5 +82,5 @@ This resource provides the following timeouts configuration options:
 CCE add-on can be imported using the cluster ID and add-on ID separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_cce_addon.my_addon <cluster_id>/<id>
+$ terraform import hcso_cce_addon.my_addon <cluster_id>/<id>
 ```

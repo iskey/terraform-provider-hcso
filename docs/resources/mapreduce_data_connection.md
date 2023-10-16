@@ -2,7 +2,7 @@
 subcategory: "MapReduce Service (MRS)"
 ---
 
-# huaweicloud_mapreduce_data_connection
+# hcso_mapreduce_data_connection
 
 Manages a data connection resource of Mapreduce within HuaweiCloud.  
 
@@ -14,7 +14,7 @@ variable "database" {}
 variable "user_name" {}
 variable "password" {}
 
-resource "huaweicloud_mapreduce_data_connection" "test" {
+resource "hcso_mapreduce_data_connection" "test" {
   name        = "demo"
   source_type = "RDS_MYSQL"
   source_info {
@@ -77,7 +77,7 @@ In addition to all arguments above, the following attributes are exported:
 The data connection can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_mapreduce_data_connection.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_mapreduce_data_connection.test 0ce123456a00f2591fabc00385ff1234
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -87,7 +87,7 @@ You can then decide if changes should be applied to the cluster, or the resource
 should be updated to align with the cluster. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_mapreduce_data_connection" "test" {
+resource "hcso_mapreduce_data_connection" "test" {
     ...
 
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_model
+# hcso_modelarts_model
 
 Manages a Modelarts model resource within HuaweiCloud.  
 
@@ -13,7 +13,7 @@ Manages a Modelarts model resource within HuaweiCloud.
 ```hcl
 variable "source_obs_path" {}
 
-resource "huaweicloud_modelarts_model" "test" {
+resource "hcso_modelarts_model" "test" {
   name            = "demo"
   version         = "0.0.2"
   description     = "This is a demo"
@@ -28,7 +28,7 @@ resource "huaweicloud_modelarts_model" "test" {
 ```hcl
 variable "source_obs_path" {}
 
-resource "huaweicloud_modelarts_model" "test" {
+resource "hcso_modelarts_model" "test" {
   name            = "demo"
   version         = "0.0.2"
   description     = "This is a demo"
@@ -90,7 +90,7 @@ variable "template_id" {}
 variable "infer_format" {}
 variable "template_obs_path" {}
 
-resource "huaweicloud_modelarts_model" "test" {
+resource "hcso_modelarts_model" "test" {
   name        = "demo"
   version     = "0.0.1"
   description = "This is a demo"
@@ -120,7 +120,7 @@ variable "execution_code_path" {}
 variable "source_job_id" {}
 
 
-resource "huaweicloud_modelarts_model" "test" {
+resource "hcso_modelarts_model" "test" {
   name            = "demo_train_model"
   version         = "0.0.1"
   description     = "This is a demo import from train"
@@ -245,7 +245,7 @@ resource "huaweicloud_modelarts_model" "test" {
 ```hcl
 variable "swr_imag_path" {}
 
-resource "huaweicloud_modelarts_model" "test" {
+resource "hcso_modelarts_model" "test" {
   name            = "demo_swr"
   version         = "0.0.1"
   description     = "This is a demo import from swr"
@@ -503,5 +503,5 @@ This resource provides the following timeouts configuration options:
 The modelarts model can be imported using id, e.g.
 
 ```bash
-$ terraform import huaweicloud_modelarts_model.test 635a2d50-0546-469d-b45d-0204b9ad4f14
+$ terraform import hcso_modelarts_model.test 635a2d50-0546-469d-b45d-0204b9ad4f14
 ```

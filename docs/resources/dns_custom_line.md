@@ -2,7 +2,7 @@
 subcategory: "Domain Name Service (DNS)"
 ---
 
-# huaweicloud_dns_custom_line
+# hcso_dns_custom_line
 
 Manages a DNS custom line resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "ip_segments" {
   type = list(string)
 }
 
-resource "huaweicloud_dns_custom_line" "test" {
+resource "hcso_dns_custom_line" "test" {
   name        = var.name
   description = var.description
   ip_segments = var.ip_segments
@@ -61,5 +61,5 @@ This resource provides the following timeouts configuration options:
 The DNS custom line can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_dns_custom_line.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_dns_custom_line.test 0ce123456a00f2591fabc00385ff1234
 ```

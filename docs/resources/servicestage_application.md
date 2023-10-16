@@ -2,7 +2,7 @@
 subcategory: "ServiceStage"
 ---
 
-# huaweicloud_servicestage_application
+# hcso_servicestage_application
 
 Manages an application resource within HuaweiCloud ServiceStage.
 
@@ -15,7 +15,7 @@ variable "env_id" {}
 variable "app_name" {}
 variable "vpc_id" {}
 
-resource "huaweicloud_servicestage_application" "test" {
+resource "hcso_servicestage_application" "test" {
   name = var.app_name
 
   environment {
@@ -78,5 +78,5 @@ In addition to all arguments above, the following attributes are exported:
 Applications can be imported using their `id`, e.g.
 
 ```
-$ terraform import huaweicloud_servicestage_application.test eeea08e7-c838-4794-926c-abc12f3e10e8
+$ terraform import hcso_servicestage_application.test eeea08e7-c838-4794-926c-abc12f3e10e8
 ```

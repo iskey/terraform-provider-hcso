@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_group
+# hcso_apig_group
 
 Manages an APIG (API) group resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "group_name" {}
 variable "description" {}
 variable "environment_id" {}
 
-resource "huaweicloud_apig_group" "test" {
+resource "hcso_apig_group" "test" {
   instance_id = var.instance_id
   name        = var.group_name
   description = var.description
@@ -107,5 +107,5 @@ The `variable` block supports:
 API groups can be imported using their `id` and the ID of the related dedicated instance, separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_group.test <instance_id>/<id>
+$ terraform import hcso_apig_group.test <instance_id>/<id>
 ```

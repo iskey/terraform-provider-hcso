@@ -2,7 +2,7 @@
 subcategory: "Cloud Eye (CES)"
 ---
 
-# huaweicloud_ces_alarmrule
+# hcso_ces_alarmrule
 
 Manages a Cloud Eye alarm rule resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "instance_id_1" {}
 variable "instance_id_2" {}
 variable "topic_urn" {}
 
-resource "huaweicloud_ces_alarmrule" "test" {
+resource "hcso_ces_alarmrule" "test" {
   alarm_name           = "rule-test"
   alarm_action_enabled = true
   alarm_enabled        = true
@@ -77,7 +77,7 @@ resource "huaweicloud_ces_alarmrule" "test" {
 ```hcl
 variable "topic_urn" {}
 
-resource "huaweicloud_ces_alarmrule" "test" {
+resource "hcso_ces_alarmrule" "test" {
   alarm_name           = "rule-test"
   alarm_action_enabled = true
   alarm_type           = "EVENT.SYS"
@@ -264,5 +264,5 @@ This resource provides the following timeouts configuration options:
 CES alarm rules can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_ces_alarmrule.alarm_rule al1619578509719Ga0X1RGWv
+$ terraform import hcso_ces_alarmrule.alarm_rule al1619578509719Ga0X1RGWv
 ```

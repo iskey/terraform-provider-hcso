@@ -2,14 +2,14 @@
 subcategory: "Elastic IP (EIP)"
 ---
 
-# huaweicloud_vpc_bandwidth
+# hcso_vpc_bandwidth
 
 Manages a **Shared** Bandwidth resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpc_bandwidth" "bandwidth_1" {
+resource "hcso_vpc_bandwidth" "bandwidth_1" {
   name = "bandwidth_1"
   size = 5
 }
@@ -82,7 +82,7 @@ This resource provides the following timeouts configuration options:
 Shared Bandwidths can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpc_bandwidth.bandwidth_1 7117d38e-4c8f-4624-a505-bd96b97d024c
+$ terraform import hcso_vpc_bandwidth.bandwidth_1 7117d38e-4c8f-4624-a505-bd96b97d024c
 ```
 
 Note that the imported state may not be identical to your resource definition, due to payment attributes missing from
@@ -92,7 +92,7 @@ It is generally recommended running `terraform plan` after importing a Shared Ba
 You can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_vpc_bandwidth" "bandwidth_1" {
+resource "hcso_vpc_bandwidth" "bandwidth_1" {
   ...
 
   lifecycle {

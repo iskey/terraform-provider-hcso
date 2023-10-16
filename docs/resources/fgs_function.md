@@ -2,7 +2,7 @@
 subcategory: "FunctionGraph"
 ---
 
-# huaweicloud_fgs_function
+# hcso_fgs_function
 
 Manages a Function resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a Function resource within HuaweiCloud.
 ### With base64 func code
 
 ```hcl
-resource "huaweicloud_fgs_function" "f_1" {
+resource "hcso_fgs_function" "f_1" {
   name        = "func_1"
   app         = "default"
   agency      = "test"
@@ -28,7 +28,7 @@ resource "huaweicloud_fgs_function" "f_1" {
 ### With text code
 
 ```hcl
-resource "huaweicloud_fgs_function" "f_1" {
+resource "hcso_fgs_function" "f_1" {
   name        = "func_1"
   app         = "default"
   agency      = "test"
@@ -61,7 +61,7 @@ variable "function_name" {}
 variable "agency_name" {} // The agent name that authorizes FunctionGraph service SWR administrator privilege
 variable "image_url" {}
 
-resource "huaweicloud_fgs_function" "by_swr_image" {
+resource "hcso_fgs_function" "by_swr_image" {
   name        = var.function_name
   agency      = var.agency_name
   handler     = "-"
@@ -81,7 +81,7 @@ resource "huaweicloud_fgs_function" "by_swr_image" {
 ```hcl
 variable "function_name" {}
 
-resource "huaweicloud_fgs_function" "with_alias" {
+resource "hcso_fgs_function" "with_alias" {
   name        = var.function_name
   app         = "default"
   handler     = "test.handler"
@@ -109,7 +109,7 @@ variable "agency_name" {} # Allow VPC and DNS permissions for FunctionGraph serv
 variable "vpc_id" {}
 variable "network_id" {}
 
-resource "huaweicloud_dns_zone" "test" {
+resource "hcso_dns_zone" "test" {
   count = 3
 
   zone_type = "private"
@@ -120,7 +120,7 @@ resource "huaweicloud_dns_zone" "test" {
   }
 }
 
-resource "huaweicloud_fgs_function" "test" {
+resource "hcso_fgs_function" "test" {
   name        = var.function_name
   app         = "default"
   handler     = "index.handler"
@@ -135,7 +135,7 @@ resource "huaweicloud_fgs_function" "test" {
   vpc_id     = var.vpc_id
   network_id = var.network_id
   dns_list   = jsonencode(
-    [for v in huaweicloud_dns_zone.test[*] : tomap({id=v.id, domain_name=v.name})]
+    [for v in hcso_dns_zone.test[*] : tomap({id=v.id, domain_name=v.name})]
   )
 }
 ```
@@ -319,7 +319,7 @@ This resource provides the following timeouts configuration options:
 Functions can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_fgs_function.my-func 7117d38e-4c8f-4624-a505-bd96b97d024c
+$ terraform import hcso_fgs_function.my-func 7117d38e-4c8f-4624-a505-bd96b97d024c
 ```
 
 Note that the imported state may not be identical to your resource definition, due to the attribute missing from the
@@ -330,7 +330,7 @@ You can then decide if changes should be applied to the function, or the resourc
 with the function. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_fgs_function" "test" {
+resource "hcso_fgs_function" "test" {
   ...
   lifecycle {
     ignore_changes = [

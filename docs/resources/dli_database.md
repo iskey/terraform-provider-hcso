@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_database
+# hcso_dli_database
 
 Manages DLI SQL database resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages DLI SQL database resource within HuaweiCloud.
 ```hcl
 variable "database_name" {}
 
-resource "huaweicloud_dli_database" "test" {
+resource "hcso_dli_database" "test" {
   name = var.database_name
 }
 ```
@@ -49,5 +49,5 @@ In addition to all arguments above, the following attributes are exported:
 DLI SQL databases can be imported by their `name`, e.g.
 
 ```
-$ terraform import huaweicloud_dli_database.test terraform_test
+$ terraform import hcso_dli_database.test terraform_test
 ```

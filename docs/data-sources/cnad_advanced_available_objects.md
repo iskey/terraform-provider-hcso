@@ -2,7 +2,7 @@
 subcategory: "Cloud Native Anti-DDoS Advanced"
 ---
 
-# huaweicloud_cnad_advanced_available_objects
+# hcso_cnad_advanced_available_objects
 
 Use this data source to get the list of CNAD advanced available protected objects.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of CNAD advanced available protected object
 ```hcl
 variable "instance_id" {}
 
-data "huaweicloud_cnad_advanced_available_objects" "test" {
+data "hcso_cnad_advanced_available_objects" "test" {
   instance_id = var.instance_id
 }
 ```
@@ -21,7 +21,7 @@ data "huaweicloud_cnad_advanced_available_objects" "test" {
 The following arguments are supported:
 
 * `instance_id` - (Required, String) Specifies the CNAD advanced instance ID. You can find it through data source
-  `huaweicloud_cnad_advanced_instances`.
+  `hcso_cnad_advanced_instances`.
 
 * `protected_object_id` - (Optional, String) Specifies the CNAD advanced protected object ID which you want to query.
   The protected object ID must be the ID of the Elastic IP, which in the same region with the CNAD advanced instance.

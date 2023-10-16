@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_rocketmq_instance
+# hcso_dms_rocketmq_instance
 
 Manage DMS RocketMQ instance resources within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "availability_zones" {
   type = list(string)
 }
 
-resource "huaweicloud_dms_rocketmq_instance" "test" {
+resource "hcso_dms_rocketmq_instance" "test" {
   name               = "rocketmq_name_test"
   description        = "this is a rocketmq instance"
   engine_version     = "4.8.0"
@@ -170,5 +170,5 @@ The `cross_vpc_accesses` block supports:
 The rocketmq instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_dms_rocketmq_instance.test 8d3c7938-dc47-4937-a30f-c80de381c5e3
+$ terraform import hcso_dms_rocketmq_instance.test 8d3c7938-dc47-4937-a30f-c80de381c5e3
 ```

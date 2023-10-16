@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_certificate
+# hcso_elb_certificate
 
 Use this data source to get the certificate in HuaweiCloud Dedicated Load Balance (Dedicated ELB).
 
@@ -11,7 +11,7 @@ Use this data source to get the certificate in HuaweiCloud Dedicated Load Balanc
 ```hcl
 variable "certificate_name" {}
 
-data "huaweicloud_elb_certificate" "test" {
+data "hcso_elb_certificate" "test" {
   name = var.certificate_name
 }
 ```

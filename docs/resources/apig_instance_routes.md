@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_instance_routes
+# hcso_apig_instance_routes
 
 Using this resource to manage the instance routes within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Using this resource to manage the instance routes within HuaweiCloud.
 ```hcl
 variable "instance_id" {}
 
-resource "huaweicloud_apig_instance_routes" "test" {
+resource "hcso_apig_instance_routes" "test" {
   instance_id = var.instance_id
   nexthops    = ["172.16.3.0/24", "172.16.7.0/24"]
 }
@@ -42,5 +42,5 @@ In addition to all arguments above, the following attributes are exported:
 Routes can be imported using their related dedicated instance ID (`instance_id`), e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_instance_routes.test 128001b3c5eb4d3e91a8da9c0f46420f
+$ terraform import hcso_apig_instance_routes.test 128001b3c5eb4d3e91a8da9c0f46420f
 ```

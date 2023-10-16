@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_node
+# hcso_cce_node
 
 Add a node to a CCE cluster.
 
@@ -13,26 +13,26 @@ variable "cluster_id" {}
 variable "node_name" {}
 variable "keypair_name" {}
 
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_compute_flavors" "myflavors" {
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+data "hcso_compute_flavors" "myflavors" {
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   performance_type  = "normal"
   cpu_core_count    = 2
   memory_size       = 4
 }
 
-resource "huaweicloud_kps_keypair" "mykp" {
+resource "hcso_kps_keypair" "mykp" {
   name       = var.keypair_name
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAjpC1hwiOCCmKEWxJ4qzTTsJbKzndLo1BCz5PcwtUnflmU+gHJtWMZKpuEGVi29h0A/+ydKek1O18k10Ff+4tyFjiHDQAT9+OfgWf7+b1yK+qDip3X1C0UPMbwHlTfSGWLGZquwhvEFx9k3h/M+VtMvwR1lJ9LUyTAImnNjWG7TAIPmui30HvM2UiFEmqkr4ijq45MyX2+fLIePLRIFuu1p4whjHAQYufqyno3BS48icQb4p6iVEZPo4AE2o9oIyQvj2mx4dk5Y8CgSETOZTYDOR3rU2fZTRDRgPJDH9FWvQjF5tA0p3d9CoWWd2s6GKKbfoUIi8R/Db1BSPJwkqB jrp-hp-pc"
 }
 
-resource "huaweicloud_cce_node" "node" {
+resource "hcso_cce_node" "node" {
   cluster_id        = var.cluster_id
   name              = var.node_name
-  flavor_id         = data.huaweicloud_compute_flavors.myflavors.ids[0]
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
-  key_pair          = huaweicloud_kps_keypair.mykp.name
+  flavor_id         = data.hcso_compute_flavors.myflavors.ids[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
+  key_pair          = hcso_kps_keypair.mykp.name
 
   root_volume {
     size       = 40
@@ -52,26 +52,26 @@ variable "cluster_id" {}
 variable "node_name" {}
 variable "keypair_name" {}
 
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_compute_flavors" "test" {
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+data "hcso_compute_flavors" "test" {
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   performance_type  = "normal"
   cpu_core_count    = 2
   memory_size       = 4
 }
 
-resource "huaweicloud_kps_keypair" "mykp" {
+resource "hcso_kps_keypair" "mykp" {
   name       = var.keypair_name
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAjpC1hwiOCCmKEWxJ4qzTTsJbKzndLo1BCz5PcwtUnflmU+gHJtWMZKpuEGVi29h0A/+ydKek1O18k10Ff+4tyFjiHDQAT9+OfgWf7+b1yK+qDip3X1C0UPMbwHlTfSGWLGZquwhvEFx9k3h/M+VtMvwR1lJ9LUyTAImnNjWG7TAIPmui30HvM2UiFEmqkr4ijq45MyX2+fLIePLRIFuu1p4whjHAQYufqyno3BS48icQb4p6iVEZPo4AE2o9oIyQvj2mx4dk5Y8CgSETOZTYDOR3rU2fZTRDRgPJDH9FWvQjF5tA0p3d9CoWWd2s6GKKbfoUIi8R/Db1BSPJwkqB jrp-hp-pc"
 }
 
-resource "huaweicloud_cce_node" "mynode" {
+resource "hcso_cce_node" "mynode" {
   cluster_id        = var.cluster_id
   name              = var.node_name
-  flavor_id         = data.huaweicloud_compute_flavors.myflavors.ids[0]
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
-  key_pair          = huaweicloud_kps_keypair.mykp.name
+  flavor_id         = data.hcso_compute_flavors.myflavors.ids[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
+  key_pair          = hcso_kps_keypair.mykp.name
 
   root_volume {
     size       = 40
@@ -97,21 +97,21 @@ variable "cluster_id" {}
 variable "node_name" {}
 variable "keypair_name" {}
 
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_compute_flavors" "test" {
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+data "hcso_compute_flavors" "test" {
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   performance_type  = "normal"
   cpu_core_count    = 2
   memory_size       = 4
 }
 
-resource "huaweicloud_kps_keypair" "mykp" {
+resource "hcso_kps_keypair" "mykp" {
   name       = var.keypair_name
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAjpC1hwiOCCmKEWxJ4qzTTsJbKzndLo1BCz5PcwtUnflmU+gHJtWMZKpuEGVi29h0A/+ydKek1O18k10Ff+4tyFjiHDQAT9+OfgWf7+b1yK+qDip3X1C0UPMbwHlTfSGWLGZquwhvEFx9k3h/M+VtMvwR1lJ9LUyTAImnNjWG7TAIPmui30HvM2UiFEmqkr4ijq45MyX2+fLIePLRIFuu1p4whjHAQYufqyno3BS48icQb4p6iVEZPo4AE2o9oIyQvj2mx4dk5Y8CgSETOZTYDOR3rU2fZTRDRgPJDH9FWvQjF5tA0p3d9CoWWd2s6GKKbfoUIi8R/Db1BSPJwkqB jrp-hp-pc"
 }
 
-resource "huaweicloud_vpc_eip" "myeip" {
+resource "hcso_vpc_eip" "myeip" {
   publicip {
     type = "5_bgp"
   }
@@ -123,12 +123,12 @@ resource "huaweicloud_vpc_eip" "myeip" {
   }
 }
 
-resource "huaweicloud_cce_node" "mynode" {
+resource "hcso_cce_node" "mynode" {
   cluster_id        = var.cluster_id
   name              = var.node_name
-  flavor_id         = data.huaweicloud_compute_flavors.myflavors.ids[0]
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
-  key_pair          = huaweicloud_kps_keypair.mykp.name
+  flavor_id         = data.hcso_compute_flavors.myflavors.ids[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
+  key_pair          = hcso_kps_keypair.mykp.name
 
   root_volume {
     size       = 40
@@ -140,7 +140,7 @@ resource "huaweicloud_cce_node" "mynode" {
   }
 
   // Assign existing EIP
-  eip_id = huaweicloud_vpc_eip.myeip.id
+  eip_id = hcso_vpc_eip.myeip.id
 }
 ```
 
@@ -152,31 +152,31 @@ variable "node_name" {}
 variable "keypair_name" {}
 variable "kms_key_name" {}
 
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_compute_flavors" "test" {
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+data "hcso_compute_flavors" "test" {
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   performance_type  = "normal"
   cpu_core_count    = 2
   memory_size       = 4
 }
 
-resource "huaweicloud_kps_keypair" "mykp" {
+resource "hcso_kps_keypair" "mykp" {
   name       = var.keypair_name
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAjpC1hwiOCCmKEWxJ4qzTTsJbKzndLo1BCz5PcwtUnflmU+gHJtWMZKpuEGVi29h0A/+ydKek1O18k10Ff+4tyFjiHDQAT9+OfgWf7+b1yK+qDip3X1C0UPMbwHlTfSGWLGZquwhvEFx9k3h/M+VtMvwR1lJ9LUyTAImnNjWG7TAIPmui30HvM2UiFEmqkr4ijq45MyX2+fLIePLRIFuu1p4whjHAQYufqyno3BS48icQb4p6iVEZPo4AE2o9oIyQvj2mx4dk5Y8CgSETOZTYDOR3rU2fZTRDRgPJDH9FWvQjF5tA0p3d9CoWWd2s6GKKbfoUIi8R/Db1BSPJwkqB jrp-hp-pc"
 }
 
-resource "huaweicloud_kms_key" "mykey" {
+resource "hcso_kms_key" "mykey" {
   key_alias    = var.kms_key_name
   pending_days = "7"
 }
 
-resource "huaweicloud_cce_node" "mynode" {
+resource "hcso_cce_node" "mynode" {
   cluster_id        = var.cluster_id
   name              = var.node_name
-  flavor_id         = data.huaweicloud_compute_flavors.myflavors.ids[0]
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
-  key_pair          = huaweicloud_kps_keypair.mykp.name
+  flavor_id         = data.hcso_compute_flavors.myflavors.ids[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
+  key_pair          = hcso_kps_keypair.mykp.name
 
   root_volume {
     size       = 40
@@ -189,7 +189,7 @@ resource "huaweicloud_cce_node" "mynode" {
   data_volumes {
     size       = 100
     volumetype = "SSD"
-    kms_key_id = huaweicloud_kms_key.mykey.id
+    kms_key_id = hcso_kms_key.mykey.id
   }
 
   // Storage configuration
@@ -206,7 +206,7 @@ resource "huaweicloud_cce_node" "mynode" {
       type                           = "evs"
       match_label_size               = "100"
       match_label_metadata_encrypted = "1"
-      match_label_metadata_cmkid     = huaweicloud_kms_key.mykey.id
+      match_label_metadata_cmkid     = hcso_kms_key.mykey.id
       match_label_count              = "1"
     }
 
@@ -498,7 +498,7 @@ This resource provides the following timeouts configuration options:
 CCE node can be imported using the cluster ID and node ID separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_cce_node.my_node 5c20fdad-7288-11eb-b817-0255ac10158b/e9287dff-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_cce_node.my_node 5c20fdad-7288-11eb-b817-0255ac10158b/e9287dff-7288-11eb-b817-0255ac10158b
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -509,7 +509,7 @@ running `terraform plan` after importing a node. You can then decide if changes 
 resource definition should be updated to align with the node. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_cce_node" "my_node" {
+resource "hcso_cce_node" "my_node" {
     ...
 
   lifecycle {

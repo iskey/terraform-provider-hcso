@@ -2,7 +2,7 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_vpc_attachment
+# hcso_er_vpc_attachment
 
 Manages a VPC attachment resource under the ER instance within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "attachment_name" {}
 
-resource "huaweicloud_er_vpc_attachment" "test" {
+resource "hcso_er_vpc_attachment" "test" {
   instance_id = var.instance_id
   vpc_id      = var.vpc_id
   subnet_id   = var.subnet_id
@@ -92,5 +92,5 @@ This resource provides the following timeouts configuration options:
 VPC attachments can be imported using their `id` and the related `instance_id`, e.g.
 
 ```
-$ terraform import huaweicloud_er_vpc_attachment.test &ltinstance_id&gt/&ltid&gt
+$ terraform import hcso_er_vpc_attachment.test &ltinstance_id&gt/&ltid&gt
 ```

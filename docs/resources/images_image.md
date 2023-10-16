@@ -2,7 +2,7 @@
 subcategory: "Image Management Service (IMS)"
 ---
 
-# huaweicloud_images_image
+# hcso_images_image
 
 Manages an Image resource within HuaweiCloud IMS.
 
@@ -14,13 +14,13 @@ Manages an Image resource within HuaweiCloud IMS.
 variable "instance_name" {}
 variable "image_name" {}
 
-data "huaweicloud_compute_instance" "test" {
+data "hcso_compute_instance" "test" {
   name = var.instance_name
 }
 
-resource "huaweicloud_images_image" "test" {
+resource "hcso_images_image" "test" {
   name        = var.image_name
-  instance_id = data.huaweicloud_compute_instance.test.id
+  instance_id = data.hcso_compute_instance.test.id
   description = "created by Terraform"
 
   tags = {
@@ -33,7 +33,7 @@ resource "huaweicloud_images_image" "test" {
 ### Creating an image from OBS bucket
 
 ```hcl
-resource "huaweicloud_images_image" "ims_test_file" {
+resource "hcso_images_image" "ims_test_file" {
   name        = "ims_test_file"
   image_url   = "ims-image:centos70.qcow2"
   min_disk    = 40
@@ -52,7 +52,7 @@ resource "huaweicloud_images_image" "ims_test_file" {
 variable "vault_id" {}
 variable "instance_id" {}
 
-resource "huaweicloud_images_image" "test" {
+resource "hcso_images_image" "test" {
   name        = "test_whole_image"
   instance_id = var.instance_id
   vault_id    = var.vault_id
@@ -69,7 +69,7 @@ resource "huaweicloud_images_image" "test" {
 ```hcl
 variable "backup_id" {}
 
-resource "huaweicloud_images_image" "test" {
+resource "hcso_images_image" "test" {
   name      = "test_whole_image"
   backup_id = var.backup_id
 
@@ -157,7 +157,7 @@ This resource provides the following timeouts configuration options:
 Images can be imported using the `id`, e.g.
 
 ```bash
-terraform import huaweicloud_images_image.my_image <id>
+terraform import hcso_images_image.my_image <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -166,7 +166,7 @@ importing the image. You can then decide if changes should be applied to the ima
 definition should be updated to align with the image. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_images_image" "test" {
+resource "hcso_images_image" "test" {
   ...
 
   lifecycle {

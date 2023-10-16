@@ -2,14 +2,14 @@
 subcategory: "Cloud Connect (CC)"
 ---
 
-# huaweicloud_cc_bandwidth_package
+# hcso_cc_bandwidth_package
 
 Manages a bandwidth package resource of Cloud Connect within HuaweiCloud.  
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_cc_bandwidth_package" "test" {
+resource "hcso_cc_bandwidth_package" "test" {
   name           = "demo"
   local_area_id  = "Chinese-Mainland"
   remote_area_id = "Chinese-Mainland"
@@ -98,5 +98,5 @@ In addition to all arguments above, the following attributes are exported:
 The bandwidth package can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cc_bandwidth_package.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_cc_bandwidth_package.test 0ce123456a00f2591fabc00385ff1234
 ```

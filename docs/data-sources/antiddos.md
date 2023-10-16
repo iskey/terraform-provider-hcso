@@ -13,7 +13,7 @@ Query the Anti-DDos resource.
 ```hcl
 variable "eip_id" {}
 
-data "huaweicloud_antiddos" "antiddos" {
+data "hcso_antiddos" "antiddos" {
   floating_ip_id = var.eip_id
 }
 ```

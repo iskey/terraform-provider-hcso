@@ -2,19 +2,19 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_notebook_images
+# hcso_modelarts_notebook_images
 
 Use this data source to get a list of ModelArts notebook images.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_modelarts_notebook_images" "test" {
+data "hcso_modelarts_notebook_images" "test" {
   type = "BUILD_IN"
 }
 
 output "image_id" {
-  value = data.huaweicloud_modelarts_notebook_images.test.images[0].id
+  value = data.hcso_modelarts_notebook_images.test.images[0].id
 }
 ```
 

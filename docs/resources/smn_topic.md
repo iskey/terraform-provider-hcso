@@ -2,7 +2,7 @@
 subcategory: "Simple Message Notification (SMN)"
 ---
 
-# huaweicloud_smn_topic
+# hcso_smn_topic
 
 Manages an SMN topic resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an SMN topic resource within HuaweiCloud.
 ### Basic Usage
 
 ```hcl
-resource "huaweicloud_smn_topic" "topic_1" {
+resource "hcso_smn_topic" "topic_1" {
   name         = "topic_1"
   display_name = "The display name of topic_1"
 }
@@ -20,7 +20,7 @@ resource "huaweicloud_smn_topic" "topic_1" {
 ### Topic with policies
 
 ```hcl
-resource "huaweicloud_smn_topic" "topic_1" {
+resource "hcso_smn_topic" "topic_1" {
   name                     = "topic_1"
   display_name             = "The display name of topic_1"
   users_publish_allowed    = "urn:csp:iam::0970d7b7d400f2470fbec00316a03560:root,urn:csp:iam::0970d7b7d400f2470fbec00316a03561:root"
@@ -80,5 +80,5 @@ In addition to all arguments above, the following attributes are exported:
 SMN topic can be imported using the `id` (topic urn), e.g.
 
 ```
-$ terraform import huaweicloud_smn_topic.topic_1 urn:smn:cn-north-4:0970dd7a1300f5672ff2c003c60ae115:topic_1
+$ terraform import hcso_smn_topic.topic_1 urn:smn:cn-north-4:0970dd7a1300f5672ff2c003c60ae115:topic_1
 ```

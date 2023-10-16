@@ -1,11 +1,11 @@
-# huaweicloud_availability_zones
+# hcso_availability_zones
 
 Use this data source to get a list of availability zones from HuaweiCloud
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_availability_zones" "zones" {}
+data "hcso_availability_zones" "zones" {}
 ```
 
 ## Argument Reference

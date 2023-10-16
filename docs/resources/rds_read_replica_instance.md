@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_read_replica_instance
+# hcso_rds_read_replica_instance
 
 Manage RDS Read Replica Instance resource.
 
@@ -15,7 +15,7 @@ variable "primary_instance_id" {}
 variable "security_group_id" {}
 variable "availability_zone" {}
 
-resource "huaweicloud_rds_read_replica_instance" "replica_instance" {
+resource "hcso_rds_read_replica_instance" "replica_instance" {
   name                = "test_rds_readonly_instance"
   flavor              = "rds.mysql.x1.large.2.rr"
   primary_instance_id = var.primary_instance_id
@@ -177,5 +177,5 @@ This resource provides the following timeouts configuration options:
 RDS read replica instance can be imported by `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_rds_read_replica_instance.replica_instance <id>
+$ terraform import hcso_rds_read_replica_instance.replica_instance <id>
 ```

@@ -2,14 +2,14 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_kms_key
+# hcso_kms_key
 
 Use this data source to get the ID of an available HuaweiCloud KMS key.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_kms_key" "key_1" {
+data "hcso_kms_key" "key_1" {
   key_alias        = "test_key"
   key_description  = "test key description"
   key_state        = "2"

@@ -2,18 +2,18 @@
 subcategory: "Network ACL"
 ---
 
-# huaweicloud_network_acl
+# hcso_network_acl
 
 Manages a network ACL resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_vpc_subnet" "subnet" {
+data "hcso_vpc_subnet" "subnet" {
   name = "subnet-default"
 }
 
-resource "huaweicloud_network_acl_rule" "rule_1" {
+resource "hcso_network_acl_rule" "rule_1" {
   name             = "my-rule-1"
   description      = "drop TELNET traffic"
   action           = "deny"
@@ -22,7 +22,7 @@ resource "huaweicloud_network_acl_rule" "rule_1" {
   enabled          = "true"
 }
 
-resource "huaweicloud_network_acl_rule" "rule_2" {
+resource "hcso_network_acl_rule" "rule_2" {
   name             = "my-rule-2"
   description      = "drop NTP traffic"
   action           = "deny"
@@ -31,12 +31,12 @@ resource "huaweicloud_network_acl_rule" "rule_2" {
   enabled          = "false"
 }
 
-resource "huaweicloud_network_acl" "fw_acl" {
+resource "hcso_network_acl" "fw_acl" {
   name          = "my-fw-acl"
-  subnets       = [data.huaweicloud_vpc_subnet.subnet.id]
+  subnets       = [data.hcso_vpc_subnet.subnet.id]
   inbound_rules = [
-    huaweicloud_network_acl_rule.rule_1.id,
-    huaweicloud_network_acl_rule.rule_2.id]
+    hcso_network_acl_rule.rule_1.id,
+    hcso_network_acl_rule.rule_2.id]
 }
 ```
 

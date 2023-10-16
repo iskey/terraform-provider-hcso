@@ -2,7 +2,7 @@
 subcategory: "Cloud Search Service (CSS)"
 ---
 
-# huaweicloud_css_snapshot
+# hcso_css_snapshot
 
 CSS cluster snapshot management
 
@@ -11,7 +11,7 @@ CSS cluster snapshot management
 ### Create a snapshot
 
 ```hcl
-resource "huaweicloud_css_snapshot" "snapshot" {
+resource "hcso_css_snapshot" "snapshot" {
   name        = "snapshot_001"
   description = "a snapshot created by manual"
   cluster_id  = var.css_cluster_id
@@ -62,5 +62,5 @@ This resource provides the following timeouts configuration options:
 This resource can be imported by specifying the CSS cluster ID and snapshot ID separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_css_snapshot.snapshot_1 < cluster_id >/< snapshot_id >
+$ terraform import hcso_css_snapshot.snapshot_1 < cluster_id >/< snapshot_id >
 ```

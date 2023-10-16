@@ -2,7 +2,7 @@
 subcategory: "CodeArts"
 ---
 
-# huaweicloud_codearts_repository
+# hcso_codearts_repository
 
 Manages a CodeArts repository resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "project_id" {}
 variable "repository_name" {}
 variable "repository_description" {}
 
-resource "huaweicloud_codearts_repository" "test" {
+resource "hcso_codearts_repository" "test" {
   project_id = var.project_id // You can use project resource to generate it
 
   name               = var.repository_name
@@ -116,7 +116,7 @@ In addition to all arguments above, the following attributes are exported:
 The repository can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_codearts_repository.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_codearts_repository.test 0ce123456a00f2591fabc00385ff1234
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -126,7 +126,7 @@ You can then decide if changes should be applied to the repository, or the resou
 align with the repository. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_codearts_repository" "test" {
+resource "hcso_codearts_repository" "test" {
   ...
 
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "CodeArts Deploy"
 ---
 
-# huaweicloud_codearts_deploy_host
+# hcso_codearts_deploy_host
 
 Manages a CodeArts deploy host resource within HuaweiCloud.
 
@@ -24,7 +24,7 @@ variable "port" {}
 variable "username" {}
 variable "password" {}
 
-resource "huaweicloud_codearts_deploy_host" "test" {
+resource "hcso_codearts_deploy_host" "test" {
   group_id   = var.group_id
   ip_address = var.ip_address
   port       = var.port
@@ -47,7 +47,7 @@ variable "username" {}
 variable "password" {}
 variable "proxy_host_id" {}
 
-resource "huaweicloud_codearts_deploy_host" "test" {
+resource "hcso_codearts_deploy_host" "test" {
   group_id      = var.group_id
   ip_address    = var.ip_address
   port          = var.port
@@ -69,7 +69,7 @@ variable "port" {}
 variable "username" {}
 variable "password" {}
 
-resource "huaweicloud_codearts_deploy_host" "test" {
+resource "hcso_codearts_deploy_host" "test" {
   group_id   = var.group_id
   ip_address = var.ip_address
   port       = var.port
@@ -168,7 +168,7 @@ The `permission` block supports:
 The CodeArts deploy host resource can be imported using `group_id` and `id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_codearts_deploy_host.test <group_id>/<id>
+$ terraform import hcso_codearts_deploy_host.test <group_id>/<id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -178,7 +178,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also, you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_codearts_deploy_host" "test" {
+resource "hcso_codearts_deploy_host" "test" {
   ...
   
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "Config"
 ---
 
-# huaweicloud_rms_resource_aggregation_authorization
+# hcso_rms_resource_aggregation_authorization
 
 Manages a RMS aggregation authorization resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a RMS aggregation authorization resource within HuaweiCloud.
 ```hcl
 variable "source_account" {}
 
-resource "huaweicloud_rms_resource_aggregation_authorization" "test" {
+resource "hcso_rms_resource_aggregation_authorization" "test" {
   account_id = var.source_account
 }
 ```
@@ -38,5 +38,5 @@ In addition to all arguments above, the following attributes are exported:
 The aggregation authorization can be imported using the `account_id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_rms_resource_aggregation_authorization.test 036a12ef8327c4194346684fdbe0b37e
+$ terraform import hcso_rms_resource_aggregation_authorization.test 036a12ef8327c4194346684fdbe0b37e
 ```

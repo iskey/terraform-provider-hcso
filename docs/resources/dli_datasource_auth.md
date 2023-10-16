@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_datasource_auth
+# hcso_dli_datasource_auth
 
 Manages a DLI datasource authentication resource within HuaweiCloud.  
 
@@ -14,7 +14,7 @@ Manages a DLI datasource authentication resource within HuaweiCloud.
   variable "username" {}
   variable "password" {}
   
-  resource "huaweicloud_dli_datasource_auth" "test" {
+  resource "hcso_dli_datasource_auth" "test" {
     type     = "passwd"
     name     = "demo"
     username = var.username
@@ -29,7 +29,7 @@ Manages a DLI datasource authentication resource within HuaweiCloud.
   variable "password" {}
   variable "certificate_location" {}
   
-  resource "huaweicloud_dli_datasource_auth" "test" {
+  resource "hcso_dli_datasource_auth" "test" {
     type                 = "CSS"
     name                 = "demo"
     username             = var.username
@@ -47,7 +47,7 @@ Manages a DLI datasource authentication resource within HuaweiCloud.
   variable "keystore_password" {}
   variable "key_password" {}
   
-  resource "huaweicloud_dli_datasource_auth" "test" {
+  resource "hcso_dli_datasource_auth" "test" {
     type                = "Kafka_SSL"
     name                = "demo"
     truststore_location = var.truststore_location
@@ -65,7 +65,7 @@ Manages a DLI datasource authentication resource within HuaweiCloud.
   variable "krb5_conf" {}
   variable "keytab" {}
   
-  resource "huaweicloud_dli_datasource_auth" "test" {
+  resource "hcso_dli_datasource_auth" "test" {
     type      = "KRB"
     name      = "demo"
     username  = var.username
@@ -130,7 +130,7 @@ In addition to all arguments above, the following attributes are exported:
 The DLI datasource authentication can be imported using `id` which equals the `name`, e.g.
 
 ```bash
-$ terraform import huaweicloud_dli_datasource_auth.test <name>
+$ terraform import hcso_dli_datasource_auth.test <name>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -141,7 +141,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_dli_datasource_auth" "test" {
+resource "hcso_dli_datasource_auth" "test" {
     ...
 
   lifecycle {

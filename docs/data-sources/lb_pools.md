@@ -2,7 +2,7 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_pools
+# hcso_lb_pools
 
 Use this data source to get the list of ELB pools.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of ELB pools.
 ```hcl
 variable "pool_name" {}
 
-data "huaweicloud_lb_pools" "test" {
+data "hcso_lb_pools" "test" {
   name = var.pool_name
 }
 ```

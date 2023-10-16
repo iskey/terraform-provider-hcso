@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_backup
+# hcso_rds_backup
 
 Manages a RDS manual backup resource within HuaweiCloud.  
 
@@ -12,7 +12,7 @@ Manages a RDS manual backup resource within HuaweiCloud.
 variable "instance_id" {}
 variable "backup_name" {}
 
-resource "huaweicloud_rds_backup" "test" {
+resource "hcso_rds_backup" "test" {
   instance_id = var.instance_id
   name        = var.backup_name
 }
@@ -85,5 +85,5 @@ This resource provides the following timeouts configuration options:
 The rds manual backup can be imported using the instance ID and the backup ID separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_rds_backup.test 1ce123456a00f2591fabc00385ff1235/0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_rds_backup.test 1ce123456a00f2591fabc00385ff1235/0ce123456a00f2591fabc00385ff1234
 ```

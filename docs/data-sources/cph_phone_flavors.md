@@ -2,14 +2,14 @@
 subcategory: "Cloud Phone (CPH)"
 ---
 
-# huaweicloud_cph_phone_flavors
+# hcso_cph_phone_flavors
 
 Use this data source to get available flavors of CPH phone.
 
 ## Example Usage
 
 ```
-data "huaweicloud_cph_phone_flavors" "test" {
+data "hcso_cph_phone_flavors" "test" {
   type = 1
 }
 ```

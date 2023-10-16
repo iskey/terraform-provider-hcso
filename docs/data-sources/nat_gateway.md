@@ -2,7 +2,7 @@
 subcategory: "NAT Gateway (NAT)"
 ---
 
-# huaweicloud_nat_gateway
+# hcso_nat_gateway
 
 Use this data source to get an available public NAT gateway within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Use this data source to get an available public NAT gateway within HuaweiCloud.
 ```hcl
 variable "gateway_name" {}
 
-data "huaweicloud_nat_gateway" "test" {
+data "hcso_nat_gateway" "test" {
   name = var.gateway_name
 }
 ```

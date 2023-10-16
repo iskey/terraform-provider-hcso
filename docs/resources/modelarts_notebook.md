@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_notebook
+# hcso_modelarts_notebook
 
 Manages ModelArts notebook resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "notebook_name" {}
 variable "key_pair_name" {}
 variable "ip" {}
 
-resource "huaweicloud_modelarts_notebook" "notebook" {
+resource "hcso_modelarts_notebook" "notebook" {
   name      = var.notebook_name
   flavor_id = "modelarts.vm.cpu.2u"
   image_id  = "e1a07296-22a8-4f05-8bc8-e936c8e54090"
@@ -122,5 +122,5 @@ The `mount_storages` block contains:
 The notebook can be imported by `id`.
 
 ```bash
-terraform import huaweicloud_modelarts_notebook.test b11b407c-e604-4e8d-8bc4-92398320b847
+terraform import hcso_modelarts_notebook.test b11b407c-e604-4e8d-8bc4-92398320b847
 ```

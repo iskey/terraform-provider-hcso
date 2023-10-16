@@ -2,34 +2,34 @@
 subcategory: "Image Management Service (IMS)"
 ---
 
-# huaweicloud_images_image
+# hcso_images_image
 
 Use this data source to get the ID of an available HuaweiCloud image.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_images_image" "ubuntu" {
+data "hcso_images_image" "ubuntu" {
   name        = "Ubuntu 18.04 server 64bit"
   visibility  = "public"
   most_recent = true
 }
 
-data "huaweicloud_images_image" "centos-1" {
+data "hcso_images_image" "centos-1" {
   architecture = "x86"
   os_version   = "CentOS 7.4 64bit"
   visibility   = "public"
   most_recent  = true
 }
 
-data "huaweicloud_images_image" "centos-2" {
+data "hcso_images_image" "centos-2" {
   architecture = "x86"
   name_regex   = "^CentOS 7.4"
   visibility   = "public"
   most_recent  = true
 }
 
-data "huaweicloud_images_image" "bms_image" {
+data "hcso_images_image" "bms_image" {
   architecture = "x86"
   image_type   = "Ironic"
   os_version   = "CentOS 7.4 64bit"

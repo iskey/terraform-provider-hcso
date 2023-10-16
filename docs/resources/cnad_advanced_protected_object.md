@@ -2,7 +2,7 @@
 subcategory: "Cloud Native Anti-DDoS Advanced"
 ---
 
-# huaweicloud_cnad_advanced_protected_object
+# hcso_cnad_advanced_protected_object
 
 Manages a CNAD advanced protected object resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "object_id" {}
 variable "object_ip_address" {}
 variable "type" {}
 
-resource "huaweicloud_cnad_advanced_protected_object" "test" {
+resource "hcso_cnad_advanced_protected_object" "test" {
   instance_id = var.instance_id
   
   protected_objects {
@@ -30,7 +30,7 @@ resource "huaweicloud_cnad_advanced_protected_object" "test" {
 The following arguments are supported:
 
 * `instance_id` - (Required, String, ForceNew) Specifies the CNAD advanced instance ID in which to bind protected
-  objects. You can find it through data source `huaweicloud_cnad_advanced_instances`.
+  objects. You can find it through data source `hcso_cnad_advanced_instances`.
 
   Changing this parameter will create a new resource.
 
@@ -42,15 +42,15 @@ The `Protected_Object` block supports:
 
 * `id` - (Required, String) Specifies the ID of the protected object. The field must be the ID of the Elastic IP,
   which in the same region with the CNAD advanced instance. You can find it through data source
-  `huaweicloud_cnad_advanced_available_objects`.
+  `hcso_cnad_advanced_available_objects`.
 
 * `ip_address` - (Required, String) Specifies the IP of the protected object. The field must be the IP of the Elastic
   IP, which in the same region with the CNAD advanced instance. You can find it through data source
-  `huaweicloud_cnad_advanced_available_objects`. This field and `id` must belong to the same protected object.
+  `hcso_cnad_advanced_available_objects`. This field and `id` must belong to the same protected object.
 
 * `type` - (Required, String) Specifies the type of the protected object. Valid values are **VPN**, **NAT**, **VIP**,
   **CCI**, **EIP**, **ELB**, **REROUTING_IP**, **SubEni** and **NetInterFace**. You can find it through data source
-  `huaweicloud_cnad_advanced_available_objects`. This field and `id` must belong to the same protected object.
+  `hcso_cnad_advanced_available_objects`. This field and `id` must belong to the same protected object.
 
 ## Attribute Reference
 
@@ -96,5 +96,5 @@ The `Protected_Object` block supports:
 The CNAD advanced protected object can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cnad_advanced_protected_object.test <id>
+$ terraform import hcso_cnad_advanced_protected_object.test <id>
 ```

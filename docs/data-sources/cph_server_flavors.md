@@ -2,14 +2,14 @@
 subcategory: "Cloud Phone (CPH)"
 ---
 
-# huaweicloud_cph_server_flavors
+# hcso_cph_server_flavors
 
 Use this data source to get available flavors of CPH server.
 
 ## Example Usage
 
 ```
-data "huaweicloud_cph_server_flavors" "flavor" {
+data "hcso_cph_server_flavors" "flavor" {
   type = 0
 }
 ```

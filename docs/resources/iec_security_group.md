@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_security_group
+# hcso_iec_security_group
 
 Manages a IEC security group resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a IEC security group resource within HuaweiCloud.
 ```hcl
 variable "iec_secgroup_name" {}
 
-resource "huaweicloud_iec_security_group" "secgroup_test" {
+resource "hcso_iec_security_group" "secgroup_test" {
   name = var.iec_secgroup_name
 }
 ```
@@ -62,5 +62,5 @@ This resource provides the following timeouts configuration options:
 IEC Security Groups can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iec_security_group.secgroup_test 2a02d1d3-437c-11eb-b721-fa163e8ac569
+$ terraform import hcso_iec_security_group.secgroup_test 2a02d1d3-437c-11eb-b721-fa163e8ac569
 ```

@@ -2,16 +2,16 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_blockstorage_volume_v2
+# hcso_blockstorage_volume_v2
 
 Manages a V2 volume resource within HuaweiCloud.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_evs_volume` instead.
+!> **WARNING:** It has been deprecated, use `hcso_evs_volume` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_blockstorage_volume_v2" "volume_1" {
+resource "hcso_blockstorage_volume_v2" "volume_1" {
   region      = "RegionOne"
   name        = "volume_1"
   description = "first test volume"
@@ -77,5 +77,5 @@ This resource provides the following timeouts configuration options:
 Volumes can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_blockstorage_volume_v2.volume_1 ea257959-eeb1-4c10-8d33-26f0409a755d
+$ terraform import hcso_blockstorage_volume_v2.volume_1 ea257959-eeb1-4c10-8d33-26f0409a755d
 ```

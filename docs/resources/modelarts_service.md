@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_service
+# hcso_modelarts_service
 
 Manages a ModelArts service resource within HuaweiCloud.  
 
@@ -13,7 +13,7 @@ Manages a ModelArts service resource within HuaweiCloud.
 ```hcl
 variable "model_id" {}
 
-resource "huaweicloud_modelarts_service" "test" {
+resource "hcso_modelarts_service" "test" {
   name        = "demo"
   infer_type  = "real-time"
   description = "This is a demo"
@@ -31,7 +31,7 @@ resource "huaweicloud_modelarts_service" "test" {
 
   additional_properties {
     smn_notification {
-      topic_urn = huaweicloud_smn_topic.test.id
+      topic_urn = hcso_smn_topic.test.id
       events    = [3]
     }
     log_report_channels {
@@ -46,7 +46,7 @@ resource "huaweicloud_modelarts_service" "test" {
 ```hcl
 variable "model_id" {}
 
-resource "huaweicloud_modelarts_service" "test" {
+resource "hcso_modelarts_service" "test" {
   name        = "demo"
   infer_type  = "real-time"
   description = "This is a demo"
@@ -64,7 +64,7 @@ resource "huaweicloud_modelarts_service" "test" {
 
   additional_properties {
     smn_notification {
-      topic_urn = huaweicloud_smn_topic.test.id
+      topic_urn = hcso_smn_topic.test.id
       events    = [3]
     }
     log_report_channels {
@@ -338,7 +338,7 @@ This resource provides the following timeouts configuration options:
 The modelarts service can be imported using `id` e.g.
 
 ```bash
-$ terraform import huaweicloud_modelarts_service.test 60495dd7-d56b-43c7-8f98-03833833f8e0
+$ terraform import hcso_modelarts_service.test 60495dd7-d56b-43c7-8f98-03833833f8e0
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -348,7 +348,7 @@ importing a dataset. You can then decide if changes should be applied to the dat
 should be updated to align with the dataset. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_modelarts_service" "test" {
+resource "hcso_modelarts_service" "test" {
     ...
 
   lifecycle {

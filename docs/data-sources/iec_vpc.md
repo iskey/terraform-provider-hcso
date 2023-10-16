@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_vpc
+# hcso_iec_vpc
 
 Use this data source to get the details of a specific IEC VPC.
 
@@ -11,7 +11,7 @@ Use this data source to get the details of a specific IEC VPC.
 ```hcl
 variable "vpc_name" {}
 
-data "huaweicloud_iec_vpc" "my_vpc" {
+data "hcso_iec_vpc" "my_vpc" {
   name = var.vpc_name
 }
 ```

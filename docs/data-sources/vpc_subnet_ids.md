@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_subnet_ids
+# hcso_vpc_subnet_ids
 
 Provides a list of subnet ids for a vpc.
 
@@ -13,17 +13,17 @@ This resource can be useful for getting back a list of subnet ids for a vpc.
 The following example shows outputing all cidr blocks for every subnet id in a vpc.
 
 ```hcl
-data "huaweicloud_vpc_subnet_ids" "subnet_ids" {
+data "hcso_vpc_subnet_ids" "subnet_ids" {
   vpc_id = var.vpc_id
 }
 
-data "huaweicloud_vpc_subnet" "subnet" {
-  count = length(data.huaweicloud_vpc_subnet_ids.subnet_ids.ids)
-  id    = data.huaweicloud_vpc_subnet_ids.subnet_ids.ids[count.index]
+data "hcso_vpc_subnet" "subnet" {
+  count = length(data.hcso_vpc_subnet_ids.subnet_ids.ids)
+  id    = data.hcso_vpc_subnet_ids.subnet_ids.ids[count.index]
 }
 
 output "subnet_cidr_blocks" {
-  value = [for s in data.huaweicloud_vpc_subnet.subnet: "${s.name}: ${s.id}: ${s.cidr}"]
+  value = [for s in data.hcso_vpc_subnet.subnet: "${s.name}: ${s.id}: ${s.cidr}"]
 }
 ```
 

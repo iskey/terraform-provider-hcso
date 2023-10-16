@@ -2,7 +2,7 @@
 subcategory: "ServiceStage"
 ---
 
-# huaweicloud_servicestage_repo_password_authorization
+# hcso_servicestage_repo_password_authorization
 
 This resource is used for the ServiceStage service to establish the authorization relationship through username
 and password with various types of the Open-Source repository.
@@ -15,7 +15,7 @@ variable "domain_name"
 variable "tenant_name"
 variable "password"
 
-resource "huaweicloud_servicestage_repo_password_authorization" "test" {
+resource "hcso_servicestage_repo_password_authorization" "test" {
   type      = "devcloud"
   name      = var.authorization_name
   user_name = format("%s/%s", var.domain_name, var.tenant_name)
@@ -61,5 +61,5 @@ In addition to all arguments above, the following attributes are exported:
 Authorizations can be imported using their `id` or `name`, e.g.:
 
 ```
-$ terraform import huaweicloud_servicestage_repo_password_authorization.test terraform-test
+$ terraform import hcso_servicestage_repo_password_authorization.test terraform-test
 ```

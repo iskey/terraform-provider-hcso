@@ -2,7 +2,7 @@
 subcategory: "ServiceStage"
 ---
 
-# huaweicloud_servicestage_repo_token_authorization
+# hcso_servicestage_repo_token_authorization
 
 This resource is used for the ServiceStage service to establish the authorization relationship through personal access
 token with various types of the Open-Source repository.
@@ -14,7 +14,7 @@ variable "authorization_name"
 variable "repository_host"
 variable "personal_access_token"
 
-resource "huaweicloud_servicestage_repo_token_authorization" "test" {
+resource "hcso_servicestage_repo_token_authorization" "test" {
   type  = "github"
   name  = var.authorization_name
   host  = var.repository_host
@@ -57,5 +57,5 @@ In addition to all arguments above, the following attributes are exported:
 Authorizations can be imported using their `id` or `name`, e.g.:
 
 ```
-$ terraform import huaweicloud_servicestage_repo_token_authorization.test terraform-test
+$ terraform import hcso_servicestage_repo_token_authorization.test terraform-test
 ```

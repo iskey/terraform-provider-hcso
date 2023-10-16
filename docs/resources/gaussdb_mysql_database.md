@@ -2,7 +2,7 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_database
+# hcso_gaussdb_mysql_database
 
 Manages a GaussDB MySQL database resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a GaussDB MySQL database resource within HuaweiCloud.
 variable "instance_id" {}
 variable "character_set" {}
 
-resource "huaweicloud_gaussdb_mysql_database" "test" {
+resource "hcso_gaussdb_mysql_database" "test" {
   instance_id   = var.instance_id
   name          = "test_db_name"
   character_set = var.character_set
@@ -62,5 +62,5 @@ This resource provides the following timeouts configuration options:
 The GaussDB MySQL database can be imported using the `instance_id` and `name` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_gaussdb_mysql_database.test <instance_id>/<name>
+$ terraform import hcso_gaussdb_mysql_database.test <instance_id>/<name>
 ```

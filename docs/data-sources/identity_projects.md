@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_projects
+# hcso_identity_projects
 
 Use this data source to query the IAM project list within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Use this data source to query the IAM project list within HuaweiCloud.
 ### Obtain project information by name
 
 ```hcl
-data "huaweicloud_identity_projects" "test" {
+data "hcso_identity_projects" "test" {
   name = "cn-north-4_demo"
 }
 ```
@@ -21,7 +21,7 @@ data "huaweicloud_identity_projects" "test" {
 ### Obtain special project information by name
 
 ```hcl
-data "huaweicloud_identity_projects" "test" {
+data "hcso_identity_projects" "test" {
   name = "MOS" // The project for OBS Billing
 }
 ```

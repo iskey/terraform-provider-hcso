@@ -2,14 +2,14 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_organization
+# hcso_swr_organization
 
 Manages a SWR organization resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_swr_organization" "test" {
+resource "hcso_swr_organization" "test" {
   name = "terraform-test"
 }
 ```
@@ -48,5 +48,5 @@ This resource provides the following timeouts configuration options:
 Organizations can be imported using the `name`, e.g.
 
 ```
-$ terraform import huaweicloud_swr_organization.test org-name
+$ terraform import hcso_swr_organization.test org-name
 ```

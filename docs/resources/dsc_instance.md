@@ -2,14 +2,14 @@
 subcategory: "Data Security Center (DSC)"
 ---
 
-# huaweicloud_dsc_instance
+# hcso_dsc_instance
 
 Manages a DSC instance resource within HuaweiCloud.  
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_dsc_instance" "test" {
+resource "hcso_dsc_instance" "test" {
   edition                    = "base_standard"
   charging_mode              = "prePaid"
   period_unit                = "month"
@@ -82,5 +82,5 @@ In addition to all arguments above, the following attributes are exported:
 The dsc instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_dsc_instance.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_dsc_instance.test 0ce123456a00f2591fabc00385ff1234
 ```

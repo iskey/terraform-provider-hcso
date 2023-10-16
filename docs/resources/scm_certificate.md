@@ -2,7 +2,7 @@
 subcategory: "Cloud Certificate Manager (CCM)"
 ---
 
-# huaweicloud_scm_certificate
+# hcso_scm_certificate
 
 SSL Certificate Manager (SCM) allows you to purchase Secure Sockets Layer (SSL) certificates from the world's leading
 digital certificate authorities (CAs), upload existing SSL certificates, and centrally manage all your SSL certificates
@@ -13,7 +13,7 @@ in one place.
 ### Load the certificate contents from the local files
 
 ```hcl
-resource "huaweicloud_scm_certificate" "certificate_1" {
+resource "hcso_scm_certificate" "certificate_1" {
   name              = "certificate_1"
   certificate       = file("/usr/local/data/certificate/cert_xxx/xxx_ca.crt")
   certificate_chain = file("/usr/local/data/certificate/cert_xxx/xxx_ca_chain.crt")
@@ -24,7 +24,7 @@ resource "huaweicloud_scm_certificate" "certificate_1" {
 ### Write the contents of the certificate into the Terrafrom script
 
 ```hcl
-resource "huaweicloud_scm_certificate" "certificate_2" {
+resource "hcso_scm_certificate" "certificate_2" {
   name              = "certificate_2"
   certificate       = <<EOT
 -----BEGIN CERTIFICATE-----
@@ -54,7 +54,7 @@ EOT
 
 ```hcl
 # Load the certificate contents from the local files.
-resource "huaweicloud_scm_certificate" "certificate_3" {
+resource "hcso_scm_certificate" "certificate_3" {
   name              = "certificate_3"
   certificate       = file("/usr/local/data/certificate/cert_xxx/xxx_ca.crt")
   certificate_chain = file("/usr/local/data/certificate/cert_xxx/xxx_ca_chain.crt")
@@ -133,5 +133,5 @@ In addition to all arguments above, the following attributes are exported:
 Certificates can be imported using the `id`, e.g.
 
 ```shell
-terraform import huaweicloud_scm_certificate.certificate_1 scs1627959834994
+terraform import hcso_scm_certificate.certificate_1 scs1627959834994
 ```

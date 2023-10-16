@@ -2,7 +2,7 @@
 subcategory: "Meeting"
 ---
 
-# huaweicloud_meeting_user
+# hcso_meeting_user
 
 Manages a meeting user resource within HuaweiCloud.
 
@@ -19,7 +19,7 @@ variable "english_name" {}
 variable "signature" {}
 variable "title" {}
 
-resource "huaweicloud_meeting_user" "test" {
+resource "hcso_meeting_user" "test" {
   app_id  = var.app_id
   app_key = var.app_key
 
@@ -49,7 +49,7 @@ variable "english_name" {}
 variable "signature" {}
 variable "title" {}
 
-resource "huaweicloud_meeting_user" "test" {
+resource "hcso_meeting_user" "test" {
   app_id  = var.app_id
   app_key = var.app_key
 
@@ -79,7 +79,7 @@ variable "english_name" {}
 variable "signature" {}
 variable "title" {}
 
-resource "huaweicloud_meeting_user" "test" {
+resource "hcso_meeting_user" "test" {
   account_name     = var.account_name
   account_password = var.account_password
 
@@ -197,13 +197,13 @@ Users can be imported using their `id` and authorization parameters, separated b
 Import a user and authenticated by account.
 
 ```
-$ terraform import huaweicloud_meeting_user.test &ltid&gt/&ltaccount_name&gt/&ltaccount_password&gt
+$ terraform import hcso_meeting_user.test &ltid&gt/&ltaccount_name&gt/&ltaccount_password&gt
 ```
 
 Import a user and authenticated by `APP ID`/`APP Key`.
 
 ```
-$ terraform import huaweicloud_meeting_user.test &ltid&gt/&ltapp_id&gt/&ltapp_key&gt/&ltcorp_id&gt/&ltuser_id&gt
+$ terraform import hcso_meeting_user.test &ltid&gt/&ltapp_id&gt/&ltapp_key&gt/&ltcorp_id&gt/&ltuser_id&gt
 ```
 
 The slashes cannot be missing even corporation ID and user ID are empty.
@@ -212,7 +212,7 @@ Note that some parameters do not support import due to missing API responses or 
 `is_send_notify` and `is_admin`. You can ignore this change as below.
 
 ```
-resource "huaweicloud_meeting_user" "test" {
+resource "hcso_meeting_user" "test" {
   ...
 
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_custom_authorizer
+# hcso_apig_custom_authorizer
 
 Manages an APIG custom authorizer resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "instance_id" {}
 variable "authorizer_name" {}
 variable "function_urn" {}
 
-resource "huaweicloud_apig_custom_authorizer" "test" {
+resource "hcso_apig_custom_authorizer" "test" {
   instance_id  = var.instance_id
   name         = var.authorizer_name
   function_urn = var.function_urn
@@ -87,5 +87,5 @@ Custom Authorizers of the APIG can be imported using their `name` and related de
 slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_custom_authorizer.test <instance_id>/<name>
+$ terraform import hcso_apig_custom_authorizer.test <instance_id>/<name>
 ```

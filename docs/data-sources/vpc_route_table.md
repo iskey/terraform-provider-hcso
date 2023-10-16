@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_route_table
+# hcso_vpc_route_table
 
 Provides details about a specific VPC route table.
 
@@ -12,12 +12,12 @@ Provides details about a specific VPC route table.
 variable "vpc_id" {}
 
 # get the default route table
-data "huaweicloud_vpc_route_table" "default" {
+data "hcso_vpc_route_table" "default" {
   vpc_id = var.vpc_id
 }
 
 # get a custom route table
-data "huaweicloud_vpc_route_table" "custom" {
+data "hcso_vpc_route_table" "custom" {
   vpc_id = var.vpc_id
   name   = "demo"
 }

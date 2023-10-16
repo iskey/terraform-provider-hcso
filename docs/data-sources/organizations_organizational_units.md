@@ -2,17 +2,17 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_organizational_units
+# hcso_organizations_organizational_units
 
 Use this data source to get the list of child organizational units under the specified parent OU.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_organizations_organization" "org" {}
+data "hcso_organizations_organization" "org" {}
 
-data "huaweicloud_organizations_organizational_units" "test" {
-  parent_id = data.huaweicloud_organizations_organization.org.root_id
+data "hcso_organizations_organizational_units" "test" {
+  parent_id = data.hcso_organizations_organization.org.root_id
 }
 ```
 

@@ -2,14 +2,14 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_global_variable
+# hcso_dli_global_variable
 
 Manages a DLI global variable resource within HuaweiCloud.  
 
 ## Example Usage
 
 ```hcl
-  resource "huaweicloud_dli_global_variable" "test" {
+  resource "hcso_dli_global_variable" "test" {
     name  = "demo"
     value = "abc"
   }
@@ -45,5 +45,5 @@ In addition to all arguments above, the following attributes are exported:
 The global variable can be imported using the `id` which equals the name, e.g.
 
 ```bash
-$ terraform import huaweicloud_dli_global_variable.test demo_name
+$ terraform import hcso_dli_global_variable.test demo_name
 ```

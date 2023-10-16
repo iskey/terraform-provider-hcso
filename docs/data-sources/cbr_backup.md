@@ -2,7 +2,7 @@
 subcategory: "Cloud Backup and Recovery (CBR)"
 ---
 
-# huaweicloud_cbr_backup
+# hcso_cbr_backup
 
 Use this data source to query the backup detail using its ID within Huaweicloud.
 
@@ -13,7 +13,7 @@ Use this data source to query the backup detail using its ID within Huaweicloud.
 ```hcl
 variable "backup_id" {}
 
-data "huaweicloud_cbr_backup" "test" {
+data "hcso_cbr_backup" "test" {
   id = "backup_id"
 }
 ```

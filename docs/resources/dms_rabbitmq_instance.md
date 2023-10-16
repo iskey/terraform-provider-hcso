@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_rabbitmq_instance
+# hcso_dms_rabbitmq_instance
 
 Manage DMS RabbitMQ instance resources within HuaweiCloud.
 
@@ -20,17 +20,17 @@ variable "availability_zones" {
 
 # Query flavor information based on flavorID and storage I/O specification.
 # Make sure the flavors are available in the availability zone.
-data "huaweicloud_dms_rabbitmq_flavors" "test" {
+data "hcso_dms_rabbitmq_flavors" "test" {
   type               = "cluster"
   storage_spec_code  = "dms.physical.storage.ultra.v2"
   availability_zones = var.availability_zones
 }
 
-resource "huaweicloud_dms_rabbitmq_instance" "test" {
+resource "hcso_dms_rabbitmq_instance" "test" {
   name              = "instance_1"
-  flavor_id         = data.huaweicloud_dms_rabbitmq_flavors.test.flavors[0].flavor.id
+  flavor_id         = data.hcso_dms_rabbitmq_flavors.test.flavors[0].flavor.id
   engine_version    = "3.8.35"
-  storage_spec_code = data.huaweicloud_dms_rabbitmq_flavors.test.flavors[0].ios[0].storage_spec_code
+  storage_spec_code = data.hcso_dms_rabbitmq_flavors.test.flavors[0].ios[0].storage_spec_code
   broker_num        = 3
 
   vpc_id             = var.vpc_id
@@ -53,16 +53,16 @@ variable "availability_zones" {
    default = ["your_availability_zones_a", "your_availability_zones_b", "your_availability_zones_c"]
 }
 
-data "huaweicloud_dms_rabbitmq_flavors" "test" {
+data "hcso_dms_rabbitmq_flavors" "test" {
   type              = "single"
   storage_spec_code = "dms.physical.storage.ultra.v2"
 }
 
-resource "huaweicloud_dms_rabbitmq_instance" "test" {
+resource "hcso_dms_rabbitmq_instance" "test" {
   name              = "instance_1"
-  flavor_id         = data.huaweicloud_dms_rabbitmq_flavors.test.flavors[0].flavor.id
-  engine_version    = data.huaweicloud_dms_rabbitmq_flavors.test.versions[0]
-  storage_spec_code = data.huaweicloud_dms_rabbitmq_flavors.test.flavors[0].ios[0].storage_spec_code
+  flavor_id         = data.hcso_dms_rabbitmq_flavors.test.flavors[0].flavor.id
+  engine_version    = data.hcso_dms_rabbitmq_flavors.test.versions[0]
+  storage_spec_code = data.hcso_dms_rabbitmq_flavors.test.flavors[0].ios[0].storage_spec_code
 
   vpc_id             = var.vpc_id
   network_id         = var.subnet_id
@@ -203,7 +203,7 @@ This resource provides the following timeouts configuration options:
 DMS RabbitMQ instance can be imported using the instance id, e.g.
 
 ```
- $ terraform import huaweicloud_dms_rabbitmq_instance.instance_1 8d3c7938-dc47-4937-a30f-c80de381c5e3
+ $ terraform import hcso_dms_rabbitmq_instance.instance_1 8d3c7938-dc47-4937-a30f-c80de381c5e3
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -213,7 +213,7 @@ importing a DMS RabbitMQ instance. You can then decide if changes should be appl
 definition should be updated to align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dms_rabbitmq_instance" "instance_1" {
+resource "hcso_dms_rabbitmq_instance" "instance_1" {
     ...
 
   lifecycle {

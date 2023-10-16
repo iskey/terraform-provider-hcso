@@ -2,7 +2,7 @@
 subcategory: "ServiceStage"
 ---
 
-# huaweicloud_servicestage_component
+# hcso_servicestage_component
 
 This resource is used to manage a component under specified application within HuaweiCloud ServiceStage service.
 
@@ -20,7 +20,7 @@ variable "repo_namespace"
 variable "organization_name"
 variable "cluster_id"
 
-resource "huaweicloud_servicestage_component" "test" {
+resource "hcso_servicestage_component" "test" {
   application_id = var.application_id
   name           = var.component_name
   type           = "Webapp"
@@ -52,7 +52,7 @@ resource "huaweicloud_servicestage_component" "test" {
 variable "application_id"
 variable "component_name"
 
-resource "huaweicloud_servicestage_component" "test" {
+resource "hcso_servicestage_component" "test" {
   application_id = var.application_id
   name           = var.component_name
   type           = "MicroService"
@@ -170,5 +170,5 @@ In addition to all arguments above, the following attributes are exported:
 Components can be imported using their `application_id` and `id`, separated by a slash (/), e.g.
 
 ```
-$ terraform import huaweicloud_servicestage_component.test dd7a1ce2-c48c-4f41-85bb-d0d09969eec9/9ab8ef79-d318-4de5-acf9-e1e1e25a0395
+$ terraform import hcso_servicestage_component.test dd7a1ce2-c48c-4f41-85bb-d0d09969eec9/9ab8ef79-d318-4de5-acf9-e1e1e25a0395
 ```

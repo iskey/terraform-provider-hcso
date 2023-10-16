@@ -2,7 +2,7 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_dataforwarding_rule
+# hcso_iotda_dataforwarding_rule
 
 Manages an IoTDA data forwarding rule within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "disStreamId" {}
 variable "obsRegion" {}
 variable "obsbucket" {}
 
-resource "huaweicloud_iotda_dataforwarding_rule" "test" {
+resource "hcso_iotda_dataforwarding_rule" "test" {
   name    = "ruleName"
   trigger = "product:create"
   enabled = true
@@ -201,7 +201,7 @@ In addition to all arguments above, the following attributes are exported:
 Data forwarding rules can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_dataforwarding_rule.test 10022532f4f94f26b01daa1e424853e1
+$ terraform import hcso_iotda_dataforwarding_rule.test 10022532f4f94f26b01daa1e424853e1
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attrubutes missing from the
@@ -211,7 +211,7 @@ applied to the resource, or the resource definition should be updated to align w
 changes as below.
 
 ```
-resource "huaweicloud_iotda_device_group" "test" {
+resource "hcso_iotda_device_group" "test" {
     ...
 
   lifecycle {

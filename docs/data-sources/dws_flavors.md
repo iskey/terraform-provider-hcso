@@ -2,14 +2,14 @@
 subcategory: "Data Warehouse Service (DWS)"
 ---
 
-# huaweicloud_dws_flavors
+# hcso_dws_flavors
 
 Use this data source to get available flavors of DWS cluster node.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_dws_flavors" "flavor" {
+data "hcso_dws_flavors" "flavor" {
   vcpus = 8
 }
 ```
@@ -47,7 +47,7 @@ In addition to all arguments above, the following attributes are exported:
 The `Flavors` block supports:
 
 * `flavor_id` - The name of the dws node flavor.  
- It is referenced by `node_type` in `huaweicloud_dws_flavors`.
+ It is referenced by `node_type` in `hcso_dws_flavors`.
 
 * `datastore_type` - The type of datastore.  
   The options are as follows:

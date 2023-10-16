@@ -2,7 +2,7 @@
 subcategory: "Cloud Performance Test Service (CPTS)"
 ---
 
-# huaweicloud_cpts_task
+# hcso_cpts_task
 
 Manages a pressure Test Task resource within HuaweiCloud CPTS.
 The task resource only supports serial execution mode.
@@ -10,13 +10,13 @@ The task resource only supports serial execution mode.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_cpts_project" "test" {
+resource "hcso_cpts_project" "test" {
   name = "tf_demo_project"
 }
 
-resource "huaweicloud_cpts_task" "test" {
+resource "hcso_cpts_task" "test" {
   name       = "tf_demo_task"
-  project_id = huaweicloud_cpts_project.test.id
+  project_id = hcso_cpts_project.test.id
 }
 ```
 
@@ -66,7 +66,7 @@ This resource provides the following timeouts configuration options:
 Tasks can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_cpts_task.test 1090
+$ terraform import hcso_cpts_task.test 1090
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -76,7 +76,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cpts_task" "test" {
+resource "hcso_cpts_task" "test" {
     ...
 
   lifecycle {

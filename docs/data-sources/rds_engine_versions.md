@@ -2,14 +2,14 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_engine_versions
+# hcso_rds_engine_versions
 
 Use this data source to obtain all version information of the specified engine type of HuaweiCloud RDS.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_rds_engine_versions" "test" {
+data "hcso_rds_engine_versions" "test" {
   type = "SQLServer"
 }
 ```

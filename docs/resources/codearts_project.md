@@ -2,14 +2,14 @@
 subcategory: CodeArts
 ---
 
-# huaweicloud_codearts_project
+# hcso_codearts_project
 
 Manages a Project resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_codearts_project" "test" {
+resource "hcso_codearts_project" "test" {
   name = "demo_project"
   type = "scrum"
 }
@@ -62,5 +62,5 @@ In addition to all arguments above, the following attributes are exported:
 The project can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_codearts_project.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_codearts_project.test 0ce123456a00f2591fabc00385ff1234
 ```

@@ -2,14 +2,14 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_vpnaas_endpoint_group_v2
+# hcso_vpnaas_endpoint_group_v2
 
 Manages a V2 Endpoint Group resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpnaas_endpoint_group_v2" "group_1" {
+resource "hcso_vpnaas_endpoint_group_v2" "group_1" {
   name      = "Group 1"
   type      = "cidr"
   endpoints = [
@@ -59,5 +59,5 @@ This resource provides the following timeouts configuration options:
 Groups can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpnaas_endpoint_group_v2.group_1 832cb7f3-59fe-40cf-8f64-8350ffc03272
+$ terraform import hcso_vpnaas_endpoint_group_v2.group_1 832cb7f3-59fe-40cf-8f64-8350ffc03272
 ```

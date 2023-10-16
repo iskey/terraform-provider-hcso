@@ -2,7 +2,7 @@
 subcategory: "Cloud Data Migration (CDM)"
 ---
 
-# huaweicloud_cdm_job
+# hcso_cdm_job
 
 Manages CDM job resource within HuaweiCloud.
 
@@ -17,22 +17,22 @@ variable "obs_input_bucket" {}
 variable "obs_output_bucket" {}
 variable "obs_link_name" {}
 
-resource "huaweicloud_obs_bucket" "input" {
+resource "hcso_obs_bucket" "input" {
   bucket        = "job-input"
   acl           = "private"
   force_destroy = true
 }
 
-resource "huaweicloud_obs_bucket" "output" {
+resource "hcso_obs_bucket" "output" {
   bucket        = "job-output"
   acl           = "private"
   force_destroy = true
 }
 
-resource "huaweicloud_cdm_job" "test" {
+resource "hcso_cdm_job" "test" {
   name       = var.name
   job_type   = "NORMAL_JOB"
-  cluster_id = huaweicloud_cdm_cluster.test.id
+  cluster_id = hcso_cdm_cluster.test.id
 
   source_connector = "obs-connector"
   source_link_name = var.obs_link_name
@@ -241,7 +241,7 @@ Jobs can be imported by `id`. It is composed of the ID of CDM cluster which this
  separated by a slash. For example,
 
 ```bash
-terraform import huaweicloud_cdm_job.test b11b407c-e604-4e8d-8bc4-92398320b847/jobName
+terraform import hcso_cdm_job.test b11b407c-e604-4e8d-8bc4-92398320b847/jobName
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -251,7 +251,7 @@ API response, security or some other reason. The missing attributes include: `so
 should be updated to align with the cluster. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_cdm_cluster" "test" {
+resource "hcso_cdm_cluster" "test" {
     ...
 
   lifecycle {

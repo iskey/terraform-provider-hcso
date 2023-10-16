@@ -2,14 +2,14 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_instance
+# hcso_dds_instance
 
 Manages dds instance resource within HuaweiCloud.
 
 ## Example Usage: Creating a Cluster Community Edition
 
 ```hcl
-resource "huaweicloud_dds_instance" "instance" {
+resource "hcso_dds_instance" "instance" {
   name = "dds-instance"
   datastore {
     type           = "DDS-Community"
@@ -52,7 +52,7 @@ resource "huaweicloud_dds_instance" "instance" {
 ## Example Usage: Creating a Replica Set Community Edition
 
 ```hcl
-resource "huaweicloud_dds_instance" "instance" {
+resource "hcso_dds_instance" "instance" {
   name = "dds-instance"
   datastore {
     type           = "DDS-Community"
@@ -79,7 +79,7 @@ resource "huaweicloud_dds_instance" "instance" {
 ## Example Usage: Creating a Single Community Edition
 
 ```hcl
-resource "huaweicloud_dds_instance" "instance" {
+resource "hcso_dds_instance" "instance" {
   name = "dds-instance"
   datastore {
     type           = "DDS-Community"
@@ -276,7 +276,7 @@ This resource provides the following timeouts configuration options:
 DDS instance can be imported using the `id`, e.g.
 
 ```sh
-terraform import huaweicloud_dds_instance.instance 9c6d6ff2cba3434293fd479571517e16in02
+terraform import hcso_dds_instance.instance 9c6d6ff2cba3434293fd479571517e16in02
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -287,7 +287,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dds_instance" "instance" {
+resource "hcso_dds_instance" "instance" {
     ...
 
   lifecycle {

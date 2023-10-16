@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc
+# hcso_vpc
 
 Provides details about a specific VPC.
 
@@ -11,7 +11,7 @@ Provides details about a specific VPC.
 ```hcl
 variable "vpc_name" {}
 
-data "huaweicloud_vpc" "vpc" {
+data "hcso_vpc" "vpc" {
   name = var.vpc_name
 }
 ```

@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_network_acl
+# hcso_iec_network_acl
 
 Use this data source to get the details of a specific IEC network ACL.
 
@@ -11,7 +11,7 @@ Use this data source to get the details of a specific IEC network ACL.
 ```hcl
 variable "acl_name" {}
 
-data "huaweicloud_iec_network_acl" "firewall" {
+data "hcso_iec_network_acl" "firewall" {
   name = var.acl_name
 }
 ```

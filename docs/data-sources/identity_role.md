@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_role
+# hcso_identity_role
 
 Use this data source to get details of the specified IAM **system-defined** role or policy.
 
@@ -85,7 +85,7 @@ FullAccess | system_all_1001 | Full permissions for all services that support po
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identity_role" "kms_adm" {
+data "hcso_identity_role" "kms_adm" {
   display_name = "KMS Administrator"
 }
 ```

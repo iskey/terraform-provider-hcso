@@ -2,21 +2,21 @@
 subcategory: "Bare Metal Server (BMS)"
 ---
 
-# huaweicloud_bms_flavors
+# hcso_bms_flavors
 
 Use this data source to get available BMS flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_bms_flavors" "demo" {
+data "hcso_bms_flavors" "demo" {
   availability_zone = "cn-north-1a"
   vcpus             = 48
 }
 
 # Create BMS instance with the matched flavor
-resource "huaweicloud_bms_instance" "instance" {
-  flavor_id = data.huaweicloud_bms_flavors.demo.flavors[0].id
+resource "hcso_bms_instance" "instance" {
+  flavor_id = data.hcso_bms_flavors.demo.flavors[0].id
 
   # Other properties...
 }

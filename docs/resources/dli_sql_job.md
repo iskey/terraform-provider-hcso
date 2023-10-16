@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_sql_job
+# hcso_dli_sql_job
 
 Manages DLI SQL job resource within HuaweiCloud
 
@@ -15,7 +15,7 @@ variable "database_name" {}
 variable "queue_name" {}
 variable "sql" {}
 
-resource "huaweicloud_dli_sql_job" "test" {
+resource "hcso_dli_sql_job" "test" {
   sql           = var.sql
   database_name = var.database_name
   queue_name    = var.queue_name
@@ -112,7 +112,7 @@ This resource provides the following timeouts configuration options:
 DLI SQL job can be imported by `id`. For example,
 
 ```
-terraform import huaweicloud_dli_sql_job.example 7f803d70-c533-469f-8431-e378f3e97123
+terraform import hcso_dli_sql_job.example 7f803d70-c533-469f-8431-e378f3e97123
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -122,7 +122,7 @@ be applied to the resource, or the resource definition should be updated to alig
 ignore changes as below.
 
 ```
-resource "huaweicloud_dli_sql_job" "test" {
+resource "hcso_dli_sql_job" "test" {
     ...
 
   lifecycle {

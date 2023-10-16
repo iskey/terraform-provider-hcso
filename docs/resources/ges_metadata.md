@@ -2,7 +2,7 @@
 subcategory: "Graph Engine Service (GES)"
 ---
 
-# huaweicloud_ges_metadata
+# hcso_ges_metadata
 
 Manages a GES metadata resource within HuaweiCloud.  
 
@@ -13,7 +13,7 @@ Manages a GES metadata resource within HuaweiCloud.
 ```hcl
 variable "obs_path" {}
 
-resource "huaweicloud_ges_metadata" "test" {
+resource "hcso_ges_metadata" "test" {
   name          = "demo"
   description   = "This is a demo"
   metadata_path = var.obs_path
@@ -132,5 +132,5 @@ In addition to all arguments above, the following attributes are exported:
 The ges metadata can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ges_metadata.test 55b32ad9-1aba-407d-86cf-85f4f765d37a
+$ terraform import hcso_ges_metadata.test 55b32ad9-1aba-407d-86cf-85f4f765d37a
 ```

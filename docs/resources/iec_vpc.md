@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_vpc
+# hcso_iec_vpc
 
 Manages an IEC VPC resource within HuaweiCloud.
 
@@ -12,12 +12,12 @@ Manages an IEC VPC resource within HuaweiCloud.
 variable "vpc_name" {}
 variable "vpc_cidr" {}
 
-resource "huaweicloud_iec_vpc" "vpc" {
+resource "hcso_iec_vpc" "vpc" {
   name = var.vpc_name
   cidr = var.vpc_cidr
 }
 
-resource "huaweicloud_iec_vpc" "vpc_by_customer" {
+resource "hcso_iec_vpc" "vpc_by_customer" {
   name = var.vpc_name
   cidr = var.vpc_cidr
   mode = "CUSTOMER"
@@ -60,5 +60,5 @@ This resource provides the following timeouts configuration options:
 VPCs can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iec_vpc.myvpc 7117d38e-4c8f-4624-a505-bd96b97d024c
+$ terraform import hcso_iec_vpc.myvpc 7117d38e-4c8f-4624-a505-bd96b97d024c
 ```

@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_cluster
+# hcso_cce_cluster
 
 Provides details about the cluster and obtains certificate for accessing cluster information.
 
@@ -11,7 +11,7 @@ Provides details about the cluster and obtains certificate for accessing cluster
 ```hcl
 variable "cluster_name" {}
 
-data "huaweicloud_cce_cluster" "cluster" {
+data "hcso_cce_cluster" "cluster" {
   name   = var.cluster_name
   status = "Available"
 }

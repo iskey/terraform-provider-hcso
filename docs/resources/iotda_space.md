@@ -2,7 +2,7 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_space
+# hcso_iotda_space
 
 Manages an IoTDA resource space within HuaweiCloud.
 
@@ -13,7 +13,7 @@ a resource space.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_iotda_space" "space" {
+resource "hcso_iotda_space" "space" {
   name = "first_space"
 }
 ```
@@ -43,5 +43,5 @@ a default resource space (undeletable) to your account.
 Spaces can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_space.test 10022532f4f94f26b01daa1e424853e1
+$ terraform import hcso_iotda_space.test 10022532f4f94f26b01daa1e424853e1
 ```

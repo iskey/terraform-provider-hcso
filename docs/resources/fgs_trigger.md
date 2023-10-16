@@ -2,7 +2,7 @@
 subcategory: "FunctionGraph"
 ---
 
-# huaweicloud_fgs_trigger
+# hcso_fgs_trigger
 
 Manages a trigger resource within HuaweiCloud FunctionGraph.
 
@@ -14,7 +14,7 @@ Manages a trigger resource within HuaweiCloud FunctionGraph.
 variable "function_urn" {}
 variable "trigger_name" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "TIMER"
 
@@ -32,7 +32,7 @@ resource "huaweicloud_fgs_trigger" "test" {
 variable "function_urn" {}
 variable "trigger_name" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "TIMER"
 
@@ -51,7 +51,7 @@ variable "function_urn" {}
 variable "bucket_name" {}
 variable "trigger_name" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "OBS"
   status       = "ACTIVE"
@@ -72,7 +72,7 @@ resource "huaweicloud_fgs_trigger" "test" {
 variable "function_urn" {}
 variable "topic_urn" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "SMN"
   status       = "ACTIVE"
@@ -89,7 +89,7 @@ resource "huaweicloud_fgs_trigger" "test" {
 variable "function_urn" {}
 variable "stream_name" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "DIS"
   status       = "ACTIVE"
@@ -111,7 +111,7 @@ variable "function_urn" {}
 variable "kafka_instance_id" {}
 variable "kafka_topic_id" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "KAFKA"
 
@@ -134,7 +134,7 @@ variable "instance_id" {}
 variable "group_id" {}
 variable "api_name" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "DEDICATEDGATEWAY"
   status       = "ACTIVE"
@@ -155,7 +155,7 @@ variable "function_urn" {}
 variable "group_id" {}
 variable "api_name" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "APIG"
   status       = "ACTIVE"
@@ -174,7 +174,7 @@ resource "huaweicloud_fgs_trigger" "test" {
 variable "log_group_id" {}
 variable "log_topic_id" {}
 
-resource "huaweicloud_fgs_trigger" "test" {
+resource "hcso_fgs_trigger" "test" {
   function_urn = var.function_urn
   type         = "LTS"
   status       = "ACTIVE"

@@ -2,7 +2,7 @@
 subcategory: "Graph Engine Service (GES)"
 ---
 
-# huaweicloud_ges_backup
+# hcso_ges_backup
 
 Manages a GES backup resource within HuaweiCloud.  
 
@@ -11,7 +11,7 @@ Manages a GES backup resource within HuaweiCloud.
 ```hcl
 variable "graph_id" {}
   
-resource "huaweicloud_ges_backup" "test" {
+resource "hcso_ges_backup" "test" {
   graph_id = var.graph_id
 }
 ```
@@ -64,5 +64,5 @@ The GES backup can be imported using
 `graph_id`, `id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_ges_backup.test <graph_id>/<id>
+$ terraform import hcso_ges_backup.test <graph_id>/<id>
 ```

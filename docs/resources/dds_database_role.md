@@ -2,7 +2,7 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_database_role
+# hcso_dds_database_role
 
 Manages a database role resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "db_name" {}
 variable "owned_role_name" {}
 variable "owned_role_db_name" {}
 
-resource "huaweicloud_dds_database_role" "test" {
+resource "hcso_dds_database_role" "test" {
   instance_id = var.instance_id
 
   name    = var.role_name
@@ -102,5 +102,5 @@ Database roles can be imported using their `id` (combination of `instance_id`, `
 slash (/), e.g.
 
 ```
-terraform import huaweicloud_dds_database_role.test &ltinstance_id&gt/&ltdb_name&gt/&ltname&gt
+terraform import hcso_dds_database_role.test &ltinstance_id&gt/&ltdb_name&gt/&ltname&gt
 ```

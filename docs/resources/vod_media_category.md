@@ -2,14 +2,14 @@
 subcategory: "Video on Demand (VOD)"
 ---
 
-# huaweicloud_vod_media_category
+# hcso_vod_media_category
 
 Manages a VOD media category resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vod_media_category" "test" {
+resource "hcso_vod_media_category" "test" {
   name = "terraform-test"
 }
 ```
@@ -40,7 +40,7 @@ In addition to all arguments above, the following attributes are exported:
 The category can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vod_media_category.test 132945
+$ terraform import hcso_vod_media_category.test 132945
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -50,7 +50,7 @@ You can then decide if changes should be applied to the media category, or the r
 definition should be updated to align with the media category. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_vod_media_category" "test" {
+resource "hcso_vod_media_category" "test" {
     ...
   lifecycle {
     ignore_changes = [

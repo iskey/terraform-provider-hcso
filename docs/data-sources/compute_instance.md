@@ -2,7 +2,7 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_instance
+# hcso_compute_instance
 
 Use this data source to get the details of a specified compute instance.
 
@@ -11,7 +11,7 @@ Use this data source to get the details of a specified compute instance.
 ```hcl
 variable "ecs_name" {}
 
-data "huaweicloud_compute_instance" "demo" {
+data "hcso_compute_instance" "demo" {
   name = var.ecs_name
 }
 ```

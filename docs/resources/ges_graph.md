@@ -2,7 +2,7 @@
 subcategory: "Graph Engine Service (GES)"
 ---
 
-# huaweicloud_ges_graph
+# hcso_ges_graph
 
 Manages a GES graph resource within HuaweiCloud.  
 
@@ -13,7 +13,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "secgroup_id" {}
   
-resource "huaweicloud_ges_graph" "test" {
+resource "hcso_ges_graph" "test" {
   name                  = "demo"
   graph_size_type_index = "1"
   cpu_arch              = "x86_64"
@@ -247,5 +247,5 @@ This resource provides the following timeouts configuration options:
 The ges graph can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ges_graph.test a0be840b-b223-48da-8b34-b8fee1b2e0ca
+$ terraform import hcso_ges_graph.test a0be840b-b223-48da-8b34-b8fee1b2e0ca
 ```

@@ -2,7 +2,7 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_lifecycle_hook
+# hcso_as_lifecycle_hook
 
 Manages an AS Lifecycle Hook resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "hook_name" {}
 variable "as_group_id" {}
 variable "smn_topic_urn" {}
 
-resource "huaweicloud_as_lifecycle_hook" "test" {
+resource "hcso_as_lifecycle_hook" "test" {
   scaling_group_id       = var.as_group_id
   name                   = var.hook_name
   type                   = "ADD"
@@ -67,5 +67,5 @@ In addition to all arguments above, the following attributes are exported:
 Lifecycle hooks can be imported using the AS group ID and hook ID separated by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_as_lifecycle_hook.test &ltAS group ID&gt/&ltLifecycle hook ID&gt
+$ terraform import hcso_as_lifecycle_hook.test &ltAS group ID&gt/&ltLifecycle hook ID&gt
 ```

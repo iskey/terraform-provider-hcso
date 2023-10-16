@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Instance (CCI)"
 ---
 
-# huaweicloud_cci_pvc
+# hcso_cci_pvc
 
 Manages a CCI Persistent Volume Claim resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "namespace" {}
 
 variable "pvc_name" {}
 
-resource "huaweicloud_cci_pvc" "test" {
+resource "hcso_cci_pvc" "test" {
   namespace   = var.namespace
   name        = var.pvc_name
   volume_type = "ssd"
@@ -34,7 +34,7 @@ variable "namespace" {}
 
 variable "pvc_name" {}
 
-resource "huaweicloud_cci_pvc" "test" {
+resource "hcso_cci_pvc" "test" {
   namespace   = var.namespace
   name        = var.pvc_name
   volume_type = "obs"
@@ -53,7 +53,7 @@ variable "pvc_name" {}
 
 variable "export_location" {}
 
-resource "huaweicloud_cci_pvc" "test" {
+resource "hcso_cci_pvc" "test" {
   namespace         = var.namespace
   name              = var.pvc_name
   volume_type       = "nfs-rw"
@@ -73,7 +73,7 @@ variable "pvc_name" {}
 
 variable "export_location" {}
 
-resource "huaweicloud_cci_pvc" "test" {
+resource "hcso_cci_pvc" "test" {
   namespace         = var.namespace
   name              = var.pvc_name
   volume_type       = "efs-standard"
@@ -126,7 +126,7 @@ In addition to all arguments above, the following attributes are exported:
 PVCs can be imported using the `namespace`, `volume_type` and `id`, e.g.
 
 ```
-$ terraform import huaweicloud_cci_pvc.test <namespace>/<volume_type>/<id>
+$ terraform import hcso_cci_pvc.test <namespace>/<volume_type>/<id>
 ```
 
 ## Timeouts

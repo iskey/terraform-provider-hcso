@@ -2,12 +2,12 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_configurations
+# hcso_as_configurations
 
 Use this data source to get a list of AS configurations.
 
 ```hcl
-data "huaweicloud_as_configurations" "configurations" {
+data "hcso_as_configurations" "configurations" {
 }
 ```
 

@@ -2,14 +2,14 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_networking_port
+# hcso_networking_port
 
 Use this data source to get the ID of an available HuaweiCloud port.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_networking_port" "port_1" {
+data "hcso_networking_port" "port_1" {
   network_id = var.network_id
   fixed_ip   = "192.168.0.100"
 }

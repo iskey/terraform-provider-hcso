@@ -2,7 +2,7 @@
 subcategory: "Scalable File Service (SFS)"
 ---
 
-# huaweicloud_sfs_turbos
+# hcso_sfs_turbos
 
 Use this data source to get the list of the available SFS turbos.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of the available SFS turbos.
 ```hcl
 variable "sfs_turbo_name" {}
 
-data "huaweicloud_sfs_turbos" "test" {
+data "hcso_sfs_turbos" "test" {
   name = var.sfs_turbo_name
 }
 ```

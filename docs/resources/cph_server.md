@@ -2,7 +2,7 @@
 subcategory: "Cloud Phone (CPH)"
 ---
 
-# huaweicloud_cph_server
+# hcso_cph_server
 
 Manages a CPH server resource within HuaweiCloud.  
 
@@ -17,7 +17,7 @@ Manages a CPH server resource within HuaweiCloud.
   variable "vpc_id" {}
   variable "subnet_id" {}
 
-  resource "huaweicloud_cph_server" "test" {
+  resource "hcso_cph_server" "test" {
     name          = var.name
     server_flavor = var.server_flavor
     phone_flavor  = var.phone_flavor
@@ -195,7 +195,7 @@ The `Address` block supports:
 The CPH server can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cph_server.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_cph_server.test 0ce123456a00f2591fabc00385ff1234
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -205,7 +205,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 align with the resource. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cph_server" "test" {
+resource "hcso_cph_server" "test" {
     ...
 
     lifecycle {

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-all_files=$(git diff $1 $2 --name-only huaweicloud | grep -v "_test.go")
+all_files=$(git diff $1 $2 --name-only internal | grep -v "_test.go")
 
 failed=0
 total=0
@@ -17,14 +17,14 @@ for f in $all_files; do
 
     path=${f%/*}
     ## Skip directories without resource files
-    if [ "$path" != "huaweicloud" ] && [[ $path != huaweicloud/services/* ]]; then
+    if [ "$path" != "huaweicloud" ] && [[ $path != internal/services/* ]]; then
         continue
     fi
 
     if [ "$path" != "huaweicloud" ]; then
         coveraged=1
         extArgs="-coverprofile=${cov_one_file} -coverpkg=./${path}"
-        # update path to "huaweicloud/services/acceptance/xxx"
+        # update path to "internal/services/acceptance/xxx"
         path=${path/"services"/"services/acceptance"}
     fi
 
@@ -58,7 +58,7 @@ if [ $coveraged -eq 1 ]; then
     echo -e "\n### coverage of files in huaweicloud/services:\n"
     for f in $all_files; do
         path=${f%/*}
-        if [[ $path == huaweicloud/services/* ]]; then
+        if [[ $path == internal/services/* ]]; then
             grep "$f" $cov_html | awk -F "<|>" '{printf "- %s\n", $3}'
         fi
     done

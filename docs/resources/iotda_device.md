@@ -2,7 +2,7 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_device
+# hcso_iotda_device
 
 Manages an IoTDA device within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "spaceId" {}
 variable "productId" {}
 variable "secret" {}
 
-resource "huaweicloud_iotda_device" "device" {
+resource "hcso_iotda_device" "device" {
   node_id    = "device_SN_1"
   name       = "device_name"
   space_id   = var.spaceId
@@ -28,12 +28,12 @@ resource "huaweicloud_iotda_device" "device" {
   }
 }
 
-resource "huaweicloud_iotda_device" "sub_device" {
+resource "hcso_iotda_device" "sub_device" {
   node_id    = "device_SN_2"
   name       = "device_name_2"
   space_id   = var.spaceId
   product_id = var.productId
-  gateway_id = huaweicloud_iotda_device.device.id
+  gateway_id = hcso_iotda_device.device.id
 }
 ```
 
@@ -101,5 +101,5 @@ In addition to all arguments above, the following attributes are exported:
 Devices can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_device.test 10022532f4f94f26b01daa1e424853e1
+$ terraform import hcso_iotda_device.test 10022532f4f94f26b01daa1e424853e1
 ```

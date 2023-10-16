@@ -2,7 +2,7 @@
 subcategory: "Content Delivery Network (CDN)"
 ---
 
-# huaweicloud_cdn_domain
+# hcso_cdn_domain
 
 CDN domain management.
 
@@ -14,7 +14,7 @@ CDN domain management.
 variable "domain_name" {}
 variable "origin_server" {}
 
-resource "huaweicloud_cdn_domain" "domain_1" {
+resource "hcso_cdn_domain" "domain_1" {
   name = var.domain_name
   type = "web"
 
@@ -37,7 +37,7 @@ resource "huaweicloud_cdn_domain" "domain_1" {
 variable "domain_name" {}
 variable "origin_server" {}
 
-resource "huaweicloud_cdn_domain" "domain_1" {
+resource "hcso_cdn_domain" "domain_1" {
   name = var.domain_name
   type = "web"
 
@@ -64,7 +64,7 @@ resource "huaweicloud_cdn_domain" "domain_1" {
 variable "domain_name" {}
 variable "origin_server" {}
 
-resource "huaweicloud_cdn_domain" "domain_1" {
+resource "hcso_cdn_domain" "domain_1" {
   name = var.domain_name
   type = "web"
 
@@ -337,5 +337,5 @@ This resource provides the following timeouts configuration options:
 Domains can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_cdn_domain.domain_1 fe2462fac09a4a42a76ecc4a1ef542f1
+$ terraform import hcso_cdn_domain.domain_1 fe2462fac09a4a42a76ecc4a1ef542f1
 ```

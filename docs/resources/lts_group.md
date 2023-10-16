@@ -2,14 +2,14 @@
 subcategory: "Log Tank Service (LTS)"
 ---
 
-# huaweicloud_lts_group
+# hcso_lts_group
 
 Manages a log group resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_lts_group" "log_group1" {
+resource "hcso_lts_group" "log_group1" {
   group_name  = "log_group1"
   ttl_in_days = 30
 }
@@ -44,5 +44,5 @@ In addition to all arguments above, the following attributes are exported:
 The log group can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_lts_group.group_1 7117d38e-4c8f-4624-a505-bd96b97d024c
+$ terraform import hcso_lts_group.group_1 7117d38e-4c8f-4624-a505-bd96b97d024c
 ```

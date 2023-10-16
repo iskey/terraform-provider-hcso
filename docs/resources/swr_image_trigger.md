@@ -2,7 +2,7 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_image_trigger
+# hcso_swr_image_trigger
 
 Manages a SWR image trigger within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "cluster_id" {}
 variable "namespace" {}
 variable "name" {}
 
-resource "huaweicloud_swr_image_trigger" "test"{
+resource "hcso_swr_image_trigger" "test"{
   organization    = var.organization_name
   repository      = var.repository_name
   workload_type   = "deployments"
@@ -112,5 +112,5 @@ The swr image trigger can be imported using the organization name, repository na
 and trigger name separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_swr_image_trigger.test <organization_name>/<repository_name>/<trigger_name>
+$ terraform import hcso_swr_image_trigger.test <organization_name>/<repository_name>/<trigger_name>
 ```

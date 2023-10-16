@@ -2,14 +2,14 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_images
+# hcso_iec_images
 
 Use this data source to get the available of HuaweiCloud IEC images.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_iec_images" "iec_image" {
+data "hcso_iec_images" "iec_image" {
   os_type = "Linux"
 }
 ```

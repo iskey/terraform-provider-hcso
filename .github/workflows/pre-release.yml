@@ -19,10 +19,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # /home/runner/work/terraform-provider-huaweicloud/terraform-provider-huaweicloud
+      # /home/runner/work/terraform-provider-hcso/terraform-provider-hcso
       - uses: actions/checkout@v3
         with:
-          path: terraform-provider-huaweicloud
+          path: terraform-provider-hcso
 
       - uses: actions/checkout@v3
         with:
@@ -91,7 +91,7 @@ jobs:
       - name: commit APIs that resources depend-on
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          repository: terraform-provider-huaweicloud
+          repository: terraform-provider-hcso
           file_pattern: 'docs/api/*.yaml'
           commit_message: Update APIs that resources depend-on ${{ env.VERSION }}
 
@@ -100,8 +100,8 @@ jobs:
     needs: scan-api
 
     env:
-      # when HW_SCHEMA is not empty, custom schema config will be contained in the description of parameters
-      HW_SCHEMA: "true"
+      # when HCSO_SCHEMA is not empty, custom schema config will be contained in the description of parameters
+      HCSO_SCHEMA: "true"
 
     runs-on: ubuntu-latest
     steps:
@@ -111,17 +111,17 @@ jobs:
           go-version: ">=1.18"
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # /home/runner/work/terraform-provider-huaweicloud/terraform-provider-huaweicloud
+      # /home/runner/work/terraform-provider-hcso/terraform-provider-hcso
       - uses: actions/checkout@v3
         with:
-          path: terraform-provider-huaweicloud
+          path: terraform-provider-hcso
           ref: master
 
       - uses: actions/checkout@v3
         with:
-          repository: chnsz/huaweicloud-provider-json
+          repository: chnsz/internal-provider-json
           token: ${{ secrets.REVIEWDOG_TOKEN }}
-          path: huaweicloud-provider-json
+          path: internal-provider-json
 
       - name: import the latest codes of provider and build
         run: |
@@ -157,7 +157,7 @@ jobs:
       - name: auto-commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          repository: terraform-provider-huaweicloud
+          repository: terraform-provider-hcso
           file_pattern: 'docs/json/'
           commit_message: Update schema json files based-on ${{ env.VERSION }}
 
@@ -166,13 +166,13 @@ jobs:
     needs: [scan-api, generate-schema]
 
     env:
-      HW_ACCESS_KEY: ${{ secrets.HW_ACCESS_KEY }}
-      HW_SECRET_KEY: ${{ secrets.HW_SECRET_KEY }}
-      HW_DOMAIN_NAME: ${{ secrets.HW_DOMAIN_NAME }}
-      HW_REGION_NAME: cn-north-4
-      HW_ADMIN: "true"
-      HW_ENTERPRISE_PROJECT_ID: "0"
-      HW_ENTERPRISE_PROJECT_ID_TEST: "0"
+      HCSO_ACCESS_KEY: ${{ secrets.HCSO_ACCESS_KEY }}
+      HCSO_SECRET_KEY: ${{ secrets.HCSO_SECRET_KEY }}
+      HCSO_DOMAIN_NAME: ${{ secrets.HCSO_DOMAIN_NAME }}
+      HCSO_REGION_NAME: cn-north-4
+      HCSO_ADMIN: "true"
+      HCSO_ENTERPRISE_PROJECT_ID: "0"
+      HCSO_ENTERPRISE_PROJECT_ID_TEST: "0"
       TF_LOG: "DEBUG"
       TF_LOG_PATH: "${{ github.workspace }}/acceptance.log"
 
@@ -190,8 +190,8 @@ jobs:
 
       # run acceptance test
       - name: Run acceptance basic test
-        # run the step only when HW_ACCESS_KEY is setted
-        if: ${{ env.HW_ACCESS_KEY }}
+        # run the step only when HCSO_ACCESS_KEY is setted
+        if: ${{ env.HCSO_ACCESS_KEY }}
         shell: bash {0}
         run: |
           result=0

@@ -2,7 +2,7 @@
 subcategory: Dedicated Load Balance (Dedicated ELB)
 ---
 
-# huaweicloud_elb_pools
+# hcso_elb_pools
 
 Use this data source to get the list of ELB pools.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of ELB pools.
 ```hcl
 variable "pool_name" {}
 
-data "huaweicloud_elb_pools" "test" {
+data "hcso_elb_pools" "test" {
   name = var.pool_name
 }
 ```

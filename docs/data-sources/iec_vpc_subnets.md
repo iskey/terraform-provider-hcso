@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_vpc_subnets
+# hcso_iec_vpc_subnets
 
 Use this data source to get a list of subnets belong to a specific IEC VPC.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of subnets belong to a specific IEC VPC.
 ```hcl
 variable "vpc_id" {}
 
-data "huaweicloud_iec_vpc_subnets" "all_subnets" {
+data "hcso_iec_vpc_subnets" "all_subnets" {
   vpc_id = var.vpc_id
 }
 ```

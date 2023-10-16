@@ -2,7 +2,7 @@
 subcategory: "Config"
 ---
 
-# huaweicloud_rms_policy_definitions
+# hcso_rms_policy_definitions
 
 Use this data source to query policy definition list.
 
@@ -11,7 +11,7 @@ Use this data source to query policy definition list.
 ```hcl
 variable "trigger_type" {}
 
-data "huaweicloud_rms_policy_definitions" "test" {
+data "hcso_rms_policy_definitions" "test" {
   trigger_type = var.trigger_type
 }
 ```

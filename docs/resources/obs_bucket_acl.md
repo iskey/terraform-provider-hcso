@@ -2,7 +2,7 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_bucket_acl
+# hcso_obs_bucket_acl
 
 Manages an OBS bucket acl resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "bucket" {}
 variable "account1" {}
 variable "account2" {}
 
-resource "huaweicloud_obs_bucket_acl" "test" {
+resource "hcso_obs_bucket_acl" "test" {
   bucket = var.bucket
 
   owner_permission {
@@ -101,5 +101,5 @@ In addition to all arguments above, the following attributes are exported:
 The obs bucket acl can be imported using the `bucket`, e.g.
 
 ```bash
-$ terraform import huaweicloud_obs_bucket_acl.test <bucket-name>
+$ terraform import hcso_obs_bucket_acl.test <bucket-name>
 ```

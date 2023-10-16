@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_workspaces
+# hcso_modelarts_workspaces
 
 Use this data source to get workspaces of ModelArts.
 
@@ -11,7 +11,7 @@ Use this data source to get workspaces of ModelArts.
 ```hcl
 variable "workspace_name" {}
 
-data "huaweicloud_modelart_workspaces" "test" {
+data "hcso_modelart_workspaces" "test" {
   name = var.workspace_name
 }
 ```

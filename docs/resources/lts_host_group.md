@@ -2,7 +2,7 @@
 subcategory: "Log Tank Service (LTS)"
 ---
 
-# huaweicloud_lts_host_group
+# hcso_lts_host_group
 
 Manages an LTS host group resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "group_name" {}
 variable "host_id_1" {}
 variable "host_id_2" {}
 
-resource "huaweicloud_lts_host_group" "test" {
+resource "hcso_lts_host_group" "test" {
   name     = var.group_name
   type     = "linux"
   host_ids = [
@@ -60,5 +60,5 @@ In addition to all arguments above, the following attributes are exported:
 The host group can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_lts_host_group.test 020f77b3-765a-4f4c-8d67-c5de35576d14
+$ terraform import hcso_lts_host_group.test 020f77b3-765a-4f4c-8d67-c5de35576d14
 ```

@@ -2,7 +2,7 @@
 subcategory: "Data Warehouse Service (DWS)"
 ---
 
-# huaweicloud_dws_snapshot
+# hcso_dws_snapshot
 
 Manages a DWS snapshot resource within HuaweiCloud.  
 
@@ -11,7 +11,7 @@ Manages a DWS snapshot resource within HuaweiCloud.
 ```hcl
   variable "cluster_id" {}
   
-  resource "huaweicloud_dws_snapshot" "test" {
+  resource "hcso_dws_snapshot" "test" {
     name        = "demo"
     cluster_id  = var.cluster_id
     description = "This is a demo"
@@ -68,5 +68,5 @@ This resource provides the following timeouts configuration options:
 The dws snapshot can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_dws_snapshot.test e87192d9-b592-4658-b23f-bdc0bb69ec2c
+$ terraform import hcso_dws_snapshot.test e87192d9-b592-4658-b23f-bdc0bb69ec2c
 ```

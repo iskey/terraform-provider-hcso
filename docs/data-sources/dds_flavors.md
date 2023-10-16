@@ -2,14 +2,14 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_flavors
+# hcso_dds_flavors
 
 Use this data source to get the details of available DDS flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_dds_flavors" "flavor" {
+data "hcso_dds_flavors" "flavor" {
   engine_name = "DDS-Community"
   vcpus       = 8
 }

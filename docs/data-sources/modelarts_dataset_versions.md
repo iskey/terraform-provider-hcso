@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_dataset_versions
+# hcso_modelarts_dataset_versions
 
 Use this data source to get a list of ModelArts dataset versions.
 
@@ -10,7 +10,7 @@ Use this data source to get a list of ModelArts dataset versions.
 
 ```hcl
 variable "dataset_id" {}
-data "huaweicloud_modelarts_dataset_versions" "test" {
+data "hcso_modelarts_dataset_versions" "test" {
   dataset_id = var.dataset_id
 }
 ```

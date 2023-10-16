@@ -2,14 +2,14 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_instances
+# hcso_rds_instances
 
 Use this data source to list all available RDS instances.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_rds_instances" "this" {
+data "hcso_rds_instances" "this" {
   name = "rds-instance"
 }
 ```

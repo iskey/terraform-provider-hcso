@@ -2,7 +2,7 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_configuration
+# hcso_as_configuration
 
 Manages an AS configuration resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "image_id" {}
 variable "ssh_key" {}
 variable "security_group_id" {}
 
-resource "huaweicloud_as_configuration" "my_as_config" {
+resource "hcso_as_configuration" "my_as_config" {
   scaling_configuration_name = "my_as_config"
 
   instance_config {
@@ -43,7 +43,7 @@ variable "ssh_key" {}
 variable "kms_id" {}
 variable "security_group_id" {}
 
-resource "huaweicloud_as_configuration" "my_as_config" {
+resource "hcso_as_configuration" "my_as_config" {
   scaling_configuration_name = "my_as_config"
 
   instance_config {
@@ -76,7 +76,7 @@ variable "image_id" {}
 variable "ssh_key" {}
 variable "security_group_id" {}
 
-resource "huaweicloud_as_configuration" "my_as_config" {
+resource "hcso_as_configuration" "my_as_config" {
   scaling_configuration_name = "my_as_config"
 
   instance_config {
@@ -106,7 +106,7 @@ variable "instance_id" {}
 variable "ssh_key" {}
 variable "security_group_id" {}
 
-resource "huaweicloud_as_configuration" "my_as_config" {
+resource "hcso_as_configuration" "my_as_config" {
   scaling_configuration_name = "my_as_config"
 
   instance_config {
@@ -248,14 +248,14 @@ In addition to all arguments above, the following attributes are exported:
 AS configurations can be imported by their `id`, e.g.
 
 ```
-$ terraform import huaweicloud_as_configuration.test 18518c8a-9d15-416b-8add-2ee874751d18
+$ terraform import hcso_as_configuration.test 18518c8a-9d15-416b-8add-2ee874751d18
 ```
 
 Note that the imported state may not be identical to your resource definition, due to `instance_config.0.instance_id`
 is missing from the API response. You can ignore changes after importing an AS configuration as below.
 
 ```
-resource "huaweicloud_as_configuration" "test" {
+resource "hcso_as_configuration" "test" {
   ...
 
   lifecycle {

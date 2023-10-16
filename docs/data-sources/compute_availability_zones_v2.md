@@ -6,12 +6,12 @@ subcategory: "Deprecated"
 
 Use this data source to get a list of availability zones from HuaweiCloud
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_availability_zones` instead.
+!> **WARNING:** It has been deprecated, use `hcso_availability_zones` instead.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_compute_availability_zones_v2" "zones" {}
+data "hcso_compute_availability_zones_v2" "zones" {}
 ```
 
 ## Argument Reference

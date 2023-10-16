@@ -2,24 +2,24 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_whitelist
+# hcso_lb_whitelist
 
 Manages an ELB whitelist resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_lb_listener" "listener_1" {
+resource "hcso_lb_listener" "listener_1" {
   name            = "listener_1"
   protocol        = "HTTP"
   protocol_port   = 8080
   loadbalancer_id = var.loadbalancer_id
 }
 
-resource "huaweicloud_lb_whitelist" "whitelist_1" {
+resource "hcso_lb_whitelist" "whitelist_1" {
   enable_whitelist = true
   whitelist        = "192.168.11.1,192.168.0.1/24,192.168.201.18/8"
-  listener_id      = huaweicloud_lb_listener.listener_1.id
+  listener_id      = hcso_lb_listener.listener_1.id
 }
 ```
 
@@ -57,5 +57,5 @@ This resource provides the following timeouts configuration options:
 ELB whitelist can be imported using the whitelist ID, e.g.
 
 ```
-$ terraform import huaweicloud_lb_whitelist.whitelist_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_lb_whitelist.whitelist_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```

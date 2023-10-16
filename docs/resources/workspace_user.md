@@ -2,7 +2,7 @@
 subcategory: "Workspace"
 ---
 
-# huaweicloud_workspace_user
+# hcso_workspace_user
 
 Manages a Workspace user resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages a Workspace user resource within HuaweiCloud.
 variable "user_name" {}
 variable "email_address" {}
 
-resource "huaweicloud_workspace_user" "test" {
+resource "hcso_workspace_user" "test" {
   name  = var.user_name
   email = var.email_address
 
@@ -79,5 +79,5 @@ In addition to all arguments above, the following attributes are exported:
 Users can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_workspace_user.test a96e632a399d452eb29e5091e0af806a
+$ terraform import hcso_workspace_user.test a96e632a399d452eb29e5091e0af806a
 ```

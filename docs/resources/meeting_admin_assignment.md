@@ -2,7 +2,7 @@
 subcategory: "Meeting"
 ---
 
-# huaweicloud_meeting_admin_assignment
+# hcso_meeting_admin_assignment
 
 Using this resource to assign an administrator role to a user within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "app_id" {}
 variable "app_key" {}
 variable "user_account" {}
 
-resource "huaweicloud_meeting_admin_assignment" "test" {
+resource "hcso_meeting_admin_assignment" "test" {
   app_id  = var.app_id
   app_key = var.app_key
 
@@ -60,13 +60,13 @@ The assignment relationships can be imported using their `id` and authorization 
 Import an administrator assignment and authenticated by account.
 
 ```
-$ terraform import huaweicloud_meeting_admin_assignment.test &ltid&gt/&ltaccount_name&gt/&ltaccount_password&gt
+$ terraform import hcso_meeting_admin_assignment.test &ltid&gt/&ltaccount_name&gt/&ltaccount_password&gt
 ```
 
 Import an administrator assignment and authenticated by `APP ID`/`APP Key`.
 
 ```
-$ terraform import huaweicloud_meeting_admin_assignment.test &ltid&gt/&ltapp_id&gt/&ltapp_key&gt/&ltcorp_id&gt/&ltuser_id&gt
+$ terraform import hcso_meeting_admin_assignment.test &ltid&gt/&ltapp_id&gt/&ltapp_key&gt/&ltcorp_id&gt/&ltuser_id&gt
 ```
 
 For this resource, the `corp_id` and `user_id` are never used, you can omit them but the slashes cannot be missing.

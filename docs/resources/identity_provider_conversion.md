@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_provider_conversion
+# hcso_identity_provider_conversion
 
 Manage the conversion rules of identity provider within HuaweiCloud IAM service.
 
@@ -11,7 +11,7 @@ Manage the conversion rules of identity provider within HuaweiCloud IAM service.
 ```hcl
 variable provider_id {}
 
-resource "huaweicloud_identity_provider_conversion" "conversion" {
+resource "hcso_identity_provider_conversion" "conversion" {
   provider_id = var.provider_id
 
   conversion_rules {
@@ -92,5 +92,5 @@ In addition to all arguments above, the following attributes are exported:
 Identity provider conversion rules are imported using the `provider_id`, e.g.
 
 ```
-$ terraform import huaweicloud_identity_provider_conversion.conversion example_com_provider_oidc
+$ terraform import hcso_identity_provider_conversion.conversion example_com_provider_oidc
 ```

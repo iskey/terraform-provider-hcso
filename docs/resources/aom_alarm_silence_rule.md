@@ -2,7 +2,7 @@
 subcategory: "Application Operations Management (AOM)"
 ---
 
-# huaweicloud_aom_alarm_silence_rule
+# hcso_aom_alarm_silence_rule
 
 Manages an AOM alarm silence rule resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an AOM alarm silence rule resource within HuaweiCloud.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_aom_alarm_silence_rule" "test" {
+resource "hcso_aom_alarm_silence_rule" "test" {
   name        = "test_rule"
   description = "terraform test"
   time_zone   = "Asia/Shanghai"
@@ -108,5 +108,5 @@ In addition to all arguments above, the following attributes are exported:
 The application operations management can be imported using the `id` (name), e.g.
 
 ```bash
-$ terraform import huaweicloud_aom_alarm_silence_rule.test test_rule
+$ terraform import hcso_aom_alarm_silence_rule.test test_rule
 ```

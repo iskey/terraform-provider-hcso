@@ -2,14 +2,14 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_networking_secgroup
+# hcso_networking_secgroup
 
 Use this data source to get the ID of an available HuaweiCloud security group.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_networking_secgroup" "secgroup" {
+data "hcso_networking_secgroup" "secgroup" {
   name = "tf_test_secgroup"
 }
 ```

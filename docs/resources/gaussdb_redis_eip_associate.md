@@ -2,7 +2,7 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_redis_eip_associate
+# hcso_gaussdb_redis_eip_associate
 
 Manages a GaussDB Redis node EIP associate resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "instance_id" {}
 variable "node_id" {}
 variable "public_ip" {}
 
-resource "huaweicloud_gaussdb_redis_eip_associate" "test"{
+resource "hcso_gaussdb_redis_eip_associate" "test"{
   instance_id = var.instance_id
   node_id     = var.node_id
   public_ip   = var.public_ip
@@ -58,5 +58,5 @@ This resource provides the following timeouts configuration options:
 The GaussDB Redis node EIP associate can be imported using `instance_id` and `node_id` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_gaussdb_redis_eip_associate.test <instance_id>/<node_id>
+$ terraform import hcso_gaussdb_redis_eip_associate.test <instance_id>/<node_id>
 ```

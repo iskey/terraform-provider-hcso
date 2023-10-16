@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_flinksql_job
+# hcso_dli_flinksql_job
 
 Manages a flink sql job resource within HuaweiCloud DLI.
 
@@ -14,7 +14,7 @@ Manages a flink sql job resource within HuaweiCloud DLI.
 variable "sql" {}
 variable "jobName" {}
 
-resource "huaweicloud_dli_flinksql_job" "test" {
+resource "hcso_dli_flinksql_job" "test" {
   name = var.jobName
   type = "flink_sql_job"
   sql  = var.sql
@@ -138,5 +138,5 @@ This resource provides the following timeouts configuration options:
 Clusters can be imported by their `id`. For example,
 
 ```
-terraform import huaweicloud_dli_flinksql_job.test 12345
+terraform import hcso_dli_flinksql_job.test 12345
 ```

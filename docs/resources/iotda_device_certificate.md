@@ -2,7 +2,7 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_device_certificate
+# hcso_iotda_device_certificate
 
 Manages an IoTDA device CA certificate within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an IoTDA device CA certificate within HuaweiCloud.
 ```hcl
 variable "certificateContent" {}
 
-resource "huaweicloud_iotda_device_certificate" "test" {
+resource "hcso_iotda_device_certificate" "test" {
   content  = var.certificateContent
 }
 ```
@@ -60,7 +60,7 @@ The format is: **yyyyMMdd'T'HHmmss'Z'**, e.g., **20151212T121212Z**.
 Device CA certificates can be imported by `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_device_certificate.test 62b3cec5558d4b703f064534
+$ terraform import hcso_iotda_device_certificate.test 62b3cec5558d4b703f064534
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -70,7 +70,7 @@ be applied to the resource, or the resource definition should be updated to alig
 changes as below.
 
 ```
-resource "huaweicloud_iotda_device_certificate" "test" {
+resource "hcso_iotda_device_certificate" "test" {
     ...
 
   lifecycle {

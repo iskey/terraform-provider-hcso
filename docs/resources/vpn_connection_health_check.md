@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Network (VPN)"
 ---
 
-# huaweicloud_vpn_connection_health_check
+# hcso_vpn_connection_health_check
 
 Manages a VPN connection health check resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a VPN connection health check resource within HuaweiCloud.
 ```hcl
 variable "connection_id" {}
 
-resource "huaweicloud_vpn_connection_health_check" "test" {
+resource "hcso_vpn_connection_health_check" "test" {
   connection_id = var.connection_id
 }
 ```
@@ -44,5 +44,5 @@ In addition to all arguments above, the following attributes are exported:
 The health check can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_vpn_connection_health_check.test 21a8d00c-5b10-405c-9d85-3581b96dbc29
+$ terraform import hcso_vpn_connection_health_check.test 21a8d00c-5b10-405c-9d85-3581b96dbc29
 ```

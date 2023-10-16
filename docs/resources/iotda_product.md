@@ -2,7 +2,7 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_product
+# hcso_iotda_product
 
 Manages an IoTDA product within HuaweiCloud.
 
@@ -11,15 +11,15 @@ Manages an IoTDA product within HuaweiCloud.
 ```hcl
 variable "productName" {}
 
-resource "huaweicloud_iotda_space" "space" {
+resource "hcso_iotda_space" "space" {
   name = "first_space"
 }
 
-resource "huaweicloud_iotda_product" "test" {
+resource "hcso_iotda_product" "test" {
   name              = var.productName
   device_type       = "WaterMeter"
   protocol          = "MQTT"
-  space_id          = huaweicloud_iotda_space.test.id
+  space_id          = hcso_iotda_space.test.id
   data_type         = "json"
   manufacturer_name = "demo_manufacturer_name"
   industry          = "demo_industry"
@@ -234,5 +234,5 @@ In addition to all arguments above, the following attributes are exported:
 Products can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_product.test 10022532f4f94f26b01daa1e424853e1
+$ terraform import hcso_iotda_product.test 10022532f4f94f26b01daa1e424853e1
 ```

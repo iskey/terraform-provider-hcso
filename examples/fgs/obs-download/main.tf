@@ -1,16 +1,16 @@
 
-resource "huaweicloud_obs_bucket" "test" {
+resource "hcso_obs_bucket" "test" {
   bucket = var.bucket_name
   acl    = "private"
 }
 
-resource "huaweicloud_obs_bucket_object" "test" {
-  bucket = huaweicloud_obs_bucket.test.bucket
+resource "hcso_obs_bucket_object" "test" {
+  bucket = hcso_obs_bucket.test.bucket
   key    = format("%s%s", var.object_path, var.object_name)
   source = var.local_file_path
 }
 
-resource "huaweicloud_fgs_function" "test" {
+resource "hcso_fgs_function" "test" {
   name        = var.function_name
   app         = "default"
   agency      = var.agency_name
@@ -99,8 +99,8 @@ def cal_image_size(fileName):
 EOF
 }
 
-resource "huaweicloud_fgs_trigger" "test" {
-  function_urn = huaweicloud_fgs_function.test.urn
+resource "hcso_fgs_trigger" "test" {
+  function_urn = hcso_fgs_function.test.urn
   type         = "TIMER"
   status       = "ACTIVE"
 

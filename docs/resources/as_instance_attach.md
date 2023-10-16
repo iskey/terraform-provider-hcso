@@ -2,7 +2,7 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_instance_attach
+# hcso_as_instance_attach
 
 Manages an AS instance attachment resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages an AS instance attachment resource within HuaweiCloud.
 variable "scaling_group_id" {}
 variable "ecs_id" {}
 
-resource "huaweicloud_as_instance_attach" "test" {
+resource "hcso_as_instance_attach" "test" {
   scaling_group_id = var.scaling_group_id
   instance_id      = var.ecs_id
 }
@@ -26,7 +26,7 @@ resource "huaweicloud_as_instance_attach" "test" {
 variable "scaling_group_id" {}
 variable "ecs_id" {}
 
-resource "huaweicloud_as_instance_attach" "test" {
+resource "hcso_as_instance_attach" "test" {
   scaling_group_id = var.scaling_group_id
   instance_id      = var.ecs_id
   protected        = true
@@ -85,7 +85,7 @@ This resource provides the following timeouts configuration options:
 The AS instances can be imported by the `scaling_group_id` and `instance_id`, separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_as_instance_attach.test <scaling_group_id>/<instance_id>
+$ terraform import hcso_as_instance_attach.test <scaling_group_id>/<instance_id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to `append_instance` is missing from
@@ -96,7 +96,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 align with the resource. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_as_instance_attach" "test" {
+resource "hcso_as_instance_attach" "test" {
   ...
 
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "Cloud Backup and Recovery (CBR)"
 ---
 
-# huaweicloud_cbr_vault
+# hcso_cbr_vault
 
 Manages a CBR Vault resource within Huaweicloud.
 
@@ -17,7 +17,7 @@ variable "attached_volume_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_cbr_vault" "test" {
+resource "hcso_cbr_vault" "test" {
   name             = var.vault_name
   type             = "server"
   protection_type  = "backup"
@@ -44,7 +44,7 @@ variable "vault_name" {}
 variable "backup_policy_id" {}
 variable "replication_policy_id" {}
 
-resource "huaweicloud_cbr_vault" "destination" {
+resource "hcso_cbr_vault" "destination" {
   region          = var.destination_region
   name            = var.destination_vault_name
   type            = "server"
@@ -52,7 +52,7 @@ resource "huaweicloud_cbr_vault" "destination" {
   size            = 500
 }
 
-resource "huaweicloud_cbr_vault" "test" {
+resource "hcso_cbr_vault" "test" {
   name             = var.vault_name
   type             = "server"
   protection_type  = "backup"
@@ -66,7 +66,7 @@ resource "huaweicloud_cbr_vault" "test" {
   }
   policy {
     id                   = var.replication_policy_id
-    destination_vault_id = huaweicloud_cbr_vault.destination.id
+    destination_vault_id = hcso_cbr_vault.destination.id
   }
 }
 ```
@@ -79,7 +79,7 @@ variable "evs_volume_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_cbr_vault" "test" {
+resource "hcso_cbr_vault" "test" {
   name            = var.vault_name
   type            = "disk"
   protection_type = "backup"
@@ -104,7 +104,7 @@ variable "sfs_turbo_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_cbr_vault" "test" {
+resource "hcso_cbr_vault" "test" {
   name            = var.vault_name
   type            = "turbo"
   protection_type = "backup"
@@ -125,7 +125,7 @@ resource "huaweicloud_cbr_vault" "test" {
 ```hcl
 variable "vault_name" {}
 
-resource "huaweicloud_cbr_vault" "test" {
+resource "hcso_cbr_vault" "test" {
   name            = var.vault_name
   type            = "turbo"
   protection_type = "replication"
@@ -259,7 +259,7 @@ This resource provides the following timeouts configuration options:
 Vaults can be imported by their `id`. For example,
 
 ```
-$ terraform import huaweicloud_cbr_vault.test 01c33779-7c83-4182-8b6b-24a671fcedf8
+$ terraform import hcso_cbr_vault.test 01c33779-7c83-4182-8b6b-24a671fcedf8
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -269,7 +269,7 @@ You can then decide if changes should be applied to the vault, or the resource d
 with the vault. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cbr_vault" "test" {
+resource "hcso_cbr_vault" "test" {
   ...
 
   lifecycle {

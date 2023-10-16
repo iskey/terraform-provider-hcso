@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_certificate
+# hcso_waf_certificate
 
 Manages a WAF certificate resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ used. The certificate resource can be used in Cloud Mode, Dedicated Mode and ELB
 ```hcl
 variable enterprise_project_id {}
 
-resource "huaweicloud_waf_certificate" "certificate_1" {
+resource "hcso_waf_certificate" "certificate_1" {
   name                  = "cert_1"
   enterprise_project_id = var.enterprise_project_id
   certificate = <<EOT
@@ -70,20 +70,20 @@ There are two ways to import WAF certificate state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_certificate.test <id>
+$ terraform import hcso_waf_certificate.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_certificate.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_certificate.test <id>/<enterprise_project_id>
 ```
 
 Note that the imported state is not identical to your resource definition, due to security reason. The missing
 attributes include `certificate`, and `private_key`. You can ignore changes as below.
 
 ```
-resource "huaweicloud_waf_certificate" "certificate_2" {
+resource "hcso_waf_certificate" "certificate_2" {
     ...
   lifecycle {
     ignore_changes = [

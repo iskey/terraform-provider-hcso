@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_plugin
+# hcso_apig_plugin
 
 Manages a plugin resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages a plugin resource within HuaweiCloud.
 variable "instance_id" {}
 variable "plugin_name" {}
 
-resource "huaweicloud_apig_plugin" "test" {
+resource "hcso_apig_plugin" "test" {
   instance_id = var.instance_id
   name        = var.plugin_name
   type        = "cors"
@@ -37,7 +37,7 @@ resource "huaweicloud_apig_plugin" "test" {
 variable "instance_id" {}
 variable "plugin_name" {}
 
-resource "huaweicloud_apig_plugin" "test" {
+resource "hcso_apig_plugin" "test" {
   instance_id = var.instance_id
   name        = var.plugin_name
   type        = "set_resp_headers"
@@ -81,7 +81,7 @@ variable "plugin_name" {}
 variable "application_id" {}
 variable "user_id" {}
 
-resource "huaweicloud_apig_plugin" "test" {
+resource "hcso_apig_plugin" "test" {
   instance_id = var.instance_id
   name        = var.plugin_name
   type        = "rate_limit"
@@ -178,7 +178,7 @@ variable "connect_addresses" {
 variable "topic_name" {}
 variable "connect_port" {}
 
-resource "huaweicloud_apig_plugin" "test" {
+resource "hcso_apig_plugin" "test" {
   instance_id = var.instance_id
   name        = var.plugin_name
   type        = "kafka_log"
@@ -281,7 +281,7 @@ resource "huaweicloud_apig_plugin" "test" {
 variable "instance_id" {}
 variable "plugin_name" {}
 
-resource "huaweicloud_apig_plugin" "test" {
+resource "hcso_apig_plugin" "test" {
   instance_id = var.instance_id
   name        = var.plugin_name
   type        = "breaker"
@@ -405,5 +405,5 @@ Plugins can be imported using their related dedicated instance ID (`instance_id`
 slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_plugin.test <instance_id>/<id>
+$ terraform import hcso_apig_plugin.test <instance_id>/<id>
 ```

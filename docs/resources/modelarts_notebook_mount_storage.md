@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_notebook_mount_storage
+# hcso_modelarts_notebook_mount_storage
 
 Manage storages mounted to the notebook resource within HuaweiCloud. A maximum of 10 storages can be mounted.
 
@@ -12,7 +12,7 @@ Manage storages mounted to the notebook resource within HuaweiCloud. A maximum o
 variable "notebook_id" {}
 variable "uri_parallel_obs" {}
 
-resource "huaweicloud_modelarts_notebook_mount_storage" "test" {
+resource "hcso_modelarts_notebook_mount_storage" "test" {
   notebook_id           = var.notebook_id
   storage_path          = var.uri_parallel_obs
   local_mount_directory = "/data/test/"
@@ -56,5 +56,5 @@ The mount storage can be imported by `id`, It is composed of the ID of notebook 
  For example,
 
 ```bash
-terraform import huaweicloud_modelarts_notebook_mount_storage.test b11b407c-e604-4e8d-8bc4-92398320b847/4e206d3c-6831-4267-b93d-e236105cda38
+terraform import hcso_modelarts_notebook_mount_storage.test b11b407c-e604-4e8d-8bc4-92398320b847/4e206d3c-6831-4267-b93d-e236105cda38
 ```

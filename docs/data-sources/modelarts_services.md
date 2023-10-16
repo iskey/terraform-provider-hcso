@@ -2,14 +2,14 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_services
+# hcso_modelarts_services
 
 Use this data source to get services of ModelArts.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_modelart_services" "test" {
+data "hcso_modelart_services" "test" {
 }
 ```
 

@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_loadbalancer
+# hcso_elb_loadbalancer
 
 Manages a Dedicated Load Balancer resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a Dedicated Load Balancer resource within HuaweiCloud.
 ### Basic Loadbalancer
 
 ```hcl
-resource "huaweicloud_elb_loadbalancer" "basic" {
+resource "hcso_elb_loadbalancer" "basic" {
   name              = "basic"
   description       = "basic example"
   cross_vpc_backend = true
@@ -34,7 +34,7 @@ resource "huaweicloud_elb_loadbalancer" "basic" {
 ### Loadbalancer With Existing EIP
 
 ```hcl
-resource "huaweicloud_elb_loadbalancer" "basic" {
+resource "hcso_elb_loadbalancer" "basic" {
   name              = "basic"
   description       = "basic example"
   cross_vpc_backend = true
@@ -61,7 +61,7 @@ resource "huaweicloud_elb_loadbalancer" "basic" {
 ### Loadbalancer With EIP
 
 ```hcl
-resource "huaweicloud_elb_loadbalancer" "basic" {
+resource "hcso_elb_loadbalancer" "basic" {
   name              = "basic"
   description       = "basic example"
   cross_vpc_backend = true
@@ -219,7 +219,7 @@ This resource provides the following timeouts configuration options:
 ELB loadbalancer can be imported using the loadbalancer ID, e.g.
 
 ```
-$ terraform import huaweicloud_elb_loadbalancer.loadbalancer_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_elb_loadbalancer.loadbalancer_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -230,7 +230,7 @@ You can then decide if changes should be applied to the loadbalancer, or the res
 definition should be updated to align with the loadbalancer. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_elb_loadbalancer" "loadbalancer_1" {
+resource "hcso_elb_loadbalancer" "loadbalancer_1" {
     ...
   lifecycle {
     ignore_changes = [

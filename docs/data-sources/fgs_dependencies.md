@@ -2,7 +2,7 @@
 subcategory: "FunctionGraph"
 ---
 
-# huaweicloud_fgs_dependencies
+# hcso_fgs_dependencies
 
 Use this data source to filter dependent packages of FGS from HuaweiCloud.
 
@@ -11,13 +11,13 @@ Use this data source to filter dependent packages of FGS from HuaweiCloud.
 ### Obtain all public dependent packages
 
 ```hcl
-data "huaweicloud_fgs_dependencies" "test" {}
+data "hcso_fgs_dependencies" "test" {}
 ```
 
 ### Obtain specific public dependent package by name
 
 ```hcl
-data "huaweicloud_fgs_dependencies" "test" {
+data "hcso_fgs_dependencies" "test" {
   type = "public"
   name = "obssdk-3.0.2"
 }
@@ -26,7 +26,7 @@ data "huaweicloud_fgs_dependencies" "test" {
 ### Obtain all public Python2.7 dependent packages
 
 ```hcl
-data "huaweicloud_fgs_dependencies" "test" {
+data "hcso_fgs_dependencies" "test" {
   type    = "public"
   runtime = "Python2.7"
 }

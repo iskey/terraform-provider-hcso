@@ -2,39 +2,39 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_networking_router_route_v2
+# hcso_networking_router_route_v2
 
 Creates a routing entry on a HuaweiCloud V2 router.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc_route` instead.
+!> **WARNING:** It has been deprecated, use `hcso_vpc_route` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_networking_router_v2" "router_1" {
+resource "hcso_networking_router_v2" "router_1" {
   name           = "router_1"
   admin_state_up = "true"
 }
 
-resource "huaweicloud_networking_network_v2" "network_1" {
+resource "hcso_networking_network_v2" "network_1" {
   name           = "network_1"
   admin_state_up = "true"
 }
 
-resource "huaweicloud_networking_subnet_v2" "subnet_1" {
-  network_id = huaweicloud_networking_network_v2.network_1.id
+resource "hcso_networking_subnet_v2" "subnet_1" {
+  network_id = hcso_networking_network_v2.network_1.id
   cidr       = "192.168.199.0/24"
   ip_version = 4
 }
 
-resource "huaweicloud_networking_router_interface_v2" "int_1" {
-  router_id = huaweicloud_networking_router_v2.router_1.id
-  subnet_id = huaweicloud_networking_subnet_v2.subnet_1.id
+resource "hcso_networking_router_interface_v2" "int_1" {
+  router_id = hcso_networking_router_v2.router_1.id
+  subnet_id = hcso_networking_subnet_v2.subnet_1.id
 }
 
-resource "huaweicloud_networking_router_route_v2" "router_route_1" {
-  depends_on       = ["huaweicloud_networking_router_interface_v2.int_1"]
-  router_id        = huaweicloud_networking_router_v2.router_1.id
+resource "hcso_networking_router_route_v2" "router_route_1" {
+  depends_on       = ["hcso_networking_router_interface_v2.int_1"]
+  router_id        = hcso_networking_router_v2.router_1.id
   destination_cidr = "10.0.1.0/24"
   next_hop         = "192.168.199.254"
 }
@@ -65,9 +65,9 @@ In addition to all arguments above, the following attributes are exported:
 
 ## Notes
 
-The `next_hop` IP address must be directly reachable from the router at the ``huaweicloud_networking_router_route_v2``
+The `next_hop` IP address must be directly reachable from the router at the ``hcso_networking_router_route_v2``
 resource creation time. You can ensure that by explicitly specifying a dependency on
-the ``huaweicloud_networking_router_interface_v2``
+the ``hcso_networking_router_interface_v2``
 resource that connects the next hop to the router, as in the example above.
 
 ## Import
@@ -76,5 +76,5 @@ Routing entries can be imported using a combined ID using the following
 format: ``<router_id>-route-<destination_cidr>-<next_hop>``
 
 ```
-$ terraform import huaweicloud_networking_router_route_v2.router_route_1 686fe248-386c-4f70-9f6c-281607dad079-route-10.0.1.0/24-192.168.199.25
+$ terraform import hcso_networking_router_route_v2.router_route_1 686fe248-386c-4f70-9f6c-281607dad079-route-10.0.1.0/24-192.168.199.25
 ```

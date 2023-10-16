@@ -2,14 +2,14 @@
 subcategory: "Elastic Volume Service (EVS)"
 ---
 
-# huaweicloud_evs_snapshot
+# hcso_evs_snapshot
 
 Provides an EVS snapshot resource.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_evs_volume" "myvolume" {
+resource "hcso_evs_volume" "myvolume" {
   name        = "volume"
   description = "my volume"
   volume_type = "SATA"
@@ -23,10 +23,10 @@ resource "huaweicloud_evs_volume" "myvolume" {
   }
 }
 
-resource "huaweicloud_evs_snapshot" "snapshot_1" {
+resource "hcso_evs_snapshot" "snapshot_1" {
   name        = "snapshot-001"
   description = "Daily backup"
-  volume_id   = huaweicloud_evs_volume.myvolume.id
+  volume_id   = hcso_evs_volume.myvolume.id
 }
 ```
 
@@ -61,7 +61,7 @@ In addition to all arguments above, the following attributes are exported:
 EVS snapshot can be imported using the `snapshot id`, e.g.
 
 ```
- $ terraform import huaweicloud_evs_snapshot.snapshot_1 3a11b255-3bb6-46f3-91e4-3338baa92dd6
+ $ terraform import hcso_evs_snapshot.snapshot_1 3a11b255-3bb6-46f3-91e4-3338baa92dd6
 ```
 
 ## Timeouts

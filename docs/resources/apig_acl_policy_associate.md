@@ -2,11 +2,11 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_acl_policy_associate
+# hcso_apig_acl_policy_associate
 
 Use this resource to bind the APIs to the ACL policy within HuaweiCloud.
 
--> An ACL policy can only create one `huaweicloud_apig_acl_policy_associate` resource.
+-> An ACL policy can only create one `hcso_apig_acl_policy_associate` resource.
 
 ## Example Usage
 
@@ -17,7 +17,7 @@ variable "api_publish_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_apig_acl_policy_associate" "test" {
+resource "hcso_apig_acl_policy_associate" "test" {
   instance_id = var.instance_id
   policy_id   = var.policy_id
   publish_ids = var.api_publish_ids
@@ -52,5 +52,5 @@ Associate resources can be imported using their `policy_id` and the APIG dedicat
 belongs, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_acl_policy_associate.test <instance_id>/<policy_id>
+$ terraform import hcso_apig_acl_policy_associate.test <instance_id>/<policy_id>
 ```

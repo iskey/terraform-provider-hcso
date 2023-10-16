@@ -2,30 +2,30 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_subnet
+# hcso_vpc_subnet
 
 Provides a VPC subnet resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpc" "vpc" {
+resource "hcso_vpc" "vpc" {
   name = var.vpc_name
   cidr = var.vpc_cidr
 }
 
-resource "huaweicloud_vpc_subnet" "subnet" {
+resource "hcso_vpc_subnet" "subnet" {
   name       = var.subnet_name
   cidr       = var.subnet_cidr
   gateway_ip = var.subnet_gateway_ip
-  vpc_id     = huaweicloud_vpc.vpc.id
+  vpc_id     = hcso_vpc.vpc.id
 }
 
-resource "huaweicloud_vpc_subnet" "subnet_with_tags" {
+resource "hcso_vpc_subnet" "subnet_with_tags" {
   name       = var.subnet_name
   cidr       = var.subnet_cidr
   gateway_ip = var.subnet_gateway_ip
-  vpc_id     = huaweicloud_vpc.vpc.id
+  vpc_id     = hcso_vpc.vpc.id
 
   tags = {
     foo = "bar"
@@ -33,11 +33,11 @@ resource "huaweicloud_vpc_subnet" "subnet_with_tags" {
   }
 }
 
-resource "huaweicloud_vpc_subnet" "subnet_with_dhcp" {
+resource "hcso_vpc_subnet" "subnet_with_dhcp" {
   name       = var.subnet_name
   cidr       = var.subnet_cidr
   gateway_ip = var.subnet_gateway_ip
-  vpc_id     = huaweicloud_vpc.vpc.id
+  vpc_id     = hcso_vpc.vpc.id
 
   dhcp_lease_time    = "24h"
   ntp_server_address = "10.100.0.33,10.100.0.34"
@@ -123,5 +123,5 @@ This resource provides the following timeouts configuration options:
 Subnets can be imported using the subnet `Network ID`, e.g.
 
 ```
-$ terraform import huaweicloud_vpc_subnet 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
+$ terraform import hcso_vpc_subnet 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
 ```

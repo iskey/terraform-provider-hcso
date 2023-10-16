@@ -2,17 +2,17 @@
 subcategory: "Cloud Native Anti-DDoS Advanced"
 ---
 
-# huaweicloud_cnad_advanced_policy
+# hcso_cnad_advanced_policy
 
 Manages a CNAD advanced policy resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_cnad_advanced_instances" "test" {}
+data "hcso_cnad_advanced_instances" "test" {}
 
-resource "huaweicloud_cnad_advanced_policy" "test" {
-  instance_id = huaweicloud_cnad_advanced_instances.test.instances[0].instance_id
+resource "hcso_cnad_advanced_policy" "test" {
+  instance_id = hcso_cnad_advanced_instances.test.instances[0].instance_id
   name        = "test-policy"
   threshold   = 100
   udp         = "block"
@@ -24,7 +24,7 @@ resource "huaweicloud_cnad_advanced_policy" "test" {
 The following arguments are supported:
 
 * `instance_id` - (Required, String, ForceNew) Specifies the CNAD advanced instance ID.
-  You can find it through data source `huaweicloud_cnad_advanced_instances`.
+  You can find it through data source `hcso_cnad_advanced_instances`.
 
   Changing this parameter will create a new resource.
 
@@ -59,7 +59,7 @@ In addition to all arguments above, the following attributes are exported:
 The CNAD advanced policy can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cnad_advanced_policy.test <id>
+$ terraform import hcso_cnad_advanced_policy.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -69,7 +69,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also, you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_cnad_advanced_policy" "test" {
+resource "hcso_cnad_advanced_policy" "test" {
   ...
   
   lifecycle {

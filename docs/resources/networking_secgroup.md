@@ -2,14 +2,14 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_networking_secgroup
+# hcso_networking_secgroup
 
 Manages a Security Group resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_networking_secgroup" "secgroup" {
+resource "hcso_networking_secgroup" "secgroup" {
   name        = "secgroup_1"
   description = "My security group"
 }
@@ -44,20 +44,20 @@ aspects of your infrastructure managed by Terraform, set `delete_default_rules` 
 and then create separate security group rules such as the following:
 
 ```hcl
-resource "huaweicloud_networking_secgroup_rule" "secgroup_rule_v4" {
-  security_group_id = huaweicloud_networking_secgroup.secgroup.id
+resource "hcso_networking_secgroup_rule" "secgroup_rule_v4" {
+  security_group_id = hcso_networking_secgroup.secgroup.id
   direction         = "egress"
   ethertype         = "IPv4"
 }
 
-resource "huaweicloud_networking_secgroup_rule" "secgroup_rule_v6" {
-  security_group_id = huaweicloud_networking_secgroup.secgroup.id
+resource "hcso_networking_secgroup_rule" "secgroup_rule_v6" {
+  security_group_id = hcso_networking_secgroup.secgroup.id
   direction         = "egress"
   ethertype         = "IPv6"
 }
 
-resource "huaweicloud_networking_secgroup_rule" "allow_ssh" {
-  security_group_id = huaweicloud_networking_secgroup.secgroup.id
+resource "hcso_networking_secgroup_rule" "allow_ssh" {
+  security_group_id = hcso_networking_secgroup.secgroup.id
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -106,5 +106,5 @@ This resource provides the following timeouts configuration options:
 Security Groups can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_networking_secgroup.secgroup_1 38809219-5e8a-4852-9139-6f461c90e8bc
+$ terraform import hcso_networking_secgroup.secgroup_1 38809219-5e8a-4852-9139-6f461c90e8bc
 ```

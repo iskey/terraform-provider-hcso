@@ -2,17 +2,17 @@
 subcategory: "VPC Endpoint (VPCEP)"
 ---
 
-# huaweicloud_vpcep_public_services
+# hcso_vpcep_public_services
 
 Use this data source to get available public VPC endpoint services.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_vpcep_public_services" "all_services" {
+data "hcso_vpcep_public_services" "all_services" {
 }
 
-data "huaweicloud_vpcep_public_services" "dns_service" {
+data "hcso_vpcep_public_services" "dns_service" {
   service_name = "dns"
 }
 ```

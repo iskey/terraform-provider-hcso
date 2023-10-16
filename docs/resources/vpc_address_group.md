@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_address_group
+# hcso_vpc_address_group
 
 Manages a VPC IP address group resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a VPC IP address group resource within HuaweiCloud.
 ### IPv4 Address Group
 
 ```hcl
-resource "huaweicloud_vpc_address_group" "ipv4" {
+resource "hcso_vpc_address_group" "ipv4" {
   name = "group-ipv4"
 
   addresses = [
@@ -24,7 +24,7 @@ resource "huaweicloud_vpc_address_group" "ipv4" {
 ### IPv6 Address Group
 
 ```hcl
-resource "huaweicloud_vpc_address_group" "ipv6" {
+resource "hcso_vpc_address_group" "ipv6" {
   name       = "group-ipv6"
   ip_version = 6
 
@@ -82,7 +82,7 @@ This resource provides the following timeouts configuration options:
 IP address groups can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_vpc_address_group.test bc96f6b0-ca2c-42ee-b719-0f26bc9c8661
+$ terraform import hcso_vpc_address_group.test bc96f6b0-ca2c-42ee-b719-0f26bc9c8661
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -91,7 +91,7 @@ importing the image. You can then decide if changes should be applied to the ima
 definition should be updated to align with the image. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_vpc_address_group" "test" {
+resource "hcso_vpc_address_group" "test" {
   ...
 
   lifecycle {

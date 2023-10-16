@@ -2,14 +2,14 @@
 subcategory: "Distributed Cache Service (DCS)"
 ---
 
-# huaweicloud_dcs_instances
+# hcso_dcs_instances
 
 Use this data source to get the list of DCS instances.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_dcs_instances" "test" {
+data "hcso_dcs_instances" "test" {
   name   = "test_name"
   status = "RUNNING"
 }

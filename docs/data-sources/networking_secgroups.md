@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_networking_secgroups
+# hcso_networking_secgroups
 
 Use this data source to get the list of the available HuaweiCloud security groups.
 
@@ -13,7 +13,7 @@ Use this data source to get the list of the available HuaweiCloud security group
 ```hcl
 variable "key_word" {}
 
-data "huaweicloud_networking_secgroups" "test" {
+data "hcso_networking_secgroups" "test" {
   description = var.key_word
 }
 ```

@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_protection_policy
+# hcso_identity_protection_policy
 
 Manages the account protection policy within HuaweiCloud.
 
@@ -16,7 +16,7 @@ Manages the account protection policy within HuaweiCloud.
 ### Self-Verification
 
 ```hcl
-resource "huaweicloud_identity_protection_policy" "test" {
+resource "hcso_identity_protection_policy" "test" {
   protection_enabled = true
   self_management {
     access_key = true
@@ -30,7 +30,7 @@ resource "huaweicloud_identity_protection_policy" "test" {
 ### Verification by another person
 
 ```hcl
-resource "huaweicloud_identity_protection_policy" "verification" {
+resource "hcso_identity_protection_policy" "verification" {
   protection_enabled = true
   verification_email = "example@email.com"
 }
@@ -76,5 +76,5 @@ In addition to all arguments above, the following attributes are exported:
 Identity protection policy can be imported using the account ID or domain ID, e.g.
 
 ```bash
-$ terraform import huaweicloud_identity_protection_policy.example <your account ID>
+$ terraform import hcso_identity_protection_policy.example <your account ID>
 ```

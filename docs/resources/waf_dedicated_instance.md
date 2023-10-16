@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_dedicated_instance
+# hcso_waf_dedicated_instance
 
 Manages a WAF dedicated instance resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable subnet_id {}
 variable security_group_id {}
 variable enterprise_project_id {}
 
-resource "huaweicloud_waf_dedicated_instance" "instance_1" {
+resource "hcso_waf_dedicated_instance" "instance_1" {
   name                  = "instance_1"
   available_zone        = var.az_name
   specification_code    = "waf.instance.professional"
@@ -42,7 +42,7 @@ The following arguments are supported:
   name unique.
 
 * `available_zone` - (Required, String, ForceNew) The available zone names for the dedicated instances. It can be
-  obtained through this data source `huaweicloud_availability_zones`. Changing this will create a new instance.
+  obtained through this data source `hcso_availability_zones`. Changing this will create a new instance.
 
 * `specification_code` - (Required, String, ForceNew) The specification code of instance. Different specifications have
   different throughput. Changing this will create a new instance. Values are:
@@ -50,7 +50,7 @@ The following arguments are supported:
   + `waf.instance.enterprise` - The enterprise edition, throughput: 500 Mbit/s; QPS: 10,000 (Reference only).
 
 * `ecs_flavor` - (Required, String, ForceNew) The flavor of the ECS used by the WAF instance. Flavors can be obtained
-  through this data source `huaweicloud_compute_flavors`. Changing this will create a new instance.
+  through this data source `hcso_compute_flavors`. Changing this will create a new instance.
 
   -> **NOTE:** If the instance specification is the professional edition, the ECS specification should be 2U4G. If the
   instance specification is the enterprise edition, the ECS specification should be 8U16G.
@@ -108,11 +108,11 @@ There are two ways to import WAF dedicated instance state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_dedicated_instance.test <id>
+$ terraform import hcso_waf_dedicated_instance.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_dedicated_instance.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_dedicated_instance.test <id>/<enterprise_project_id>
 ```

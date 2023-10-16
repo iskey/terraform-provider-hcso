@@ -2,7 +2,7 @@
 subcategory: "Elastic IP (EIP)"
 ---
 
-# huaweicloud_vpc_eip
+# hcso_vpc_eip
 
 Manages an EIP resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an EIP resource within HuaweiCloud.
 ```hcl
 var "bandwidth_name" {}
 
-resource "huaweicloud_vpc_eip" "dedicated" {
+resource "hcso_vpc_eip" "dedicated" {
   publicip {
     type = "5_bgp"
   }
@@ -32,19 +32,19 @@ resource "huaweicloud_vpc_eip" "dedicated" {
 ```hcl
 var "bandwidth_name" {}
 
-resource "huaweicloud_vpc_bandwidth" "test" {
+resource "hcso_vpc_bandwidth" "test" {
   name = var.bandwidth_name
   size = 5
 }
 
-resource "huaweicloud_vpc_eip" "shared" {
+resource "hcso_vpc_eip" "shared" {
   publicip {
     type = "5_bgp"
   }
 
   bandwidth {
     share_type = "WHOLE"
-    id         = huaweicloud_vpc_bandwidth.test.id
+    id         = hcso_vpc_bandwidth.test.id
   }
 }
 ```
@@ -143,5 +143,5 @@ This resource provides the following timeouts configuration options:
 EIPs can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpc_eip.test 2c7f39f3-702b-48d1-940c-b50384177ee1
+$ terraform import hcso_vpc_eip.test 2c7f39f3-702b-48d1-940c-b50384177ee1
 ```

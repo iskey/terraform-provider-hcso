@@ -2,20 +2,20 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_peering_connection
+# hcso_vpc_peering_connection
 
 Provides a resource to manage a VPC Peering Connection resource.
 
 -> **NOTE:** For cross-tenant (requester's tenant differs from the accepter's tenant) VPC Peering Connections,
-  use the `huaweicloud_vpc_peering_connection` resource to manage the requester's side of the connection and
-  use the `huaweicloud_vpc_peering_connection_accepter` resource to manage the accepter's side of the connection.
+  use the `hcso_vpc_peering_connection` resource to manage the requester's side of the connection and
+  use the `hcso_vpc_peering_connection_accepter` resource to manage the accepter's side of the connection.
   <br/>If you create a VPC peering connection with another VPC of your own, the connection is created without the need
   for you to accept the connection.
 
 ## Example Usage
 
  ```hcl
-resource "huaweicloud_vpc_peering_connection" "peering" {
+resource "hcso_vpc_peering_connection" "peering" {
   name        = var.peer_conn_name
   vpc_id      = var.vpc_id
   peer_vpc_id = var.accepter_vpc_id
@@ -64,5 +64,5 @@ This resource provides the following timeouts configuration options:
 VPC Peering resources can be imported using the `vpc peering id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpc_peering_connection.test_connection 22b76469-08e3-4937-8c1d-7aad34892be1
+$ terraform import hcso_vpc_peering_connection.test_connection 22b76469-08e3-4937-8c1d-7aad34892be1
 ```

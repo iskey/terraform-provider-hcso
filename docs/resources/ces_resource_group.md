@@ -2,7 +2,7 @@
 subcategory: "Cloud Eye (CES)"
 ---
 
-# huaweicloud_ces_resource_group
+# hcso_ces_resource_group
 
 Manages a CES resource group resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "security_group_id" {}
 variable "availability_zone" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_compute_instance" "vm_1" {
+resource "hcso_compute_instance" "vm_1" {
   name               = "ecs-test"
   image_id           = var.image_id
   flavor_id          = var.flavor_id
@@ -29,14 +29,14 @@ resource "huaweicloud_compute_instance" "vm_1" {
   }
 }
 
-resource "huaweicloud_ces_resource_group" "test" {
+resource "hcso_ces_resource_group" "test" {
   name = "test"
 
   resources {
     namespace = "SYS.ECS"
     dimensions {
       name  = "instance_id"
-      value = huaweicloud_compute_instance.vm_1.id
+      value = hcso_compute_instance.vm_1.id
     }
   }
 
@@ -44,7 +44,7 @@ resource "huaweicloud_ces_resource_group" "test" {
     namespace = "SYS.EVS"
     dimensions {
       name  = "disk_name"
-      value = "${huaweicloud_compute_instance.vm_1.id}-sda"
+      value = "${hcso_compute_instance.vm_1.id}-sda"
     }
   }
 }
@@ -55,7 +55,7 @@ resource "huaweicloud_ces_resource_group" "test" {
 ```hcl
 variable "eps_id" {}
 
-resource "huaweicloud_ces_resource_group" "test" {
+resource "hcso_ces_resource_group" "test" {
   name               = "test"
   type               = "EPS"
   associated_eps_ids = [ var.eps_id ]
@@ -65,7 +65,7 @@ resource "huaweicloud_ces_resource_group" "test" {
 ### Add resources by tags
 
 ```hcl
-resource "huaweicloud_ces_resource_group" "test" {
+resource "hcso_ces_resource_group" "test" {
   name = "test"
   type = "TAG"
   tags = {
@@ -141,7 +141,7 @@ In addition to all arguments above, the following attributes are exported:
 The resource group can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ces_resource_group.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_ces_resource_group.test 0ce123456a00f2591fabc00385ff1234
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -151,7 +151,7 @@ You can then decide if changes should be applied to the resource group, or the r
 align with the resource group. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_ces_resource_group" "test" {
+resource "hcso_ces_resource_group" "test" {
     ...
 
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_kafka_permissions
+# hcso_dms_kafka_permissions
 
 Use the resource to grant user permissions of a kafka topic within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "kafka_topic_name" {}
 variable "user_1" {}
 variable "user_2" {}
 
-resource "huaweicloud_dms_kafka_permissions" "test" {
+resource "hcso_dms_kafka_permissions" "test" {
   instance_id = var.kafka_instance_id
   topic_name  = var.kafka_topic_name
   policies {
@@ -66,5 +66,5 @@ In addition to all arguments above, the following attributes are exported:
 DMS kafka permissions can be imported using the kafka instance ID and topic name separated by a slash, e.g.:
 
 ```
-terraform import huaweicloud_dms_kafka_permissions.permissions c8057fe5-23a8-46ef-ad83-c0055b4e0c5c/topic_1
+terraform import hcso_dms_kafka_permissions.permissions c8057fe5-23a8-46ef-ad83-c0055b4e0c5c/topic_1
 ```

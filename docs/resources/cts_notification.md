@@ -2,7 +2,7 @@
 subcategory: "Cloud Trace Service (CTS)"
 ---
 
-# huaweicloud_cts_notification
+# hcso_cts_notification
 
 Manages CTS key event notification resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages CTS key event notification resource within HuaweiCloud.
 ```hcl
 variable "topic_urn" {}
 
-resource "huaweicloud_cts_notification" "notify" {
+resource "hcso_cts_notification" "notify" {
   name           = "keyOperate_test"
   operation_type = "complete"
   smn_topic      = var.topic_urn
@@ -25,7 +25,7 @@ resource "huaweicloud_cts_notification" "notify" {
 ```hcl
 variable "topic_urn" {}
 
-resource "huaweicloud_cts_notification" "notify" {
+resource "hcso_cts_notification" "notify" {
   name           = "keyOperate_test"
   operation_type = "customized"
   smn_topic      = var.topic_urn
@@ -100,5 +100,5 @@ This resource provides the following timeouts configuration options:
 CTS notifications can be imported using `name`, e.g.:
 
 ```
-$ terraform import huaweicloud_cts_notification.tracker your_notification
+$ terraform import hcso_cts_notification.tracker your_notification
 ```

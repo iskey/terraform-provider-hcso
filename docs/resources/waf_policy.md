@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_policy
+# hcso_waf_policy
 
 Manages a WAF policy resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ used. The policy resource can be used in Cloud Mode, Dedicated Mode and ELB Mode
 ```hcl
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_policy" "test" {
+resource "hcso_waf_policy" "test" {
   name                  = "test_policy"
   protection_mode       = "log"
   robot_action          = "block"
@@ -154,11 +154,11 @@ There are two ways to import WAF policy state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_policy.test <id>
+$ terraform import hcso_waf_policy.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_policy.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_policy.test <id>/<enterprise_project_id>
 ```

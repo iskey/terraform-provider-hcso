@@ -2,7 +2,7 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_kps_keypair
+# hcso_kps_keypair
 
 Manages a keypair resource within HuaweiCloud.
 
@@ -19,22 +19,22 @@ Keys imported support the following cryptographic algorithms:
 ### Create a new keypair which scope is Tenant-level and the private key is managed by HuaweiCloud
 
 ```hcl
-resource "huaweicloud_kms_key" "test" {
+resource "hcso_kms_key" "test" {
   key_alias = "kms_test"
 }
 
-resource "huaweicloud_kps_keypair" "test-keypair" {
+resource "hcso_kps_keypair" "test-keypair" {
   name            = "my-keypair"
   scope           = "account"
   encryption_type = "kms"
-  kms_key_name    = huaweicloud_kms_key.test.key_alias
+  kms_key_name    = hcso_kms_key.test.key_alias
 }
 ```
 
 ### Create a new keypair and export private key to current folder
 
 ```hcl
-resource "huaweicloud_kps_keypair" "test-keypair" {
+resource "hcso_kps_keypair" "test-keypair" {
   name     = "my-keypair"
   key_file = "private_key.pem"
 }
@@ -43,7 +43,7 @@ resource "huaweicloud_kps_keypair" "test-keypair" {
 ### Import an existing keypair
 
 ```hcl
-resource "huaweicloud_kps_keypair" "test-keypair" {
+resource "hcso_kps_keypair" "test-keypair" {
   name       = "my-keypair"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAlJq5Pu+eizhou7nFFDxXofr2ySF8k/yuA9OnJdVF9Fbf85Z59CWNZBvcAT... root@terra-dev"
 }
@@ -113,7 +113,7 @@ This resource provides the following timeouts configuration options:
 Keypairs can be imported using the `name`, e.g.
 
 ```
-$ terraform import huaweicloud_kps_keypair.my-keypair test-keypair
+$ terraform import hcso_kps_keypair.my-keypair test-keypair
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -123,7 +123,7 @@ You can then decide if changes should be applied to the key pair, or the resourc
 should be updated to align with the key pair. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_kps_keypair" "test" {
+resource "hcso_kps_keypair" "test" {
     ...
 
   lifecycle {

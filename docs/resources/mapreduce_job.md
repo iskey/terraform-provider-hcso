@@ -2,7 +2,7 @@
 subcategory: "MapReduce Service (MRS)"
 ---
 
-# huaweicloud_mapreduce_job
+# hcso_mapreduce_job
 
 Manage a job resource within HuaweiCloud MRS.
 
@@ -15,7 +15,7 @@ variable "program_path" {}
 variable "access_key" {}
 variable "secret_key" {}
 
-resource "huaweicloud_mapreduce_job" "test" {
+resource "hcso_mapreduce_job" "test" {
   cluster_id   = var.cluster_id
   type         = "SparkSubmit"
   name         = var.job_name
@@ -107,5 +107,5 @@ MapReduce jobs can be imported using their `id` and the IDs of the MapReduce clu
 by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_mapreduce_job.test <cluster_id>/<id>
+$ terraform import hcso_mapreduce_job.test <cluster_id>/<id>
 ```

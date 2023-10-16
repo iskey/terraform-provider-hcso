@@ -2,14 +2,14 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_redis_instance
+# hcso_gaussdb_redis_instance
 
 Use this data source to get available HuaweiCloud gaussdb redis instance.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_redis_instance" "test" {
+data "hcso_gaussdb_redis_instance" "test" {
   name = "gaussdb-instance"
 }
 ```

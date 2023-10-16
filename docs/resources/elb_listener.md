@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_listener
+# hcso_elb_listener
 
 Manages an ELB listener resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an ELB listener resource within HuaweiCloud.
 ```hcl
 variable "loadbalancer_id" {}
 
-resource "huaweicloud_elb_listener" "basic" {
+resource "hcso_elb_listener" "basic" {
   name            = "basic"
   description     = "basic description"
   protocol        = "HTTP"
@@ -130,5 +130,5 @@ This resource provides the following timeouts configuration options:
 ELB listener can be imported using the listener ID, e.g.
 
 ```
-$ terraform import huaweicloud_elb_listener.listener_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_elb_listener.listener_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```

@@ -2,14 +2,14 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_cassandra_instances
+# hcso_gaussdb_cassandra_instances
 
 Use this data source to get available HuaweiCloud gaussdb cassandra instances.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_cassandra_instances" "this" {
+data "hcso_gaussdb_cassandra_instances" "this" {
   name = "gaussdb-instance"
 }
 ```

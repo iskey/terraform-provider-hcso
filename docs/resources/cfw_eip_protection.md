@@ -2,11 +2,11 @@
 subcategory: "Cloud Firewall (CFW)"
 ---
 
-# huaweicloud_cfw_eip_protection
+# hcso_cfw_eip_protection
 
 Manages the protected EIPs under the protect object for CFW service within HuaweiCloud.
 
-~> A protection object (`object_id`) can only create one `huaweicloud_cfw_eip_protection` resource for managing
+~> A protection object (`object_id`) can only create one `hcso_cfw_eip_protection` resource for managing
 protected EIPs.
 
 ## Example Usage
@@ -20,7 +20,7 @@ variable "protected_eips" {
   }))
 }
 
-resource "huaweicloud_cfw_eip_protection" "test" {
+resource "hcso_cfw_eip_protection" "test" {
   object_id = var.object_id
 
   dynamic "protected_eip" {
@@ -77,5 +77,5 @@ This resource provides the following timeouts configuration options:
 The protection resource can be imported using their `object_id` or `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cfw_eip_protection.test <id>
+$ terraform import hcso_cfw_eip_protection.test <id>
 ```

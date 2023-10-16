@@ -2,18 +2,18 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_cs_cluster
+# hcso_cs_cluster
 
 Cloud Stream Service cluster management.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_dli_queue` instead.
+!> **WARNING:** It has been deprecated, use `hcso_dli_queue` instead.
 
 ## Example Usage
 
 ### create a cluster
 
 ```hcl
-resource "huaweicloud_cs_cluster" "cluster" {
+resource "hcso_cs_cluster" "cluster" {
   name = "terraform_cs_cluster_test"
 }
 ```

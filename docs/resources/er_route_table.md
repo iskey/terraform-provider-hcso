@@ -2,7 +2,7 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_route_table
+# hcso_er_route_table
 
 Manages a route table resource under the ER instance within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a route table resource under the ER instance within HuaweiCloud.
 variable "instance_id" {}
 variable "route_table_name" {}
 
-resource "huaweicloud_er_route_table" "test" {
+resource "hcso_er_route_table" "test" {
   instance_id = var.instance_id
   name        = var.route_table_name
   description = "Route table created by terraform"
@@ -73,5 +73,5 @@ This resource provides the following timeouts configuration options:
 Route tables can be imported using their `id` and the related `instance_id`, separated by slashes (/), e.g.
 
 ```
-$ terraform import huaweicloud_er_route_table.test &ltinstance_id&gt/&ltid&gt
+$ terraform import hcso_er_route_table.test &ltinstance_id&gt/&ltid&gt
 ```

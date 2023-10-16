@@ -2,7 +2,7 @@
 subcategory: "Meeting"
 ---
 
-# huaweicloud_meeting_conference
+# hcso_meeting_conference
 
 Using this resource to book a conference within HuaweiCloud.
 
@@ -19,7 +19,7 @@ variable "conference_topic" {}
 variable "meeting_room_id" {}
 variable "account_id" {}
 
-resource "huaweicloud_meeting_conference" "test" {
+resource "hcso_meeting_conference" "test" {
   app_id  = var.app_id
   app_key = var.app_key
 
@@ -56,7 +56,7 @@ variable "conference_topic" {}
 variable "meeting_room_id" {}
 variable "account_id" {}
 
-resource "huaweicloud_meeting_conference" "test" {
+resource "hcso_meeting_conference" "test" {
   account_name     = var.account_name
   account_password = var.account_password
 
@@ -93,7 +93,7 @@ variable "conference_topic" {}
 variable "meeting_room_id" {}
 variable "account_id" {}
 
-resource "huaweicloud_meeting_conference" "test" {
+resource "hcso_meeting_conference" "test" {
   app_id  = var.app_id
   app_key = var.app_key
 
@@ -450,13 +450,13 @@ parameters, separated by slashes, e.g.
 Import a conference and authenticated by account.
 
 ```
-$ terraform import huaweicloud_meeting_conference.test &ltid&gt/&ltaccount_name&gt/&ltaccount_password&gt
+$ terraform import hcso_meeting_conference.test &ltid&gt/&ltaccount_name&gt/&ltaccount_password&gt
 ```
 
 Import a conference and authenticated by `APP ID`/`APP Key`.
 
 ```
-$ terraform import huaweicloud_meeting_conference.test &ltid&gt/&ltapp_id&gt/&ltapp_key&gt/&ltcorp_id&gt/&ltuser_id&gt
+$ terraform import hcso_meeting_conference.test &ltid&gt/&ltapp_id&gt/&ltapp_key&gt/&ltcorp_id&gt/&ltuser_id&gt
 ```
 
 The slashes cannot be missing even corporation ID and user ID are empty.
@@ -465,7 +465,7 @@ Note that importing is not supported for expired conferences and the start time 
 with it. You can ignore this change as below.
 
 ```
-resource "huaweicloud_meeting_conference" "test" {
+resource "hcso_meeting_conference" "test" {
     ...
 
   lifecycle {

@@ -2,14 +2,14 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_resource_flavors
+# hcso_modelarts_resource_flavors
 
 Use this data source to get resource flavors of ModelArts.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_modelart_resource_flavors" "test" {
+data "hcso_modelart_resource_flavors" "test" {
   type = "Dedicate"
   tag  ="os.modelarts/scope"
 }

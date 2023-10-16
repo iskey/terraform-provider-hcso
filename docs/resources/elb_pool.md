@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_pool
+# hcso_elb_pool
 
 Manages an ELB pool resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an ELB pool resource within HuaweiCloud.
 ```hcl
 variable "loadbalancer_id" {}
 
-resource "huaweicloud_elb_pool" "pool_1" {
+resource "hcso_elb_pool" "pool_1" {
   name            = "test"
   protocol        = "HTTP"
   lb_method       = "ROUND_ROBIN"
@@ -37,7 +37,7 @@ resource "huaweicloud_elb_pool" "pool_1" {
 ```hcl
 variable "listener_id" {}
 
-resource "huaweicloud_elb_pool" "pool_1" {
+resource "hcso_elb_pool" "pool_1" {
   name        = "test"
   protocol    = "HTTP"
   lb_method   = "ROUND_ROBIN"
@@ -61,7 +61,7 @@ resource "huaweicloud_elb_pool" "pool_1" {
 ```hcl
 variable "vpc_id" {}
 
-resource "huaweicloud_elb_pool" "pool_1" {
+resource "hcso_elb_pool" "pool_1" {
   name      = "test"
   protocol  = "HTTP"
   lb_method = "ROUND_ROBIN"
@@ -201,5 +201,5 @@ This resource provides the following timeouts configuration options:
 ELB pool can be imported using the pool `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_elb_pool.pool_1 <id>
+$ terraform import hcso_elb_pool.pool_1 <id>
 ```

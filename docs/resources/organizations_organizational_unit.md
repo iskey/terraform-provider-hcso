@@ -2,7 +2,7 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_organizational_unit
+# hcso_organizations_organizational_unit
 
 Manages an Organizations organizational unit resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an Organizations organizational unit resource within HuaweiCloud.
 ```hcl
   variable "parent_id" {}
   
-  resource "huaweicloud_organizations_organizational_unit" "test"{
+  resource "hcso_organizations_organizational_unit" "test"{
     name      = "organizational_unit_test_name"
     parent_id = var.parent_id
   }
@@ -45,7 +45,7 @@ In addition to all arguments above, the following attributes are exported:
 The Organizations organizational unit can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_organizations_organizational_unit.test <id>
+$ terraform import hcso_organizations_organizational_unit.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -55,7 +55,7 @@ the organizational unit, or the resource definition should be updated to align w
 can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_organizations_organizational_unit" "instance_1" {
+resource "hcso_organizations_organizational_unit" "instance_1" {
     ...
 
   lifecycle {

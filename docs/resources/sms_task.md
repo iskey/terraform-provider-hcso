@@ -2,7 +2,7 @@
 subcategory: "Server Migration Service (SMS)"
 ---
 
-# huaweicloud_sms_task
+# hcso_sms_task
 
 Manages an SMS migration task resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages an SMS migration task resource within HuaweiCloud.
 variable "source_server" {}
 variable "template_id" {}
 
-resource "huaweicloud_sms_task" "migration" {
+resource "hcso_sms_task" "migration" {
   type             = "MIGRATE_FILE"
   os_type          = "LINUX"
   source_server_id = var.source_server
@@ -139,7 +139,7 @@ This resource provides the following timeouts configuration options:
 SMS migration tasks can be imported by `id`, e.g.
 
 ```sh
-terraform import huaweicloud_sms_task.demo 6402c49b-7d9a-413e-8b5f-a7307f7d5679
+terraform import hcso_sms_task.demo 6402c49b-7d9a-413e-8b5f-a7307f7d5679
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -149,7 +149,7 @@ You can then decide if changes should be applied to the task, or the resource de
 updated to align with the task. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_sms_task" "demo" {
+resource "hcso_sms_task" "demo" {
     ...
 
   lifecycle {

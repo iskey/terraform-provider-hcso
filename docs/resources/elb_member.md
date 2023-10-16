@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_member
+# hcso_elb_member
 
 Manages an ELB member resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages an ELB member resource within HuaweiCloud.
 variable "elb_pool_id" {}
 variable "ipv4_subnet_id" {}
 
-resource "huaweicloud_elb_member" "member_1" {
+resource "hcso_elb_member" "member_1" {
   address       = "192.168.199.23"
   protocol_port = 8080
   pool_id       = var.elb_pool_id
@@ -66,5 +66,5 @@ This resource provides the following timeouts configuration options:
 ELB member can be imported using the pool ID and member ID separated by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_elb_member.member_1 e0bd694a-abbe-450e-b329-0931fd1cc5eb/4086b0c9-b18c-4d1c-b6b8-4c56c3ad2a9e
+$ terraform import hcso_elb_member.member_1 e0bd694a-abbe-450e-b329-0931fd1cc5eb/4086b0c9-b18c-4d1c-b6b8-4c56c3ad2a9e
 ```

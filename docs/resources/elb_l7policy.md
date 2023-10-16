@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_l7policy
+# hcso_elb_l7policy
 
 Manages an ELB L7 Policy resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages an ELB L7 Policy resource within HuaweiCloud.
 variable listener_id {}
 variable pool_id {}
 
-resource "huaweicloud_elb_l7policy" "policy_1" {
+resource "hcso_elb_l7policy" "policy_1" {
   name             = "policy_1"
   action           = "REDIRECT_TO_POOL"
   priority         = 20
@@ -40,7 +40,7 @@ resource "huaweicloud_elb_l7policy" "policy_1" {
 variable listener_id {}
 variable redirect_listener_id {}
 
-resource "huaweicloud_elb_l7policy" "policy_1" {
+resource "hcso_elb_l7policy" "policy_1" {
   name                 = "policy_1"
   action               = "REDIRECT_TO_LISTENER"
   description          = "test description"
@@ -54,7 +54,7 @@ resource "huaweicloud_elb_l7policy" "policy_1" {
 ```hcl
 variable listener_id {}
 
-resource "huaweicloud_elb_l7policy" "policy_1" {
+resource "hcso_elb_l7policy" "policy_1" {
   name        = "policy_1"
   action      = "REDIRECT_TO_URL"
   priority    = 20
@@ -77,7 +77,7 @@ resource "huaweicloud_elb_l7policy" "policy_1" {
 ```hcl
 variable listener_id {}
 
-resource "huaweicloud_elb_l7policy" "policy_1" {
+resource "hcso_elb_l7policy" "policy_1" {
   name        = "policy_1"
   action      = "FIXED_RESPONSE"
   priority    = 20
@@ -225,5 +225,5 @@ This resource provides the following timeouts configuration options:
 ELB policy can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_elb_policy.policy_1 <id>
+$ terraform import hcso_elb_policy.policy_1 <id>
 ```

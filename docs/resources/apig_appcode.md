@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_appcode
+# hcso_apig_appcode
 
 Manages an APPCODE in application resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages an APPCODE in application resource within HuaweiCloud.
 variable "instance_id" {}
 variable "application_id" {}
 
-resource "huaweicloud_apig_appcode" "test" {
+resource "hcso_apig_appcode" "test" {
   instance_id    = var.instance_id
   application_id = var.application_id
 }
@@ -27,7 +27,7 @@ variable "instance_id" {}
 variable "application_id" {}
 variable "app_code" {}
 
-resource "huaweicloud_apig_appcode" "test" {
+resource "hcso_apig_appcode" "test" {
   instance_id    = var.instance_id
   application_id = var.application_id
   value          = var.app_code
@@ -67,5 +67,5 @@ In addition to all arguments above, the following attributes are exported:
 APPCODEs can be imported using related `instance_id`, `application_id` and their `id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_appcode.test <instance_id>/<application_id>/<id>
+$ terraform import hcso_apig_appcode.test <instance_id>/<application_id>/<id>
 ```

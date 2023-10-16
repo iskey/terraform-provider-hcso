@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_role
+# hcso_identity_role
 
 Manages a **Custom Policy** resource within HuaweiCloud IAM service.
 
@@ -11,7 +11,7 @@ Manages a **Custom Policy** resource within HuaweiCloud IAM service.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_identity_role" "role1" {
+resource "hcso_identity_role" "role1" {
   name        = "test"
   description = "created by terraform"
   type        = "AX"
@@ -69,5 +69,5 @@ In addition to all arguments above, the following attributes are exported:
 IAM custom policies can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_identity_role.role1 89c60255-9bd6-460c-822a-e2b959ede9d2
+$ terraform import hcso_identity_role.role1 89c60255-9bd6-460c-822a-e2b959ede9d2
 ```

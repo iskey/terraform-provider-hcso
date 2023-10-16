@@ -4,14 +4,14 @@ subcategory: "Deprecated"
 
 # huaweicloud\_networking\_floatingip\_v2
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc_eip` instead.
+!> **WARNING:** It has been deprecated, use `hcso_vpc_eip` instead.
 
 Manages a V2 floating IP resource within HuaweiCloud Neutron (networking)
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_networking_floatingip_v2" "floatip_1" {
+resource "hcso_networking_floatingip_v2" "floatip_1" {
 }
 ```
 
@@ -57,5 +57,5 @@ This resource provides the following timeouts configuration options:
 Floating IPs can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_networking_floatingip_v2.floatip_1 2c7f39f3-702b-48d1-940c-b50384177ee1
+$ terraform import hcso_networking_floatingip_v2.floatip_1 2c7f39f3-702b-48d1-940c-b50384177ee1
 ```

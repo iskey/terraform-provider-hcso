@@ -2,7 +2,7 @@
 subcategory: "Scalable File Service (SFS)"
 ---
 
-# huaweicloud_sfs_file_system
+# hcso_sfs_file_system
 
 Provides a Shared File System (SFS) resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "share_name" {}
 variable "share_description" {}
 variable "vpc_id" {}
 
-resource "huaweicloud_sfs_file_system" "share-file" {
+resource "hcso_sfs_file_system" "share-file" {
   name         = var.share_name
   size         = 100
   share_proto  = "NFS"
@@ -36,12 +36,12 @@ variable "share_name" {}
 variable "share_description" {}
 variable "vpc_id" {}
 
-respurce "huaweicloud_kms_key" mykey {
+respurce "hcso_kms_key" mykey {
   key_alias    = "kms_sfs"
   pending_days = "7"
 }
 
-resource "huaweicloud_sfs_file_system" "share-file" {
+resource "hcso_sfs_file_system" "share-file" {
   name         = var.share_name
   size         = 100
   share_proto  = "NFS"
@@ -50,9 +50,9 @@ resource "huaweicloud_sfs_file_system" "share-file" {
   description  = var.share_description
 
   metadata = {
-    "#sfs_crypt_key_id"    = huaweicloud_kms_key.mykey.id
-    "#sfs_crypt_domain_id" = huaweicloud_kms_key.mykey.domain_id
-    "#sfs_crypt_alias"     = huaweicloud_kms_key.mykey.key_alias
+    "#sfs_crypt_key_id"    = hcso_kms_key.mykey.id
+    "#sfs_crypt_domain_id" = hcso_kms_key.mykey.domain_id
+    "#sfs_crypt_alias"     = hcso_kms_key.mykey.key_alias
   }
   tags     = {
     function = "encryption"
@@ -67,7 +67,7 @@ resource "huaweicloud_sfs_file_system" "share-file" {
 ```hcl
 variable "share_name" {}
 
-resource "huaweicloud_sfs_file_system" "share-file" {
+resource "hcso_sfs_file_system" "share-file" {
   name        = var.share_name
   size        = 100
   share_proto = "NFS"
@@ -129,7 +129,7 @@ The following arguments are supported:
         For example, 0157b53f-4974-4e80-91c9-098532bcaf00#2.2.2.2/16#0.
 
 -> **NOTE:** If you want to create more access rules, please using
-  [huaweicloud_sfs_access_rule](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/sfs_access_rule).
+  [hcso_sfs_access_rule](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/sfs_access_rule).
 
 ## Attribute Reference
 
@@ -164,8 +164,8 @@ This resource provides the following timeouts configuration options:
 SFS can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_sfs_file_system 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
+$ terraform import hcso_sfs_file_system 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
 ```
 
 **NOTE:** The `access_to`, `access_type` and `access_level` will not be imported. Please importing them by
-  [huaweicloud_sfs_access_rule](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/sfs_access_rule).
+  [hcso_sfs_access_rule](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/sfs_access_rule).

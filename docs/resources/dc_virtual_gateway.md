@@ -2,7 +2,7 @@
 subcategory: "Direct Connect (DC)"
 ---
 
-# huaweicloud_dc_virtual_gateway
+# hcso_dc_virtual_gateway
 
 Manages a virtual gateway resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "vpc_id" {}
 variable "vpc_cidr" {}
 variable "gateway_name" {}
 
-resource "huaweicloud_dc_virtual_gateway" "test" {
+resource "hcso_dc_virtual_gateway" "test" {
   vpc_id = var.vpc_id
   name   = var.gateway_name
 
@@ -66,5 +66,5 @@ In addition to all arguments above, the following attributes are exported:
 Virtual gateways can be imported using their `id`, e.g.
 
 ```shell
-$ terraform import huaweicloud_dc_virtual_gateway.test f6f36e69-d980-4b0a-a33d-b9b125b3896c
+$ terraform import hcso_dc_virtual_gateway.test f6f36e69-d980-4b0a-a33d-b9b125b3896c
 ```

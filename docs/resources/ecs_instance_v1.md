@@ -4,7 +4,7 @@ subcategory: "Deprecated"
 
 # huaweicloud\_ecs\_instance\_v1
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_compute_instance` instead.
+!> **WARNING:** It has been deprecated, use `hcso_compute_instance` instead.
 
 Manages a ECS instance resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ Manages a ECS instance resource within HuaweiCloud.
 ```hcl
 variable "security_group_name" {}
 
-resource "huaweicloud_ecs_instance_v1" "basic" {
+resource "hcso_ecs_instance_v1" "basic" {
   name     = "server_1"
   image_id = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor   = "s1.medium"
@@ -36,7 +36,7 @@ resource "huaweicloud_ecs_instance_v1" "basic" {
 ```hcl
 variable "security_group_name" {}
 
-resource "huaweicloud_ecs_instance_v1" "basic" {
+resource "hcso_ecs_instance_v1" "basic" {
   name     = "server_1"
   image_id = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor   = "s1.medium"
@@ -70,12 +70,12 @@ resource "huaweicloud_ecs_instance_v1" "basic" {
 ```hcl
 variable "security_group_name" {}
 
-resource "huaweicloud_blockstorage_volume_v2" "myvol" {
+resource "hcso_blockstorage_volume_v2" "myvol" {
   name = "myvol"
   size = 1
 }
 
-resource "huaweicloud_ecs_instance_v1" "basic" {
+resource "hcso_ecs_instance_v1" "basic" {
   name     = "server_1"
   image_id = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor   = "s1.medium"
@@ -90,9 +90,9 @@ resource "huaweicloud_ecs_instance_v1" "basic" {
   security_groups   = [var.security_group_name]
 }
 
-resource "huaweicloud_compute_volume_attach" "attached" {
-  instance_id = huaweicloud_ecs_instance_v1.basic.id
-  volume_id   = huaweicloud_blockstorage_volume_v2.myvol.id
+resource "hcso_compute_volume_attach" "attached" {
+  instance_id = hcso_ecs_instance_v1.basic.id
+  volume_id   = hcso_blockstorage_volume_v2.myvol.id
 }
 ```
 
@@ -101,10 +101,10 @@ resource "huaweicloud_compute_volume_attach" "attached" {
 ```hcl
 variable "security_group_name" {}
 
-resource "huaweicloud_networking_floatingip_v2" "myip" {
+resource "hcso_networking_floatingip_v2" "myip" {
 }
 
-resource "huaweicloud_ecs_instance_v1" "multi-net" {
+resource "hcso_ecs_instance_v1" "multi-net" {
   name     = "server_1"
   image_id = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor   = "s1.medium"
@@ -123,10 +123,10 @@ resource "huaweicloud_ecs_instance_v1" "multi-net" {
   security_groups   = [var.security_group_name]
 }
 
-resource "huaweicloud_compute_eip_associate" "myip" {
-  floating_ip = huaweicloud_networking_floatingip_v2.myip.address
-  instance_id = huaweicloud_ecs_instance_v1.multi-net.id
-  fixed_ip    = huaweicloud_ecs_instance_v1.multi-net.nics.0.ip_address
+resource "hcso_compute_eip_associate" "myip" {
+  floating_ip = hcso_networking_floatingip_v2.myip.address
+  instance_id = hcso_ecs_instance_v1.multi-net.id
+  fixed_ip    = hcso_ecs_instance_v1.multi-net.nics.0.ip_address
 }
 ```
 
@@ -135,7 +135,7 @@ resource "huaweicloud_compute_eip_associate" "myip" {
 ```hcl
 variable "security_group_name" {}
 
-resource "huaweicloud_ecs_instance_v1" "basic" {
+resource "hcso_ecs_instance_v1" "basic" {
   name     = "server_1"
   image_id = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor   = "s1.medium"
@@ -268,4 +268,4 @@ This resource provides the following timeouts configuration options:
 Instances can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_ecs_instance_v1.instance_1 d90ce693-5ccf-4136-a0ed-152ce412b6b9
+$ terraform import hcso_ecs_instance_v1.instance_1 d90ce693-5ccf-4136-a0ed-152ce412b6b9

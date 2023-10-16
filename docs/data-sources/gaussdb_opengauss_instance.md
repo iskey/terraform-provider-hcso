@@ -9,7 +9,7 @@ Use this data source to get available HuaweiCloud gaussdb opengauss instance.
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_opengauss_instance" "this" {
+data "hcso_gaussdb_opengauss_instance" "this" {
   name = "gaussdb-instance"
 }
 ```

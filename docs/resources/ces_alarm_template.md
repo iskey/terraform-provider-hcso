@@ -2,7 +2,7 @@
 subcategory: "Cloud Eye (CES)"
 ---
 
-# huaweicloud_ces_alarm_template
+# hcso_ces_alarm_template
 
 Manages a CES alarm template resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a CES alarm template resource within HuaweiCloud.
 ```hcl
 variable "name" {}
 
-resource "huaweicloud_ces_alarm_template" "test"{
+resource "hcso_ces_alarm_template" "test"{
   name = var.name
 
   policies {
@@ -104,5 +104,5 @@ In addition to all arguments above, the following attributes are exported:
 The ces alarm template can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ces_alarm_template.test <template_id>
+$ terraform import hcso_ces_alarm_template.test <template_id>
 ```

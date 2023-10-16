@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_node_pool
+# hcso_cce_node_pool
 
 To get the specified node pool in a cluster.
 
@@ -12,7 +12,7 @@ To get the specified node pool in a cluster.
 variable "cluster_id" {}
 variable "node_pool_name" {}
 
-data "huaweicloud_cce_node_pool" "node_pool" {
+data "hcso_cce_node_pool" "node_pool" {
   cluster_id = var.cluster_id
   name       = var.node_pool_name
 }

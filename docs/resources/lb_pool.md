@@ -2,14 +2,14 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_pool
+# hcso_lb_pool
 
 Manages an ELB pool resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_lb_pool" "pool_1" {
+resource "hcso_lb_pool" "pool_1" {
   protocol    = "HTTP"
   lb_method   = "ROUND_ROBIN"
   listener_id = "d9415786-5f1a-428b-b35f-2f1523e146d2"
@@ -83,5 +83,5 @@ This resource provides the following timeouts configuration options:
 ELB pool can be imported using the pool ID, e.g.
 
 ```
-$ terraform import huaweicloud_lb_pool.pool_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_lb_pool.pool_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```

@@ -2,16 +2,16 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_images_image_v2
+# hcso_images_image_v2
 
 Manages a Image resource within HuaweiCloud IMS.
 
-!> **WARNING:** It has been deprecated, please use `huaweicloud_images_image` instead.
+!> **WARNING:** It has been deprecated, please use `hcso_images_image` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_images_image_v2" "rancheros" {
+resource "hcso_images_image_v2" "rancheros" {
   name             = "RancherOS"
   image_source_url = "https://releases.rancher.com/os/latest/rancheros-openstack.img"
   container_format = "bare"
@@ -92,5 +92,5 @@ This resource provides the following timeouts configuration options:
 Images can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_images_image_v2.rancheros 89c60255-9bd6-460c-822a-e2b959ede9d2
+$ terraform import hcso_images_image_v2.rancheros 89c60255-9bd6-460c-822a-e2b959ede9d2
 ```

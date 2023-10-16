@@ -2,19 +2,19 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_networking_vip
+# hcso_networking_vip
 
 Manages a network VIP resource within HuaweiCloud VPC.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpc_subnet" "test" {
+resource "hcso_vpc_subnet" "test" {
   ...
 }
 
-resource "huaweicloud_networking_vip" "test" {
-  network_id = huaweicloud_vpc_subnet.test.id
+resource "hcso_networking_vip" "test" {
+  network_id = hcso_vpc_subnet.test.id
 }
 ```
 
@@ -60,5 +60,5 @@ This resource provides the following timeouts configuration options:
 Network VIPs can be imported using their `id`, e.g.:
 
 ```
-$ terraform import huaweicloud_networking_vip.test ce595799-da26-4015-8db5-7733c6db292e
+$ terraform import hcso_networking_vip.test ce595799-da26-4015-8db5-7733c6db292e
 ```

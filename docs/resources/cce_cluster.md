@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_cluster
+# hcso_cce_cluster
 
 Provides a CCE cluster resource.
 
@@ -11,12 +11,12 @@ Provides a CCE cluster resource.
 ### Basic Usage
 
 ```hcl
-resource "huaweicloud_vpc" "myvpc" {
+resource "hcso_vpc" "myvpc" {
   name = "vpc"
   cidr = "192.168.0.0/16"
 }
 
-resource "huaweicloud_vpc_subnet" "mysubnet" {
+resource "hcso_vpc_subnet" "mysubnet" {
   name       = "subnet"
   cidr       = "192.168.0.0/16"
   gateway_ip = "192.168.0.1"
@@ -24,14 +24,14 @@ resource "huaweicloud_vpc_subnet" "mysubnet" {
   //dns is required for cce node installing
   primary_dns   = "100.125.1.250"
   secondary_dns = "100.125.21.250"
-  vpc_id        = huaweicloud_vpc.myvpc.id
+  vpc_id        = hcso_vpc.myvpc.id
 }
 
-resource "huaweicloud_cce_cluster" "cluster" {
+resource "hcso_cce_cluster" "cluster" {
   name                   = "cluster"
   flavor_id              = "cce.s1.small"
-  vpc_id                 = huaweicloud_vpc.myvpc.id
-  subnet_id              = huaweicloud_vpc_subnet.mysubnet.id
+  vpc_id                 = hcso_vpc.myvpc.id
+  subnet_id              = hcso_vpc_subnet.mysubnet.id
   container_network_type = "overlay_l2"
 }
 ```
@@ -39,12 +39,12 @@ resource "huaweicloud_cce_cluster" "cluster" {
 ### Cluster With EIP
 
 ```hcl
-resource "huaweicloud_vpc" "myvpc" {
+resource "hcso_vpc" "myvpc" {
   name = "vpc"
   cidr = "192.168.0.0/16"
 }
 
-resource "huaweicloud_vpc_subnet" "mysubnet" {
+resource "hcso_vpc_subnet" "mysubnet" {
   name       = "subnet"
   cidr       = "192.168.0.0/16"
   gateway_ip = "192.168.0.1"
@@ -52,10 +52,10 @@ resource "huaweicloud_vpc_subnet" "mysubnet" {
   //dns is required for cce node installing
   primary_dns   = "100.125.1.250"
   secondary_dns = "100.125.21.250"
-  vpc_id        = huaweicloud_vpc.myvpc.id
+  vpc_id        = hcso_vpc.myvpc.id
 }
 
-resource "huaweicloud_vpc_eip" "myeip" {
+resource "hcso_vpc_eip" "myeip" {
   publicip {
     type = "5_bgp"
   }
@@ -67,27 +67,27 @@ resource "huaweicloud_vpc_eip" "myeip" {
   }
 }
 
-resource "huaweicloud_cce_cluster" "cluster" {
+resource "hcso_cce_cluster" "cluster" {
   name                   = "cluster"
   cluster_type           = "VirtualMachine"
   flavor_id              = "cce.s1.small"
-  vpc_id                 = huaweicloud_vpc.myvpc.id
-  subnet_id              = huaweicloud_vpc_subnet.mysubnet.id
+  vpc_id                 = hcso_vpc.myvpc.id
+  subnet_id              = hcso_vpc_subnet.mysubnet.id
   container_network_type = "overlay_l2"
   authentication_mode    = "rbac"
-  eip                    = huaweicloud_vpc_eip.myeip.address
+  eip                    = hcso_vpc_eip.myeip.address
 }
 ```
 
 ### CCE Turbo Cluster
 
 ```hcl
-resource "huaweicloud_vpc" "myvpc" {
+resource "hcso_vpc" "myvpc" {
   name = "vpc"
   cidr = "192.168.0.0/16"
 }
 
-resource "huaweicloud_vpc_subnet" "mysubnet" {
+resource "hcso_vpc_subnet" "mysubnet" {
   name       = "subnet"
   cidr       = "192.168.0.0/24"
   gateway_ip = "192.168.0.1"
@@ -95,32 +95,32 @@ resource "huaweicloud_vpc_subnet" "mysubnet" {
   //dns is required for cce node installing
   primary_dns   = "100.125.1.250"
   secondary_dns = "100.125.21.250"
-  vpc_id        = huaweicloud_vpc.myvpc.id
+  vpc_id        = hcso_vpc.myvpc.id
 }
 
-resource "huaweicloud_vpc_subnet" "eni_test_1" {
+resource "hcso_vpc_subnet" "eni_test_1" {
   name          = "subnet-eni-1"
   cidr          = "192.168.2.0/24"
   gateway_ip    = "192.168.2.1"
-  vpc_id        = huaweicloud_vpc.test.id
+  vpc_id        = hcso_vpc.test.id
 }
 
-resource "huaweicloud_vpc_subnet" "eni_test_2" {
+resource "hcso_vpc_subnet" "eni_test_2" {
   name          = "subnet-eni-2"
   cidr          = "192.168.3.0/24"
   gateway_ip    = "192.168.3.1"
-  vpc_id        = huaweicloud_vpc.test.id
+  vpc_id        = hcso_vpc.test.id
 }
 
-resource "huaweicloud_cce_cluster" "test" {
+resource "hcso_cce_cluster" "test" {
   name                   = cluster"
   flavor_id              = "cce.s1.small"
-  vpc_id                 = huaweicloud_vpc.myvpc.id
-  subnet_id              = huaweicloud_vpc_subnet.mysubnet.id
+  vpc_id                 = hcso_vpc.myvpc.id
+  subnet_id              = hcso_vpc_subnet.mysubnet.id
   container_network_type = "eni"
   eni_subnet_id          = join(",", [
-    huaweicloud_vpc_subnet.eni_test_1.ipv4_subnet_id,
-    huaweicloud_vpc_subnet.eni_test_2.ipv4_subnet_id,
+    hcso_vpc_subnet.eni_test_1.ipv4_subnet_id,
+    hcso_vpc_subnet.eni_test_2.ipv4_subnet_id,
   ])
 }
 ```
@@ -131,7 +131,7 @@ resource "huaweicloud_cce_cluster" "test" {
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_cce_cluster" "cluster" {
+resource "hcso_cce_cluster" "cluster" {
   name                   = "cluster"
   flavor_id              = "cce.s2.small"
   vpc_id                 = var.vpc_id
@@ -414,7 +414,7 @@ This resource provides the following timeouts configuration options:
 Cluster can be imported using the cluster ID, e.g.
 
 ```
- $ terraform import huaweicloud_cce_cluster.cluster_1 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
+ $ terraform import hcso_cce_cluster.cluster_1 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -425,7 +425,7 @@ the cluster, or the resource definition should be updated to align with the clus
 below.
 
 ```
-resource "huaweicloud_cce_cluster" "cluster_1" {
+resource "hcso_cce_cluster" "cluster_1" {
     ...
 
   lifecycle {

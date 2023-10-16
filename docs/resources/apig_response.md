@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_response
+# hcso_apig_response
 
 Manages an APIG (API) custom response resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "instance_id" {}
 variable "group_id" {}
 variable "response_name" {}
 
-resource "huaweicloud_apig_response" "test" {
+resource "hcso_apig_response" "test" {
   instance_id = var.instance_id
   group_id    = var.group_id
   name        = var.response_name
@@ -89,5 +89,5 @@ API Responses can be imported using their `name` and IDs of the APIG dedicated i
 response belongs, separated by slashes, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_response.test <instance_id>/<group_id>/<name>
+$ terraform import hcso_apig_response.test <instance_id>/<group_id>/<name>
 ```

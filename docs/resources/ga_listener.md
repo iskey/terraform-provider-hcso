@@ -2,7 +2,7 @@
 subcategory: "Global Accelerator (GA)"
 ---
 
-# huaweicloud_ga_listener
+# hcso_ga_listener
 
 Manages a GA listener resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "name" {}
 variable "description" {}
 variable "accelerator_id" {}
 
-resource "huaweicloud_ga_listener" "test" {
+resource "hcso_ga_listener" "test" {
   accelerator_id = var.accelerator_id
   name           = var.name
   description    = var.description
@@ -94,5 +94,5 @@ This resource provides the following timeouts configuration options:
 The listener can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_ga_listener.test ac1bf54f-6a23-4074-af77-800648d25bc8
+$ terraform import hcso_ga_listener.test ac1bf54f-6a23-4074-af77-800648d25bc8
 ```

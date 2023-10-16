@@ -14,7 +14,7 @@ The VBS Backup Policy data source provides details about a specific VBS backup p
 variable "policy_name" {}
 variable "policy_id" {}
 
-data "huaweicloud_vbs_backup_policy" "policies" {
+data "hcso_vbs_backup_policy" "policies" {
   name = var.policy_name
   id   = var.policy_id
 }

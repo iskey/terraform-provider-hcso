@@ -2,7 +2,7 @@
 subcategory: "Cloud Service Engine (CSE)"
 ---
 
-# huaweicloud_cse_microservice_instance
+# hcso_cse_microservice_instance
 
 Manages a dedicated microservice instance resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "microservice_id" {}
 variable "region_name" {}
 variable "az_name" {}
 
-resource "huaweicloud_cse_microservice_instance" "test" {
+resource "hcso_cse_microservice_instance" "test" {
   connect_address = var.engine_conn_addr
   microservice_id = var.microservice_id
   host_name       = "localhost"
@@ -51,7 +51,7 @@ variable "microservice_id" {}
 variable "region_name" {}
 variable "az_name" {}
 
-resource "huaweicloud_cse_microservice_instance" "test" {
+resource "hcso_cse_microservice_instance" "test" {
   connect_address = var.engine_conn_addr
   microservice_id = var.microservice_id
   host_name       = "localhost"
@@ -168,13 +168,13 @@ Microservices can be imported using related `connect_address`, `microservice_id`
 slash (/), e.g.
 
 ```
-$ terraform import huaweicloud_cse_microservice_instance.test https://124.70.26.32:30100/f14960ba495e03f59f85aacaaafbdef3fbff3f0d/336e7428dd9411eca913fa163e7364b7
+$ terraform import hcso_cse_microservice_instance.test https://124.70.26.32:30100/f14960ba495e03f59f85aacaaafbdef3fbff3f0d/336e7428dd9411eca913fa163e7364b7
 ```
 
 If you enabled the **RBAC** authorization, you also need to provide the account name and password, e.g.
 
 ```
-$ terraform import huaweicloud_cse_microservice_instance.test 'https://124.70.26.32:30100/f14960ba495e03f59f85aacaaafbdef3fbff3f0d/336e7428dd9411eca913fa163e7364b7/root/Test!123'
+$ terraform import hcso_cse_microservice_instance.test 'https://124.70.26.32:30100/f14960ba495e03f59f85aacaaafbdef3fbff3f0d/336e7428dd9411eca913fa163e7364b7/root/Test!123'
 ```
 
 The single quotes can help you solve the problem of special characters reporting errors on bash.

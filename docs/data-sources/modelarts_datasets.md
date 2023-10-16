@@ -2,14 +2,14 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_datasets
+# hcso_modelarts_datasets
 
 Use this data source to get a list of ModelArts datasets.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_modelarts_datasets" "test" {
+data "hcso_modelarts_datasets" "test" {
   name = "your_dataset_name"
   type = 1
 }

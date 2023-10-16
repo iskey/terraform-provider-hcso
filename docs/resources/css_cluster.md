@@ -2,7 +2,7 @@
 subcategory: "Cloud Search Service (CSS)"
 ---
 
-# huaweicloud_css_cluster
+# hcso_css_cluster
 
 Manages CSS cluster resource within HuaweiCloud
 
@@ -16,7 +16,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "secgroup_id" {}
 
-resource "huaweicloud_css_cluster" "cluster" {
+resource "hcso_css_cluster" "cluster" {
   name           = "terraform_test_cluster"
   engine_version = "7.10.2"
 
@@ -44,7 +44,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "secgroup_id" {}
 
-resource "huaweicloud_css_cluster" "cluster" {
+resource "hcso_css_cluster" "cluster" {
   name           = "terraform_test_cluster"
   engine_version = "7.10.2"
 
@@ -81,7 +81,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "secgroup_id" {}
 
-resource "huaweicloud_css_cluster" "cluster" {
+resource "hcso_css_cluster" "cluster" {
   name           = "terraform_test_cluster"
   engine_version = "7.10.2"
 
@@ -366,5 +366,5 @@ This resource provides the following timeouts configuration options:
 CSS cluster can be imported by `id`. For example,
 
 ```
-terraform import huaweicloud_css_cluster.example 6d793124-3d5d-47be-bf09-f694fdf2d9ed
+terraform import hcso_css_cluster.example 6d793124-3d5d-47be-bf09-f694fdf2d9ed
 ```

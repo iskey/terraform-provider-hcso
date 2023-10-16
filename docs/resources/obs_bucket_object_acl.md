@@ -2,7 +2,7 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_bucket_object_acl
+# hcso_obs_bucket_object_acl
 
 Manages an OBS bucket object acl resource within HuaweiCloud.
 
@@ -18,7 +18,7 @@ variable "key" {}
 variable "account1" {}
 variable "account2" {}
 
-resource "huaweicloud_obs_bucket_object_acl" "test" {
+resource "hcso_obs_bucket_object_acl" "test" {
   bucket = var.bucket
   key    = var.key
 
@@ -100,5 +100,5 @@ The `owner_permission_struct` block supports:
 The obs bucket object acl can be imported using `bucket` and `key`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_obs_bucket_object_acl.test <bucket>/<key>
+$ terraform import hcso_obs_bucket_object_acl.test <bucket>/<key>
 ```

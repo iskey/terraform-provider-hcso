@@ -2,19 +2,19 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_network_acl_rule
+# hcso_iec_network_acl_rule
 
 Manages a network ACL rule resource within HuaweiCloud IEC.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_iec_network_acl" "acl_test" {
+resource "hcso_iec_network_acl" "acl_test" {
   name = "iec-network-acl-demo"
 }
 
-resource "huaweicloud_iec_network_acl_rule" "rule_test" {
-  network_acl_id         = huaweicloud_iec_network_acl.acl_test.id
+resource "hcso_iec_network_acl_rule" "rule_test" {
+  network_acl_id         = hcso_iec_network_acl.acl_test.id
   direction              = "ingress"
   protocol               = "tcp"
   action                 = "allow"

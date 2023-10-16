@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_policies
+# hcso_waf_policies
 
 Use this data source to get a list of WAF policies.
 
@@ -12,7 +12,7 @@ Use this data source to get a list of WAF policies.
 variable "policy_name" {}
 variable "enterprise_project_id" {}
 
-data "huaweicloud_waf_policies" "policies" {
+data "hcso_waf_policies" "policies" {
   name                  = var.policy_name
   enterprise_project_id = var.enterprise_project_id
 }

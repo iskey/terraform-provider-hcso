@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_kafka_flavors
+# hcso_dms_kafka_flavors
 
 Use this data source to get the list of available flavor details within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of available flavor details within HuaweiCl
 ### Query the list of kafka flavors for cluster type
 
 ```hcl
-data "huaweicloud_dms_kafka_flavors" "test" {
+data "hcso_dms_kafka_flavors" "test" {
   type = "cluster"
 }
 ```
@@ -19,7 +19,7 @@ data "huaweicloud_dms_kafka_flavors" "test" {
 ### Query the kafka flavor details of the specified ID
 
 ```hcl
-data "huaweicloud_dms_kafka_flavors" "test" {
+data "hcso_dms_kafka_flavors" "test" {
   flavor_id = "c6.2u4g.cluster"
 }
 ```
@@ -30,7 +30,7 @@ data "huaweicloud_dms_kafka_flavors" "test" {
 variable "az1" {}
 variable "az2" {}
 
-data "huaweicloud_dms_kafka_flavors" "test" {
+data "hcso_dms_kafka_flavors" "test" {
   availability_zones = [
     var.az1,
     var.az2,

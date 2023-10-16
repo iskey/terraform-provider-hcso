@@ -48,26 +48,26 @@ and `authenticating_proxy_private_key`) needed.
 ## Create CCE cluster with Enhance Authentication
 
 ```hcl
-resource "huaweicloud_vpc" "myvpc" {
+resource "hcso_vpc" "myvpc" {
   name = "vpc"
   cidr = "192.168.0.0/16"
 }
 
-resource "huaweicloud_vpc_subnet" "mysubnet" {
+resource "hcso_vpc_subnet" "mysubnet" {
   name          = "subnet"
   cidr          = "192.168.0.0/16"
   gateway_ip    = "192.168.0.1"
   //dns is required for cce node installing
   primary_dns   = "100.125.1.250"
   secondary_dns = "100.125.21.250"
-  vpc_id        = huaweicloud_vpc.myvpc.id
+  vpc_id        = hcso_vpc.myvpc.id
 }
 
-resource "huaweicloud_cce_cluster" "cluster" {
+resource "hcso_cce_cluster" "cluster" {
   name                   = "cluster"
   flavor_id              = "cce.s1.small"
-  vpc_id                 = huaweicloud_vpc.myvpc.id
-  subnet_id              = huaweicloud_vpc_subnet.mysubnet.id
+  vpc_id                 = hcso_vpc.myvpc.id
+  subnet_id              = hcso_vpc_subnet.mysubnet.id
   container_network_type = "overlay_l2"
 
   authentication_mode              = "authenticating_proxy"

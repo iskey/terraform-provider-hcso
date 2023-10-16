@@ -2,14 +2,14 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_vpnaas_service_v2
+# hcso_vpnaas_service_v2
 
 Manages a V2 VPN service resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpnaas_service_v2" "service_1" {
+resource "hcso_vpnaas_service_v2" "service_1" {
   name           = "my_service"
   router_id      = "14a75700-fc03-4602-9294-26ee44f366b3"
   admin_state_up = "true"
@@ -61,5 +61,5 @@ This resource provides the following timeouts configuration options:
 Services can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpnaas_service_v2.service_1 832cb7f3-59fe-40cf-8f64-8350ffc03272
+$ terraform import hcso_vpnaas_service_v2.service_1 832cb7f3-59fe-40cf-8f64-8350ffc03272
 ```

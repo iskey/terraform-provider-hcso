@@ -2,7 +2,7 @@
 subcategory: "IAM Identity Center"
 ---
 
-# huaweicloud_identitycenter_system_policy_attachment
+# hcso_identitycenter_system_policy_attachment
 
 Manages an Identity Center system policy attachment resource within HuaweiCloud.  
 
@@ -17,10 +17,10 @@ variable "iam_policy_ids" {
   type = list(stirng)
 }
 
-data "huaweicloud_identitycenter_instance" "system" {}
+data "hcso_identitycenter_instance" "system" {}
 
-resource "huaweicloud_identitycenter_system_policy_attachment" "test" {
-  instance_id       = data.huaweicloud_identitycenter_instance.system.id
+resource "hcso_identitycenter_system_policy_attachment" "test" {
+  instance_id       = data.hcso_identitycenter_instance.system.id
   permission_set_id = var.permission_set_id
   policy_ids        = var.iam_policy_ids
 }
@@ -61,5 +61,5 @@ The Identity Center system policy attachment can be imported using the `instance
 by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_identitycenter_system_policy_attachment.test <instance_id>/<permission_set_id>
+$ terraform import hcso_identitycenter_system_policy_attachment.test <instance_id>/<permission_set_id>
 ```

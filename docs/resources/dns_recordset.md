@@ -2,7 +2,7 @@
 subcategory: "Domain Name Service (DNS)"
 ---
 
-# huaweicloud_dns_recordset
+# hcso_dns_recordset
 
 Manages a DNS record set resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a DNS record set resource within HuaweiCloud.
 ### Record Set with Multi-line
 
 ```hcl
-resource "huaweicloud_dns_zone" "example_zone" {
+resource "hcso_dns_zone" "example_zone" {
   name        = "example.com."
   email       = "email2@example.com"
   description = "a zone"
@@ -19,8 +19,8 @@ resource "huaweicloud_dns_zone" "example_zone" {
   zone_type   = "public"
 }
 
-resource "huaweicloud_dns_recordset" "test" {
-  zone_id     = huaweicloud_dns_zone.example_zone.id
+resource "hcso_dns_recordset" "test" {
+  zone_id     = hcso_dns_zone.example_zone.id
   name        = "test.example.com."
   type        = "A"
   description = "a recordset description"
@@ -40,7 +40,7 @@ resource "huaweicloud_dns_recordset" "test" {
 ### Record Set with Public Zone
 
 ```hcl
-resource "huaweicloud_dns_zone" "example_zone" {
+resource "hcso_dns_zone" "example_zone" {
   name        = "example.com."
   email       = "email2@example.com"
   description = "a public zone"
@@ -48,8 +48,8 @@ resource "huaweicloud_dns_zone" "example_zone" {
   zone_type   = "public"
 }
 
-resource "huaweicloud_dns_recordset" "test" {
-  zone_id     = huaweicloud_dns_zone.example_zone.id
+resource "hcso_dns_recordset" "test" {
+  zone_id     = hcso_dns_zone.example_zone.id
   name        = "rs.example.com."
   description = "An example record set"
   ttl         = 3000
@@ -61,7 +61,7 @@ resource "huaweicloud_dns_recordset" "test" {
 ### Record Set with Private Zone
 
 ```hcl
-resource "huaweicloud_dns_zone" "example_zone" {
+resource "hcso_dns_zone" "example_zone" {
   name        = "example.com."
   email       = "email2@example.com"
   description = "a private zone"
@@ -69,8 +69,8 @@ resource "huaweicloud_dns_zone" "example_zone" {
   zone_type   = "private"
 }
 
-resource "huaweicloud_dns_recordset" "test" {
-  zone_id     = huaweicloud_dns_zone.example_zone.id
+resource "hcso_dns_recordset" "test" {
+  zone_id     = hcso_dns_zone.example_zone.id
   name        = "rs.example.com."
   description = "An example record set"
   ttl         = 3000
@@ -137,5 +137,5 @@ This resource provides the following timeouts configuration options:
 The DNS recordset can be imported using `zone_id`, `recordset_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_dns_recordset.test <zone_id>/<recordset_id>
+$ terraform import hcso_dns_recordset.test <zone_id>/<recordset_id>
 ```

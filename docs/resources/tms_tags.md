@@ -2,14 +2,14 @@
 subcategory: "Tag Management Service (TMS)"
 ---
 
-# huaweicloud_tms_tags
+# hcso_tms_tags
 
 Manages TMS tags resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_tms_tags" "test" {
+resource "hcso_tms_tags" "test" {
   tags {
     key   = "foo"
     value = "bar"

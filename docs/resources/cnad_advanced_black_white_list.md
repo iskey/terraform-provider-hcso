@@ -2,7 +2,7 @@
 subcategory: "Cloud Native Anti-DDoS Advanced"
 ---
 
-# huaweicloud_cnad_advanced_black_white_list
+# hcso_cnad_advanced_black_white_list
 
 Manages a CNAD advanced policy black and white IP list resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "white_ip_list" {
   type = list(string)
 }
 
-resource "huaweicloud_cnad_advanced_black_white_list" "test" {
+resource "hcso_cnad_advanced_black_white_list" "test" {
   policy_id     = var.policy_id
   black_ip_list = var.black_ip_list
   white_ip_list = var.white_ip_list
@@ -54,5 +54,5 @@ In addition to all arguments above, the following attributes are exported:
 The CNAD advanced policy black and white IP list can be imported using the `policy_id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cnad_advanced_black_white_list.test <policy_id>
+$ terraform import hcso_cnad_advanced_black_white_list.test <policy_id>
 ```

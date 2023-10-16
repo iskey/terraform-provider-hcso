@@ -2,7 +2,7 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_account
+# hcso_gaussdb_mysql_account
 
 Manages a GaussDB MySQL account resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a GaussDB MySQL account resource within HuaweiCloud.
 variable "instance_id" {}
 variable "password" {}
 
-resource "huaweicloud_gaussdb_mysql_account" "test" {
+resource "hcso_gaussdb_mysql_account" "test" {
   instance_id = var.instance_id
   name        = "test_account_name"
   password    = var.password
@@ -68,7 +68,7 @@ This resource provides the following timeouts configuration options:
 The GaussDB MySQL account can be imported using the `instance_id`, `name` and `host` separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_gaussdb_mysql_account.test <instance_id>/<name>/<host>
+$ terraform import hcso_gaussdb_mysql_account.test <instance_id>/<name>/<host>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -78,7 +78,7 @@ MySQL account, or the resource definition should be updated to align with the Ga
 ignore changes as below.
 
 ```hcl
-resource "huaweicloud_gaussdb_mysql_account" "test" {
+resource "hcso_gaussdb_mysql_account" "test" {
     ...
 
   lifecycle {

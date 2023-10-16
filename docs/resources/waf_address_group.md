@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_address_group
+# hcso_waf_address_group
 
 Manages a WAF address group resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ used. The address group resource can be used in Cloud Mode, Dedicated Mode and E
 ```hcl
 variable enterprise_project_id {}
 
-resource "huaweicloud_waf_address_group" "example_group" {
+resource "hcso_waf_address_group" "example_group" {
   name                  = "example_address_name"
   description           = "example_description"
   ip_addresses          = ["192.168.1.0/24"]
@@ -67,11 +67,11 @@ There are two ways to import WAF address group state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_address_group.test <id>
+$ terraform import hcso_waf_address_group.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_address_group.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_address_group.test <id>/<enterprise_project_id>
 ```

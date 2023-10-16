@@ -6,12 +6,12 @@ subcategory: "Deprecated"
 
 Manages a v2 firewall policy resource within HuaweiCloud.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_network_acl` instead.
+!> **WARNING:** It has been deprecated, use `hcso_network_acl` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_fw_rule_v2" "rule_1" {
+resource "hcso_fw_rule_v2" "rule_1" {
   name             = "my-rule-1"
   description      = "drop TELNET traffic"
   action           = "deny"
@@ -20,7 +20,7 @@ resource "huaweicloud_fw_rule_v2" "rule_1" {
   enabled          = "true"
 }
 
-resource "huaweicloud_fw_rule_v2" "rule_2" {
+resource "hcso_fw_rule_v2" "rule_2" {
   name             = "my-rule-2"
   description      = "drop NTP traffic"
   action           = "deny"
@@ -29,12 +29,12 @@ resource "huaweicloud_fw_rule_v2" "rule_2" {
   enabled          = "false"
 }
 
-resource "huaweicloud_fw_policy_v2" "policy_1" {
+resource "hcso_fw_policy_v2" "policy_1" {
   name = "my-policy"
 
   rules = [
-    huaweicloud_fw_rule_v2.rule_1.id,
-    huaweicloud_fw_rule_v2.rule_2.id,
+    hcso_fw_rule_v2.rule_1.id,
+    hcso_fw_rule_v2.rule_2.id,
   ]
 }
 ```
@@ -84,5 +84,5 @@ This resource provides the following timeouts configuration options:
 Firewall Policies can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_fw_policy_v2.policy_1 07f422e6-c596-474b-8b94-fe2c12506ce0
+$ terraform import hcso_fw_policy_v2.policy_1 07f422e6-c596-474b-8b94-fe2c12506ce0
 ```

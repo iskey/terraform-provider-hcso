@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_rule_data_masking
+# hcso_waf_rule_data_masking
 
 Manages a WAF Data Masking Rule resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ used. The data masking rule resource can be used in Cloud Mode, Dedicated Mode a
 variable "enterprise_project_id" {}
 variable "policy_id" {}
 
-resource "huaweicloud_waf_rule_data_masking" "rule_1" {
+resource "hcso_waf_rule_data_masking" "rule_1" {
   policy_id             = var.policy_id
   enterprise_project_id = var.enterprise_project_id
   path                  = "/login"
@@ -59,11 +59,11 @@ There are two ways to import WAF rule data masking state.
 * Using `policy_id` and `rule_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_data_masking.test <policy_id>/<rule_id>
+$ terraform import hcso_waf_rule_data_masking.test <policy_id>/<rule_id>
 ```
 
 * Using `policy_id`, `rule_id` and `enterprise_project_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_data_masking.test <policy_id>/<rule_id>/<enterprise_project_id>
+$ terraform import hcso_waf_rule_data_masking.test <policy_id>/<rule_id>/<enterprise_project_id>
 ```

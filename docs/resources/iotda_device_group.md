@@ -2,7 +2,7 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_device_group
+# hcso_iotda_device_group
 
 Manages an IoTDA device group within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages an IoTDA device group within HuaweiCloud.
 variable "space_id" {}
 variable "device_id" {}
 
-resource "huaweicloud_iotda_device_group" "group" {
+resource "hcso_iotda_device_group" "group" {
   name       = "demo_group"
   space_id   = var.space_id
   device_ids = [var.device_id]
@@ -52,7 +52,7 @@ In addition to all arguments above, the following attributes are exported:
 Groups can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_device_group.test 10022532f4f94f26b01daa1e424853e1
+$ terraform import hcso_iotda_device_group.test 10022532f4f94f26b01daa1e424853e1
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -62,7 +62,7 @@ the resource, or the resource definition should be updated to align with the gro
 below.
 
 ```
-resource "huaweicloud_iotda_device_group" "test" {
+resource "hcso_iotda_device_group" "test" {
     ...
 
   lifecycle {

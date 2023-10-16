@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_flow_log
+# hcso_vpc_flow_log
 
 Manages a VPC flow log resource within HuaweiCloud.
 
@@ -11,22 +11,22 @@ Manages a VPC flow log resource within HuaweiCloud.
 ```hcl
 var "subnet_id" {}
 
-resource "huaweicloud_lts_group" "test_group" {
+resource "hcso_lts_group" "test_group" {
   group_name  = "test_group"
   ttl_in_days = 7
 }
-resource "huaweicloud_lts_stream" "test_stream" {
-  group_id    = huaweicloud_lts_group.test_group.id
+resource "hcso_lts_stream" "test_stream" {
+  group_id    = hcso_lts_group.test_group.id
   stream_name = "test_stream"
 }
 
-resource "huaweicloud_vpc_flow_log" "test_flowlog" {
+resource "hcso_vpc_flow_log" "test_flowlog" {
   name          = "flowlog-test"
   resource_type = "network"
   resource_id   = var.subnet_id
   traffic_type  = "all"
-  log_group_id  = huaweicloud_lts_group.test_group.id
-  log_stream_id = huaweicloud_lts_stream.test_stream.id
+  log_group_id  = hcso_lts_group.test_group.id
+  log_stream_id = hcso_lts_stream.test_stream.id
 }
 ```
 
@@ -82,5 +82,5 @@ In addition to all arguments above, the following attributes are exported:
 VPC flow logs can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_vpc_flow_log_v1.flowlog1 41b9d73f-eb1c-4795-a100-59a99b062513
+$ terraform import hcso_vpc_flow_log_v1.flowlog1 41b9d73f-eb1c-4795-a100-59a99b062513
 ```

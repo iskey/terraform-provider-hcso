@@ -2,14 +2,14 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_flavors
+# hcso_compute_flavors
 
 Use this data source to get the available Compute Flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_compute_flavors" "flavors" {
+data "hcso_compute_flavors" "flavors" {
   availability_zone = "cn-north-1a"
   performance_type  = "normal"
   cpu_core_count    = 2
@@ -17,8 +17,8 @@ data "huaweicloud_compute_flavors" "flavors" {
 }
 
 # Create ECS instance with the first matched flavor
-resource "huaweicloud_compute_instance" "instance" {
-  flavor_id = data.huaweicloud_compute_flavors.flavors.ids[0]
+resource "hcso_compute_instance" "instance" {
+  flavor_id = data.hcso_compute_flavors.flavors.ids[0]
 
   # Other properties...
 }

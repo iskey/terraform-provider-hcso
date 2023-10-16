@@ -4,13 +4,13 @@ subcategory: "MapReduce Service (MRS)"
 
 # huaweicloud\_mrs\_cluster
 
-Manages resource cluster within HuaweiCloud MRS. It is recommend to use `huaweicloud_mapreduce_cluster`, which makes a
+Manages resource cluster within HuaweiCloud MRS. It is recommend to use `hcso_mapreduce_cluster`, which makes a
 great improvement of managing MRS clusters.
 
 ## Example Usage: Creating an MRS cluster
 
 ```hcl
-resource "huaweicloud_mrs_cluster" "cluster1" {
+resource "hcso_mrs_cluster" "cluster1" {
   cluster_name          = "mrs-cluster"
   cluster_version       = "MRS 1.8.10"
   cluster_type          = 0

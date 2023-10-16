@@ -2,7 +2,7 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_account
+# hcso_organizations_account
 
 Manages an Organizations account resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ the Organizations account is only removed from the state, but it remains in the 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_organizations_account" "test"{
+resource "hcso_organizations_account" "test"{
   name = "account_test_name"
 }
 ```
@@ -53,5 +53,5 @@ This resource provides the following timeouts configuration options:
 The Organizations account can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_organizations_account.test <id>
+$ terraform import hcso_organizations_account.test <id>
 ```

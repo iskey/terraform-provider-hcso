@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_instance_group
+# hcso_waf_instance_group
 
 Manages WAF instance groups within HuaweiCloud. The groups are used to bind the ELB instance to the ELB mode WAF.
 
@@ -11,7 +11,7 @@ Manages WAF instance groups within HuaweiCloud. The groups are used to bind the 
 ```hcl
 variable "vpc_id" {}
 
-resource "huaweicloud_waf_instance_group" "group_1" {
+resource "hcso_waf_instance_group" "group_1" {
   name   = "example_name"
   vpc_id = var.vpc_id
 }
@@ -54,5 +54,5 @@ In addition to all arguments above, the following attributes are exported:
 The instance group can be imported using the ID, e.g.:
 
 ```sh
-terraform import huaweicloud_waf_instance_group.group_1 0be1e69d-1987-4d9c-9dc5-fc7eed592398
+terraform import hcso_waf_instance_group.group_1 0be1e69d-1987-4d9c-9dc5-fc7eed592398
 ```

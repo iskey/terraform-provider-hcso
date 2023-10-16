@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_spark_job
+# hcso_dli_spark_job
 
 Manages spark job resource of DLI within HuaweiCloud
 
@@ -14,7 +14,7 @@ Manages spark job resource of DLI within HuaweiCloud
 variables "queue_name" {}
 variables "job_name" {}
 
-resource "huaweicloud_dli_spark_job" "default" {
+resource "hcso_dli_spark_job" "default" {
   queue_name    = var.queue_name
   name          = var.job_name
   app_name      = "driver_package/driver_behavior.jar"

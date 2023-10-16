@@ -2,7 +2,7 @@
 subcategory: "EventGrid (EG)"
 ---
 
-# huaweicloud_eg_endpoint
+# hcso_eg_endpoint
 
 Manages an EG endpoint resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages an EG endpoint resource within HuaweiCloud.
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_eg_endpoint" "test" {
+resource "hcso_eg_endpoint" "test" {
   name        = "test"
   vpc_id      = var.vpc_id
   subnet_id   = var.subnet_id
@@ -62,5 +62,5 @@ In addition to all arguments above, the following attributes are exported:
 The endpoint can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_eg_endpoint.test 32a6a33f-ac15-4548-a328-8dc91ed22c3c
+$ terraform import hcso_eg_endpoint.test 32a6a33f-ac15-4548-a328-8dc91ed22c3c
 ```

@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_workspace
+# hcso_modelarts_workspace
 
 Manages a Modelarts workspace resource within HuaweiCloud.  
 
@@ -11,7 +11,7 @@ Manages a Modelarts workspace resource within HuaweiCloud.
 ### Create a public workspace
 
 ```hcl
-resource "huaweicloud_modelarts_workspace" "test" {
+resource "hcso_modelarts_workspace" "test" {
   name        = "demo"
   description = "This is a demo"
 }
@@ -21,7 +21,7 @@ resource "huaweicloud_modelarts_workspace" "test" {
 
 ```hcl
 variable "user_id" {}
-resource "huaweicloud_modelarts_workspace" "test" {
+resource "hcso_modelarts_workspace" "test" {
   name        = "demo"
   description = "This is a demo"
   auth_type   = "internal"
@@ -92,5 +92,5 @@ This resource provides the following timeouts configuration options:
 The Modelarts workspace can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_modelarts_workspace.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_modelarts_workspace.test 0ce123456a00f2591fabc00385ff1234
 ```

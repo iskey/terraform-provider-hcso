@@ -2,14 +2,14 @@
 subcategory: "ServiceStage"
 ---
 
-# huaweicloud_servicestage_component_runtimes
+# hcso_servicestage_component_runtimes
 
 Use this data source to query available runtimes within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_servicestage_component_runtimes" "test" {}
+data "hcso_servicestage_component_runtimes" "test" {}
 ```
 
 ## Argument Reference

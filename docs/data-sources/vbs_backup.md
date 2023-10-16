@@ -13,7 +13,7 @@ The VBS Backup data source provides details about a specific VBS Backup.
 ```hcl
 variable "backup_id" {}
 
-data "huaweicloud_vbs_backup" "mybackup" {
+data "hcso_vbs_backup" "mybackup" {
   id = var.backup_id
 }
 ```

@@ -2,7 +2,7 @@
 subcategory: "Global Accelerator (GA)"
 ---
 
-# huaweicloud_ga_health_check
+# hcso_ga_health_check
 
 Manages a GA health check resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a GA health check resource within HuaweiCloud.
 ```hcl
 variable "endpoint_group_id" {}
 
-resource "huaweicloud_ga_health_check" "test" {
+resource "hcso_ga_health_check" "test" {
   endpoint_group_id = var.endpoint_group_id
   enabled           = true
   interval          = 10
@@ -77,5 +77,5 @@ This resource provides the following timeouts configuration options:
 The healthcheck can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_ga_health_check.test 30a04052-b553-4292-af4e-a483106653ce
+$ terraform import hcso_ga_health_check.test 30a04052-b553-4292-af4e-a483106653ce
 ```

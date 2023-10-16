@@ -2,26 +2,26 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_vpc_subnet
+# hcso_iec_vpc_subnet
 
 Manages a VPC subnet resource within HuaweiCloud IEC.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_iec_sites" "sites_test" {}
+data "hcso_iec_sites" "sites_test" {}
 
-resource "huaweicloud_iec_vpc" "vpc_test" {
+resource "hcso_iec_vpc" "vpc_test" {
   name = "vpc_demo"
   cidr = "192.168.0.0/16"
   mode = "CUSTOMER"
 }
 
-resource "huaweicloud_iec_vpc_subnet" "subnet_test" {
+resource "hcso_iec_vpc_subnet" "subnet_test" {
   name       = "subnet_demo"
   cidr       = "192.168.128.0/18"
-  vpc_id     = huaweicloud_iec_vpc.vpc_test.id
-  site_id    = data.huaweicloud_iec_sites.sites_test.sites[0].id
+  vpc_id     = hcso_iec_vpc.vpc_test.id
+  site_id    = data.hcso_iec_sites.sites_test.sites[0].id
   gateway_ip = "192.168.128.1"
 }
 ```
@@ -76,5 +76,5 @@ This resource provides the following timeouts configuration options:
 IEC vpc subnet can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iec_vpc_subnet.subnet_demo 51be9f2b-5a3b-406a-9271-36f0c929fbcc
+$ terraform import hcso_iec_vpc_subnet.subnet_demo 51be9f2b-5a3b-406a-9271-36f0c929fbcc
 ```

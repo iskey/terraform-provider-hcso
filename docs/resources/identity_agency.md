@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_agency
+# hcso_identity_agency
 
 Manages an agency resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an agency resource within HuaweiCloud.
 ### Delegate another HUAWEI CLOUD account to perform operations on your resources
 
 ```hcl
-resource "huaweicloud_identity_agency" "agency" {
+resource "hcso_identity_agency" "agency" {
   name                  = "test_agency"
   description           = "test agency"
   delegated_domain_name = "***"
@@ -76,7 +76,7 @@ In addition to all arguments above, the following attributes are exported:
 Agencies can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_identity_agency.agency 0b97661f9900f23f4fc2c00971ea4dc0
+$ terraform import hcso_identity_agency.agency 0b97661f9900f23f4fc2c00971ea4dc0
 ```
 
 Note that the imported state may not be identical to your resource definition, due to `all_resources_roles` field is
@@ -85,7 +85,7 @@ You can then decide if changes should be applied to the agency, or the resource 
 align with the agency. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_identity_agency" "agency" {
+resource "hcso_identity_agency" "agency" {
     ...
 
   lifecycle {

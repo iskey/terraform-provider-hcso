@@ -2,14 +2,14 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_parameter_template
+# hcso_gaussdb_mysql_parameter_template
 
 Manages a GaussDB MySQL parameter template resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_gaussdb_mysql_parameter_template" "test" {
+resource "hcso_gaussdb_mysql_parameter_template" "test" {
    name = "test_mysql_parameter_template"
 }
 ```
@@ -55,5 +55,5 @@ In addition to all arguments above, the following attributes are exported:
 The GaussDB Mysql parameter template can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_gaussdb_mysql_parameter_template.test <id>
+$ terraform import hcso_gaussdb_mysql_parameter_template.test <id>
 ```

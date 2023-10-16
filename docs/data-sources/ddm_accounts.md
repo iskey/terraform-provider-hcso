@@ -2,7 +2,7 @@
 subcategory: "Distributed Database Middleware (DDM)"
 ---
 
-# huaweicloud_ddm_accounts
+# hcso_ddm_accounts
 
 Use this data source to get the list of DDM accounts.
 
@@ -12,7 +12,7 @@ Use this data source to get the list of DDM accounts.
 variable "ddm_instance_id" {}
 variable "account_name" {}
 
-data "huaweicloud_ddm_accounts" test {
+data "hcso_ddm_accounts" test {
   instance_id = var.ddm_instance_id
   name        = var.account_name
 }

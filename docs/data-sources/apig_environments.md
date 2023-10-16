@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_environments
+# hcso_apig_environments
 
 Use this data source to query the environment list under the APIG instance within Huaweicloud.
 
@@ -12,7 +12,7 @@ Use this data source to query the environment list under the APIG instance withi
 variable "instance_id" {}
 variable "environment_name" {}
 
-data "huaweicloud_apig_environments" "test" {
+data "hcso_apig_environments" "test" {
   instance_id = var.instance_id
   name        = var.environment_name
 }

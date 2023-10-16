@@ -2,14 +2,14 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_csms_secret_version
+# hcso_csms_secret_version
 
 Use this data source to query the version and plaintext of the CSMS(Cloud Secret Management Service) secret.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_csms_secret_version" "version_1" {
+data "hcso_csms_secret_version" "version_1" {
   secret_name = "your_secret_name"
 }
 ```

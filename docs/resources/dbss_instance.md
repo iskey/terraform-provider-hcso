@@ -2,7 +2,7 @@
 subcategory: "Database Security Service (DBSS)"
 ---
 
-# huaweicloud_dbss_instance
+# hcso_dbss_instance
 
 Manages a DBSS instance resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "security_group_id" {}
 
-resource "huaweicloud_dbss_instance" "test" {
+resource "hcso_dbss_instance" "test" {
   name               = var.name
   flavor             = "c3ne.xlarge.4"
   availability_zone  = var.availability_zone
@@ -158,7 +158,7 @@ This resource provides the following timeouts configuration options:
 The instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_dbss_instance.test f440a6c3fab9be5aa8b2a139fc6fdfbf
+$ terraform import hcso_dbss_instance.test f440a6c3fab9be5aa8b2a139fc6fdfbf
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -168,7 +168,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dbss_instance" "test" {
+resource "hcso_dbss_instance" "test" {
   ...
 
   lifecycle {

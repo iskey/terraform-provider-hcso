@@ -2,7 +2,7 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_account_invite_accepter
+# hcso_organizations_account_invite_accepter
 
 Manages an Organizations account invite accepter resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an Organizations account invite accepter resource within HuaweiCloud.
 ```hcl
 variable invitation_id {}
 
-resource "huaweicloud_organizations_account_invite_accepter" "test"{
+resource "hcso_organizations_account_invite_accepter" "test"{
   invitation_id = var.invitation_id
 }
 ```
@@ -55,7 +55,7 @@ In addition to all arguments above, the following attributes are exported:
 The Organizations account invite accepter can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_organizations_account_invite_accepter.test <id>
+$ terraform import hcso_organizations_account_invite_accepter.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -65,7 +65,7 @@ changes should be applied to the account invite accepter, or the resource defini
 the account invite accepter. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_organizations_account_invite_accepter" "test" {
+resource "hcso_organizations_account_invite_accepter" "test" {
   ...
 
   lifecycle {

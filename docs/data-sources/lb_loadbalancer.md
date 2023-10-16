@@ -2,7 +2,7 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_loadbalancer
+# hcso_lb_loadbalancer
 
 Use this data source to get available HuaweiCloud elb load balancer.
 
@@ -11,7 +11,7 @@ Use this data source to get available HuaweiCloud elb load balancer.
 ```hcl
 variable "lb_name" {}
 
-data "huaweicloud_lb_loadbalancer" "test" {
+data "hcso_lb_loadbalancer" "test" {
   name = var.lb_name
 }
 ```

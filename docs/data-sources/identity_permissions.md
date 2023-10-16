@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_permissions
+# hcso_identity_permissions
 
 Use this data source to get the available IAM [Permissions](https://support.huaweicloud.com/intl/en-us/productdesc-iam/iam_01_0023.html#section5),
 including roles and policies.
@@ -14,7 +14,7 @@ including roles and policies.
 ### Full Permissions of ECS Service
 
 ```hcl
-data "huaweicloud_identity_permissions" "ecs_full" {
+data "hcso_identity_permissions" "ecs_full" {
   name = "ECS FullAccess"
 }
 ```
@@ -22,7 +22,7 @@ data "huaweicloud_identity_permissions" "ecs_full" {
 ### All System Defined Permissions of ELB Service
 
 ```hcl
-data "huaweicloud_identity_permissions" "elb_all" {
+data "hcso_identity_permissions" "elb_all" {
   catalog = "ELB"
 }
 ```
@@ -30,7 +30,7 @@ data "huaweicloud_identity_permissions" "elb_all" {
 ### All Administrator Permissions
 
 ```hcl
-data "huaweicloud_identity_permissions" "all_adm" {
+data "hcso_identity_permissions" "all_adm" {
   name = "Administrator"
 }
 ```
@@ -38,7 +38,7 @@ data "huaweicloud_identity_permissions" "all_adm" {
 ### All Custom Policies
 
 ```hcl
-data "huaweicloud_identity_permissions" "custom" {
+data "hcso_identity_permissions" "custom" {
   type = "custom"
 }
 ```

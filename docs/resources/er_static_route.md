@@ -2,7 +2,7 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_static_route
+# hcso_er_static_route
 
 Manages a static route under the ER route table within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "route_table_id" {}
 variable "destination_vpc_cidr" {}
 variable "source_vpc_attachment_id" {}
 
-resource "huaweicloud_er_static_route" "test" {
+resource "hcso_er_static_route" "test" {
   route_table_id = var.route_table_id
   destination    = var.destination_vpc_cidr
   attachment_id  = var.source_vpc_attachment_id
@@ -28,7 +28,7 @@ resource "huaweicloud_er_static_route" "test" {
 variable "route_table_id" {}
 variable "destination_vpc_cidr" {}
 
-resource "huaweicloud_er_static_route" "test" {
+resource "hcso_er_static_route" "test" {
   route_table_id = var.route_table_id
   destination    = var.destination_vpc_cidr
   is_blackhole   = true
@@ -75,5 +75,5 @@ In addition to all arguments above, the following attributes are exported:
 Static routes can be imported using the related `route_table_id` and their `id`, separated by a slash (/), e.g.
 
 ```bash
-$ terraform import huaweicloud_er_static_route.test <route_table_id>/<id>
+$ terraform import hcso_er_static_route.test <route_table_id>/<id>
 ```

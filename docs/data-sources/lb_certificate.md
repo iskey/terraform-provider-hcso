@@ -2,7 +2,7 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_certificate
+# hcso_lb_certificate
 
 Use this data source to get the certificates in HuaweiCloud Elastic Load Balance (ELB).
 
@@ -11,7 +11,7 @@ Use this data source to get the certificates in HuaweiCloud Elastic Load Balance
 ```hcl
 variable "certificate_name" {}
 
-data "huaweicloud_lb_certificate" "test" {
+data "hcso_lb_certificate" "test" {
   name = var.certificate_name
   type = "server"
 }

@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_signature
+# hcso_apig_signature
 
 Manages a signature resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "signature_name" {}
 variable "signature_key" {}
 variable "signature_secret" {}
 
-resource "huaweicloud_apig_signature" "test" {
+resource "hcso_apig_signature" "test" {
   instance_id = var.instance_id
   name        = var.signature_name
   type        = "hmac"
@@ -31,7 +31,7 @@ resource "huaweicloud_apig_signature" "test" {
 variable "instance_id" {}
 variable "signature_name" {}
 
-resource "huaweicloud_apig_signature" "test" {
+resource "hcso_apig_signature" "test" {
   instance_id = var.instance_id
   name        = var.signature_name
   type        = "hmac"
@@ -46,7 +46,7 @@ variable "signature_name" {}
 variable "signature_key" {}
 variable "signature_secret" {}
 
-resource "huaweicloud_apig_signature" "test" {
+resource "hcso_apig_signature" "test" {
   instance_id = var.instance_id
   name        = var.signature_name
   type        = "aes"
@@ -118,5 +118,5 @@ In addition to all arguments above, the following attributes are exported:
 Signatures can be imported using their `id` and related dedicated instance ID, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_signature.test <instance_id>/<id>
+$ terraform import hcso_apig_signature.test <instance_id>/<id>
 ```

@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_resource_pool
+# hcso_modelarts_resource_pool
 
 Manages a ModelArts dedicated resource pool resource within HuaweiCloud.  
 
@@ -11,7 +11,7 @@ Manages a ModelArts dedicated resource pool resource within HuaweiCloud.
 ```hcl
 variable "modelarts_network_id" {}
 
-resource "huaweicloud_modelarts_resource_pool" "test" {
+resource "hcso_modelarts_resource_pool" "test" {
   name        = "demo"
   description = "This is a demo"
   scope       = ["Train", "Infer", "Notebook"]
@@ -93,5 +93,5 @@ This resource provides the following timeouts configuration options:
 The ModelArts resource pool can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_modelarts_resource_pool.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_modelarts_resource_pool.test 0ce123456a00f2591fabc00385ff1234
 ```

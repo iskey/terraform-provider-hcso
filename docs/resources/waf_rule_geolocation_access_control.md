@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_rule_geolocation_access_control
+# hcso_waf_rule_geolocation_access_control
 
 Manages a WAF rule geolocation access control resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ used. The geolocation access control rule resource can be used in Cloud Mode, De
 variable policy_id {}
 variable enterprise_project_id {}
 
-resource "huaweicloud_waf_rule_geolocation_access_control" "test" {
+resource "hcso_waf_rule_geolocation_access_control" "test" {
   policy_id             = var.policy_id
   enterprise_project_id = var.enterprise_project_id
   name                  = "test_rule"
@@ -86,11 +86,11 @@ There are two ways to import WAF rule geolocation access control state.
 * Using `policy_id` and `rule_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_geolocation_access_control.test <policy_id>/<rule_id>
+$ terraform import hcso_waf_rule_geolocation_access_control.test <policy_id>/<rule_id>
 ```
 
 * Using `policy_id`, `rule_id` and `enterprise_project_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_geolocation_access_control.test <policy_id>/<rule_id>/<enterprise_project_id>
+$ terraform import hcso_waf_rule_geolocation_access_control.test <policy_id>/<rule_id>/<enterprise_project_id>
 ```

@@ -1,24 +1,24 @@
-data "huaweicloud_availability_zones" "default" {}
+data "hcso_availability_zones" "default" {}
 
-resource "huaweicloud_vpc" "default" {
+resource "hcso_vpc" "default" {
   name = var.vpc_name
   cidr = "192.168.0.0/16"
 }
 
-resource "huaweicloud_vpc_subnet" "default" {
+resource "hcso_vpc_subnet" "default" {
   name       = var.subnet_name
   cidr       = "192.168.0.0/20"
   gateway_ip = "192.168.0.1"
-  vpc_id     = huaweicloud_vpc.default.id
+  vpc_id     = hcso_vpc.default.id
 }
 
-resource "huaweicloud_networking_secgroup" "default" {
+resource "hcso_networking_secgroup" "default" {
   name = var.security_group_name
 }
 
 # HTTP access from anywhere
-resource "huaweicloud_networking_secgroup_rule" "http_rule" {
-  security_group_id = huaweicloud_networking_secgroup.default.id
+resource "hcso_networking_secgroup_rule" "http_rule" {
+  security_group_id = hcso_networking_secgroup.default.id
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"
@@ -27,13 +27,13 @@ resource "huaweicloud_networking_secgroup_rule" "http_rule" {
   remote_ip_prefix  = "0.0.0.0/0"
 }
 
-data "huaweicloud_images_image" "default" {
+data "hcso_images_image" "default" {
   name        = var.ecs_image
   most_recent = true
 }
 
-data "huaweicloud_compute_flavors" "default" {
-  availability_zone = data.huaweicloud_availability_zones.default.names[0]
+data "hcso_compute_flavors" "default" {
+  availability_zone = data.hcso_availability_zones.default.names[0]
   performance_type  = "normal"
   cpu_core_count    = 2
   memory_size       = 4
@@ -48,21 +48,21 @@ resource "random_password" "password" {
   min_special      = 1
 }
 
-resource "huaweicloud_compute_instance" "default" {
+resource "hcso_compute_instance" "default" {
   name               = var.ecs_name
-  image_id           = data.huaweicloud_images_image.default.id
-  flavor_id          = data.huaweicloud_compute_flavors.default.ids[0]
-  security_group_ids = [huaweicloud_networking_secgroup.default.id]
-  availability_zone  = data.huaweicloud_availability_zones.default.names[0]
+  image_id           = data.hcso_images_image.default.id
+  flavor_id          = data.hcso_compute_flavors.default.ids[0]
+  security_group_ids = [hcso_networking_secgroup.default.id]
+  availability_zone  = data.hcso_availability_zones.default.names[0]
   system_disk_type   = "SSD"
   admin_pass         = random_password.password.result
 
   network {
-    uuid = huaweicloud_vpc_subnet.default.id
+    uuid = hcso_vpc_subnet.default.id
   }
 }
 
-resource "huaweicloud_vpc_eip" "default" {
+resource "hcso_vpc_eip" "default" {
   publicip {
     type = "5_bgp"
   }
@@ -74,20 +74,20 @@ resource "huaweicloud_vpc_eip" "default" {
   }
 }
 
-resource "huaweicloud_compute_eip_associate" "default" {
-  public_ip   = huaweicloud_vpc_eip.default.address
-  instance_id = huaweicloud_compute_instance.default.id
+resource "hcso_compute_eip_associate" "default" {
+  public_ip   = hcso_vpc_eip.default.address
+  instance_id = hcso_compute_instance.default.id
 }
 
 resource "null_resource" "provision" {
   depends_on = [
-    huaweicloud_compute_eip_associate.default
+    hcso_compute_eip_associate.default
   ]
   provisioner "remote-exec" {
     connection {
       user     = "root"
       password = random_password.password.result
-      host     = huaweicloud_vpc_eip.default.address
+      host     = hcso_vpc_eip.default.address
       port     = 22
     }
     inline = [
@@ -99,7 +99,7 @@ resource "null_resource" "provision" {
   }
 }
 
-resource "huaweicloud_fgs_function" "default" {
+resource "hcso_fgs_function" "default" {
   name        = var.function_name
   app         = "default"
   handler     = "index.handler"
@@ -136,29 +136,29 @@ def handler(event, context):
 EOF
 }
 
-resource "huaweicloud_apig_instance" "default" {
+resource "hcso_apig_instance" "default" {
   name              = var.apig_instance_name
   edition           = "BASIC"
-  vpc_id            = huaweicloud_vpc.default.id
-  subnet_id         = huaweicloud_vpc_subnet.default.id
-  security_group_id = huaweicloud_networking_secgroup.default.id
+  vpc_id            = hcso_vpc.default.id
+  subnet_id         = hcso_vpc_subnet.default.id
+  security_group_id = hcso_networking_secgroup.default.id
 
   available_zones = [
-    data.huaweicloud_availability_zones.default.names[0],
+    data.hcso_availability_zones.default.names[0],
   ]
 }
 
-resource "huaweicloud_apig_custom_authorizer" "default" {
-  instance_id  = huaweicloud_apig_instance.default.id
+resource "hcso_apig_custom_authorizer" "default" {
+  instance_id  = hcso_apig_instance.default.id
   name         = var.apig_auth_name
-  function_urn = huaweicloud_fgs_function.default.urn
+  function_urn = hcso_fgs_function.default.urn
   type         = "FRONTEND"
 }
 
-resource "huaweicloud_apig_response" "default" {
+resource "hcso_apig_response" "default" {
   name        = var.apig_response_name
-  instance_id = huaweicloud_apig_instance.default.id
-  group_id    = huaweicloud_apig_group.default.id
+  instance_id = hcso_apig_instance.default.id
+  group_id    = hcso_apig_group.default.id
 
   rule {
     error_type  = "AUTHORIZER_FAILURE"
@@ -167,13 +167,13 @@ resource "huaweicloud_apig_response" "default" {
   }
 }
 
-resource "huaweicloud_apig_group" "default" {
+resource "hcso_apig_group" "default" {
   name        = var.apig_group_name
-  instance_id = huaweicloud_apig_instance.default.id
+  instance_id = hcso_apig_instance.default.id
 }
 
-resource "huaweicloud_apig_vpc_channel" "default" {
-  instance_id = huaweicloud_apig_instance.default.id
+resource "hcso_apig_vpc_channel" "default" {
+  instance_id = hcso_apig_instance.default.id
   name        = var.apig_channel_name
   port        = 80
   member_type = "ECS"
@@ -182,13 +182,13 @@ resource "huaweicloud_apig_vpc_channel" "default" {
   http_code   = "200,401"
 
   members {
-    id = huaweicloud_compute_instance.default.id
+    id = hcso_compute_instance.default.id
   }
 }
 
-resource "huaweicloud_apig_api" "default" {
-  instance_id             = huaweicloud_apig_instance.default.id
-  group_id                = huaweicloud_apig_group.default.id
+resource "hcso_apig_api" "default" {
+  instance_id             = hcso_apig_instance.default.id
+  group_id                = hcso_apig_group.default.id
   type                    = "Public"
   name                    = var.apig_api_name
   request_protocol        = "BOTH"
@@ -196,8 +196,8 @@ resource "huaweicloud_apig_api" "default" {
   request_path            = "/terraform/users"
   security_authentication = "AUTHORIZER"
   matching                = "Exact"
-  response_id             = huaweicloud_apig_response.default.id
-  authorizer_id           = huaweicloud_apig_custom_authorizer.default.id
+  response_id             = hcso_apig_response.default.id
+  authorizer_id           = hcso_apig_custom_authorizer.default.id
 
   backend_params {
     type     = "SYSTEM"
@@ -209,7 +209,7 @@ resource "huaweicloud_apig_api" "default" {
   web {
     # ensure the backend server include this path or API debug will fail
     path             = "/backend/users"
-    vpc_channel_id   = huaweicloud_apig_vpc_channel.default.id
+    vpc_channel_id   = hcso_apig_vpc_channel.default.id
     request_method   = "GET"
     request_protocol = "HTTP"
     timeout          = 5000

@@ -2,7 +2,7 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_repository_sharing
+# hcso_swr_repository_sharing
 
 Manages a SWR repository sharing resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "organization_name" {}
 variable "repository_name" {}
 variable "sharing_account" {}
 
-resource "huaweicloud_swr_repository_sharing" "test" {
+resource "hcso_swr_repository_sharing" "test" {
   organization    = var.organization_name
   repository      = var.repository_name
   sharing_account = var.sharing_account
@@ -70,5 +70,5 @@ Repository sharing can be imported using the organization name, repository name 
 separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_swr_repository_sharing.test org-name/repo-name/sharing-account
+$ terraform import hcso_swr_repository_sharing.test org-name/repo-name/sharing-account
 ```

@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_l7rule
+# hcso_elb_l7rule
 
 Manages an ELB L7 Rule resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an ELB L7 Rule resource within HuaweiCloud.
 ```hcl
 variable l7policy_id {}
 
-resource "huaweicloud_elb_l7rule" "l7rule_1" {
+resource "hcso_elb_l7rule" "l7rule_1" {
   l7policy_id  = var.l7policy_id
   type         = "PATH"
   compare_type = "EQUAL_TO"
@@ -26,7 +26,7 @@ resource "huaweicloud_elb_l7rule" "l7rule_1" {
 ```hcl
 variable l7policy_id {}
 
-resource "huaweicloud_elb_l7rule" "l7rule_1" {
+resource "hcso_elb_l7rule" "l7rule_1" {
   l7policy_id  = var.l7policy_id
   type         = "HOST_NAME"
   compare_type = "EQUAL_TO"
@@ -42,7 +42,7 @@ resource "huaweicloud_elb_l7rule" "l7rule_1" {
 ```hcl
 variable l7policy_id {}
 
-resource "huaweicloud_elb_l7rule" "l7rule_1" {
+resource "hcso_elb_l7rule" "l7rule_1" {
   l7policy_id  = var.l7policy_id
   type         = "HEADER"
   compare_type = "EQUAL_TO"
@@ -59,7 +59,7 @@ resource "huaweicloud_elb_l7rule" "l7rule_1" {
 ```hcl
 variable l7policy_id {}
 
-resource "huaweicloud_elb_l7rule" "l7rule_1" {
+resource "hcso_elb_l7rule" "l7rule_1" {
   l7policy_id  = var.l7policy_id
   type         = "SOURCE_IP"
   compare_type = "EQUAL_TO"
@@ -175,5 +175,5 @@ This resource provides the following timeouts configuration options:
 ELB L7 rule can be imported using the `l7policy_id` and `id` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_elb_rule.rule_1 <l7policy_id>/<id>
+$ terraform import hcso_elb_rule.rule_1 <l7policy_id>/<id>
 ```

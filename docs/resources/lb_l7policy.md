@@ -2,39 +2,39 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_l7policy
+# hcso_lb_l7policy
 
 Manages an ELB L7 Policy resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_lb_loadbalancer" "loadbalancer_1" {
+resource "hcso_lb_loadbalancer" "loadbalancer_1" {
   name          = "loadbalancer_1"
   vip_subnet_id = var.subnet_id
 }
 
-resource "huaweicloud_lb_listener" "listener_1" {
+resource "hcso_lb_listener" "listener_1" {
   name            = "listener_1"
   protocol        = "HTTP"
   protocol_port   = 8080
-  loadbalancer_id = huaweicloud_lb_loadbalancer.loadbalancer_1.id
+  loadbalancer_id = hcso_lb_loadbalancer.loadbalancer_1.id
 }
 
-resource "huaweicloud_lb_pool" "pool_1" {
+resource "hcso_lb_pool" "pool_1" {
   name            = "pool_1"
   protocol        = "HTTP"
   lb_method       = "ROUND_ROBIN"
-  loadbalancer_id = huaweicloud_lb_loadbalancer.loadbalancer_1.id
+  loadbalancer_id = hcso_lb_loadbalancer.loadbalancer_1.id
 }
 
-resource "huaweicloud_lb_l7policy" "l7policy_1" {
+resource "hcso_lb_l7policy" "l7policy_1" {
   name             = "test"
   action           = "REDIRECT_TO_POOL"
   description      = "test l7 policy"
   position         = 1
-  listener_id      = huaweicloud_lb_listener.listener_1.id
-  redirect_pool_id = huaweicloud_lb_pool.pool_1.id
+  listener_id      = hcso_lb_listener.listener_1.id
+  redirect_pool_id = hcso_lb_pool.pool_1.id
 }
 ```
 
@@ -92,5 +92,5 @@ This resource provides the following timeouts configuration options:
 Load Balancer L7 Policy can be imported using the L7 Policy ID, e.g.:
 
 ```
-$ terraform import huaweicloud_lb_l7policy.l7policy_1 8a7a79c2-cf17-4e65-b2ae-ddc8bfcf6c74
+$ terraform import hcso_lb_l7policy.l7policy_1 8a7a79c2-cf17-4e65-b2ae-ddc8bfcf6c74
 ```

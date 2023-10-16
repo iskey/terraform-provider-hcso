@@ -2,7 +2,7 @@
 subcategory: "Domain Name Service (DNS)"
 ---
 
-# huaweicloud_dns_zones
+# hcso_dns_zones
 
 Use this data source to get the list of DNS zones.
 
@@ -12,7 +12,7 @@ Use this data source to get the list of DNS zones.
 variable "zone_type" {}
 variable "enterprise_project_id" {}
 
-data "huaweicloud_dns_zones" "test" {
+data "hcso_dns_zones" "test" {
   zone_type             = var.zone_type
   enterprise_project_id = var.enterprise_project_id
 }

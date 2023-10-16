@@ -2,16 +2,16 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_vpc_route
+# hcso_vpc_route
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc_route_table` to get the route details.
+!> **WARNING:** It has been deprecated, use `hcso_vpc_route_table` to get the route details.
 
 Provides details about a specific VPC route.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_vpc_route" "vpc_route" {
+data "hcso_vpc_route" "vpc_route" {
   vpc_id = var.vpc_id
 }
 ```

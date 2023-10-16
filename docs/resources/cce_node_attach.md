@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_node_attach
+# hcso_cce_node_attach
 
 Add a node from an existing ECS server to a CCE cluster.
 
@@ -13,7 +13,7 @@ variable "cluster_id" {}
 variable "server_id" {}
 variable "keypair_name" {}
 
-resource "huaweicloud_cce_node_attach" "test" {
+resource "hcso_cce_node_attach" "test" {
   cluster_id = var.cluster_id
   server_id  = var.server_id
   key_pair   = var.keypair_name

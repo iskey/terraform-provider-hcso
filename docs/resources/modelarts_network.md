@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_network
+# hcso_modelarts_network
 
 Manages a Modelarts network resource within HuaweiCloud.  
 A maximum of 15 networks can be created.
@@ -12,7 +12,7 @@ A maximum of 15 networks can be created.
 ```hcl
 variable "cidr" {}
 
-resource "huaweicloud_modelarts_network" "test" {
+resource "hcso_modelarts_network" "test" {
   name = "demo"
   cidr = var.cidr
 }
@@ -75,5 +75,5 @@ This resource provides the following timeouts configuration options:
 The modelarts network can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_modelarts_network.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_modelarts_network.test 0ce123456a00f2591fabc00385ff1234
 ```

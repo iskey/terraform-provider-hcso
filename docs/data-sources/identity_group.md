@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_group
+# hcso_identity_group
 
 Use this data source to get details of the specified IAM user group.
 
@@ -11,7 +11,7 @@ Use this data source to get details of the specified IAM user group.
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identity_group" "group" {
+data "hcso_identity_group" "group" {
   name = "my_group"
 }
 ```

@@ -2,7 +2,7 @@
 subcategory: "Distributed Database Middleware (DDM)"
 ---
 
-# huaweicloud_ddm_instances
+# hcso_ddm_instances
 
 Use this data source to get the list of DDM instances.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of DDM instances.
 ```hcl
 variable "instance_name" {}
 
-data "huaweicloud_ddm_instances" test {
+data "hcso_ddm_instances" test {
   name = var.instance_name
 }
 ```

@@ -2,43 +2,43 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_l7rule
+# hcso_lb_l7rule
 
 Manages an ELB L7 Rule resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_lb_loadbalancer" "loadbalancer_1" {
+resource "hcso_lb_loadbalancer" "loadbalancer_1" {
   name          = "loadbalancer_1"
   vip_subnet_id = var.subnet_id
 }
 
-resource "huaweicloud_lb_listener" "listener_1" {
+resource "hcso_lb_listener" "listener_1" {
   name            = "listener_1"
   protocol        = "HTTP"
   protocol_port   = 8080
-  loadbalancer_id = huaweicloud_lb_loadbalancer.loadbalancer_1.id
+  loadbalancer_id = hcso_lb_loadbalancer.loadbalancer_1.id
 }
 
-resource "huaweicloud_lb_pool" "pool_1" {
+resource "hcso_lb_pool" "pool_1" {
   name            = "pool_1"
   protocol        = "HTTP"
   lb_method       = "ROUND_ROBIN"
-  loadbalancer_id = huaweicloud_lb_loadbalancer.loadbalancer_1.id
+  loadbalancer_id = hcso_lb_loadbalancer.loadbalancer_1.id
 }
 
-resource "huaweicloud_lb_l7policy" "l7policy_1" {
+resource "hcso_lb_l7policy" "l7policy_1" {
   name             = "test"
   action           = "REDIRECT_TO_POOL"
   description      = "test l7 policy"
   position         = 1
-  listener_id      = huaweicloud_lb_listener.listener_1.id
-  redirect_pool_id = huaweicloud_lb_pool.pool_1.id
+  listener_id      = hcso_lb_listener.listener_1.id
+  redirect_pool_id = hcso_lb_pool.pool_1.id
 }
 
-resource "huaweicloud_lb_l7rule" "l7rule_1" {
-  l7policy_id  = huaweicloud_lb_l7policy.l7policy_1.id
+resource "hcso_lb_l7rule" "l7rule_1" {
+  l7policy_id  = hcso_lb_l7policy.l7policy_1.id
   type         = "PATH"
   compare_type = "EQUAL_TO"
   value        = "/api"
@@ -87,5 +87,5 @@ This resource provides the following timeouts configuration options:
 Load Balancer L7 Rule can be imported using the L7 Policy ID and L7 Rule ID separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_lb_l7rule.l7rule_1 e0bd694a-abbe-450e-b329-0931fd1cc5eb/4086b0c9-b18c-4d1c-b6b8-4c56c3ad2a9e
+$ terraform import hcso_lb_l7rule.l7rule_1 e0bd694a-abbe-450e-b329-0931fd1cc5eb/4086b0c9-b18c-4d1c-b6b8-4c56c3ad2a9e
 ```

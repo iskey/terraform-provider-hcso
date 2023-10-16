@@ -2,7 +2,7 @@
 subcategory: "VPC Endpoint (VPCEP)"
 ---
 
-# huaweicloud_vpcep_approval
+# hcso_vpcep_approval
 
 Provides a resource to manage the VPC endpoint connections.
 
@@ -14,7 +14,7 @@ variable "vm_port" {}
 variable "vpc_id" {}
 variable "network_id" {}
 
-resource "huaweicloud_vpcep_service" "demo" {
+resource "hcso_vpcep_service" "demo" {
   name        = "demo-service"
   server_type = "VM"
   vpc_id      = var.service_vpc_id
@@ -27,8 +27,8 @@ resource "huaweicloud_vpcep_service" "demo" {
   }
 }
 
-resource "huaweicloud_vpcep_endpoint" "demo" {
-  service_id = huaweicloud_vpcep_service.demo.id
+resource "hcso_vpcep_endpoint" "demo" {
+  service_id = hcso_vpcep_service.demo.id
   vpc_id     = var.vpc_id
   network_id = var.network_id
   enable_dns = true
@@ -42,9 +42,9 @@ resource "huaweicloud_vpcep_endpoint" "demo" {
   }
 }
 
-resource "huaweicloud_vpcep_approval" "approval" {
-  service_id = huaweicloud_vpcep_service.demo.id
-  endpoints  = [huaweicloud_vpcep_endpoint.demo.id]
+resource "hcso_vpcep_approval" "approval" {
+  service_id = hcso_vpcep_service.demo.id
+  endpoints  = [hcso_vpcep_endpoint.demo.id]
 }
 ```
 
@@ -86,5 +86,5 @@ This resource provides the following timeouts configuration options:
 VPC endpoint approval can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_vpcep_approval.test <id>
+$ terraform import hcso_vpcep_approval.test <id>
 ```

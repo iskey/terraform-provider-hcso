@@ -2,7 +2,7 @@
 subcategory: "Ubiquitous Cloud Native Service (UCS)"
 ---
 
-# huaweicloud_ucs_fleet
+# hcso_ucs_fleet
 
 Manages a UCS fleet resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a UCS fleet resource within HuaweiCloud.
 ### Basic Usage
 
 ```hcl
-resource "huaweicloud_ucs_fleet" "test" {
+resource "hcso_ucs_fleet" "test" {
   name        = "fleet_1"
   description = "created by terraform"
 }
@@ -24,7 +24,7 @@ variable "policy_id_1" {}
 variable "policy_id_2" {}
 variable "policy_id_3" {}
 
-resource "huaweicloud_ucs_fleet" "test" {
+resource "hcso_ucs_fleet" "test" {
   name        = "fleet_1"
   description = "created by terraform"
 
@@ -72,5 +72,5 @@ In addition to all arguments above, the following attributes are exported:
 The UCS fleet can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ucs_fleet.test dbd042ec-2474-11ee-9d1c-0255ac1000ce
+$ terraform import hcso_ucs_fleet.test dbd042ec-2474-11ee-9d1c-0255ac1000ce
 ```

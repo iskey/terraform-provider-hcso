@@ -2,7 +2,7 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_listeners
+# hcso_lb_listeners
 
 Use this data source to query the list of ELB listeners.
 
@@ -11,7 +11,7 @@ Use this data source to query the list of ELB listeners.
 ```
 variable "protocol" {}
 
-data "huaweicloud_lb_listeners" "test" {
+data "hcso_lb_listeners" "test" {
   protocol  = var.protocol
 }
 ```

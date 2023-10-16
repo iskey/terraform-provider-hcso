@@ -2,7 +2,7 @@
 subcategory: "MapReduce Service (MRS)"
 ---
 
-# huaweicloud_mapreduce_cluster
+# hcso_mapreduce_cluster
 
 Manages a cluster resource within HuaweiCloud MRS.
 
@@ -11,15 +11,15 @@ Manages a cluster resource within HuaweiCloud MRS.
 ### Create an analysis cluster
 
 ```hcl
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
 variable "cluster_name" {}
 variable "password" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_mapreduce_cluster" "test" {
-  availability_zone  = data.huaweicloud_availability_zones.test.names[0]
+resource "hcso_mapreduce_cluster" "test" {
+  availability_zone  = data.hcso_availability_zones.test.names[0]
   name               = var.cluster_name
   version            = "MRS 1.9.2"
   type               = "ANALYSIS"
@@ -67,15 +67,15 @@ resource "huaweicloud_mapreduce_cluster" "test" {
 ### Create a stream cluster
 
 ```hcl
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
 variable "cluster_name" {}
 variable "password" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_mapreduce_cluster" "test" {
-  availability_zone  = data.huaweicloud_availability_zones.test.names[0]
+resource "hcso_mapreduce_cluster" "test" {
+  availability_zone  = data.hcso_availability_zones.test.names[0]
   name               = var.cluster_name
   type               = "STREAMING"
   version            = "MRS 1.9.2"
@@ -114,15 +114,15 @@ resource "huaweicloud_mapreduce_cluster" "test" {
 ### Create a hybrid cluster
 
 ```hcl
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
 variable "cluster_name" {}
 variable "password" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_mapreduce_cluster" "test" {
-  availability_zone  = data.huaweicloud_availability_zones.test.names[0]
+resource "hcso_mapreduce_cluster" "test" {
+  availability_zone  = data.hcso_availability_zones.test.names[0]
   name               = var.cluster_name
   version            = "MRS 1.9.2"
   type               = "MIXED"
@@ -188,15 +188,15 @@ resource "huaweicloud_mapreduce_cluster" "test" {
 ### Create a custom cluster
 
 ```hcl
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
 variable "cluster_name" {}
 variable "password" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_mapreduce_cluster" "test" {
-  availability_zone  = data.huaweicloud_availability_zones.test.names[0]
+resource "hcso_mapreduce_cluster" "test" {
+  availability_zone  = data.hcso_availability_zones.test.names[0]
   name               = var.cluster_name
   version            = "MRS 3.1.0"
   type               = "CUSTOM"
@@ -263,7 +263,7 @@ resource "huaweicloud_mapreduce_cluster" "test" {
 ### Create an analysis cluster and bind public IP
 
 ```hcl
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
 variable "cluster_name" {}
 variable "password" {}
@@ -271,8 +271,8 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "public_ip" {}
 
-resource "huaweicloud_mapreduce_cluster" "test" {
-  availability_zone  = data.huaweicloud_availability_zones.test.names[0]
+resource "hcso_mapreduce_cluster" "test" {
+  availability_zone  = data.hcso_availability_zones.test.names[0]
   name               = var.cluster_name
   version            = "MRS 1.9.2"
   type               = "ANALYSIS"
@@ -626,7 +626,7 @@ This resource provides the following timeouts configuration options:
 Clusters can be imported by their `id`. For example,
 
 ```bash
-terraform import huaweicloud_mapreduce_cluster.test b11b407c-e604-4e8d-8bc4-92398320b847
+terraform import hcso_mapreduce_cluster.test b11b407c-e604-4e8d-8bc4-92398320b847
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -637,7 +637,7 @@ You can then decide if changes should be applied to the cluster, or the resource
 should be updated to align with the cluster. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_mapreduce_cluster" "test" {
+resource "hcso_mapreduce_cluster" "test" {
     ...
 
   lifecycle {

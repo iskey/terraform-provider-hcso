@@ -2,7 +2,7 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_audit_log_policy
+# hcso_dds_audit_log_policy
 
 Manages a DDS audit log policy resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a DDS audit log policy resource within HuaweiCloud.
 variable "instance_id" {}
 variable "keep_days" {}
 
-resource "huaweicloud_dds_audit_log_policy" "test"{
+resource "hcso_dds_audit_log_policy" "test"{
   instance_id = var.instance_id
   keep_days   = var.keep_days
 }
@@ -65,5 +65,5 @@ In addition to all arguments above, the following attributes are exported:
 The DDS audit log policy can be imported using the instance ID, e.g.:
 
 ```bash
-$ terraform import huaweicloud_dds_audit_log.test <instance_id>
+$ terraform import hcso_dds_audit_log.test <instance_id>
 ```

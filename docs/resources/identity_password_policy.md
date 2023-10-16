@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_password_policy
+# hcso_identity_password_policy
 
 Manages the account password policy within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages the account password policy within HuaweiCloud.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_identity_password_policy" "enhanced" {
+resource "hcso_identity_password_policy" "enhanced" {
   password_char_combination             = 4
   minimum_password_length               = 12
   number_of_recent_passwords_disallowed = 2
@@ -65,5 +65,5 @@ In addition to all arguments above, the following attributes are exported:
 Identity password policy can be imported using the account ID or domain ID, e.g.
 
 ```bash
-$ terraform import huaweicloud_identity_password_policy.example <your account ID>
+$ terraform import hcso_identity_password_policy.example <your account ID>
 ```

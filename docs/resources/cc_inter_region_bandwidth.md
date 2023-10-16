@@ -2,7 +2,7 @@
 subcategory: "Cloud Connect (CC)"
 ---
 
-# huaweicloud_cc_inter_region_bandwidth
+# hcso_cc_inter_region_bandwidth
 
 Manages an inter-region bandwidth resource of Cloud Connect within HuaweiCloud.  
 
@@ -19,7 +19,7 @@ variable "bandwidth_package_id" {}
 variable "region_local" {}
 variable "region_remote" {}
 
-resource "huaweicloud_cc_inter_region_bandwidth" "test" {
+resource "hcso_cc_inter_region_bandwidth" "test" {
   cloud_connection_id  = var.cloud_connection_id
   bandwidth_package_id = var.bandwidth_package_id
   bandwidth            = 5
@@ -73,5 +73,5 @@ The `inter_regions` block supports:
 The inter-region bandwidth can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cc_inter_region_bandwidth.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_cc_inter_region_bandwidth.test 0ce123456a00f2591fabc00385ff1234
 ```

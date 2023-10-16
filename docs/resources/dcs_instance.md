@@ -2,7 +2,7 @@
 subcategory: "Distributed Cache Service (DCS)"
 ---
 
-# huaweicloud_dcs_instance
+# hcso_dcs_instance
 
 Manages a DCS instance within HuaweiCloud.
 
@@ -18,17 +18,17 @@ You can use this resource to manage Memcached instances that exist in HuaweiClou
 variable vpc_id {}
 variable subnet_id {}
 
-data "huaweicloud_dcs_flavors" "single_flavors" {
+data "hcso_dcs_flavors" "single_flavors" {
   cache_mode = "single"
   capacity   = 0.125
 }
 
-resource "huaweicloud_dcs_instance" "instance_1" {
+resource "hcso_dcs_instance" "instance_1" {
   name               = "redis_single_instance"
   engine             = "Redis"
   engine_version     = "5.0"
-  capacity           = data.huaweicloud_dcs_flavors.single_flavors.capacity
-  flavor             = data.huaweicloud_dcs_flavors.single_flavors.flavors[0].name
+  capacity           = data.hcso_dcs_flavors.single_flavors.capacity
+  flavor             = data.hcso_dcs_flavors.single_flavors.flavors[0].name
   availability_zones = ["cn-north-1a"]
   password           = "YourPassword@123"
   vpc_id             = var.vpc_id
@@ -42,7 +42,7 @@ resource "huaweicloud_dcs_instance" "instance_1" {
 variable vpc_id {}
 variable subnet_id {}
 
-resource "huaweicloud_dcs_instance" "instance_2" {
+resource "hcso_dcs_instance" "instance_2" {
   name               = "redis_name"
   engine             = "Redis"
   engine_version     = "5.0"
@@ -108,7 +108,7 @@ The following arguments are supported:
 * `flavor` - (Required, String) The flavor of the cache instance, which including the total memory, available memory,
   maximum number of connections allowed, maximum/assured bandwidth and reference performance.
   It also includes the modes of Redis instances. You can query the *flavor* as follows:
-  + It can be obtained through this data source `huaweicloud_dcs_flavors`.
+  + It can be obtained through this data source `hcso_dcs_flavors`.
   + Query some flavors
     in [DCS Instance Specifications](https://support.huaweicloud.com/intl/en-us/productdesc-dcs/dcs-pd-200713003.html)
   + Log in to the DCS console, click *Buy DCS Instance*, and find the corresponding instance specification.
@@ -290,7 +290,7 @@ This resource provides the following timeouts configuration options:
 DCS instance can be imported using the `id`, e.g.
 
 ```bash
-terraform import huaweicloud_dcs_instance.instance_1 80e373f9-872e-4046-aae9-ccd9ddc55511
+terraform import hcso_dcs_instance.instance_1 80e373f9-872e-4046-aae9-ccd9ddc55511
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -302,7 +302,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dcs_instance" "instance_1" {
+resource "hcso_dcs_instance" "instance_1" {
     ...
 
   lifecycle {

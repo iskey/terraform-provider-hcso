@@ -2,7 +2,7 @@
 subcategory: "VPC Endpoint (VPCEP)"
 ---
 
-# huaweicloud_vpcep_service
+# hcso_vpcep_service
 
 Provides a resource to manage a VPC endpoint service resource.
 
@@ -12,7 +12,7 @@ Provides a resource to manage a VPC endpoint service resource.
 variable "vpc_id" {}
 variable "vm_port" {}
 
-resource "huaweicloud_vpcep_service" "demo" {
+resource "hcso_vpcep_service" "demo" {
   name        = "demo-service"
   server_type = "VM"
   vpc_id      = var.vpc_id
@@ -104,5 +104,5 @@ This resource provides the following timeouts configuration options:
 VPC endpoint services can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_vpcep_service.test_service <id>
+$ terraform import hcso_vpcep_service.test_service <id>
 ```

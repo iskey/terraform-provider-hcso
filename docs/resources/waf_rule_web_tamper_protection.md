@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_rule_web_tamper_protection
+# hcso_waf_rule_web_tamper_protection
 
 Manages a WAF web tamper protection rule resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ used. The web tamper protection rule resource can be used in Cloud Mode, Dedicat
 variable "enterprise_project_id" {}
 variable "policy_id" {}
 
-resource "huaweicloud_waf_rule_web_tamper_protection" "rule_1" {
+resource "hcso_waf_rule_web_tamper_protection" "rule_1" {
   policy_id             = var.policy_id
   enterprise_project_id = var.enterprise_project_id
   domain                = "www.your-domain.com"
@@ -53,11 +53,11 @@ There are two ways to import WAF rule web tamper protection state.
 * Using `policy_id` and `rule_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_web_tamper_protection.test <policy_id>/<rule_id>
+$ terraform import hcso_waf_rule_web_tamper_protection.test <policy_id>/<rule_id>
 ```
 
 * Using `policy_id`, `rule_id` and `enterprise_project_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_web_tamper_protection.test <policy_id>/<rule_id>/<enterprise_project_id>
+$ terraform import hcso_waf_rule_web_tamper_protection.test <policy_id>/<rule_id>/<enterprise_project_id>
 ```

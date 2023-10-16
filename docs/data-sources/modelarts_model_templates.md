@@ -2,14 +2,14 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_model_templates
+# hcso_modelarts_model_templates
 
 Use this data source to get model templates of ModelArts.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_modelarts_model_templates" "test" {
+data "hcso_modelarts_model_templates" "test" {
   type = "Classification"
 }
 ```

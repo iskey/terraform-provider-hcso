@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_sql_audit
+# hcso_rds_sql_audit
 
 Manages RDS SQL audit resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages RDS SQL audit resource within HuaweiCloud.
 ```hcl
 variable "instance_id" {}
 
-resource "huaweicloud_rds_sql_audit" "test" {
+resource "hcso_rds_sql_audit" "test" {
   instance_id = var.instance_id
   keep_days   = 5
 }
@@ -59,5 +59,5 @@ This resource provides the following timeouts configuration options:
 The RDS SQL audit can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_rds_sql_audit.test <id>
+$ terraform import hcso_rds_sql_audit.test <id>
 ```

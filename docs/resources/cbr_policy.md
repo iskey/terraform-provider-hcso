@@ -2,7 +2,7 @@
 subcategory: "Cloud Backup and Recovery (CBR)"
 ---
 
-# huaweicloud_cbr_policy
+# hcso_cbr_policy
 
 Manages a CBR Policy resource within Huaweicloud.
 
@@ -13,7 +13,7 @@ Manages a CBR Policy resource within Huaweicloud.
 ```hcl
 variable "policy_name" {}
 
-resource "huaweicloud_cbr_policy" "test" {
+resource "hcso_cbr_policy" "test" {
   name        = var.policy_name
   type        = "backup"
   time_period = 20
@@ -33,7 +33,7 @@ variable "policy_name" {}
 variable "destination_region" {}
 variable "destination_project_id" {}
 
-resource "huaweicloud_cbr_policy" "test" {
+resource "hcso_cbr_policy" "test" {
   name                   = var.policy_name
   type                   = "replication"
   destination_region     = var.destination_region
@@ -139,7 +139,7 @@ In addition to all arguments above, the following attributes are exported:
 Policies can be imported by their `id`. For example,
 
 ```
-terraform import huaweicloud_cbr_policy.test 4d2c2939-774f-42ef-ab15-e5b126b11ace
+terraform import hcso_cbr_policy.test 4d2c2939-774f-42ef-ab15-e5b126b11ace
 ```
 
 Note that the imported state may not be identical to your resource definition, due to the attribute missing from the
@@ -149,7 +149,7 @@ You can then decide if changes should be applied to the policy, or the resource 
 with the policy. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cbr_policy" "test" {
+resource "hcso_cbr_policy" "test" {
   ...
 
   lifecycle {

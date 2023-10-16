@@ -2,7 +2,7 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_bandwidth_policy
+# hcso_as_bandwidth_policy
 
 Manages an AS bandwidth scaling policy resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ Manages an AS bandwidth scaling policy resource within HuaweiCloud.
 ```hcl
 variable "bandwidth_id" {}
 
-resource "huaweicloud_as_bandwidth_policy" "bw_policy" {
+resource "hcso_as_bandwidth_policy" "bw_policy" {
   scaling_policy_name = "bw_policy"
   scaling_policy_type = "RECURRENCE"
   bandwidth_id        = var.bandwidth_id
@@ -40,7 +40,7 @@ resource "huaweicloud_as_bandwidth_policy" "bw_policy" {
 ```hcl
 variable "bandwidth_id" {}
 
-resource "huaweicloud_as_bandwidth_policy" "bw_policy" {
+resource "hcso_as_bandwidth_policy" "bw_policy" {
   scaling_policy_name = "bw_policy"
   scaling_policy_type = "SCHEDULED"
   bandwidth_id        = var.bandwidth_id
@@ -62,7 +62,7 @@ resource "huaweicloud_as_bandwidth_policy" "bw_policy" {
 variable "bandwidth_id" {}
 variable "alarm_id" {}
 
-resource "huaweicloud_as_bandwidth_policy" "test" {
+resource "hcso_as_bandwidth_policy" "test" {
   scaling_policy_name = "bw_policy"
   scaling_policy_type = "ALARM"
   bandwidth_id        = var.bandwidth_id
@@ -172,5 +172,5 @@ In addition to all arguments above, the following attributes are exported:
 The bandwidth scaling policies can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_as_bandwidth_policy.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_as_bandwidth_policy.test 0ce123456a00f2591fabc00385ff1234
 ```

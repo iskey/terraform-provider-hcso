@@ -2,14 +2,14 @@
 subcategory: "Media Processing Center (MPC)"
 ---
 
-# huaweicloud_mpc_transcoding_template
+# hcso_mpc_transcoding_template
 
 Manages an MPC transcoding template resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_mpc_transcoding_template" "test" {
+resource "hcso_mpc_transcoding_template" "test" {
   name = "test"
   low_bitrate_hd        = true
   dash_segment_duration = 5
@@ -191,5 +191,5 @@ In addition to all arguments above, the following attributes are exported:
 MPC transcoding templates can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_mpc_transcoding_template.test 542899
+$ terraform import hcso_mpc_transcoding_template.test 542899
 ```

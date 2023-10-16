@@ -2,7 +2,7 @@
 subcategory: "Data Security Center (DSC)"
 ---
 
-# huaweicloud_dsc_asset_obs
+# hcso_dsc_asset_obs
 
 Manages an OBS asset resource of DSC within HuaweiCloud.  
 
@@ -12,7 +12,7 @@ Manages an OBS asset resource of DSC within HuaweiCloud.
 variable "name" {}
 variable "bucket_name" {}
 
-resource "huaweicloud_dsc_asset_obs" "test" {
+resource "hcso_dsc_asset_obs" "test" {
   name          = var.name
   bucket_name   = var.bucket_name
   bucket_policy = "private"
@@ -47,5 +47,5 @@ In addition to all arguments above, the following attributes are exported:
 The obs asset can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_dsc_asset_obs.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_dsc_asset_obs.test 0ce123456a00f2591fabc00385ff1234
 ```

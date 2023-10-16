@@ -2,7 +2,7 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_notification
+# hcso_as_notification
 
 Manages an AS notification resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "events" {
   type = list(string)
 }
 
-resource "huaweicloud_as_notification" "test" {
+resource "hcso_as_notification" "test" {
   scaling_group_id = var.scaling_group_id
   topic_urn        = var.topic_urn
   events           = var.events
@@ -51,5 +51,5 @@ In addition to all arguments above, the following attributes are exported:
 The as notification can be imported using `scaling_group_id`, `topic_urn`, separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_as_notification.test <scaling_group_id>/<topic_urn>
+$ terraform import hcso_as_notification.test <scaling_group_id>/<topic_urn>
 ```

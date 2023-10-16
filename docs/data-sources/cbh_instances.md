@@ -2,7 +2,7 @@
 subcategory: "Cloud Bastion Host (CBH)"
 ---
 
-# huaweicloud_cbh_instances
+# hcso_cbh_instances
 
 Use this data source to get the list of CBH instance.
 
@@ -13,7 +13,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "security_group_id" {}
 
-data "huaweicloud_cbh_instances" "test" {
+data "hcso_cbh_instances" "test" {
   name              = "test_name"
   vpc_id            = var.vpc_id
   subnet_id         = var.subnet_id

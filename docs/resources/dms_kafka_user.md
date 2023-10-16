@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_kafka_user
+# hcso_dms_kafka_user
 
 Manages a DMS kafka user resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a DMS kafka user resource within HuaweiCloud.
 ```hcl
 variable "kafka_instance_id" {}
 
-resource "huaweicloud_dms_kafka_user" "user" {
+resource "hcso_dms_kafka_user" "user" {
   instance_id = var.kafka_instance_id
   name        = "user_1"
   password    = "Test@123"
@@ -45,5 +45,5 @@ In addition to all arguments above, the following attributes are exported:
 DMS kafka users can be imported using the kafka instance ID and user name separated by a slash, e.g.
 
 ```
-terraform import huaweicloud_dms_kafka_user.user c8057fe5-23a8-46ef-ad83-c0055b4e0c5c/user_1
+terraform import hcso_dms_kafka_user.user c8057fe5-23a8-46ef-ad83-c0055b4e0c5c/user_1
 ```

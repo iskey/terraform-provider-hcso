@@ -2,7 +2,7 @@
 subcategory: "Live"
 ---
 
-# huaweicloud_live_domain
+# hcso_live_domain
 
 Manages a Live domain within HuaweiCloud.
 
@@ -14,15 +14,15 @@ Manages a Live domain within HuaweiCloud.
 variable "ingest_domain_name" {}
 variable "streaming_domain_name" {}
 
-resource "huaweicloud_live_domain" "ingestDomain" {
+resource "hcso_live_domain" "ingestDomain" {
   name = var.ingest_domain_name
   type = "push"
 }
 
-resource "huaweicloud_live_domain" "streamingDomain" {
+resource "hcso_live_domain" "streamingDomain" {
   name               = var.streaming_domain_name
   type               = "pull"
-  ingest_domain_name = huaweicloud_live_domain.ingestDomain.name
+  ingest_domain_name = hcso_live_domain.ingestDomain.name
 }
 ```
 
@@ -75,5 +75,5 @@ This resource provides the following timeouts configuration options:
 Domains can be imported using the `name`, e.g.
 
 ```
-$ terraform import huaweicloud_live_domain.test domainName
+$ terraform import hcso_live_domain.test domainName
 ```

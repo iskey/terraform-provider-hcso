@@ -2,7 +2,7 @@
 subcategory: "Storage Disaster Recovery Service (SDRS)"
 ---
 
-# huaweicloud_sdrs_drill
+# hcso_sdrs_drill
 
 Manages an SDRS DR drill resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ refer to [document](https://support.huaweicloud.com/intl/en-us/qs-sdrs/en-us_top
 ```hcl
 variable "group_id" {}
 
-resource "huaweicloud_sdrs_drill" "test" {
+resource "hcso_sdrs_drill" "test" {
   name     = "test-drill"
   group_id = var.group_id
 }
@@ -69,5 +69,5 @@ This resource provides the following timeouts configuration options:
 The SDRS DR drill can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_sdrs_drill.test <id>
+$ terraform import hcso_sdrs_drill.test <id>
 ```

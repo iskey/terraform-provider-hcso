@@ -2,7 +2,7 @@
 subcategory: Cloud Connect (CC)
 ---
 
-# huaweicloud_cc_connection
+# hcso_cc_connection
 
 Manages a Cloud Connection resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ between VPCs across regions and between VPCs and on-premises data centers.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_cc_connection" "test" {
+resource "hcso_cc_connection" "test" {
    name = "connection_demo"
 }
 ```
@@ -63,5 +63,5 @@ In addition to all arguments above, the following attributes are exported:
 The cloud connection can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_cc_connection.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_cc_connection.test 0ce123456a00f2591fabc00385ff1234
 ```

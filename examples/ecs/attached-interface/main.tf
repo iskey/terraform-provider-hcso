@@ -1,49 +1,49 @@
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_compute_flavors" "myflavor" {
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+data "hcso_compute_flavors" "myflavor" {
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   performance_type  = "normal"
   cpu_core_count    = 2
   memory_size       = 4
 }
 
-data "huaweicloud_vpc_subnet" "mynet" {
+data "hcso_vpc_subnet" "mynet" {
   name = "subnet-default"
 }
 
-data "huaweicloud_images_image" "myimage" {
+data "hcso_images_image" "myimage" {
   name        = "Ubuntu 18.04 server 64bit"
   most_recent = true
 }
 
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name              = "basic"
-  image_id          = data.huaweicloud_images_image.myimage.id
-  flavor_id         = data.huaweicloud_compute_flavors.myflavor.ids[0]
+  image_id          = data.hcso_images_image.myimage.id
+  flavor_id         = data.hcso_compute_flavors.myflavor.ids[0]
   security_groups   = ["default"]
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
 
   network {
-    uuid = data.huaweicloud_vpc_subnet.mynet.id
+    uuid = data.hcso_vpc_subnet.mynet.id
   }
 }
 
-data "huaweicloud_vpc" "myvpc" {
+data "hcso_vpc" "myvpc" {
   name = "vpc-default"
 }
 
-resource "huaweicloud_vpc_subnet" "attach" {
+resource "hcso_vpc_subnet" "attach" {
   name       = "subnet-attach"
   cidr       = "192.168.1.0/24"
   gateway_ip = "192.168.1.1"
-  vpc_id     = data.huaweicloud_vpc.myvpc.id
+  vpc_id     = data.hcso_vpc.myvpc.id
 
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
 }
 
-resource "huaweicloud_compute_interface_attach" "attached" {
-  instance_id = huaweicloud_compute_instance.myinstance.id
-  network_id  = huaweicloud_vpc_subnet.attach.id
+resource "hcso_compute_interface_attach" "attached" {
+  instance_id = hcso_compute_instance.myinstance.id
+  network_id  = hcso_vpc_subnet.attach.id
 
   # This is optional
   fixed_ip = "192.168.1.100"

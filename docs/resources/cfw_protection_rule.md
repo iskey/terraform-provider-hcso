@@ -2,7 +2,7 @@
 subcategory: "Cloud Firewall (CFW)"
 ---
 
-# huaweicloud_cfw_protection_rule
+# hcso_cfw_protection_rule
 
 Manages a CFW protection rule resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "name" {}
 variable "description" {}
 variable "object_id" {}
 
-resource "huaweicloud_cfw_protection_rule" "test" {
+resource "hcso_cfw_protection_rule" "test" {
   name                = var.name
   object_id           = var.object_id
   description         = var.description
@@ -191,5 +191,5 @@ In addition to all arguments above, the following attributes are exported:
 The protectionrule can be imported using `object_id`, `id`, separated by a slash, e.g.
 
 ```sh
-$ terraform import huaweicloud_cfw_protection_rule.test <object_id>/<id>
+$ terraform import hcso_cfw_protection_rule.test <object_id>/<id>
 ```

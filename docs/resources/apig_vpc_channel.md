@@ -2,7 +2,7 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_apig_vpc_channel
+# hcso_apig_vpc_channel
 
 !> **WARNING:** It has been deprecated.
 
@@ -16,7 +16,7 @@ variable "channel_name" {}
 variable "ecs_id1" {}
 variable "ecs_id2" {}
 
-resource "huaweicloud_apig_vpc_channel" "test" {
+resource "hcso_apig_vpc_channel" "test" {
   instance_id = var.instance_id
   name        = var.app_name
   port        = 8080
@@ -123,5 +123,5 @@ In addition to all arguments above, the following attributes are exported:
 VPC Channels can be imported using their `name` and the ID of the related dedicated instance, separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_vpc_channel.test <instance_id>/<name>
+$ terraform import hcso_apig_vpc_channel.test <instance_id>/<name>
 ```

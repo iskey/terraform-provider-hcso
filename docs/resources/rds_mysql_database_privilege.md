@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_mysql_database_privilege
+# hcso_rds_mysql_database_privilege
 
 Manages RDS Mysql database privilege resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "db_name" {}
 variable "user_name_1" {}
 variable "user_name_2" {}
 
-resource "huaweicloud_rds_mysql_database_privilege" "test" {
+resource "hcso_rds_mysql_database_privilege" "test" {
   instance_id = var.instance_id
   db_name     = var.db_name
 
@@ -72,5 +72,5 @@ This resource provides the following timeouts configuration options:
 RDS database privilege can be imported using the `instance id` and `db_name`, e.g.
 
 ```bash
-$ terraform import huaweicloud_rds_mysql_database_privilege.test <instance_id>/<db_name>
+$ terraform import hcso_rds_mysql_database_privilege.test <instance_id>/<db_name>
 ```

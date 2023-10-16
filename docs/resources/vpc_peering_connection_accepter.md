@@ -2,14 +2,14 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_peering_connection_accepter
+# hcso_vpc_peering_connection_accepter
 
 Provides a resource to manage the accepter's side of a VPC Peering Connection.
 
 -> **NOTE:** When a cross-tenant (requester's tenant differs from the accepter's tenant) VPC Peering Connection
   is created, a VPC Peering Connection resource is automatically created in the accepter's account.
-  The requester can use the `huaweicloud_vpc_peering_connection` resource to manage its side of the connection and
-  the accepter can use the `huaweicloud_vpc_peering_connection_accepter` resource to accept its side of the connection
+  The requester can use the `hcso_vpc_peering_connection` resource to manage its side of the connection and
+  the accepter can use the `hcso_vpc_peering_connection_accepter` resource to accept its side of the connection
   into management.
 
 ## Example Usage
@@ -23,33 +23,33 @@ provider "huaweicloud" {
   alias = "peer"
 }
 
-resource "huaweicloud_vpc" "vpc_main" {
-  provider = "huaweicloud.main"
+resource "hcso_vpc" "vpc_main" {
+  provider = "internal.main"
   name     = var.vpc_name
   cidr     = var.vpc_cidr
 }
 
-resource "huaweicloud_vpc" "vpc_peer" {
-  provider = "huaweicloud.peer"
+resource "hcso_vpc" "vpc_peer" {
+  provider = "internal.peer"
   name     = var.peer_vpc_name
   cidr     = var.peer_vpc_cidr
 }
 
 # Requester's side of the connection.
-resource "huaweicloud_vpc_peering_connection" "peering" {
-  provider       = "huaweicloud.main"
+resource "hcso_vpc_peering_connection" "peering" {
+  provider       = "internal.main"
   name           = var.peer_name
-  vpc_id         = huaweicloud_vpc.vpc_main.id
-  peer_vpc_id    = huaweicloud_vpc.vpc_peer.id
+  vpc_id         = hcso_vpc.vpc_main.id
+  peer_vpc_id    = hcso_vpc.vpc_peer.id
   peer_tenant_id = var.tenant_id
 }
 
 # Accepter's side of the connection.
-resource "huaweicloud_vpc_peering_connection_accepter" "peer" {
-  provider = "huaweicloud.peer"
+resource "hcso_vpc_peering_connection_accepter" "peer" {
+  provider = "internal.peer"
   accept   = true
 
-  vpc_peering_connection_id = huaweicloud_vpc_peering_connection.peering.id
+  vpc_peering_connection_id = hcso_vpc_peering_connection.peering.id
 }
  ```
 
@@ -65,12 +65,12 @@ The following arguments are supported:
 
 * `accept` - (Optional, Bool) Whether or not to accept the peering request. Defaults to `false`.
 
-## Removing huaweicloud_vpc_peering_connection_accepter from your configuration
+## Removing hcso_vpc_peering_connection_accepter from your configuration
 
 HuaweiCloud allows a cross-tenant VPC Peering Connection to be deleted from either the requester's or accepter's side.
 However, Terraform only allows the VPC Peering Connection to be deleted from the requester's side by removing the
-corresponding `huaweicloud_vpc_peering_connection` resource from your configuration.
-Removing a `huaweicloud_vpc_peering_connection_accepter` resource from your configuration will remove it from your
+corresponding `hcso_vpc_peering_connection` resource from your configuration.
+Removing a `hcso_vpc_peering_connection_accepter` resource from your configuration will remove it from your
 state file and management, but will not destroy the VPC Peering Connection.
 
 ## Attribute Reference

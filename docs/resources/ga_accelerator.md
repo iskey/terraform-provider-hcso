@@ -2,7 +2,7 @@
 subcategory: "Global Accelerator (GA)"
 ---
 
-# huaweicloud_ga_accelerator
+# hcso_ga_accelerator
 
 Manages a GA accelerator resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a GA accelerator resource within HuaweiCloud.
 variable "name" {}
 variable "description" {}
 
-resource "huaweicloud_ga_accelerator" "test" {
+resource "hcso_ga_accelerator" "test" {
   name        = var.name
   description = var.description
 
@@ -129,5 +129,5 @@ This resource provides the following timeouts configuration options:
 The accelerator can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_ga_accelerator.test ac1bf54f-6a23-4074-af77-800648d25bc8
+$ terraform import hcso_ga_accelerator.test ac1bf54f-6a23-4074-af77-800648d25bc8
 ```

@@ -2,7 +2,7 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_instance
+# hcso_er_instance
 
 Manages an ER instance resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "availability_zones" {
   type = list(string)
 }
 
-resource "huaweicloud_er_instance" "test" {
+resource "hcso_er_instance" "test" {
   availability_zones = var.availability_zones
 
   name = var.router_name
@@ -90,5 +90,5 @@ This resource provides the following timeouts configuration options:
 The router instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_er_instance.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_er_instance.test 0ce123456a00f2591fabc00385ff1234
 ```

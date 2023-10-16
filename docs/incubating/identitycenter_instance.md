@@ -2,14 +2,14 @@
 subcategory: "IAM Identity Center"
 ---
 
-# huaweicloud_identitycenter_instance
+# hcso_identitycenter_instance
 
 Use this data source to get the Identity Center instance info.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identitycenter_instance" "system"{}
+data "hcso_identitycenter_instance" "system"{}
 ```
 
 ## Argument Reference

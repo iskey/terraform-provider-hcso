@@ -2,31 +2,31 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_peering_connection
+# hcso_vpc_peering_connection
 
 The VPC Peering Connection data source provides details about a specific VPC peering connection.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_vpc" "vpc" {
+data "hcso_vpc" "vpc" {
   name = "vpc"
 }
 
-data "huaweicloud_vpc" "peer_vpc" {
+data "hcso_vpc" "peer_vpc" {
   name = "peer_vpc"
 }
 
-data "huaweicloud_vpc_peering_connection" "peering" {
-  vpc_id      = data.huaweicloud_vpc.vpc.id
-  peer_vpc_id = data.huaweicloud_vpc.peer_vpc.id
+data "hcso_vpc_peering_connection" "peering" {
+  vpc_id      = data.hcso_vpc.vpc.id
+  peer_vpc_id = data.hcso_vpc.peer_vpc.id
 }
 
-resource "huaweicloud_vpc_route" "vpc_route" {
+resource "hcso_vpc_route" "vpc_route" {
   type        = "peering"
-  nexthop     = data.huaweicloud_vpc_peering_connection.peering.id
+  nexthop     = data.hcso_vpc_peering_connection.peering.id
   destination = "192.168.0.0/16"
-  vpc_id      = data.huaweicloud_vpc.vpc.id
+  vpc_id      = data.hcso_vpc.vpc.id
 }
 ```
 

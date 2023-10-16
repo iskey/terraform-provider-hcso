@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_user_role_assignment
+# hcso_identity_user_role_assignment
 
 Manages an IAM user role assignment within HuaweiCloud IAM.
 
@@ -14,19 +14,19 @@ Manages an IAM user role assignment within HuaweiCloud IAM.
 ```hcl
 variable "enterprise_project_id" {}
 
-data "huaweicloud_identity_role" "test" {
+data "hcso_identity_role" "test" {
   display_name = "ECS FullAccess"
 }
 
-resource "huaweicloud_identity_user" "test" {
+resource "hcso_identity_user" "test" {
   name        = "user_1"
   description = "A user"
   password    = "password123!"
 }
 
-resource "huaweicloud_identity_user_role_assignment" "test" {
-  user_id               = huaweicloud_identity_user.test.id
-  role_id               = data.huaweicloud_identity_role.test.id
+resource "hcso_identity_user_role_assignment" "test" {
+  user_id               = hcso_identity_user.test.id
+  role_id               = data.hcso_identity_role.test.id
   enterprise_project_id = var.enterprise_project_id
 }
 ```
@@ -55,5 +55,5 @@ In addition to all arguments above, the following attributes are exported:
 The role assignments can be imported using the `user_id`, `role_id` and  `enterprise_project_id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_identity_user_role_assignment.test <user_id>/<role_id>/<enterprise_project_id>
+$ terraform import hcso_identity_user_role_assignment.test <user_id>/<role_id>/<enterprise_project_id>
 ```

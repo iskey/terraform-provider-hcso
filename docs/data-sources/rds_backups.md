@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_backups
+# hcso_rds_backups
 
 Use this data source to get the list of RDS backups.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of RDS backups.
 ```hcl
 variable "instance_id" {}
 
-data "huaweicloud_rds_backups" "test" {
+data "hcso_rds_backups" "test" {
   instance_id = var.instance_id
 }
 ```

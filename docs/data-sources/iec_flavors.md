@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_flavors
+# hcso_iec_flavors
 
 Use this data source to get the available of HuaweiCloud IEC flavors.
 
@@ -13,7 +13,7 @@ variable "flavor_name" {
   default = "c6.large.2"
 }
 
-data "huaweicloud_iec_flavors" "iec_flavor_test" {
+data "hcso_iec_flavors" "iec_flavor_test" {
   name = var.flavor_name
 }
 ```

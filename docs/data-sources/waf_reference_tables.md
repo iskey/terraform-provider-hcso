@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_reference_tables
+# hcso_waf_reference_tables
 
 Use this data source to get a list of WAF reference tables.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of WAF reference tables.
 ```hcl
 variable "enterprise_project_id" {}
 
-data "huaweicloud_waf_reference_tables" "reftables" {
+data "hcso_waf_reference_tables" "reftables" {
   name                  = "reference_table_name"
   enterprise_project_id = var.enterprise_project_id
 }

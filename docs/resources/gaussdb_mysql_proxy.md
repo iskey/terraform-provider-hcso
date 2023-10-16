@@ -2,7 +2,7 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_proxy
+# hcso_gaussdb_mysql_proxy
 
 GaussDB mysql proxy management within HuaweiCoud.
 
@@ -13,7 +13,7 @@ GaussDB mysql proxy management within HuaweiCoud.
 ```hcl
 variable "instance_id" {}
 
-resource "huaweicloud_gaussdb_mysql_proxy" "proxy_1" {
+resource "hcso_gaussdb_mysql_proxy" "proxy_1" {
   instance_id = var.instance_id
   flavor      = "gaussdb.proxy.xlarge.arm.2"
   node_num    = 3
@@ -56,5 +56,5 @@ This resource provides the following timeouts configuration options:
 GaussDB instance can be imported using the instance `id`, e.g.
 
 ```
-$ terraform import huaweicloud_gaussdb_mysql_proxy.proxy_1 ee678f40-ce8e-4d0c-8221-38dead426f06
+$ terraform import hcso_gaussdb_mysql_proxy.proxy_1 ee678f40-ce8e-4d0c-8221-38dead426f06
 ```

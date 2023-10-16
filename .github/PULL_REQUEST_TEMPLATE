@@ -27,10 +27,10 @@ fixes #xxx
 ## Acceptance Steps Performed
 
 ```
-make testacc TEST='./huaweicloud' TESTARGS='-run=TestAccSomethingV0_basic'
+make testacc TEST='./internal' TESTARGS='-run=TestAccSomethingV0_basic'
 ...
 === RUN   TestAccSomethingV0_basic
 --- PASS: TestAccSomethingV0_basic (70.75s)
 PASS
-ok      github.com/huaweicloud/terraform-provider-huaweicloud/huaweicloud       70.796s
+ok      github.com/huaweicloud/terraform-provider-hcso/internal       70.796s
 ```

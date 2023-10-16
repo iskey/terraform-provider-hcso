@@ -2,7 +2,7 @@
 subcategory: "Blockchain Service (BCS)"
 ---
 
-# huaweicloud_bcs_instance
+# hcso_bcs_instance
 
 ## Example Usage
 
@@ -15,15 +15,15 @@ variable "instance_password" {}
 
 variable "enterprise_project_id" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-data "huaweicloud_cce_cluster" "test" {
+data "hcso_cce_cluster" "test" {
   ...
 }
 
-resource "huaweicloud_bcs_instance" "test" {
+resource "hcso_bcs_instance" "test" {
   name                  = var.instance_name
-  cce_cluster_id        = data.huaweicloud_cce_cluster.test.id
+  cce_cluster_id        = data.hcso_cce_cluster.test.id
   consensus             = "etcdraft"
   edition               = 1
   enterprise_project_id = var.enterprise_project_id
@@ -61,16 +61,16 @@ variable "database_user_name" {}
 
 variable "database_password" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-data "huaweicloud_cce_cluster" "test" {
+data "hcso_cce_cluster" "test" {
   ...
 }
 
-resource "huaweicloud_bcs_instance" "test" {
+resource "hcso_bcs_instance" "test" {
   name                  = var.instance_name
   blockchain_type       = "private"
-  cce_cluster_id        = data.huaweicloud_cce_cluster.test.id
+  cce_cluster_id        = data.hcso_cce_cluster.test.id
   consensus             = "kafka"
   edition               = 4
   fabric_version        = "1.4"
@@ -113,15 +113,15 @@ resource "huaweicloud_bcs_instance" "test" {
     share_type        = "STANDARD"
     type              = "efs-ha"
     flavor            = "sfs.turbo.standard"
-    availability_zone = data.huaweicloud_availability_zones.test.names[0]
+    availability_zone = data.hcso_availability_zones.test.names[0]
   }
   kafka {
     flavor            = "c3.mini"
     storage_size      = 600
     availability_zone = [
-      data.huaweicloud_availability_zones.test.names[0],
-      data.huaweicloud_availability_zones.test.names[1],
-      data.huaweicloud_availability_zones.test.names[2],
+      data.hcso_availability_zones.test.names[0],
+      data.hcso_availability_zones.test.names[1],
+      data.hcso_availability_zones.test.names[2],
     ]
   }
 }

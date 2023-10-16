@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_storage_types
+# hcso_rds_storage_types
 
 Use this data source to get the list of RDS storage types.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of RDS storage types.
 ```hcl
 variable "instance_id" {}
 
-data "huaweicloud_rds_storage_types" "test" {
+data "hcso_rds_storage_types" "test" {
   db_type    = "MySQL"
   db_version = "8.0"
 }

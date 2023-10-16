@@ -2,14 +2,14 @@
 subcategory: "Video on Demand (VOD)"
 ---
 
-# huaweicloud_vod_transcoding_template_group
+# hcso_vod_transcoding_template_group
 
 Manages a VOD transcoding template group resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vod_transcoding_template_group" "test" {
+resource "hcso_vod_transcoding_template_group" "test" {
   name                 = "test"
   description          = "test group"
   audio_codec          = "AAC"
@@ -136,5 +136,5 @@ In addition to all arguments above, the following attributes are exported:
 VOD transcoding template groups can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vod_transcoding_template_group.test 589e49809bb84447a759f6fa9aa19949
+$ terraform import hcso_vod_transcoding_template_group.test 589e49809bb84447a759f6fa9aa19949
 ```

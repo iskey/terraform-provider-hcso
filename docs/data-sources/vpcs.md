@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpcs
+# hcso_vpcs
 
 Use this data source to get a list of VPC.
 
@@ -13,7 +13,7 @@ An example filter by name and tag
 ```hcl
 variable "vpc_name" {}
 
-data "huaweicloud_vpcs" "vpc" {
+data "hcso_vpcs" "vpc" {
   name = var.vpc_name
 
   tags = {
@@ -22,7 +22,7 @@ data "huaweicloud_vpcs" "vpc" {
 }
 
 output "vpc_ids" {
-  value = data.huaweicloud_vpcs.vpc.vpcs[*].id
+  value = data.hcso_vpcs.vpc.vpcs[*].id
 }
 ```
 

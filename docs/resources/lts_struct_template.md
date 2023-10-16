@@ -2,7 +2,7 @@
 subcategory: "Log Tank Service (LTS)"
 ---
 
-# huaweicloud_lts_struct_template
+# hcso_lts_struct_template
 
 Manage a log structuring template resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manage a log structuring template resource within HuaweiCloud.
 variable "group_id" {}
 variable "stream_id" {}
 
-resource "huaweicloud_lts_struct_template" "template_1" {
+resource "hcso_lts_struct_template" "template_1" {
   log_group_id  = var.group_id
   log_stream_id = var.stream_id
   template_type = "built_in"
@@ -28,7 +28,7 @@ resource "huaweicloud_lts_struct_template" "template_1" {
 variable "group_id" {}
 variable "stream_id" {}
 
-resource "huaweicloud_lts_struct_template" "template_1" {
+resource "hcso_lts_struct_template" "template_1" {
   log_group_id  = var.group_id
   log_stream_id = var.stream_id
   template_type = "custom"
@@ -68,5 +68,5 @@ In addition to all arguments above, the following attributes are exported:
 The structuring templates can be imported using the template ID, lts group ID and stream ID separated by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_lts_struct_template.demo_1 2f148a75-acd3-4ce7-8f63-d5c9fadab3a0/393f2bfd-2244-11ea-adb7-286ed488c87f/72855918-20b1-11ea-80e0-286ed488c880
+$ terraform import hcso_lts_struct_template.demo_1 2f148a75-acd3-4ce7-8f63-d5c9fadab3a0/393f2bfd-2244-11ea-adb7-286ed488c87f/72855918-20b1-11ea-80e0-286ed488c880
 ```

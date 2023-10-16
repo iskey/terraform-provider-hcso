@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Network (VPN)"
 ---
 
-# huaweicloud_vpn_customer_gateway
+# hcso_vpn_customer_gateway
 
 Manages a VPN customer gateway resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a VPN customer gateway resource within HuaweiCloud.
 variable "name" {}
 variable "ip" {}
 
-resource "huaweicloud_vpn_customer_gateway" "test" {
+resource "hcso_vpn_customer_gateway" "test" {
   name = var.name
   ip   = var.ip
 }
@@ -56,5 +56,5 @@ In addition to all arguments above, the following attributes are exported:
 The customer gateway can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpn_customer_gateway.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_vpn_customer_gateway.test 0ce123456a00f2591fabc00385ff1234
 ```

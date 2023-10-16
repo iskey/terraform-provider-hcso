@@ -2,7 +2,7 @@
 subcategory: "Scalable File Service (SFS)"
 ---
 
-# huaweicloud_sfs_turbo
+# hcso_sfs_turbo
 
 Provides an Shared File System (SFS) Turbo resource.
 
@@ -16,7 +16,7 @@ variable "subnet_id" {}
 variable "secgroup_id" {}
 variable "test_az" {}
 
-resource "huaweicloud_sfs_turbo" "test" {
+resource "hcso_sfs_turbo" "test" {
   name              = "sfs-turbo-1"
   size              = 500
   share_proto       = "NFS"
@@ -40,7 +40,7 @@ variable "subnet_id" {}
 variable "secgroup_id" {}
 variable "test_az" {}
 
-resource "huaweicloud_sfs_turbo" "test" {
+resource "hcso_sfs_turbo" "test" {
   name              = "sfs-turbo-1"
   size              = 3686
   share_proto       = "NFS"
@@ -61,7 +61,7 @@ variable "subnet_id" {}
 variable "secgroup_id" {}
 variable "test_az" {}
 
-resource "huaweicloud_sfs_turbo" "test" {
+resource "hcso_sfs_turbo" "test" {
   name                = "sfs-turbo-1"
   size                = 4096
   share_proto         = "NFS"
@@ -197,7 +197,7 @@ This resource provides the following timeouts configuration options:
 SFS Turbo can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_sfs_turbo 1e3d5306-24c9-4316-9185-70e9787d71ab
+$ terraform import hcso_sfs_turbo 1e3d5306-24c9-4316-9185-70e9787d71ab
 ```
 
 Note that the imported state may not be identical to your resource definition, due to payment attributes missing from
@@ -207,7 +207,7 @@ It is generally recommended running `terraform plan` after importing an instance
 You can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_sfs_turbo" "test" {
+resource "hcso_sfs_turbo" "test" {
   ...
 
   lifecycle {

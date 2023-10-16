@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_cross_region_backup_strategy
+# hcso_rds_cross_region_backup_strategy
 
 Manages RDS cross-region backup strategy resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "instance_id" {}
 variable "destination_region" {}
 variable "destination_project_id" {}
 
-resource "huaweicloud_rds_cross_region_backup_strategy" "test" {
+resource "hcso_rds_cross_region_backup_strategy" "test" {
   instance_id            = var.instance_id
   backup_type            = "all"
   keep_days              = 5
@@ -70,5 +70,5 @@ This resource provides the following timeouts configuration options:
 The RDS cross-region backup strategy can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_rds_cross_region_backup_strategy.test <id>
+$ terraform import hcso_rds_cross_region_backup_strategy.test <id>
 ```

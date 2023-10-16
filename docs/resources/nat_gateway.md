@@ -2,7 +2,7 @@
 subcategory: "NAT Gateway (NAT)"
 ---
 
-# huaweicloud_nat_gateway
+# hcso_nat_gateway
 
 Manages a gateway resource of the **public** NAT within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "gateway_name" {}
 variable "vpc_id" {}
 variable "network_id" {}
 
-resource "huaweicloud_nat_gateway" "test" {
+resource "hcso_nat_gateway" "test" {
   name        = var.gateway_name
   description = "test for terraform"
   spec        = "3"
@@ -74,5 +74,5 @@ This resource provides the following timeouts configuration options:
 NAT gateways can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_nat_gateway.test d126fb87-43ce-4867-a2ff-cf34af3765d9
+$ terraform import hcso_nat_gateway.test d126fb87-43ce-4867-a2ff-cf34af3765d9
 ```

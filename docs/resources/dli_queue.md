@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_queue
+# hcso_dli_queue
 
 Manages DLI Queue resource within HuaweiCloud
 
@@ -11,7 +11,7 @@ Manages DLI Queue resource within HuaweiCloud
 ### Create a queue
 
 ```hcl
-resource "huaweicloud_dli_queue" "queue" {
+resource "hcso_dli_queue" "queue" {
   name     = "terraform_dli_queue_test"
   cu_count = 16
 
@@ -25,7 +25,7 @@ resource "huaweicloud_dli_queue" "queue" {
 ### Create a queue with CIDR Block
 
 ```hcl
-resource "huaweicloud_dli_queue" "queue" {
+resource "hcso_dli_queue" "queue" {
   name          = "terraform_dli_queue_test"
   cu_count      = 16
   resource_mode = 1
@@ -109,5 +109,5 @@ This resource provides the following timeouts configuration options:
 DLI queue can be imported by  `id`. For example,
 
 ```
-terraform import huaweicloud_dli_queue.example  abc123
+terraform import hcso_dli_queue.example  abc123
 ```

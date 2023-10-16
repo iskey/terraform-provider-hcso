@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_server
+# hcso_iec_server
 
 Manages a IEC server resource within HuaweiCloud.
 
@@ -21,7 +21,7 @@ variable "iec_subnet_id" {}
 variable "iec_secgroup_id" {}
 variable "iec_server_password" {}
 
-resource "huaweicloud_iec_server" "server_test" {
+resource "hcso_iec_server" "server_test" {
   name            = var.iec_server_name
   image_id        = var.iec_iamge_id
   flavor_id       = var.iec_flavor_id
@@ -54,7 +54,7 @@ variable "iec_subnet_id" {}
 variable "iec_secgroup_id" {}
 variable "iec_server_password" {}
 
-resource "huaweicloud_iec_server" "server_test" {
+resource "hcso_iec_server" "server_test" {
   name            = var.iec_server_name
   image_id        = var.iec_iamge_id
   flavor_id       = var.iec_flavor_id

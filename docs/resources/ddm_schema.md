@@ -2,64 +2,64 @@
 subcategory: "Distributed Database Middleware (DDM)"
 ---
 
-# huaweicloud_ddm_schema
+# hcso_ddm_schema
 
 Manages a DDM schema resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpc" "test" {
+resource "hcso_vpc" "test" {
   name = "test_vpc"
   cidr = "192.168.0.0/24"
 }
 
-resource "huaweicloud_vpc_subnet" "test" {
+resource "hcso_vpc_subnet" "test" {
   name       = "test_subnet"
   cidr       = "192.168.0.0/24"
   gateway_ip = "192.168.0.1"
-  vpc_id     = huaweicloud_vpc.test.id
+  vpc_id     = hcso_vpc.test.id
 }
 
-resource "huaweicloud_networking_secgroup" "test" {
+resource "hcso_networking_secgroup" "test" {
   name = "test_secgroup"
 }
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-data "huaweicloud_ddm_engines" test {
+data "hcso_ddm_engines" test {
   version = "3.0.8.5"
 }
 
-data "huaweicloud_ddm_flavors" test {
-  engine_id = data.huaweicloud_ddm_engines.test.engines[0].id
+data "hcso_ddm_flavors" test {
+  engine_id = data.hcso_ddm_engines.test.engines[0].id
   cpu_arch  = "X86"
 }
 
-resource "huaweicloud_ddm_instance" "test" {
+resource "hcso_ddm_instance" "test" {
   name              = "ddm-test"
-  flavor_id         = data.huaweicloud_ddm_flavors.test.flavors[0].id
+  flavor_id         = data.hcso_ddm_flavors.test.flavors[0].id
   node_num          = 2
-  engine_id         = data.huaweicloud_ddm_engines.test.engines[0].id
-  vpc_id            = huaweicloud_vpc.test.id
-  subnet_id         = huaweicloud_vpc_subnet.test.id
-  security_group_id = huaweicloud_networking_secgroup.test.id
+  engine_id         = data.hcso_ddm_engines.test.engines[0].id
+  vpc_id            = hcso_vpc.test.id
+  subnet_id         = hcso_vpc_subnet.test.id
+  security_group_id = hcso_networking_secgroup.test.id
 
   availability_zones = [
-    data.huaweicloud_availability_zones.test.names[0]
+    data.hcso_availability_zones.test.names[0]
   ]
 }
 
-resource "huaweicloud_rds_instance" "test" {
+resource "hcso_rds_instance" "test" {
   name              = "rds_test"
   flavor            = "rds.mysql.n1.large.4"
-  security_group_id = huaweicloud_networking_secgroup.test.id
-  subnet_id         = huaweicloud_vpc_subnet.test.id
-  vpc_id            = huaweicloud_vpc.test.id
+  security_group_id = hcso_networking_secgroup.test.id
+  subnet_id         = hcso_vpc_subnet.test.id
+  vpc_id            = hcso_vpc.test.id
   fixed_ip          = "192.168.0.58"
 
   availability_zone = [
-    data.huaweicloud_availability_zones.test.names[0]
+    data.hcso_availability_zones.test.names[0]
   ]
 
   db {
@@ -75,14 +75,14 @@ resource "huaweicloud_rds_instance" "test" {
   }
 }
 
-resource "huaweicloud_ddm_schema" "test"{
-  instance_id  = huaweicloud_ddm_instance.test.id
+resource "hcso_ddm_schema" "test"{
+  instance_id  = hcso_ddm_instance.test.id
   name         = "test_schema"
   shard_mode   = "single"
   shard_number = 1
 
   data_nodes {
-    id             = huaweicloud_rds_instance.test.id
+    id             = hcso_rds_instance.test.id
     admin_user     = "root"
     admin_password = "test_password_123"
   }
@@ -182,5 +182,5 @@ This resource provides the following timeouts configuration options:
 The DDM schema can be imported using the `<instance_id>/<schema_name>`, e.g.
 
 ```
-$ terraform import huaweicloud_ddm_schema.test 80e373f9-872e-4046-aae9-ccd9ddc55511/schema_name
+$ terraform import hcso_ddm_schema.test 80e373f9-872e-4046-aae9-ccd9ddc55511/schema_name
 ```

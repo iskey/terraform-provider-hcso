@@ -2,7 +2,7 @@
 subcategory: "Scalable File Service (SFS)"
 ---
 
-# huaweicloud_sfs_file_system
+# hcso_sfs_file_system
 
 Provides information about an Shared File System (SFS) within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Provides information about an Shared File System (SFS) within HuaweiCloud.
 ```hcl
 variable "share_name" {}
 
-data "huaweicloud_sfs_file_system" "shared_file" {
+data "hcso_sfs_file_system" "shared_file" {
   name = var.share_name
 }
 ```

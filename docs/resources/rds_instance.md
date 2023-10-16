@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_instance
+# hcso_rds_instance
 
 Manage RDS instance resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "subnet_id" {}
 variable "secgroup_id" {}
 variable "availability_zone" {}
 
-resource "huaweicloud_rds_instance" "instance" {
+resource "hcso_rds_instance" "instance" {
   name              = "terraform_test_rds_instance"
   flavor            = "rds.pg.n1.large.2"
   vpc_id            = var.vpc_id
@@ -51,7 +51,7 @@ variable "secgroup_id" {}
 variable "availability_zone1" {}
 variable "availability_zone2" {}
 
-resource "huaweicloud_rds_instance" "instance" {
+resource "hcso_rds_instance" "instance" {
   name                = "terraform_test_rds_instance"
   flavor              = "rds.pg.n1.large.2.ha"
   ha_replication_mode = "async"
@@ -87,7 +87,7 @@ variable "secgroup_id" {}
 variable "availability_zone" {}
 variable "kms_id" {}
 
-resource "huaweicloud_rds_instance" "instance" {
+resource "hcso_rds_instance" "instance" {
   name              = "terraform_test_rds_instance"
   flavor            = "rds.pg.n1.large.2"
   vpc_id            = var.vpc_id
@@ -120,7 +120,7 @@ variable "subnet_id" {}
 variable "secgroup_id" {}
 variable "availability_zone" {}
 
-resource "huaweicloud_rds_instance" "instance" {
+resource "hcso_rds_instance" "instance" {
   name              = "terraform_test_rds_instance"
   flavor            = "rds.pg.n1.large.2"
   vpc_id            = var.vpc_id
@@ -381,7 +381,7 @@ This resource provides the following timeouts configuration options:
 RDS instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_rds_instance.instance_1 52e4b497d2c94df88a2eb4c661314903in01
+$ terraform import hcso_rds_instance.instance_1 52e4b497d2c94df88a2eb4c661314903in01
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -391,7 +391,7 @@ should be applied to the instance, or the resource definition should be updated 
 Also, you can ignore changes as below.
 
 ```
-resource "huaweicloud_rds_instance" "instance_1" {
+resource "hcso_rds_instance" "instance_1" {
   ...
 
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "FunctionGraph"
 ---
 
-# huaweicloud_fgs_dependency
+# hcso_fgs_dependency
 
 Manages a custom dependency package within HuaweiCloud FunctionGraph.
 
@@ -15,20 +15,20 @@ variable "package_name"
 variable "package_location"
 variable "dependency_name"
 
-resource "huaweicloud_obs_bucket" "test" {
+resource "hcso_obs_bucket" "test" {
   ...
 }
 
-resource "huaweicloud_obs_bucket_object" "test" {
-  bucket = huaweicloud_obs_bucket.test.bucket
+resource "hcso_obs_bucket_object" "test" {
+  bucket = hcso_obs_bucket.test.bucket
   key    = format("terraform_dependencies/%s", var.package_name)
   source = var.package_location
 }
 
-resource "huaweicloud_fgs_dependency" "test" {
+resource "hcso_fgs_dependency" "test" {
   name    = var.dependency_name
   runtime = "Python3.6"
-  link    = format("https://%s/%s", huaweicloud_obs_bucket.test.bucket_domain_name, huaweicloud_obs_bucket_object.test.key)
+  link    = format("https://%s/%s", hcso_obs_bucket.test.bucket_domain_name, hcso_obs_bucket_object.test.key)
 }
 ```
 
@@ -87,5 +87,5 @@ In addition to all arguments above, the following attributes are exported:
 Dependencies can be imported using the `id`, e.g.:
 
 ```
-$ terraform import huaweicloud_fgs_dependency.test 795e722f-0c23-41b6-a189-dcd56f889cf6
+$ terraform import hcso_fgs_dependency.test 795e722f-0c23-41b6-a189-dcd56f889cf6
 ```

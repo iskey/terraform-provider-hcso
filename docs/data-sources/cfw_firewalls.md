@@ -2,14 +2,14 @@
 subcategory: "Cloud Firewall (CFW)"
 ---
 
-# huaweicloud_cfw_firewalls
+# hcso_cfw_firewalls
 
 Use this data source to get the list of CFW firewalls.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_cfw_firewalls" "test" {
+data "hcso_cfw_firewalls" "test" {
   service_type = 0
 }
 ```

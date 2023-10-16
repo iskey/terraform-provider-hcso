@@ -2,14 +2,14 @@
 subcategory: "Elastic IP (EIP)"
 ---
 
-# huaweicloud_vpc_eip
+# hcso_vpc_eip
 
 Use this data source to get the details of an available EIP.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_vpc_eip" "by_address" {
+data "hcso_vpc_eip" "by_address" {
   public_ip = "123.60.208.163"
 }
 ```

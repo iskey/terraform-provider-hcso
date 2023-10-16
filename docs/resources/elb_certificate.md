@@ -2,14 +2,14 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_certificate
+# hcso_elb_certificate
 
 Manages an ELB certificate resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_elb_certificate" "certificate_1" {
+resource "hcso_elb_certificate" "certificate_1" {
   name        = "certificate_1"
   description = "terraform test certificate"
   domain      = "www.elb.com"
@@ -110,7 +110,7 @@ In addition to all arguments above, the following attributes are exported:
 ELB certificate can be imported using the certificate ID, e.g.
 
 ```
-$ terraform import huaweicloud_elb_certificate.certificate_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_elb_certificate.certificate_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -120,7 +120,7 @@ You can then decide if changes should be applied to the certificate, or the reso
 definition should be updated to align with the certificate. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_elb_certificate" "certificate_1" {
+resource "hcso_elb_certificate" "certificate_1" {
     ...
   lifecycle {
     ignore_changes = [

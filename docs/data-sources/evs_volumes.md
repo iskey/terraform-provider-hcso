@@ -2,7 +2,7 @@
 subcategory: "Elastic Volume Service (EVS)"
 ---
 
-# huaweicloud_evs_volumes
+# hcso_evs_volumes
 
 Use this data source to query the detailed information list of the EVS disks within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Use this data source to query the detailed information list of the EVS disks wit
 ```hcl
 variable "target_server" {}
 
-data "huaweicloud_evs_volumes" "test" {
+data "hcso_evs_volumes" "test" {
   server_id = var.target_server
 }
 ```

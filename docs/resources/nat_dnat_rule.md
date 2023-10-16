@@ -2,7 +2,7 @@
 subcategory: "NAT Gateway (NAT)"
 ---
 
-# huaweicloud_nat_dnat_rule
+# hcso_nat_dnat_rule
 
 Manages a DNAT rule resource of the **public** NAT within HuaweiCloud.
 
@@ -14,14 +14,14 @@ Manages a DNAT rule resource of the **public** NAT within HuaweiCloud.
 variable "gateway_id" {}
 variable "publicip_id" {}
 
-resource "huaweicloud_compute_instance" "test" {
+resource "hcso_compute_instance" "test" {
   ...
 }
 
-resource "huaweicloud_nat_dnat_rule" "test" {
+resource "hcso_nat_dnat_rule" "test" {
   nat_gateway_id        = var.gateway_id
   floating_ip_id        = var.publicip_id
-  port_id               = huaweicloud_compute_instance.test.network[0].port
+  port_id               = hcso_compute_instance.test.network[0].port
   protocol              = "tcp"
   internal_service_port = 23
   external_service_port = 8023
@@ -34,14 +34,14 @@ resource "huaweicloud_nat_dnat_rule" "test" {
 variable "gateway_id" {}
 variable "publicip_id" {}
 
-resource "huaweicloud_compute_instance" "test" {
+resource "hcso_compute_instance" "test" {
   ...
 }
 
-resource "huaweicloud_nat_dnat_rule" "test" {
+resource "hcso_nat_dnat_rule" "test" {
   nat_gateway_id              = var.gateway_id
   floating_ip_id              = var.publicip_id
-  port_id                     = huaweicloud_compute_instance.test.network[0].port
+  port_id                     = hcso_compute_instance.test.network[0].port
   protocol                    = "tcp"
   internal_service_port_range = "23-823"
   external_service_port_range = "8023-8823"
@@ -54,7 +54,7 @@ resource "huaweicloud_nat_dnat_rule" "test" {
 variable "gateway_id" {}
 variable "publicip_id" {}
 
-resource "huaweicloud_nat_dnat_rule" "test" {
+resource "hcso_nat_dnat_rule" "test" {
   nat_gateway_id        = var.gateway_id
   floating_ip_id        = var.publicip_id
   private_ip            = "10.0.0.12"
@@ -71,21 +71,21 @@ variable "subnet_id" {}
 variable "natgw_id" {}
 variable "publicip_id" {}
 
-resource "huaweicloud_rds_instance" "db_pgSql" {
+resource "hcso_rds_instance" "db_pgSql" {
   ...
 }
 
-data "huaweicloud_networking_port" "pgSql_network_port" {
+data "hcso_networking_port" "pgSql_network_port" {
   network_id = var.subnet_id
-  fixed_ip   = huaweicloud_rds_instance.db_pgSql.fixed_ip
+  fixed_ip   = hcso_rds_instance.db_pgSql.fixed_ip
 }
 
-resource "huaweicloud_nat_dnat_rule" "test" {
+resource "hcso_nat_dnat_rule" "test" {
   nat_gateway_id        = var.natgw_id
   floating_ip_id        = var.publicip_id
-  port_id               = data.huaweicloud_networking_port.pgSql_network_port.port_id
+  port_id               = data.hcso_networking_port.pgSql_network_port.port_id
   protocol              = "tcp"
-  internal_service_port = huaweicloud_rds_instance.db_pgSql.db.0.port
+  internal_service_port = hcso_rds_instance.db_pgSql.db.0.port
   external_service_port = 5432
 }
 ```
@@ -126,7 +126,7 @@ The following arguments are supported:
   Required if `internal_service_port_range` is set.
 
 * `port_id` - (Optional, String) Specifies the port ID of network. This parameter is mandatory in VPC scenario.  
-  Use [huaweicloud_networking_port](../data-sources/networking_port) to get the port if just know a fixed IP addresses
+  Use [hcso_networking_port](../data-sources/networking_port) to get the port if just know a fixed IP addresses
   on the port.
 
 * `private_ip` - (Optional, String) Specifies the private IP address of a user. This parameter is mandatory in
@@ -160,5 +160,5 @@ This resource provides the following timeouts configuration options:
 DNAT rules can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_nat_dnat_rule.test f4f783a7-b908-4215-b018-724960e5df4a
+$ terraform import hcso_nat_dnat_rule.test f4f783a7-b908-4215-b018-724960e5df4a
 ```

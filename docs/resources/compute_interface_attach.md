@@ -2,7 +2,7 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_interface_attach
+# hcso_compute_interface_attach
 
 Attaches a Network Interface to an Instance.
 
@@ -14,7 +14,7 @@ Attaches a Network Interface to an Instance.
 variable "instance_id" {}
 variable "network_id" {}
 
-resource "huaweicloud_compute_interface_attach" "test" {
+resource "hcso_compute_interface_attach" "test" {
   instance_id = var.instance_id
   network_id  = var.network_id
 }
@@ -29,7 +29,7 @@ variable "security_group_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_compute_interface_attach" "test" {
+resource "hcso_compute_interface_attach" "test" {
   instance_id        = var.instance_id
   network_id         = var.network_id
   fixed_ip           = "192.168.10.199"
@@ -42,16 +42,16 @@ resource "huaweicloud_compute_interface_attach" "test" {
 ```hcl
 variable "security_group_id" {}
 
-data "huaweicloud_vpc_subnet" "mynet" {
+data "hcso_vpc_subnet" "mynet" {
   name = "subnet-default"
 }
 
-data "huaweicloud_networking_port" "myport" {
-  network_id = data.huaweicloud_vpc_subnet.mynet.id
+data "hcso_networking_port" "myport" {
+  network_id = data.hcso_vpc_subnet.mynet.id
   fixed_ip   = "192.168.0.100"
 }
 
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name               = "instance"
   image_id           = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor_id          = "s6.small.1"
@@ -64,9 +64,9 @@ resource "huaweicloud_compute_instance" "myinstance" {
   }
 }
 
-resource "huaweicloud_compute_interface_attach" "attached" {
-  instance_id = huaweicloud_compute_instance.myinstance.id
-  port_id     = data.huaweicloud_networking_port.myport.id
+resource "hcso_compute_interface_attach" "attached" {
+  instance_id = hcso_compute_instance.myinstance.id
+  port_id     = data.hcso_networking_port.myport.id
 }
 ```
 
@@ -117,5 +117,5 @@ This resource provides the following timeouts configuration options:
 Interface Attachments can be imported using the Instance ID and Port ID separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_compute_interface_attach.ai_1 89c60255-9bd6-460c-822a-e2b959ede9d2/45670584-225f-46c3-b33e-6707b589b666
+$ terraform import hcso_compute_interface_attach.ai_1 89c60255-9bd6-460c-822a-e2b959ede9d2/45670584-225f-46c3-b33e-6707b589b666
 ```

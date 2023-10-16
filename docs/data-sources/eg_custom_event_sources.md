@@ -2,7 +2,7 @@
 subcategory: "EventGrid (EG)"
 ---
 
-# huaweicloud_eg_custom_event_sources
+# hcso_eg_custom_event_sources
 
 Use this data source to filter EG custom event sources within Huaweicloud.
 
@@ -11,7 +11,7 @@ Use this data source to filter EG custom event sources within Huaweicloud.
 ```hcl
 variable "source_name" {}
 
-data "huaweicloud_eg_custom_event_sources" "test" {
+data "hcso_eg_custom_event_sources" "test" {
   name = var.source_name
 }
 ```

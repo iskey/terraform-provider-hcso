@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_route
+# hcso_vpc_route
 
 Manages a VPC route resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages a VPC route resource within HuaweiCloud.
 variable "vpc_id" {}
 variable "nexthop" {}
 
-resource "huaweicloud_vpc_route" "vpc_route" {
+resource "hcso_vpc_route" "vpc_route" {
   vpc_id      = var.vpc_id
   destination = "192.168.0.0/16"
   type        = "peering"
@@ -28,14 +28,14 @@ resource "huaweicloud_vpc_route" "vpc_route" {
 variable "vpc_id" {}
 variable "nexthop" {}
 
-data "huaweicloud_vpc_route_table" "rtb" {
+data "hcso_vpc_route_table" "rtb" {
   vpc_id = var.vpc_id
   name   = "demo"
 }
 
-resource "huaweicloud_vpc_route" "vpc_route" {
+resource "hcso_vpc_route" "vpc_route" {
   vpc_id         = var.vpc_id
-  route_table_id = data.huaweicloud_vpc_route_table.rtb.id
+  route_table_id = data.hcso_vpc_route_table.rtb.id
   destination    = "172.16.8.0/24"
   type           = "ecs"
   nexthop        = var.nexthop
@@ -95,5 +95,5 @@ This resource provides the following timeouts configuration options:
 VPC routes can be imported using the route table ID and their `destination` separated by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_vpc_route.test <route_table_id>/<destination>
+$ terraform import hcso_vpc_route.test <route_table_id>/<destination>
 ```

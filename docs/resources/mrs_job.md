@@ -4,13 +4,13 @@ subcategory: "MapReduce Service (MRS)"
 
 # huaweicloud\_mrs\_job
 
-Manages resource job within HuaweiCloud MRS. It is recommend to use `huaweicloud_mapreduce_job`, which makes a great
+Manages resource job within HuaweiCloud MRS. It is recommend to use `hcso_mapreduce_job`, which makes a great
 improvement of managing MRS jobs.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_mrs_job" "job1" {
+resource "hcso_mrs_job" "job1" {
   job_type   = 1
   job_name   = "test_mapreduce_job1"
   cluster_id = "ef43d2ff-1ecf-4f13-bd0c-0004c429a058"

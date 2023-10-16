@@ -2,7 +2,7 @@
 subcategory: "Data Replication Service (DRS)"
 ---
 
-# huaweicloud_drs_job
+# hcso_drs_job
 
 Manages DRS job resource within HuaweiCloud.
 
@@ -19,11 +19,11 @@ variable "source_db_password" {}
 variable "source_db_port" {}
 variable "destination_db_password" {}
 
-resource "huaweicloud_rds_instance" "mysql" {
+resource "hcso_rds_instance" "mysql" {
   ...
 }
 
-resource "huaweicloud_drs_job" "test" {
+resource "hcso_drs_job" "test" {
   name           = var.name
   type           = "migration"
   engine_type    = "mysql"
@@ -42,14 +42,14 @@ resource "huaweicloud_drs_job" "test" {
   }
 
   destination_db {
-    region      = huaweicloud_rds_instance.mysql.region
-    ip          = huaweicloud_rds_instance.mysql.fixed_ip
+    region      = hcso_rds_instance.mysql.region
+    ip          = hcso_rds_instance.mysql.fixed_ip
     port        = 3306
     engine_type = "mysql"
     user        = "root"
     password    = var.destination_db_password
-    instance_id = huaweicloud_rds_instance.mysql.id
-    subnet_id   = huaweicloud_rds_instance.mysql.subnet_id
+    instance_id = hcso_rds_instance.mysql.id
+    subnet_id   = hcso_rds_instance.mysql.subnet_id
   }
 
   lifecycle {
@@ -238,7 +238,7 @@ This resource provides the following timeouts configuration options:
 The DRS job can be imported by `id`. For example,
 
 ```
-terraform import huaweicloud_drs_job.test b11b407c-e604-4e8d-8bc4-92398320b847
+terraform import hcso_drs_job.test b11b407c-e604-4e8d-8bc4-92398320b847
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -248,7 +248,7 @@ API response, security or some other reason. The missing attributes include: `en
 definition should be updated to align with the job. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_drs_job" "test" {
+resource "hcso_drs_job" "test" {
     ...
 
   lifecycle {

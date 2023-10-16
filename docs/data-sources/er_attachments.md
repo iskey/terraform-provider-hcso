@@ -2,7 +2,7 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_attachments
+# hcso_er_attachments
 
 Use this data source to filter ER attachments within Huaweicloud.
 
@@ -11,7 +11,7 @@ Use this data source to filter ER attachments within Huaweicloud.
 ```hcl
 variable "instance_id" {}
 
-data "huaweicloud_er_attachments" "test" {
+data "hcso_er_attachments" "test" {
   instance_id = var.instance_id
 
   tags = {

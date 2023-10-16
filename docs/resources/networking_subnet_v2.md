@@ -6,18 +6,18 @@ subcategory: "Deprecated"
 
 Manages a V2 Neutron subnet resource within HuaweiCloud.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc_subnet` instead.
+!> **WARNING:** It has been deprecated, use `hcso_vpc_subnet` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_networking_network_v2" "network_1" {
+resource "hcso_networking_network_v2" "network_1" {
   name           = "tf_test_network"
   admin_state_up = "true"
 }
 
-resource "huaweicloud_networking_subnet_v2" "subnet_1" {
-  network_id = huaweicloud_networking_network_v2.network_1.id
+resource "hcso_networking_subnet_v2" "subnet_1" {
+  network_id = hcso_networking_network_v2.network_1.id
   cidr       = "192.168.199.0/24"
 }
 ```
@@ -90,5 +90,5 @@ This resource provides the following timeouts configuration options:
 Subnets can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_networking_subnet_v2.subnet_1 da4faf16-5546-41e4-8330-4d0002b74048
+$ terraform import hcso_networking_subnet_v2.subnet_1 da4faf16-5546-41e4-8330-4d0002b74048
 ```

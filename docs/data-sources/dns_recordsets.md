@@ -2,7 +2,7 @@
 subcategory: "Domain Name Service (DNS)"
 ---
 
-# huaweicloud_dns_recordsets
+# hcso_dns_recordsets
 
 Use this data source to get the list of DNS recordsets.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of DNS recordsets.
 ```hcl
 variable "zone_id" {}
 
-data "huaweicloud_dns_recordsets" "test" {
+data "hcso_dns_recordsets" "test" {
   zone_id = var.zone_id
 }
 ```

@@ -28,7 +28,7 @@ To run, configure your HuaweiCloud provider as described in the
   The expected `flavor_id` can be obtained in the following way.
 
   ```hcl
-  data "huaweicloud_dms_kafka_flavors" "test" {
+  data "hcso_dms_kafka_flavors" "test" {
     type              = "cluster"
     flavor_id         = "c6.2u4g.cluster"
     storage_spec_code = "dms.physical.storage.ultra.v2"

@@ -2,7 +2,7 @@
 subcategory: "Cloud Backup and Recovery (CBR)"
 ---
 
-# huaweicloud_cbr_vaults
+# hcso_cbr_vaults
 
 Use this data source to get available CBR vaults within Huaweicloud.
 
@@ -11,7 +11,7 @@ Use this data source to get available CBR vaults within Huaweicloud.
 ### Get vaults for all server type
 
 ```hcl
-data "huaweicloud_cbr_vaults" "test" {
+data "hcso_cbr_vaults" "test" {
   type = "server"
 }
 ```

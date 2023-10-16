@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_provider
+# hcso_identity_provider
 
 Manages the identity providers within HuaweiCloud IAM service.
 
@@ -14,7 +14,7 @@ Manages the identity providers within HuaweiCloud IAM service.
 ### Create a SAML protocol provider
 
 ```hcl
-resource "huaweicloud_identity_provider" "provider_1" {
+resource "hcso_identity_provider" "provider_1" {
   name     = "example_com_provider_saml"
   protocol = "saml"
   metadata = file("/usr/local/data/files/metadata.txt")
@@ -24,7 +24,7 @@ resource "huaweicloud_identity_provider" "provider_1" {
 ### Create a OpenID Connect protocol provider
 
 ```hcl
-resource "huaweicloud_identity_provider" "provider_2" {
+resource "hcso_identity_provider" "provider_2" {
   name     = "example_com_provider_oidc"
   protocol = "oidc"
   
@@ -173,5 +173,5 @@ The `remote` block supports:
 Identity provider can be imported using the `name`, e.g.
 
 ```
-$ terraform import huaweicloud_identity_provider.provider_1 example_com_provider_saml
+$ terraform import hcso_identity_provider.provider_1 example_com_provider_saml
 ```

@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_rule_global_protection_whitelist
+# hcso_waf_rule_global_protection_whitelist
 
 Manages a WAF global protection whitelist rule resource within HuaweiCloud.
 
@@ -20,7 +20,7 @@ variable "domains" {
   type = list(string)
 }
 
-resource "huaweicloud_waf_rule_global_protection_whitelist" "test" {
+resource "hcso_waf_rule_global_protection_whitelist" "test" {
   policy_id             = var.policy_id
   domains               = var.domains
   enterprise_project_id = var.enterprise_project_id
@@ -44,7 +44,7 @@ resource "huaweicloud_waf_rule_global_protection_whitelist" "test" {
 variable "policy_id" {}
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_rule_global_protection_whitelist" "test" {
+resource "hcso_waf_rule_global_protection_whitelist" "test" {
   policy_id             = var.policy_id
   enterprise_project_id = var.enterprise_project_id
   domains               = []
@@ -164,11 +164,11 @@ There are two ways to import WAF rule global protection whitelist state.
 * Using `policy_id` and `rule_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_global_protection_whitelist.test <policy_id>/<rule_id>
+$ terraform import hcso_waf_rule_global_protection_whitelist.test <policy_id>/<rule_id>
 ```
 
 * Using `policy_id`, `rule_id` and `enterprise_project_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_global_protection_whitelist.test <policy_id>/<rule_id>/<enterprise_project_id>
+$ terraform import hcso_waf_rule_global_protection_whitelist.test <policy_id>/<rule_id>/<enterprise_project_id>
 ```

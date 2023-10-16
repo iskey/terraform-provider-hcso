@@ -2,20 +2,20 @@
 subcategory: "Log Tank Service (LTS)"
 ---
 
-# huaweicloud_lts_stream
+# hcso_lts_stream
 
 Manage a log stream resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_lts_group" "test_group" {
+resource "hcso_lts_group" "test_group" {
   group_name  = "test_group"
   ttl_in_days = 1
 }
 
-resource "huaweicloud_lts_stream" "test_stream" {
-  group_id    = huaweicloud_lts_group.test_group.id
+resource "hcso_lts_stream" "test_stream" {
+  group_id    = hcso_lts_group.test_group.id
   stream_name = "testacc_stream"
 }
 ```
@@ -56,7 +56,7 @@ In addition to all arguments above, the following attributes are exported:
 The log stream can be imported using the group ID and stream ID separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_lts_stream.stream_1 <group_id>/<stream_id>
+$ terraform import hcso_lts_stream.stream_1 <group_id>/<stream_id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to `ttl_in_days` attribute missing
@@ -65,7 +65,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 align with the resource. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_lts_stream" "stream_1" {
+resource "hcso_lts_stream" "stream_1" {
     ...
 
     lifecycle {

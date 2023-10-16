@@ -2,7 +2,7 @@
 subcategory: "Workspace"
 ---
 
-# huaweicloud_workspace_desktop
+# hcso_workspace_desktop
 
 Manages a Workspace desktop resource within HuaweiCloud.
 
@@ -18,21 +18,21 @@ variable "network_id" {}
 variable "security_group_id" {}
 variable "desktop_name" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-data "huaweicloud_networking_secgroups" "test" {
+data "hcso_networking_secgroups" "test" {
   // Security group automatically created when first opening the Workspace account, do not remove
   name = "WorkspaceUserSecurityGroup"
 }
 
-resource "huaweicloud_workspace_desktop" "test" {
+resource "hcso_workspace_desktop" "test" {
   flavor_id  = var.flavor_id
   image_type = "market"
   image_id   = var.image_id
 
-  availability_zone = data.huaweicloud_availability_zones.test.names[0]
+  availability_zone = data.hcso_availability_zones.test.names[0]
   vpc_id            = var.vpc_id
-  security_groups   = setunion(data.huaweicloud_networking_secgroups.test.security_groups[*].id,
+  security_groups   = setunion(data.hcso_networking_secgroups.test.security_groups[*].id,
     [var.security_group_id])
 
   nics {
@@ -183,7 +183,7 @@ This resource provides the following timeouts configuration options:
 Desktops can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_workspace_desktop.test 339d2539-e945-4090-a08d-c16badc0c6bb
+$ terraform import hcso_workspace_desktop.test 339d2539-e945-4090-a08d-c16badc0c6bb
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -193,7 +193,7 @@ You can then decide if changes should be applied to the desktop, or the resource
 align with the desktop. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_workspace_desktop" "test" {
+resource "hcso_workspace_desktop" "test" {
   ...
 
   lifecycle {

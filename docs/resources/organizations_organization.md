@@ -2,14 +2,14 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations
+# hcso_organizations
 
 Manages an Organizations organization resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_organizations_organization" "test"{
+resource "hcso_organizations_organization" "test"{
 }
 ```
 
@@ -44,5 +44,5 @@ In addition to all arguments above, the following attributes are exported:
 The Organizations organization can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_organizations_organization.test <id>
+$ terraform import hcso_organizations_organization.test <id>
 ```

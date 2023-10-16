@@ -2,17 +2,17 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_eip
+# hcso_iec_eip
 
 Manages a eip resource within HuaweiCloud IEC.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_iec_sites" "iec_sites" {}
+data "hcso_iec_sites" "iec_sites" {}
 
-resource "huaweicloud_iec_eip" "eip_test" {
-  site_id = data.huaweicloud_iec_sites.iec_sites.sites[0].id
+resource "hcso_iec_eip" "eip_test" {
+  site_id = data.hcso_iec_sites.iec_sites.sites[0].id
 }
 ```
 
@@ -58,5 +58,5 @@ This resource provides the following timeouts configuration options:
 IEC EIPs can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iec_eip.eip_test b5ad19d1-57d1-48fd-aab7-1378f9bee169
+$ terraform import hcso_iec_eip.eip_test b5ad19d1-57d1-48fd-aab7-1378f9bee169
 ```

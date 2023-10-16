@@ -2,7 +2,7 @@
 subcategory: "Live"
 ---
 
-# huaweicloud_live_recording
+# hcso_live_recording
 
 Manages a recording template within HuaweiCloud Live.
 
@@ -15,13 +15,13 @@ variable "ingest_domain_name" {}
 variable "bucket_region" {}
 variable "bucket_name" {}
 
-resource "huaweicloud_live_domain" "ingestDomain" {
+resource "hcso_live_domain" "ingestDomain" {
   name = var.ingest_domain_name
   type = "push"
 }
 
-resource "huaweicloud_live_recording" "recording" {
-  domain_name = huaweicloud_live_domain.ingestDomain.name
+resource "hcso_live_recording" "recording" {
+  domain_name = hcso_live_domain.ingestDomain.name
   app_name    = "live"
   stream_name = "stream_name"
   type        = "CONTINUOUS_RECORD"
@@ -124,5 +124,5 @@ In addition to all arguments above, the following attributes are exported:
 Recording templates can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_live_recording.test 55534eaa-533a-419d-9b40-ec427ea7195a
+$ terraform import hcso_live_recording.test 55534eaa-533a-419d-9b40-ec427ea7195a
 ```

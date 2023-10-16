@@ -2,7 +2,7 @@
 subcategory: "Data Warehouse Service (DWS)"
 ---
 
-# huaweicloud_dws_cluster
+# hcso_dws_cluster
 
 Manages a DWS cluster resource within HuaweiCloud.  
 
@@ -17,12 +17,12 @@ variable "user_pwd" {}
 variable "vpc_id" {}
 variable "network_id" {}
 
-resource "huaweicloud_networking_secgroup" "secgroup" {
+resource "hcso_networking_secgroup" "secgroup" {
   name        = "sg_dws"
   description = "terraform security group"
 }
 
-resource "huaweicloud_dws_cluster" "cluster" {
+resource "hcso_dws_cluster" "cluster" {
   name              = var.dws_cluster_name
   version           = var.dws_cluster_version
   node_type         = "dws.m3.xlarge"
@@ -32,7 +32,7 @@ resource "huaweicloud_dws_cluster" "cluster" {
   user_pwd          = var.user_pwd
   vpc_id            = var.vpc_id
   network_id        = var.network_id
-  security_group_id = huaweicloud_networking_secgroup.secgroup.id
+  security_group_id = hcso_networking_secgroup.secgroup.id
 }
 ```
 
@@ -232,7 +232,7 @@ This resource provides the following timeouts configuration options:
 Cluster can be imported using the following format:
 
 ```
-$ terraform import huaweicloud_dws_cluster.test 47ad727e-9dcc-4833-bde0-bb298607c719
+$ terraform import hcso_dws_cluster.test 47ad727e-9dcc-4833-bde0-bb298607c719
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -243,7 +243,7 @@ You can then decide if changes should be applied to the cluster, or the resource
 should be updated to align with the cluster. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dws_cluster" "test" {
+resource "hcso_dws_cluster" "test" {
     ...
 
   lifecycle {

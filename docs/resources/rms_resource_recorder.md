@@ -2,7 +2,7 @@
 subcategory: "Config"
 ---
 
-# huaweicloud_rms_resource_recorder
+# hcso_rms_resource_recorder
 
 Manages a RMS recorder resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "topic_urn" {}
 variable "bucket_name" {}
 variable "delivery_region" {}
 
-resource "huaweicloud_rms_resource_recorder" "test" {
+resource "hcso_rms_resource_recorder" "test" {
   agency_name = "rms_tracker_agency"
 
   selector {
@@ -40,7 +40,7 @@ resource "huaweicloud_rms_resource_recorder" "test" {
 variable "bucket_name" {}
 variable "delivery_region" {}
 
-resource "huaweicloud_rms_resource_recorder" "test" {
+resource "hcso_rms_resource_recorder" "test" {
   agency_name = "rms_tracker_agency"
 
   selector {
@@ -108,5 +108,5 @@ In addition to all arguments above, the following attributes are exported:
 The recorder can be imported using **any string** as the resource ID, e.g.
 
 ```bash
-$ terraform import huaweicloud_rms_resource_recorder.test recorder
+$ terraform import hcso_rms_resource_recorder.test recorder
 ```

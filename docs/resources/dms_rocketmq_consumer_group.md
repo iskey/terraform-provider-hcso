@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_rocketmq_consumer_group
+# hcso_dms_rocketmq_consumer_group
 
 Manages DMS RocketMQ consumer group resources within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages DMS RocketMQ consumer group resources within HuaweiCloud.
 ```hcl
 variable "instance_id" {}
 
-resource "huaweicloud_dms_rocketmq_consumer_group" "test" {
+resource "hcso_dms_rocketmq_consumer_group" "test" {
   instance_id     = var.instance_id
   name            = "consumer_group_test"
   enabled         = true
@@ -57,5 +57,5 @@ In addition to all arguments above, the following attributes are exported:
 The rocketmq consumer group can be imported using the rocketMQ instance ID and group name separated by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_dms_rocketmq_consumer_group.test 8d3c7938-dc47-4937-a30f-c80de381c5e3/group_1
+$ terraform import hcso_dms_rocketmq_consumer_group.test 8d3c7938-dc47-4937-a30f-c80de381c5e3/group_1
 ```

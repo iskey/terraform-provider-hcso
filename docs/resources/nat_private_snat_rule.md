@@ -2,7 +2,7 @@
 subcategory: "NAT Gateway (NAT)"
 ---
 
-# huaweicloud_nat_private_snat_rule
+# hcso_nat_private_snat_rule
 
 Manages an SNAT rule resource of the **private** NAT within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "gateway_id" {}
 variable "transit_ip_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_nat_private_snat_rule" "test" {
+resource "hcso_nat_private_snat_rule" "test" {
   gateway_id    = var.gateway_id
   transit_ip_id = var.transit_ip_id
   subnet_id     = var.subnet_id
@@ -29,7 +29,7 @@ variable "gateway_id" {}
 variable "transit_ip_id" {}
 variable "cidr_block" {}
 
-resource "huaweicloud_nat_private_snat_rule" "test" {
+resource "hcso_nat_private_snat_rule" "test" {
   gateway_id    = var.gateway_id
   transit_ip_id = var.transit_ip_id
   cidr          = var.cidr_block
@@ -76,5 +76,5 @@ In addition to all arguments above, the following attributes are exported:
 SNAT rules can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_nat_private_snat_rule.test df9b61e9-79c1-4a75-bfab-736e224ced71
+$ terraform import hcso_nat_private_snat_rule.test df9b61e9-79c1-4a75-bfab-736e224ced71
 ```

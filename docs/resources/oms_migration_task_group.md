@@ -2,7 +2,7 @@
 subcategory: "Object Storage Migration Service (OMS)"
 ---
 
-# huaweicloud_oms_migration_task_group
+# hcso_oms_migration_task_group
 
 Manages an OMS migration task group resource within HuaweiCloud.
 
@@ -20,7 +20,7 @@ variable "dest_bucket" {}
 variable "dest_access_key" {}
 variable "dest_secret_key" {}
 
-resource "huaweicloud_oms_migration_task_group" "test" {
+resource "hcso_oms_migration_task_group" "test" {
   source_object {
     data_source = "Aliyun"
     region      = var.source_region
@@ -74,7 +74,7 @@ variable "dest_secret_key" {}
 variable "list_file_bucket" {}
 variable "list_file_key" {}
 
-resource "huaweicloud_oms_migration_task_group" "test" {
+resource "hcso_oms_migration_task_group" "test" {
   source_object {
     data_source      = "HuaweiCloud"
     region           = var.source_region
@@ -107,7 +107,7 @@ variable "dest_secret_key" {}
 variable "list_file_bucket" {}
 variable "list_file_key" {}
 
-resource "huaweicloud_oms_migration_task_group" "test" {
+resource "hcso_oms_migration_task_group" "test" {
   source_object {
     data_source      = "URLSource"
     list_file_bucket = var.list_file_bucket

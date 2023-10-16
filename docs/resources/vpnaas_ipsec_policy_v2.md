@@ -2,14 +2,14 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_vpnaas_ipsec_policy_v2
+# hcso_vpnaas_ipsec_policy_v2
 
 Manages a V2 IPSec policy resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpnaas_ipsec_policy_v2" "policy_1" {
+resource "hcso_vpnaas_ipsec_policy_v2" "policy_1" {
   name = "my_policy"
 }
 ```
@@ -67,5 +67,5 @@ This resource provides the following timeouts configuration options:
 Policies can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpnaas_ipsec_policy_v2.policy_1 832cb7f3-59fe-40cf-8f64-8350ffc03272
+$ terraform import hcso_vpnaas_ipsec_policy_v2.policy_1 832cb7f3-59fe-40cf-8f64-8350ffc03272
 ```

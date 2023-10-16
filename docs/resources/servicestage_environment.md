@@ -2,7 +2,7 @@
 subcategory: "ServiceStage"
 ---
 
-# huaweicloud_servicestage_environment
+# hcso_servicestage_environment
 
 Manages an environment resource within HuaweiCloud ServiceStage.
 
@@ -16,7 +16,7 @@ variable "vpc_id" {}
 variable "cce_cluster_id" {}
 variable "cci_namespace_name" {}
 
-resource "huaweicloud_servicestage_environment" "test" {
+resource "hcso_servicestage_environment" "test" {
   name   = var.env_name
   vpc_id = var.vpc_id
 
@@ -80,5 +80,5 @@ In addition to all arguments above, the following attributes are exported:
 Environments can be imported using their `id`, e.g.:
 
 ```
-$ terraform import huaweicloud_servicestage_environment.test 17383329-b686-47e4-8f70-0d8dcddb65e9
+$ terraform import hcso_servicestage_environment.test 17383329-b686-47e4-8f70-0d8dcddb65e9
 ```

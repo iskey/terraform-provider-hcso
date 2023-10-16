@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_dedicated_domain
+# hcso_waf_dedicated_domain
 
 Manages a dedicated mode domain resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "certificated_id" {}
 variable "vpc_id" {}
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_dedicated_domain" "domain_1" {
+resource "hcso_waf_dedicated_domain" "domain_1" {
   domain                = "www.example.com"
   certificate_id        = var.certificated_id
   enterprise_project_id = var.enterprise_project_id
@@ -136,11 +136,11 @@ There are two ways to import WAF dedicated domain state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_dedicated_domain.test <id>
+$ terraform import hcso_waf_dedicated_domain.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_dedicated_domain.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_dedicated_domain.test <id>/<enterprise_project_id>
 ```

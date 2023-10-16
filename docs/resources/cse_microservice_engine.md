@@ -2,7 +2,7 @@
 subcategory: "Cloud Service Engine (CSE)"
 ---
 
-# huaweicloud_cse_microservice_engine
+# hcso_cse_microservice_engine
 
 Manages a dedicated microservice engine (2.0+) resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "engine_name" {}
 variable "network_id" {}
 variable "az1" {}
 
-resource "huaweicloud_cse_microservice_engine" "test" {
+resource "hcso_cse_microservice_engine" "test" {
   name       = var.engine_name
   flavor     = "cse.s1.small2"
   network_id = var.network_id
@@ -125,7 +125,7 @@ This resource provides the following timeouts configuration options:
 Engines can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cse_microservice_engine.test eddc5d42-f9d5-4f8e-984b-d6f3e088561c
+$ terraform import hcso_cse_microservice_engine.test eddc5d42-f9d5-4f8e-984b-d6f3e088561c
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -135,7 +135,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cse_microservice_engine" "test" {
+resource "hcso_cse_microservice_engine" "test" {
   ...
   lifecycle {
     ignore_changes = [
@@ -150,5 +150,5 @@ For the engine created with the `enterprise_project_id`, its enterprise project 
 when importing, the format is `<id>/<enterprise_project_id>`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cse_microservice_engine.test eddc5d42-f9d5-4f8e-984b-d6f3e088561c/ef101e1a-990c-42cd-bb99-a4474e41e461
+$ terraform import hcso_cse_microservice_engine.test eddc5d42-f9d5-4f8e-984b-d6f3e088561c/ef101e1a-990c-42cd-bb99-a4474e41e461
 ```

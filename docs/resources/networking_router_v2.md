@@ -2,16 +2,16 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_networking_router_v2
+# hcso_networking_router_v2
 
 Manages a V2 router resource within HuaweiCloud.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc` instead.
+!> **WARNING:** It has been deprecated, use `hcso_vpc` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_networking_router_v2" "router_1" {
+resource "hcso_networking_router_v2" "router_1" {
   name                = "my_router"
   admin_state_up      = true
   external_network_id = "f67f0d72-0ddf-11e4-9d95-e1f29f417e2f"
@@ -73,5 +73,5 @@ This resource provides the following timeouts configuration options:
 Routers can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_networking_router_v2.router_1 014395cd-89fc-4c9b-96b7-13d1ee79dad2
+$ terraform import hcso_networking_router_v2.router_1 014395cd-89fc-4c9b-96b7-13d1ee79dad2
 ```

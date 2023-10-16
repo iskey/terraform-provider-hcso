@@ -2,7 +2,7 @@
 subcategory: "Workspace"
 ---
 
-# huaweicloud_workspace_service
+# hcso_workspace_service
 
 Use this resource to register or unregister the Workspace service in HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "network_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_workspace_service" "test" {
+resource "hcso_workspace_service" "test" {
   access_mode = "INTERNET"
   vpc_id      = var.vpc_id
   network_ids = var.network_ids
@@ -38,7 +38,7 @@ variable "ad_master_domain_ip" {}
 variable "ad_server_name" {}
 variable "ad_master_dns_ip" {}
 
-resource "huaweicloud_workspace_service" "test" {
+resource "hcso_workspace_service" "test" {
   auth_type   = "LOCAL_AD"
   access_mode = "INTERNET"
   vpc_id      = var.vpc_id
@@ -172,7 +172,7 @@ This resource provides the following timeouts configuration options:
 Service can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_workspace_service.test fd3f81cb-d95f-43ce-b342-81b6b5dcadda
+$ terraform import hcso_workspace_service.test fd3f81cb-d95f-43ce-b342-81b6b5dcadda
 ```
 
 ## Appendix

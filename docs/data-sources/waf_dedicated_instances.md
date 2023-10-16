@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_dedicated_instances
+# hcso_waf_dedicated_instances
 
 Use this data source to get a list of WAF dedicated instances.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of WAF dedicated instances.
 ```hcl
 variable instance_name {}
 
-data "huaweicloud_waf_dedicated_instances" "instances" {
+data "hcso_waf_dedicated_instances" "instances" {
   name = var.instance_name
 }
 ```

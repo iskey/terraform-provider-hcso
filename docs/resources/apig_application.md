@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_application
+# hcso_apig_application
 
 Manages an APIG application resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "instance_id" {}
 variable "app_name" {}
 variable "app_code" {}
 
-resource "huaweicloud_apig_application" "test" {
+resource "hcso_apig_application" "test" {
   instance_id = var.instance_id
   name        = var.app_name
   description = "Created by script"
@@ -73,5 +73,5 @@ In addition to all arguments above, the following attributes are exported:
 Applications can be imported using their `id` and the ID of the related dedicated instance, separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_application.test <instance_id>/<id>
+$ terraform import hcso_apig_application.test <instance_id>/<id>
 ```

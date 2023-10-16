@@ -2,7 +2,7 @@
 subcategory: "Host Security Service (HSS)"
 ---
 
-# huaweicloud_hss_host_group
+# hcso_hss_host_group
 
 Manages an HSS host group resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "host_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_hss_host_group" "test" {
+resource "hcso_hss_host_group" "test" {
   name     = var.host_group_name
   host_ids = var.host_ids
 }
@@ -63,5 +63,5 @@ This resource provides the following timeouts configuration options:
 Host groups instance can be imported using their `id`, e.g.
 
 ```
-$ terraform import huaweicloud_hss_host_group.test 69daa15a-3a6b-47ae-a2be-62b488c4e099
+$ terraform import hcso_hss_host_group.test 69daa15a-3a6b-47ae-a2be-62b488c4e099
 ```

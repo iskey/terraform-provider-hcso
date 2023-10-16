@@ -2,7 +2,7 @@
 subcategory: "Cloud Connect (CC)"
 ---
 
-# huaweicloud_cc_network_instance
+# hcso_cc_network_instance
 
 Manages a network instance resource within HuaweiCloud.  
 
@@ -20,7 +20,7 @@ variable "vpc_project_id" {}
 variable "vpc_region_id" {}
 variable "cidr" {}
 
-resource "huaweicloud_cc_network" "test" {
+resource "hcso_cc_network" "test" {
   type                = "vpc"
   cloud_connection_id = var.cloud_connection_id
   instance_id         = var.vpc_instance_id
@@ -92,5 +92,5 @@ In addition to all arguments above, the following attributes are exported:
 The network instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_cc_network_instance.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_cc_network_instance.test 0ce123456a00f2591fabc00385ff1234
 ```

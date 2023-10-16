@@ -2,12 +2,12 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_buckets
+# hcso_obs_buckets
 
 Use this data source to get all OBS buckets.
 
 ```hcl
-data "huaweicloud_obs_buckets" "buckets" {
+data "hcso_obs_buckets" "buckets" {
   bucket = "your-bucket-name"
 }
 ```

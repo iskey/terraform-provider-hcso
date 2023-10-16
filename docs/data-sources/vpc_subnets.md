@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_subnets
+# hcso_vpc_subnets
 
 Use this data source to get a list of VPC subnet.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of VPC subnet.
 An example filter by name and tag
 
 ```hcl
-data "huaweicloud_vpc_subnets" "subnet" {
+data "hcso_vpc_subnets" "subnet" {
   name = var.subnet_name
 
   tags = {
@@ -20,7 +20,7 @@ data "huaweicloud_vpc_subnets" "subnet" {
 }
 
 output "subnet_vpc_ids" {
-  value = data.huaweicloud_vpc_subnets.subnet.subnets[*].vpc_id
+  value = data.hcso_vpc_subnets.subnet.subnets[*].vpc_id
 }
 ```
 

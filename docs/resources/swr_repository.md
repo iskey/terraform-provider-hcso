@@ -2,7 +2,7 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_repository
+# hcso_swr_repository
 
 Manages a SWR repository resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a SWR repository resource within HuaweiCloud.
 ```hcl
 variable "organization_name" {} 
 
-resource "huaweicloud_swr_repository" "test" {
+resource "hcso_swr_repository" "test" {
   organization = var.organization_name
   name         = "%s"
   description  = "Test repository"
@@ -61,5 +61,5 @@ In addition to all arguments above, the following attributes are exported:
 Repository can be imported using the organization name and repository name separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_swr_repository.test org-name/repo-name
+$ terraform import hcso_swr_repository.test org-name/repo-name
 ```

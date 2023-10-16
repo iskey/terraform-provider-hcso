@@ -2,7 +2,7 @@
 subcategory: "SecMaster"
 ---
 
-# huaweicloud_secmaster_incident
+# hcso_secmaster_incident
 
 Manages a SecMaster incident resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages a SecMaster incident resource within HuaweiCloud.
 ```hcl
 variable "workspace_id" {}
 
-resource "huaweicloud_secmaster_incident" "test" {
+resource "hcso_secmaster_incident" "test" {
   workspace_id = var.workspace_id
   name         = "test-incident"
   description  = "test incident"
@@ -145,5 +145,5 @@ In addition to all arguments above, the following attributes are exported:
 The incident can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_secmaster_incident.test 40b57838-2019-443a-bb07-30a7a50a4780
+$ terraform import hcso_secmaster_incident.test 40b57838-2019-443a-bb07-30a7a50a4780
 ```

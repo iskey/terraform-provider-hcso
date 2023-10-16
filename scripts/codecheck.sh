@@ -10,7 +10,7 @@ function usage() {
 function checkImporter() {
     dir=$1
     for f in $(ls $dir); do
-        if [[ $f =~ "resource_huaweicloud_" ]]; then
+        if [[ $f =~ "resource_hcso_" ]]; then
             hasImporter=$(grep -w "Importer:" $dir/$f)
             if [ "X$hasImporter" == "X" ]; then
                 echo -e "\033[31m  -> the resource in $f should can be imported\n\033[0m"
@@ -22,7 +22,7 @@ function checkImporter() {
 function checkCheckDeleted() {
     dir=$1
     for f in $(ls $dir); do
-        if [[ $f =~ "resource_huaweicloud_" ]]; then
+        if [[ $f =~ "resource_hcso_" ]]; then
             checkDeleted=$(grep "CheckDeleted" $dir/$f)
              if [ "X$checkDeleted" == "X" ]; then
                 checkDeleted=$(grep "\"Resource not found\"" $dir/$f)
@@ -38,7 +38,7 @@ function checkCheckDeleted() {
 function checkMultierror() {
     dir=$1
     for f in $(ls $dir); do
-        if [[ $f =~ "_huaweicloud_" ]]; then
+        if [[ $f =~ "_hcso_" ]]; then
             hasMultierror=$(grep -w "go-multierror" $dir/$f)
             if [ "X$hasMultierror" == "X" ]; then
                 echo -e "\033[31m  -> please use go-multierror package in $f\n\033[0m"
@@ -74,8 +74,8 @@ service=${package##*/}
 # Check working directory
 workDir=`pwd`
 thisDir=${workDir##*/}
-if [ "X$thisDir" != "Xterraform-provider-huaweicloud" ]; then
-    echo -e "error: the working directory must be terraform-provider-huaweicloud!\n"
+if [ "X$thisDir" != "Xterraform-provider-hcso" ]; then
+    echo -e "error: the working directory must be terraform-provider-hcso!\n"
     usage
     exit 1
 fi
@@ -152,7 +152,7 @@ echo -e "\n==> Checking for Nolint directives..."
 grep -rn "nolint:" $packageDir | grep -v "/deprecated/"
 grep -rn "lintignore:" $packageDir | grep -v "/deprecated/"
 
-if [ "X$service" != "X..." ] && [[ $package == ./huaweicloud/services/* ]] && [[ $package != ./huaweicloud/services/acceptance/* ]]; then
+if [ "X$service" != "X..." ] && [[ $package == ./internal/services/* ]] && [[ $package != ./internal/services/acceptance/* ]]; then
     grep -rn "markdownlint" ./docs | grep "/${service}_"
 
     echo -e "\n==> Checking for TF features in $service..."
@@ -165,7 +165,7 @@ if [ "X$service" != "X..." ] && [[ $package == ./huaweicloud/services/* ]] && [[
     misspell ./docs | grep "/${service}_"
     misspell ./examples | grep -w "${service}"
 
-    # update path to "./huaweicloud/services/acceptance/xxx"
+    # update path to "./internal/services/acceptance/xxx"
     testpackage=${package/"services"/"services/acceptance"}
     if [ ! -d $testpackage ]; then
         echo -e "error: the acceptance directory is not exist!\n"
@@ -189,8 +189,8 @@ fi
 # cleanup
 if [ "X$applied" == "XTRUE" ]; then
     echo -e "\n==> Cleanup patch..."
-    git checkout -- huaweicloud/utils/fmtp/errors.go
-    git checkout -- huaweicloud/utils/logp/log.go
+    git checkout -- internal/utils/fmtp/errors.go
+    git checkout -- internal/utils/logp/log.go
 fi
 
 echo -e "\nCheck Completed!\n"

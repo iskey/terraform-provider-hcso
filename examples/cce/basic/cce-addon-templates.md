@@ -2,7 +2,7 @@
 
 Addon support configuration input depending on addon type and version. This page contains description of addon
 arguments. You can get up to date reference of addon arguments for your cluster using data source
-[`huaweicloud_cce_addon_template`](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/cce_addon_template)
+[`hcso_cce_addon_template`](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/cce_addon_template)
 .
 
 Following addon templates exist in the addon template list:
@@ -24,27 +24,27 @@ It is recommended to use `basic_json`, `custom_json` and `flavor_json` for more 
 variable "cluster_id" {}
 variable "tenant_id" {}
 
-data "huaweicloud_cce_addon_template" "autoscaler" {
+data "hcso_cce_addon_template" "autoscaler" {
   cluster_id = var.cluster_id
   name       = "autoscaler"
   version    = "1.19.6"
 }
 
-resource "huaweicloud_cce_addon" "autoscaler" {
+resource "hcso_cce_addon" "autoscaler" {
   cluster_id    = var.cluster_id
   template_name = "autoscaler"
   version       = "1.19.6"
 
   values {
-    basic_json  = jsonencode(jsondecode(data.huaweicloud_cce_addon_template.autoscaler.spec).basic)
+    basic_json  = jsonencode(jsondecode(data.hcso_cce_addon_template.autoscaler.spec).basic)
     custom_json = jsonencode(merge(
-      jsondecode(data.huaweicloud_cce_addon_template.autoscaler.spec).parameters.custom,
+      jsondecode(data.hcso_cce_addon_template.autoscaler.spec).parameters.custom,
       {
         cluster_id = var.cluster_id
         tenant_id  = var.tenant_id
       }
     ))
-    flavor_json = jsonencode(jsondecode(data.huaweicloud_cce_addon_template.autoscaler.spec).parameters.flavor2)
+    flavor_json = jsonencode(jsondecode(data.hcso_cce_addon_template.autoscaler.spec).parameters.flavor2)
   }
 }
 
@@ -56,21 +56,21 @@ resource "huaweicloud_cce_addon" "autoscaler" {
 variable "cluster_id" {}
 variable "tenant_id" {}
 
-data "huaweicloud_cce_addon_template" "autoscaler" {
+data "hcso_cce_addon_template" "autoscaler" {
   cluster_id = var.cluster_id
   name       = "autoscaler"
   version    = "1.19.6"
 }
 
-resource "huaweicloud_cce_addon" "autoscaler" {
+resource "hcso_cce_addon" "autoscaler" {
   cluster_id    = var.cluster_id
   template_name = "autoscaler"
   version       = "1.19.6"
   
   values {
-    basic  = jsondecode(data.huaweicloud_cce_addon_template.autoscaler.spec).basic
+    basic  = jsondecode(data.hcso_cce_addon_template.autoscaler.spec).basic
     custom = merge(
-      jsondecode(data.huaweicloud_cce_addon_template.autoscaler.spec).parameters.custom,
+      jsondecode(data.hcso_cce_addon_template.autoscaler.spec).parameters.custom,
       {
         cluster_id = var.cluster_id
         tenant_id  = var.tenant_id

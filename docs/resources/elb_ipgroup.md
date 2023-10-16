@@ -2,14 +2,14 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_ipgroup
+# hcso_elb_ipgroup
 
 Manages a Dedicated ELB Ip Group resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_elb_ipgroup" "basic" {
+resource "hcso_elb_ipgroup" "basic" {
   name        = "basic"
   description = "basic example"
 
@@ -52,7 +52,7 @@ In addition to all arguments above, the following attributes are exported:
 ELB IP group can be imported using the IP group ID, e.g.
 
 ```
-$ terraform import huaweicloud_elb_ipgroup.group_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_elb_ipgroup.group_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -62,7 +62,7 @@ You can then decide if changes should be applied to the IP group, or the resourc
 definition should be updated to align with the IP group. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_elb_ipgroup" "group_1" {
+resource "hcso_elb_ipgroup" "group_1" {
     ...
   lifecycle {
     ignore_changes = [

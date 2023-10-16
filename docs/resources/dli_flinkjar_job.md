@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_flinkjar_job
+# hcso_dli_flinkjar_job
 
 Manages a flink job resource which type is `Flink Jar` within HuaweiCloud DLI.
 
@@ -16,16 +16,16 @@ variable "queue_name" {}
 variable "jar_obs_path" {}
 variable "entrypoint_args" {}
 
-resource "huaweicloud_dli_package" "test" {
+resource "hcso_dli_package" "test" {
   group_name  = "jarPackage"
   type        = "jar"
   object_path = var.jar_obs_path
 }
 
-resource "huaweicloud_dli_flinkjar_job" "test" {
+resource "hcso_dli_flinkjar_job" "test" {
   name            = var.name
   queue_name      = var.queue_name
-  entrypoint      = "${huaweicloud_dli_package.test.group_name}/${huaweicloud_dli_package.test.object_name}"
+  entrypoint      = "${hcso_dli_package.test.group_name}/${hcso_dli_package.test.object_name}"
   entrypoint_args = var.entrypoint_args
 
   tags = {
@@ -149,5 +149,5 @@ This resource provides the following timeouts configuration options:
 The job can be imported by `id`. For example,
 
 ```
-terraform import huaweicloud_dli_flinkjar_job.test 12345
+terraform import hcso_dli_flinkjar_job.test 12345
 ```

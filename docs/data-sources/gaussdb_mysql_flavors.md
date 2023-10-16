@@ -2,14 +2,14 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_flavors
+# hcso_gaussdb_mysql_flavors
 
 Use this data source to get available HuaweiCloud gaussdb mysql flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_mysql_flavors" "flavors" {
+data "hcso_gaussdb_mysql_flavors" "flavors" {
 }
 ```
 

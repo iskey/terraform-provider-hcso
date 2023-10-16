@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_project
+# hcso_identity_project
 
 Manages an IAM project resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an IAM project resource within HuaweiCloud.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_identity_project" "project_1" {
+resource "hcso_identity_project" "project_1" {
   name        = "cn-north-1_project1"
   description = "This is a test project"
 }
@@ -43,5 +43,5 @@ In addition to all arguments above, the following attributes are exported:
 IAM projects can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_identity_project.project_1 89c60255-9bd6-460c-822a-e2b959ede9d2
+$ terraform import hcso_identity_project.project_1 89c60255-9bd6-460c-822a-e2b959ede9d2
 ```

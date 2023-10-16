@@ -2,7 +2,7 @@
 subcategory: "Bare Metal Server (BMS)"
 ---
 
-# huaweicloud_bms_instance
+# hcso_bms_instance
 
 Manages a BMS instance resource within HuaweiCloud.
 
@@ -25,29 +25,29 @@ variable "eip_id" {}
 
 variable "enterprise_project_id" {}
 
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_vpc" "myvpc" {
+data "hcso_vpc" "myvpc" {
   name = "vpc-default"
 }
 
-data "huaweicloud_vpc_subnet" "mynet" {
+data "hcso_vpc_subnet" "mynet" {
   name = "subnet-default"
 }
 
-data "huaweicloud_networking_secgroup" "mysecgroup" {
+data "hcso_networking_secgroup" "mysecgroup" {
   name = "default"
 }
 
-resource "huaweicloud_bms_instance" "test" {
+resource "hcso_bms_instance" "test" {
   name                  = var.instance_name
   image_id              = var.image_id
   flavor_id             = var.flavor_id
   user_id               = var.user_id
-  security_groups       = [data.huaweicloud_networking_secgroup.mysecgroup.id]
-  availability_zone     = data.huaweicloud_availability_zones.myaz.names[0]
-  vpc_id                = data.huaweicloud_vpc.myvpc.id
-  eip_id                = huaweicloud_vpc_eip.myeip.id
+  security_groups       = [data.hcso_networking_secgroup.mysecgroup.id]
+  availability_zone     = data.hcso_availability_zones.myaz.names[0]
+  vpc_id                = data.hcso_vpc.myvpc.id
+  eip_id                = hcso_vpc_eip.myeip.id
   charging_mode         = "prePaid"
   period_unit           = "month"
   period                = "1"
@@ -62,7 +62,7 @@ resource "huaweicloud_bms_instance" "test" {
   }
 
   nics {
-    subnet_id  = data.huaweicloud_vpc_subnet.mynet.id
+    subnet_id  = data.hcso_vpc_subnet.mynet.id
     ip_address = "192.168.0.123"
   }
 

@@ -2,7 +2,7 @@
 subcategory: "Data Ingestion Service (DIS)"
 ---
 
-# huaweicloud_dis_stream
+# hcso_dis_stream
 
 Manages DIS Stream resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages DIS Stream resource within HuaweiCloud.
 ### Create a stream that type is BLOB
 
 ```hcl
-resource "huaweicloud_dis_stream" "stream" {
+resource "hcso_dis_stream" "stream" {
   stream_name     = "terraform_test_dis_stream"
   partition_count = 1
 }
@@ -20,7 +20,7 @@ resource "huaweicloud_dis_stream" "stream" {
 ### Create a stream that type is JSON
 
 ```hcl
-resource "huaweicloud_dis_stream" "stream" {
+resource "hcso_dis_stream" "stream" {
   stream_name     = "terraform_test_dis_stream"
   partition_count = 1
   data_type       = "JSON"
@@ -104,5 +104,5 @@ The `partitions` block contains:
 Dis stream can be imported by `stream_name`. For example,
 
 ```
-terraform import huaweicloud_dis_stream.example _abc123
+terraform import hcso_dis_stream.example _abc123
 ```

@@ -28,7 +28,7 @@ You can refer to the following configuration to write scripts according to your 
 Use Pay-per-use charging mode for the Redis instance.
 
 ```hcl
-resource "huaweicloud_dcs_instance" "instance" {
+resource "hcso_dcs_instance" "instance" {
   ...
   charging_mode = "postPaid"
   ...
@@ -38,7 +38,7 @@ resource "huaweicloud_dcs_instance" "instance" {
 Use Monthly/Yearly charging mode for the Redis instance.
 
 ```hcl
-resource "huaweicloud_dcs_instance" "instance" {
+resource "hcso_dcs_instance" "instance" {
   ...
   charging_mode = "prePaid"
   period_unit   = "year" # yearly mode. If set to month, monthly billing mode.
@@ -52,7 +52,7 @@ resource "huaweicloud_dcs_instance" "instance" {
 Configure a backup policy, I need to back up from 02:00 to 04:00 every day and keep the backup data for 3 days.
 
 ```hcl
-resource "huaweicloud_dcs_instance" "instance" {
+resource "hcso_dcs_instance" "instance" {
   ...
   backup_policy {
     backup_type = "auto"
@@ -70,7 +70,7 @@ resource "huaweicloud_dcs_instance" "instance" {
 Configure IP Whitelists, only the IP in the whitelist can access Redis instances.
 
 ```hcl
-resource "huaweicloud_dcs_instance" "instance" {
+resource "hcso_dcs_instance" "instance" {
   ...
   whitelists {
     group_name = "group_1"
@@ -90,7 +90,7 @@ Rename the original command to make redis more secure.
 The commands that support renaming are: command, keys, flushdb, flushall and hgetall.
 
 ```hcl
-resource "huaweicloud_dcs_instance" "instance" {
+resource "hcso_dcs_instance" "instance" {
   ...
   rename_commands = {
     "command": "cmd",
@@ -106,7 +106,7 @@ resource "huaweicloud_dcs_instance" "instance" {
 ### Configure Tags for Redis instance
 
 ```hcl
-resource "huaweicloud_dcs_instance" "instance" {
+resource "hcso_dcs_instance" "instance" {
   ...
   tags = {
     "level": "A",

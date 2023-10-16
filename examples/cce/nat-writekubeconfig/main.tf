@@ -1,14 +1,14 @@
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_vpc" "myvpc" {
+data "hcso_vpc" "myvpc" {
   id = var.vpc_id
 }
 
-data "huaweicloud_vpc_subnet" "mysubnet" {
+data "hcso_vpc_subnet" "mysubnet" {
   id = var.subnet_id
 }
 
-resource "huaweicloud_vpc_eip" "cce" {
+resource "hcso_vpc_eip" "cce" {
   publicip {
     type = "5_bgp"
   }
@@ -20,7 +20,7 @@ resource "huaweicloud_vpc_eip" "cce" {
   }
 }
 
-resource "huaweicloud_vpc_eip" "nat" {
+resource "hcso_vpc_eip" "nat" {
   publicip {
     type = "5_bgp"
   }
@@ -32,37 +32,37 @@ resource "huaweicloud_vpc_eip" "nat" {
   }
 }
 
-resource "huaweicloud_nat_gateway" "nat_1" {
+resource "hcso_nat_gateway" "nat_1" {
   name      = var.nat_name
   spec      = "1"
-  vpc_id    = data.huaweicloud_vpc.myvpc.id
-  subnet_id = data.huaweicloud_vpc_subnet.mysubnet.id
+  vpc_id    = data.hcso_vpc.myvpc.id
+  subnet_id = data.hcso_vpc_subnet.mysubnet.id
 }
 
-resource "huaweicloud_nat_snat_rule" "snat_1" {
-  nat_gateway_id = huaweicloud_nat_gateway.nat_1.id
-  floating_ip_id = huaweicloud_vpc_eip.nat.id
-  subnet_id      = data.huaweicloud_vpc_subnet.mysubnet.id
+resource "hcso_nat_snat_rule" "snat_1" {
+  nat_gateway_id = hcso_nat_gateway.nat_1.id
+  floating_ip_id = hcso_vpc_eip.nat.id
+  subnet_id      = data.hcso_vpc_subnet.mysubnet.id
 }
 
-resource "huaweicloud_cce_cluster" "cluster" {
+resource "hcso_cce_cluster" "cluster" {
   name                   = var.cce_name
   cluster_type           = "VirtualMachine"
   cluster_version        = "v1.19"
   flavor_id              = "cce.s1.small"
-  vpc_id                 = data.huaweicloud_vpc.myvpc.id
-  subnet_id              = data.huaweicloud_vpc_subnet.mysubnet.id
+  vpc_id                 = data.hcso_vpc.myvpc.id
+  subnet_id              = data.hcso_vpc_subnet.mysubnet.id
   container_network_type = "overlay_l2"
   authentication_mode    = "rbac"
-  eip                    = huaweicloud_vpc_eip.cce.address
+  eip                    = hcso_vpc_eip.cce.address
   delete_all             = "true"
 }
 
-resource "huaweicloud_cce_node" "cce-node1" {
-  cluster_id        = huaweicloud_cce_cluster.cluster.id
+resource "hcso_cce_node" "cce-node1" {
+  cluster_id        = hcso_cce_cluster.cluster.id
   name              = "node1"
   flavor_id         = "s6.large.2"
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   key_pair          = var.key_pair_name
 
   root_volume {
@@ -75,11 +75,11 @@ resource "huaweicloud_cce_node" "cce-node1" {
   }
 }
 
-resource "huaweicloud_cce_node" "cce-node2" {
-  cluster_id        = huaweicloud_cce_cluster.cluster.id
+resource "hcso_cce_node" "cce-node2" {
+  cluster_id        = hcso_cce_cluster.cluster.id
   name              = "node2"
   flavor_id         = "s6.large.2"
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   key_pair          = var.key_pair_name
 
   root_volume {
@@ -92,11 +92,11 @@ resource "huaweicloud_cce_node" "cce-node2" {
   }
 }
 
-resource "huaweicloud_cce_node" "cce-node3" {
-  cluster_id        = huaweicloud_cce_cluster.cluster.id
+resource "hcso_cce_node" "cce-node3" {
+  cluster_id        = hcso_cce_cluster.cluster.id
   name              = "node3"
   flavor_id         = "s6.large.2"
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   key_pair          = var.key_pair_name
 
   root_volume {
@@ -110,7 +110,7 @@ resource "huaweicloud_cce_node" "cce-node3" {
 }
 
 resource "local_file" "kubeconfig" {
-  content  = huaweicloud_cce_cluster.cluster.kube_config_raw
+  content  = hcso_cce_cluster.cluster.kube_config_raw
   filename = "$Local kubeconfig file path"
 }
 

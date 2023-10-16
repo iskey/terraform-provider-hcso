@@ -2,14 +2,14 @@
 subcategory: "Video on Demand (VOD)"
 ---
 
-# huaweicloud_vod_watermark_template
+# hcso_vod_watermark_template
 
 Manages a VOD watermark template resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vod_watermark_template" "test" {
+resource "hcso_vod_watermark_template" "test" {
   name              = "test"
   image_file        = "./test.PNG"
   image_type        = "PNG"
@@ -90,7 +90,7 @@ This resource provides the following timeouts configuration options:
 The template can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vod_watermark_template.test 81ac58796e25842ee2e90a904aa8a719
+$ terraform import hcso_vod_watermark_template.test 81ac58796e25842ee2e90a904aa8a719
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -100,7 +100,7 @@ You can then decide if changes should be applied to the watermark template, or t
 definition should be updated to align with the watermark template. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_vod_watermark_template" "test" {
+resource "hcso_vod_watermark_template" "test" {
     ...
   lifecycle {
     ignore_changes = [

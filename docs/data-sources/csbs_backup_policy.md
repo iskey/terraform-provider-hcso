@@ -13,7 +13,7 @@ The HuaweiCloud CSBS Backup Policy data source allows access of backup Policy re
 ```hcl
 variable "policy_id" {}
 
-data "huaweicloud_csbs_backup_policy" "csbs_policy" {
+data "hcso_csbs_backup_policy" "csbs_policy" {
   id = var.policy_id
 }
 ```

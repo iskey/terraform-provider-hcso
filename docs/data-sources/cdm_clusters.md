@@ -2,7 +2,7 @@
 subcategory: "Cloud Data Migration (CDM)"
 ---
 
-# huaweicloud_cdm_clusters
+# hcso_cdm_clusters
 
 Use this data source to get clusters of CDM.
 
@@ -11,7 +11,7 @@ Use this data source to get clusters of CDM.
 ```hcl
 variable "cluster_name" {}
 
-data "huaweicloud_cdm_clusters" "test" {
+data "hcso_cdm_clusters" "test" {
   name = var.cluster_name
 }
 ```

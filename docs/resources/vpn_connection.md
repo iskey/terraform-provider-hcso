@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Network (VPN)"
 ---
 
-# huaweicloud_vpn_connection
+# hcso_vpn_connection
 
 Manages a VPN connection resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "gateway_id" {}
 variable "gateway_ip" {}
 variable "customer_gateway_id" {}
 
-resource "huaweicloud_vpn_connection" "test" {
+resource "hcso_vpn_connection" "test" {
   name                = var.name
   gateway_id          = var.gateway_id
   gateway_ip          = var.gateway_ip
@@ -37,7 +37,7 @@ variable "gateway_id" {}
 variable "gateway_ip" {}
 variable "customer_gateway_id" {}
 
-resource "huaweicloud_vpn_connection" "test" {
+resource "hcso_vpn_connection" "test" {
   name                = var.name
   gateway_id          = var.gateway_id
   gateway_ip          = var.gateway_ip
@@ -220,5 +220,5 @@ This resource provides the following timeouts configuration options:
 The connection can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpn_connection.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_vpn_connection.test 0ce123456a00f2591fabc00385ff1234
 ```

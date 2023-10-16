@@ -2,7 +2,7 @@
 subcategory: "Server Migration Service (SMS)"
 ---
 
-# huaweicloud_sms_source_servers
+# hcso_sms_source_servers
 
 Use this data source to get a list of SMS source servers.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of SMS source servers.
 ```hcl
 variable "server_name" {}
 
-data "huaweicloud_sms_source_servers" "demo" {
+data "hcso_sms_source_servers" "demo" {
   name = var.server_name
 }
 ```

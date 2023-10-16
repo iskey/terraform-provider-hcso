@@ -2,7 +2,7 @@
 subcategory: "NAT Gateway (NAT)"
 ---
 
-# huaweicloud_nat_private_dnat_rule
+# hcso_nat_private_dnat_rule
 
 Manages a DNAT rule resource of the **private** NAT within HuaweiCloud.
 
@@ -14,16 +14,16 @@ Manages a DNAT rule resource of the **private** NAT within HuaweiCloud.
 variable "gateway_id" {}
 variable "transit_ip_id" {}
 
-resource "huaweicloud_compute_instance" "test" {
+resource "hcso_compute_instance" "test" {
   ...
 }
 
-resource "huaweicloud_nat_private_dnat_rule" "test" {
+resource "hcso_nat_private_dnat_rule" "test" {
   gateway_id            = var.gateway_id
   protocol              = "tcp"
   transit_ip_id         = var.transit_ip_id
   transit_service_port  = 1000
-  backend_interface_id  = huaweicloud_compute_instance.test.network[0].port
+  backend_interface_id  = hcso_compute_instance.test.network[0].port
   internal_service_port = 2000
 }
 ```
@@ -35,21 +35,21 @@ variable "network_id" {}
 variable "gateway_id" {}
 variable "transit_ip_id" {}
 
-resource "huaweicloud_elb_loadbalancer" "test" {
+resource "hcso_elb_loadbalancer" "test" {
   ...
 }
 
-data "huaweicloud_networking_port" "test" {
+data "hcso_networking_port" "test" {
   network_id = var.network_id
-  fixed_ip   = huaweicloud_elb_loadbalancer.test.ipv4_address
+  fixed_ip   = hcso_elb_loadbalancer.test.ipv4_address
 }
 
-resource "huaweicloud_nat_private_dnat_rule" "test" {
+resource "hcso_nat_private_dnat_rule" "test" {
   gateway_id            = var.gateway_id
   protocol              = "tcp"
   transit_ip_id         = var.transit_ip_id
   transit_service_port  = 1000
-  backend_interface_id  = data.huaweicloud_networking_port.test.id
+  backend_interface_id  = data.hcso_networking_port.test.id
   internal_service_port = 2000
 }
 ```
@@ -61,16 +61,16 @@ variable "network_id" {}
 variable "gateway_id" {}
 variable "transit_ip_id" {}
 
-resource "huaweicloud_networking_vip" "test" {
+resource "hcso_networking_vip" "test" {
   network_id = var.network_id
 }
 
-resource "huaweicloud_nat_private_dnat_rule" "test" {
+resource "hcso_nat_private_dnat_rule" "test" {
   gateway_id            = var.gateway_id
   protocol              = "tcp"
   transit_ip_id         = var.transit_ip_id
   transit_service_port  = 1000
-  backend_interface_id  = huaweicloud_networking_vip.test.id
+  backend_interface_id  = hcso_networking_vip.test.id
   internal_service_port = 2000
 }
 ```
@@ -81,7 +81,7 @@ resource "huaweicloud_nat_private_dnat_rule" "test" {
 variable "gateway_id" {}
 variable "transit_ip_id" {}
 
-resource "huaweicloud_nat_private_dnat_rule" "test" {
+resource "hcso_nat_private_dnat_rule" "test" {
   gateway_id            = var.gateway_id
   protocol              = "tcp"
   transit_ip_id         = var.transit_ip_id
@@ -97,7 +97,7 @@ resource "huaweicloud_nat_private_dnat_rule" "test" {
 variable "gateway_id" {}
 variable "transit_ip_id" {}
 
-resource "huaweicloud_nat_private_dnat_rule" "test" {
+resource "hcso_nat_private_dnat_rule" "test" {
   gateway_id         = var.gateway_id
   protocol           = "any"
   transit_ip_id      = var.transit_ip_id
@@ -159,5 +159,5 @@ In addition to all arguments above, the following attributes are exported:
 DNAT rules can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_nat_private_dnat_rule.test 19e3f4ed-fde0-406a-828d-7e0482400da9
+$ terraform import hcso_nat_private_dnat_rule.test 19e3f4ed-fde0-406a-828d-7e0482400da9
 ```

@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_api
+# hcso_apig_api
 
 Manages an APIG API resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "custom_response_id" {}
 variable "custom_auth_id" {}
 variable "vpc_channel_id" {}
 
-resource "huaweicloud_apig_api" "test" {
+resource "hcso_apig_api" "test" {
   instance_id             = var.instance_id
   group_id                = var.group_id
   type                    = "Public"
@@ -412,5 +412,5 @@ In addition to all arguments above, the following attributes are exported:
 APIs can be imported using their `name` and the related dedicated instance IDs, separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_api.test <instance_id>/<name>
+$ terraform import hcso_apig_api.test <instance_id>/<name>
 ```

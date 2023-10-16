@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_user
+# hcso_identity_user
 
 Manages an IAM user resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an IAM user resource within HuaweiCloud.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_identity_user" "user_1" {
+resource "hcso_identity_user" "user_1" {
   name        = "user_1"
   description = "A user"
   password    = "password123!"
@@ -73,13 +73,13 @@ In addition to all arguments above, the following attributes are exported:
 Users can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_identity_user.user_1 89c60255-9bd6-460c-822a-e2b959ede9d2
+$ terraform import hcso_identity_user.user_1 89c60255-9bd6-460c-822a-e2b959ede9d2
 ```
 
 But due to the security reason, `password` can not be imported, you can ignore it as below.
 
 ```hcl
-resource "huaweicloud_identity_user" "user_1" {
+resource "hcso_identity_user" "user_1" {
   ...
 
   lifecycle {

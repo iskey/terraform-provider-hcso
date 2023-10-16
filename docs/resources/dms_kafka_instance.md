@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_kafka_instance
+# hcso_dms_kafka_instance
 
 Manage DMS Kafka instance resources within HuaweiCloud.
 
@@ -27,21 +27,21 @@ variable "storage_spec_code" {
 
 # Query flavor information based on flavorID and storage I/O specification.
 # Make sure the flavors are available in the availability zone.
-data "huaweicloud_dms_kafka_flavors" "test" {
+data "hcso_dms_kafka_flavors" "test" {
   type               = "cluster"
   flavor_id          = var.flavor_id
   availability_zones = var.availability_zones
   storage_spec_code  = var.storage_spec_code
 }
 
-resource "huaweicloud_dms_kafka_instance" "test" {
+resource "hcso_dms_kafka_instance" "test" {
   name              = "kafka_test"
   vpc_id            = var.vpc_id
   network_id        = var.subnet_id
   security_group_id = var.security_group_id
 
-  flavor_id          = data.huaweicloud_dms_kafka_flavors.test.flavor_id
-  storage_spec_code  = data.huaweicloud_dms_kafka_flavors.test.flavors[0].ios[0].storage_spec_code
+  flavor_id          = data.hcso_dms_kafka_flavors.test.flavor_id
+  storage_spec_code  = data.hcso_dms_kafka_flavors.test.flavors[0].ios[0].storage_spec_code
   availability_zones = var.availability_zones
   engine_version     = "2.7"
   storage_space      = 600
@@ -263,7 +263,7 @@ This resource provides the following timeouts configuration options:
 DMS Kafka instance can be imported using the instance id, e.g.
 
 ```
- $ terraform import huaweicloud_dms_kafka_instance.instance_1 8d3c7938-dc47-4937-a30f-c80de381c5e3
+ $ terraform import hcso_dms_kafka_instance.instance_1 8d3c7938-dc47-4937-a30f-c80de381c5e3
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -273,7 +273,7 @@ a DMS Kafka instance. You can then decide if changes should be applied to the in
 should be updated to align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dms_kafka_instance" "instance_1" {
+resource "hcso_dms_kafka_instance" "instance_1" {
     ...
 
   lifecycle {

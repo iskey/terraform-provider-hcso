@@ -2,14 +2,14 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_flavors
+# hcso_rds_flavors
 
 Use this data source to get available HuaweiCloud rds flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_rds_flavors" "flavor" {
+data "hcso_rds_flavors" "flavor" {
   db_type       = "PostgreSQL"
   db_version    = "9.5"
   instance_mode = "ha"

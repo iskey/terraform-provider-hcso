@@ -2,17 +2,17 @@
 subcategory: "IAM Identity Center"
 ---
 
-# huaweicloud_identitycenter_group
+# hcso_identitycenter_group
 
 Manages an Identity Center group resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identitycenter_instance" "system" {}
+data "hcso_identitycenter_instance" "system" {}
 
-resource "huaweicloud_identitycenter_group" "test"{
-  identity_store_id = data.huaweicloud_identitycenter_instance.system.identity_store_id
+resource "hcso_identitycenter_group" "test"{
+  identity_store_id = data.hcso_identitycenter_instance.system.identity_store_id
   name              = "test_group"
 }
 ```
@@ -49,5 +49,5 @@ In addition to all arguments above, the following attributes are exported:
 The Identity Center group can be imported using the `identity_store_id` and `id` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_identitycenter_group.test <identity_store_id>/<id>
+$ terraform import hcso_identitycenter_group.test <identity_store_id>/<id>
 ```

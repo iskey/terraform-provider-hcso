@@ -2,14 +2,14 @@
 subcategory: "Cloud Data Migration (CDM)"
 ---
 
-# huaweicloud_cdm_flavors
+# hcso_cdm_flavors
 
 Use this data source to get available HuaweiCloud CDM flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_cdm_flavors" "flavor" {}
+data "hcso_cdm_flavors" "flavor" {}
 ```
 
 ## Argument Reference

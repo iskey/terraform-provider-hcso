@@ -2,14 +2,14 @@
 subcategory: "Domain Name Service (DNS)"
 ---
 
-# huaweicloud_dns_ptrrecord
+# hcso_dns_ptrrecord
 
 Manages a DNS PTR record in the HuaweiCloud DNS Service.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpc_eip" "eip_1" {
+resource "hcso_vpc_eip" "eip_1" {
   publicip {
     type = "5_bgp"
   }
@@ -21,10 +21,10 @@ resource "huaweicloud_vpc_eip" "eip_1" {
   }
 }
 
-resource "huaweicloud_dns_ptrrecord" "ptr_1" {
+resource "hcso_dns_ptrrecord" "ptr_1" {
   name          = "ptr.example.com."
   description   = "An example PTR record"
-  floatingip_id = huaweicloud_vpc_eip.eip_1.id
+  floatingip_id = hcso_vpc_eip.eip_1.id
   ttl           = 3000
 
   tags = {
@@ -77,5 +77,5 @@ This resource provides the following timeouts configuration options:
 PTR records can be imported using region and floatingip/eip ID, separated by a colon(:), e.g.
 
 ```
-$ terraform import huaweicloud_dns_ptrrecord.ptr_1 cn-north-1:d90ce693-5ccf-4136-a0ed-152ce412b6b9
+$ terraform import hcso_dns_ptrrecord.ptr_1 cn-north-1:d90ce693-5ccf-4136-a0ed-152ce412b6b9
 ```

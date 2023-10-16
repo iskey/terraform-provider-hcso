@@ -2,7 +2,7 @@
 subcategory: "Distributed Database Middleware (DDM)"
 ---
 
-# huaweicloud_ddm_account
+# hcso_ddm_account
 
 Manages a DDM account resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "name" {}
 variable "password" {}
 variable "schema_name" {}
 
-resource "huaweicloud_ddm_account" "test"{
+resource "hcso_ddm_account" "test"{
   instance_id = var.ddm_instance_id
   name        = var.name
   password    = var.password
@@ -89,5 +89,5 @@ This resource provides the following timeouts configuration options:
 The DDM account can be imported using the instance ID and account name separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_ddm_account.test 0a8f1c6baa124e99853719d9257324dfin09/account_name
+$ terraform import hcso_ddm_account.test 0a8f1c6baa124e99853719d9257324dfin09/account_name
 ```

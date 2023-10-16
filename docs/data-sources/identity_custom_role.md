@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_custom_role
+# hcso_identity_custom_role
 
 Use this data source to get details of the specified IAM **custom policy**.
 
@@ -11,7 +11,7 @@ Use this data source to get details of the specified IAM **custom policy**.
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identity_custom_role" "policy" {
+data "hcso_identity_custom_role" "policy" {
   name = "custom_policy"
 }
 ```

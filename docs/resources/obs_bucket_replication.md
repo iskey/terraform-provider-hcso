@@ -2,7 +2,7 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_bucket_replication
+# hcso_obs_bucket_replication
 
 Manages an OBS bucket **Cross-Region Replication** resource within HuaweiCloud.
 
@@ -19,7 +19,7 @@ variable "bucket" {}
 variable "destination_bucket" {}
 variable "agency" {}
 
-resource "huaweicloud_obs_bucket_replication" "test" {
+resource "hcso_obs_bucket_replication" "test" {
   bucket             = var.bucket
   destination_bucket = var.destination_bucket
   agency             = var.agency
@@ -33,7 +33,7 @@ variable "bucket" {}
 variable "destination_bucket" {}
 variable "agency" {}
 
-resource "huaweicloud_obs_bucket_replication" "test" {
+resource "hcso_obs_bucket_replication" "test" {
   bucket             = var.bucket
   destination_bucket = var.destination_bucket
   agency             = var.agency
@@ -106,5 +106,5 @@ In addition to all arguments above, the following attributes are exported:
 The obs bucket cross-region replication can be imported using the `bucket`, e.g.
 
 ```bash
-$ terraform import huaweicloud_obs_bucket_replication.test <bucket-name>
+$ terraform import hcso_obs_bucket_replication.test <bucket-name>
 ```

@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_route_table
+# hcso_vpc_route_table
 
 Manages a VPC custom route table resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ Manages a VPC custom route table resource within HuaweiCloud.
 variable "vpc_id" {}
 variable "vpc_peering_id" {}
 
-resource "huaweicloud_vpc_route_table" "demo" {
+resource "hcso_vpc_route_table" "demo" {
   name        = "demo"
   vpc_id      = var.vpc_id
   description = "a custom route table demo"
@@ -35,14 +35,14 @@ resource "huaweicloud_vpc_route_table" "demo" {
 variable "vpc_id" {}
 variable "vpc_peering_id" {}
 
-data "huaweicloud_vpc_subnet_ids" "subnet_ids" {
+data "hcso_vpc_subnet_ids" "subnet_ids" {
   vpc_id = var.vpc_id
 }
 
-resource "huaweicloud_vpc_route_table" "demo" {
+resource "hcso_vpc_route_table" "demo" {
   name    = "demo"
   vpc_id  = var.vpc_id
-  subnets = data.huaweicloud_vpc_subnet_ids.subnet_ids.ids
+  subnets = data.hcso_vpc_subnet_ids.subnet_ids.ids
 
   route {
     destination = "172.16.0.0/16"
@@ -122,5 +122,5 @@ This resource provides the following timeouts configuration options:
 vpc route tables can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpc_route_table.demo e1b3208a-544b-42a7-84e6-5d70371dd982
+$ terraform import hcso_vpc_route_table.demo e1b3208a-544b-42a7-84e6-5d70371dd982
 ```

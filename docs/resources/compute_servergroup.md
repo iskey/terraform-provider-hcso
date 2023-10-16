@@ -2,22 +2,22 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_servergroup
+# hcso_compute_servergroup
 
 Manages Server Group resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_compute_instance" "instance_demo" {
+data "hcso_compute_instance" "instance_demo" {
   name = "ecs-servergroup-demo"
 }
 
-resource "huaweicloud_compute_servergroup" "test-sg" {
+resource "hcso_compute_servergroup" "test-sg" {
   name     = "my-sg"
   policies = ["anti-affinity"]
   members  = [
-    data.huaweicloud_compute_instance.instance_demo.id,
+    data.hcso_compute_instance.instance_demo.id,
   ]
 }
 ```
@@ -52,5 +52,5 @@ In addition to all arguments above, the following attributes are exported:
 Server Groups can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_compute_servergroup.test-sg 1bc30ee9-9d5b-4c30-bdd5-7f1e663f5edf
+$ terraform import hcso_compute_servergroup.test-sg 1bc30ee9-9d5b-4c30-bdd5-7f1e663f5edf
 ```

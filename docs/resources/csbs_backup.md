@@ -2,7 +2,7 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_csbs_backup
+# hcso_csbs_backup
 
 !> **WARNING:** It has been deprecated.
 
@@ -14,7 +14,7 @@ Provides an HuaweiCloud Backup of Resources.
 variable "backup_name" {}
 variable "resource_id" {}
 
-resource "huaweicloud_csbs_backup" "backup" {
+resource "hcso_csbs_backup" "backup" {
   backup_name   = var.backup_name
   resource_id   = var.resource_id
   description   = "create backup"
@@ -105,5 +105,5 @@ In addition to all arguments above, the following attributes are exported:
 Backup can be imported using  `backup_record_id`, e.g.
 
 ```
-$ terraform import huaweicloud_csbs_backup.backup 7056d636-ac60-4663-8a6c-82d3c32c1c64
+$ terraform import hcso_csbs_backup.backup 7056d636-ac60-4663-8a6c-82d3c32c1c64
 ```

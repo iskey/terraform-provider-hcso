@@ -2,7 +2,7 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_instances
+# hcso_compute_instances
 
 Use this data source to get the list of the compute instances.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of the compute instances.
 ```hcl
 variable "name_regex" {}
 
-data "huaweicloud_compute_instances" "test" {
+data "hcso_compute_instances" "test" {
   name = var.name_regex
 }
 ```

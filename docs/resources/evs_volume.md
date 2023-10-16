@@ -2,14 +2,14 @@
 subcategory: "Elastic Volume Service (EVS)"
 ---
 
-# huaweicloud_evs_volume
+# hcso_evs_volume
 
 Manages a volume resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_evs_volume" "volume" {
+resource "hcso_evs_volume" "volume" {
   name              = "volume"
   description       = "my volume"
   volume_type       = "SAS"
@@ -26,7 +26,7 @@ resource "huaweicloud_evs_volume" "volume" {
 ## Example Usage with KMS encryption
 
 ```hcl
-resource "huaweicloud_evs_volume" "volume" {
+resource "hcso_evs_volume" "volume" {
   name              = "volume"
   description       = "my volume"
   volume_type       = "SAS"
@@ -176,7 +176,7 @@ The `attachment` block supports:
 Volumes can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_evs_volume.volume_1 14a80bc7-c12c-4fe0-a38a-cb77eeac9bd6
+$ terraform import hcso_evs_volume.volume_1 14a80bc7-c12c-4fe0-a38a-cb77eeac9bd6
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -186,7 +186,7 @@ You can then decide if changes should be applied to the disk, or the resource de
 with the disk. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_evs_volume" "volume_1" {
+resource "hcso_evs_volume" "volume_1" {
     ...
 
   lifecycle {

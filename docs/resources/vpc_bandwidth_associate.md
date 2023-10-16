@@ -2,7 +2,7 @@
 subcategory: "Elastic IP (EIP)"
 ---
 
-# huaweicloud_vpc_bandwidth_associate
+# hcso_vpc_bandwidth_associate
 
 Associates an EIP to a specified **shared** bandwidth.
 
@@ -17,13 +17,13 @@ Associates an EIP to a specified **shared** bandwidth.
 ```hcl
 variable "public_id" {}
 
-resource "huaweicloud_vpc_bandwidth" "test" {
+resource "hcso_vpc_bandwidth" "test" {
   name = "bandwidth_1"
   size = 100
 }
 
-resource "huaweicloud_vpc_bandwidth_associate" "test" {
-  bandwidth_id = huaweicloud_vpc_bandwidth.test.id
+resource "hcso_vpc_bandwidth_associate" "test" {
+  bandwidth_id = hcso_vpc_bandwidth.test.id
   eip_id       = var.public_id
 }
 ```
@@ -35,15 +35,15 @@ variable "multiple_eips" {
   type = list(string)
 }
 
-resource "huaweicloud_vpc_bandwidth" "test" {
+resource "hcso_vpc_bandwidth" "test" {
   name = "bandwidth_1"
   size = 100
 }
 
-resource "huaweicloud_vpc_bandwidth_associate" "test" {
+resource "hcso_vpc_bandwidth_associate" "test" {
   count = length(var.multiple_eips)
 
-  bandwidth_id = huaweicloud_vpc_bandwidth.test.id
+  bandwidth_id = hcso_vpc_bandwidth.test.id
   eip_id       = var.multiple_eips[count.index]
 }
 ```
@@ -51,7 +51,7 @@ resource "huaweicloud_vpc_bandwidth_associate" "test" {
 ### Associate an EIP managed by Terraform
 
 ```hcl
-resource "huaweicloud_vpc_eip" "dedicated" {
+resource "hcso_vpc_eip" "dedicated" {
   publicip {
     type = "5_bgp"
   }
@@ -68,14 +68,14 @@ resource "huaweicloud_vpc_eip" "dedicated" {
   }
 }
 
-resource "huaweicloud_vpc_bandwidth" "test" {
+resource "hcso_vpc_bandwidth" "test" {
   name = "bandwidth_1"
   size = 100
 }
 
-resource "huaweicloud_vpc_bandwidth_associate" "test" {
-  bandwidth_id = huaweicloud_vpc_bandwidth.test.id
-  eip_id       = huaweicloud_vpc_eip.dedicated.id
+resource "hcso_vpc_bandwidth_associate" "test" {
+  bandwidth_id = hcso_vpc_bandwidth.test.id
+  eip_id       = hcso_vpc_eip.dedicated.id
 }
 ```
 
@@ -111,5 +111,5 @@ In addition to all arguments above, the following attributes are exported:
 Bandwidth associations can be imported using the `bandwidth_id` and `eip_id` separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_vpc_bandwidth_associate.eip <bandwidth_id>/<eip_id>
+$ terraform import hcso_vpc_bandwidth_associate.eip <bandwidth_id>/<eip_id>
 ```

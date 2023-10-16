@@ -2,14 +2,14 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_instance
+# hcso_gaussdb_mysql_instance
 
 Use this data source to get available HuaweiCloud gaussdb mysql instance.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_mysql_instance" "this" {
+data "hcso_gaussdb_mysql_instance" "this" {
   name = "gaussdb-instance"
 }
 ```

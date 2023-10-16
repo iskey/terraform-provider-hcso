@@ -2,14 +2,14 @@
 subcategory: "Cloud Phone (CPH)"
 ---
 
-# huaweicloud_cph_phone_images
+# hcso_cph_phone_images
 
 Use this data source to get available images of CPH phone.
 
 ## Example Usage
 
 ```
-data "huaweicloud_cph_phone_images" "images" {
+data "hcso_cph_phone_images" "images" {
   is_public = 1
 }
 ```

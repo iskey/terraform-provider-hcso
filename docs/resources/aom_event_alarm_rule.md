@@ -2,7 +2,7 @@
 subcategory: "Application Operations Management (AOM)"
 ---
 
-# huaweicloud_aom_event_alarm_rule
+# hcso_aom_event_alarm_rule
 
 Manages an AOM event alarm rule resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an AOM event alarm rule resource within HuaweiCloud.
 variable "action_rule_name" {}
 
 ```hcl
-resource "huaweicloud_aom_event_alarm_rule" "test" {
+resource "hcso_aom_event_alarm_rule" "test" {
   name                = "test_rule"
   description         = "terraform test"
   alarm_type          = "notification"
@@ -83,5 +83,5 @@ In addition to all arguments above, the following attributes are exported:
 The application operations management can be imported using the `id` (name), e.g.
 
 ```bash
-$ terraform import huaweicloud_aom_event_alarm_rule.test test_rule
+$ terraform import hcso_aom_event_alarm_rule.test test_rule
 ```

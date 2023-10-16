@@ -2,14 +2,14 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_organization
+# hcso_organizations_organization
 
 Use this data source to get the Organization info and the root info.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_organizations_organization" "test"{
+data "hcso_organizations_organization" "test"{
 }
 ```
 

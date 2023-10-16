@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_table
+# hcso_dli_table
 
 Manages DLI Table resource within HuaweiCloud
 
@@ -13,12 +13,12 @@ Manages DLI Table resource within HuaweiCloud
 ```hcl
 variable "database_name" {}
 
-resource "huaweicloud_dli_database" "test" {
+resource "hcso_dli_database" "test" {
   name = var.database_name
 }
 
-resource "huaweicloud_dli_table" "test" {
-  database_name = huaweicloud_dli_database.test.name
+resource "hcso_dli_table" "test" {
+  database_name = hcso_dli_database.test.name
   name          = "table_1"
   data_location = "DLI"
   description   = "SQL table_1 description"
@@ -123,5 +123,5 @@ DLI table can be imported by `id`. It is composed of the name of database which 
  separated by a slash. For example,
 
 ```
-terraform import huaweicloud_dli_table.example <database_name>/<table_name>
+terraform import hcso_dli_table.example <database_name>/<table_name>
 ```

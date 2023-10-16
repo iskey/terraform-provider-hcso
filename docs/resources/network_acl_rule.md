@@ -2,14 +2,14 @@
 subcategory: "Network ACL"
 ---
 
-# huaweicloud_network_acl_rule
+# hcso_network_acl_rule
 
 Manages a network ACL rule resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_network_acl_rule" "rule_1" {
+resource "hcso_network_acl_rule" "rule_1" {
   name                   = "rule_1"
   protocol               = "udp"
   action                 = "deny"
@@ -65,5 +65,5 @@ In addition to all arguments above, the following attributes are exported:
 network ACL rules can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_network_acl_rule.rule_1 89a84b28-4cc2-4859-9885-c67e802a46a3
+$ terraform import hcso_network_acl_rule.rule_1 89a84b28-4cc2-4859-9885-c67e802a46a3
 ```

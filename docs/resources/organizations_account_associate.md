@@ -2,7 +2,7 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_account_associate
+# hcso_organizations_account_associate
 
 Manages an Organizations account associate resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages an Organizations account associate resource within HuaweiCloud.
 variable account_id {}
 variable parent_id {}
 
-resource "huaweicloud_organizations_account_associate" "test"{
+resource "hcso_organizations_account_associate" "test"{
   account_id = var.account_id
   parent_id  = var.parent_id
 }
@@ -47,5 +47,5 @@ In addition to all arguments above, the following attributes are exported:
 The Organizations account associate can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_organizations_account_associate.test <id>
+$ terraform import hcso_organizations_account_associate.test <id>
 ```

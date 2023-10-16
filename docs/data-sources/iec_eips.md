@@ -2,17 +2,17 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_eips
+# hcso_iec_eips
 
 Use this data source to get a list of EIPs belong to a specific IEC site.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_iec_sites" "sites_test" {}
+data "hcso_iec_sites" "sites_test" {}
 
-data "huaweicloud_iec_eips" "site" {
-  site_id = data.huaweicloud_iec_sites.sites_test.sites[0].id
+data "hcso_iec_eips" "site" {
+  site_id = data.hcso_iec_sites.sites_test.sites[0].id
 }
 ```
 

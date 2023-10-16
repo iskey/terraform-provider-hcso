@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_networking_secgroup_rule
+# hcso_networking_secgroup_rule
 
 Manages a Security Group Rule resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages a Security Group Rule resource within HuaweiCloud.
 ```hcl
 variable "security_group_id" {}
 
-resource "huaweicloud_networking_secgroup_rule" "test" {
+resource "hcso_networking_secgroup_rule" "test" {
   security_group_id = var.security_group_id
   direction         = "ingress"
   ethertype         = "IPv4"
@@ -30,7 +30,7 @@ resource "huaweicloud_networking_secgroup_rule" "test" {
 variable "group_name" {}
 variable "security_group_id" {}
 
-resource "huaweicloud_vpc_address_group" "test" {
+resource "hcso_vpc_address_group" "test" {
   name = var.group_name
 
   addresses = [
@@ -39,7 +39,7 @@ resource "huaweicloud_vpc_address_group" "test" {
   ]
 }
 
-resource "huaweicloud_networking_secgroup_rule" "test" {
+resource "hcso_networking_secgroup_rule" "test" {
   security_group_id       = var.security_group_id
   direction               = "ingress"
   action                  = "allow"
@@ -47,7 +47,7 @@ resource "huaweicloud_networking_secgroup_rule" "test" {
   ports                   = "80,500,600-800"
   protocol                = "tcp"
   priority                = 5
-  remote_address_group_id = huaweicloud_vpc_address_group.test.id
+  remote_address_group_id = hcso_vpc_address_group.test.id
 }
 ```
 
@@ -123,5 +123,5 @@ This resource provides the following timeouts configuration options:
 Security Group Rules can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_networking_secgroup_rule.secgroup_rule_1 aeb68ee3-6e9d-4256-955c-9584a6212745
+$ terraform import hcso_networking_secgroup_rule.secgroup_rule_1 aeb68ee3-6e9d-4256-955c-9584a6212745
 ```

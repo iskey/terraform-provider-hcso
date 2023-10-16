@@ -2,7 +2,7 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_group
+# hcso_as_group
 
 Manages an AS group resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "configuration_id" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_as_group" "my_as_group" {
+resource "hcso_as_group" "my_as_group" {
   scaling_group_name       = "my_as_group"
   scaling_configuration_id = var.configuration_id
   desire_instance_number   = 2
@@ -38,7 +38,7 @@ variable "configuration_id" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_as_group" "my_as_group_tags" {
+resource "hcso_as_group" "my_as_group_tags" {
   scaling_group_name       = "my_as_group_tags"
   scaling_configuration_id = var.configuration_id
   desire_instance_number   = 2
@@ -65,7 +65,7 @@ variable "configuration_id" {}
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-resource "huaweicloud_as_group" "my_as_group_only_remove_members" {
+resource "hcso_as_group" "my_as_group_only_remove_members" {
   scaling_group_name       = "my_as_group_only_remove_members"
   scaling_configuration_id = var.configuration_id
   desire_instance_number   = 2
@@ -89,26 +89,26 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "ipv4_subnet_id" {}
 
-resource "huaweicloud_lb_loadbalancer" "loadbalancer_1" {
+resource "hcso_lb_loadbalancer" "loadbalancer_1" {
   name          = "loadbalancer_1"
   vip_subnet_id = var.ipv4_subnet_id
 }
 
-resource "huaweicloud_lb_listener" "listener_1" {
+resource "hcso_lb_listener" "listener_1" {
   name            = "listener_1"
   protocol        = "HTTP"
   protocol_port   = 8080
-  loadbalancer_id = huaweicloud_lb_loadbalancer.loadbalancer_1.id
+  loadbalancer_id = hcso_lb_loadbalancer.loadbalancer_1.id
 }
 
-resource "huaweicloud_lb_pool" "pool_1" {
+resource "hcso_lb_pool" "pool_1" {
   name        = "pool_1"
   protocol    = "HTTP"
   lb_method   = "ROUND_ROBIN"
-  listener_id = huaweicloud_lb_listener.listener_1.id
+  listener_id = hcso_lb_listener.listener_1.id
 }
 
-resource "huaweicloud_as_group" "my_as_group_with_enhanced_lb" {
+resource "hcso_as_group" "my_as_group_with_enhanced_lb" {
   scaling_group_name       = "my_as_group_with_enhanced_lb"
   scaling_configuration_id = var.configuration_id
   desire_instance_number   = 2
@@ -120,8 +120,8 @@ resource "huaweicloud_as_group" "my_as_group_with_enhanced_lb" {
     id = var.subnet_id
   }
   lbaas_listeners {
-    pool_id       = huaweicloud_lb_pool.pool_1.id
-    protocol_port = huaweicloud_lb_listener.listener_1.protocol_port
+    pool_id       = hcso_lb_pool.pool_1.id
+    protocol_port = hcso_lb_listener.listener_1.protocol_port
   }
 }
 ```
@@ -273,5 +273,5 @@ This resource provides the following timeouts configuration options:
 AS groups can be imported by their `id`. For example,
 
 ```
-terraform import huaweicloud_as_group.my_as_group 9ec5bea6-a728-4082-8109-5a7dc5c7af74
+terraform import hcso_as_group.my_as_group 9ec5bea6-a728-4082-8109-5a7dc5c7af74
 ```

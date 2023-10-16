@@ -2,7 +2,7 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_influx_instance
+# hcso_gaussdb_influx_instance
 
 GaussDB for influx instance management within HuaweiCoud.
 
@@ -11,7 +11,7 @@ GaussDB for influx instance management within HuaweiCoud.
 ### create a gaussdb for influx instance with tags
 
 ```hcl
-resource "huaweicloud_gaussdb_influx_instance" "instance_1" {
+resource "hcso_gaussdb_influx_instance" "instance_1" {
   name              = "gaussdb_influx_instance_1"
   password          = var.password
   flavor            = "geminidb.influxdb.large.4"
@@ -31,7 +31,7 @@ resource "huaweicloud_gaussdb_influx_instance" "instance_1" {
 ### create a gaussdb influx instance with backup strategy
 
 ```hcl
-resource "huaweicloud_gaussdb_influx_instance" "instance_1" {
+resource "hcso_gaussdb_influx_instance" "instance_1" {
   name              = "gaussdb_influx_instance_1"
   password          = var.password
   flavor            = "geminidb.influxdb.large.4"
@@ -182,5 +182,5 @@ This resource provides the following timeouts configuration options:
 GaussDB influx instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_gaussdb_influx_instance.instance_1 e6f6b1fde738489793ce09320d732037in13
+$ terraform import hcso_gaussdb_influx_instance.instance_1 e6f6b1fde738489793ce09320d732037in13
 ```

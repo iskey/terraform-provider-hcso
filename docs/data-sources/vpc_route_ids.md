@@ -2,9 +2,9 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_vpc_route_ids
+# hcso_vpc_route_ids
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc_route_table` to get the route details.
+!> **WARNING:** It has been deprecated, use `hcso_vpc_route_table` to get the route details.
 
 Provides a list of route ids for a vpc_id.
 
@@ -15,17 +15,17 @@ This resource can be useful for getting back a list of route ids for a vpc.
  ```hcl
 variable "vpc_id" {}
 
-data "huaweicloud_vpc_route_ids" "example" {
+data "hcso_vpc_route_ids" "example" {
   vpc_id = var.vpc_id
 }
 
-data "huaweicloud_vpc_route" "vpc_route" {
-  count = length(data.huaweicloud_vpc_route_ids.example.ids)
-  id    = data.huaweicloud_vpc_route_ids.example.ids[count.index]
+data "hcso_vpc_route" "vpc_route" {
+  count = length(data.hcso_vpc_route_ids.example.ids)
+  id    = data.hcso_vpc_route_ids.example.ids[count.index]
 }
 
 output "route_nexthop" {
-  value = ["${data.huaweicloud_vpc_route.vpc_route.*.nexthop}"]
+  value = ["${data.hcso_vpc_route.vpc_route.*.nexthop}"]
 }
  ```
 

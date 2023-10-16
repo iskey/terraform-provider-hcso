@@ -2,7 +2,7 @@
 subcategory: "Advanced Anti-DDoS"
 ---
 
-# huaweicloud_aad_forward_rule
+# hcso_aad_forward_rule
 
 Manages a forward rule resource of Advanced Anti-DDos service within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a forward rule resource of Advanced Anti-DDos service within HuaweiCloud
 variable "aad_instance_id" {}
 variable "aad_ip_address" {}
 
-resource "huaweicloud_aad_forward_rule" "test" {
+resource "hcso_aad_forward_rule" "test" {
   instance_id         = var.aad_instance_id
   ip                  = var.aad_ip_address
   forward_protocol    = "udp"
@@ -59,5 +59,5 @@ Rule can be imported using the `id` (combination of `instance_id`, `ip`, `forwar
 separated by slashes (/), e.g.
 
 ```
-terraform import huaweicloud_dds_database_user.test &ltinstance_id&gt/&ltip&gt/&ltforward_protocol&gt/&ltforward_port&gt
+terraform import hcso_dds_database_user.test &ltinstance_id&gt/&ltip&gt/&ltforward_protocol&gt/&ltforward_port&gt
 ```

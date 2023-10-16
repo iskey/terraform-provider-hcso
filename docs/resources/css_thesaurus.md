@@ -2,7 +2,7 @@
 subcategory: "Cloud Search Service (CSS)"
 ---
 
-# huaweicloud_css_thesaurus
+# hcso_css_thesaurus
 
 Manages CSS thesaurus resource within HuaweiCloud
 
@@ -13,7 +13,7 @@ Manages CSS thesaurus resource within HuaweiCloud
 ### Create a thesaurus
 
 ```hcl
-resource "huaweicloud_css_thesaurus" "test" {
+resource "hcso_css_thesaurus" "test" {
   cluster_id  = {{ css_cluster_id }}
   bucket_name = {{ bucket_name }}
   main_object = {{ bucket_obj_key }}
@@ -64,5 +64,5 @@ This resource provides the following timeouts configuration options:
 CSS thesaurus can be imported by `id`. For example,
 
 ```
-terraform import huaweicloud_css_thesaurus.example e9ee3f48-f097-406a-aa74-cfece0af3e31
+terraform import hcso_css_thesaurus.example e9ee3f48-f097-406a-aa74-cfece0af3e31
 ```

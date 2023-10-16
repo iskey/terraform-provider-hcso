@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_node_pool
+# hcso_cce_node_pool
 
 Add a node pool to a container cluster.
 
@@ -15,7 +15,7 @@ variable "cluster_id" {}
 variable "key_pair" {}
 variable "availability_zone" {}
 
-resource "huaweicloud_cce_node_pool" "node_pool" {
+resource "hcso_cce_node_pool" "node_pool" {
   cluster_id               = var.cluster_id
   name                     = "testpool"
   os                       = "EulerOS 2.5"
@@ -49,7 +49,7 @@ variable "kms_key_id"
 variable "key_pair" {}
 variable "availability_zone" {}
 
-resource "huaweicloud_cce_node_pool" "test" {
+resource "hcso_cce_node_pool" "test" {
   cluster_id               = var.cluster_id
   name                     = "testpool"
   os                       = "EulerOS 2.5"
@@ -137,7 +137,7 @@ variable "cluster_id" {}
 variable "key_pair" {}
 variable "availability_zone" {}
 
-resource "huaweicloud_cce_node_pool" "node_pool" {
+resource "hcso_cce_node_pool" "node_pool" {
   cluster_id               = var.cluster_id
   name                     = "testpool"
   os                       = "EulerOS 2.5"
@@ -419,7 +419,7 @@ This resource provides the following timeouts configuration options:
 CCE node pool can be imported using the cluster ID and node pool ID separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_cce_node_pool.my_node_pool <cluster_id>/<id>
+$ terraform import hcso_cce_node_pool.my_node_pool <cluster_id>/<id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -430,7 +430,7 @@ You can then decide if changes should be applied to the node pool, or the resour
 definition should be updated to align with the node pool. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_cce_node_pool" "my_node_pool" {
+resource "hcso_cce_node_pool" "my_node_pool" {
   ...
 
   lifecycle {

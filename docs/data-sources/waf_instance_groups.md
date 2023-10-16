@@ -2,14 +2,14 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_instance_groups
+# hcso_waf_instance_groups
 
 Use this data source to get a list of WAF instance groups.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_waf_instance_groups" "groups_1" {
+data "hcso_waf_instance_groups" "groups_1" {
   name = "example_name"
 }
 ```

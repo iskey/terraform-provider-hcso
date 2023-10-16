@@ -2,7 +2,7 @@
 subcategory: "Cloud Native Anti-DDoS Advanced"
 ---
 
-# huaweicloud_cnad_advanced_protected_objects
+# hcso_cnad_advanced_protected_objects
 
 Use this data source to get the list of CNAD advanced protected objects.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of CNAD advanced protected objects.
 ```hcl
 variable "instance_id" {}
 
-data "huaweicloud_cnad_advanced_protected_objects" "test" {
+data "hcso_cnad_advanced_protected_objects" "test" {
   instance_id = var.instance_id
 }
 ```
@@ -21,7 +21,7 @@ data "huaweicloud_cnad_advanced_protected_objects" "test" {
 The following arguments are supported:
 
 * `instance_id` - (Optional, String) Specifies the CNAD advanced instance ID. You can find it through data source
-  `huaweicloud_cnad_advanced_instances`.
+  `hcso_cnad_advanced_instances`.
 
 * `policy_id` - (Optional, String) Specifies the CNAD advanced policy ID.
 

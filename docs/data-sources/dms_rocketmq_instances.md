@@ -2,14 +2,14 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_rocketmq_instances
+# hcso_dms_rocketmq_instances
 
 Use this data source to get the list of DMS RocketMQ instances.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_dms_rocketmq_instances" "test" {
+data "hcso_dms_rocketmq_instances" "test" {
   name = "rocketmq_name_test"
 }
 ```

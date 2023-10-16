@@ -2,7 +2,7 @@
 subcategory: "GaussDB"
 ---
 
-# huaweicloud_gaussdb_opengauss_instance
+# hcso_gaussdb_opengauss_instance
 
 GaussDB OpenGauss instance management within HuaweiCoud.
 
@@ -17,9 +17,9 @@ variable "security_group_id" {}
 variable "instance_name" {}
 variable "instance_password" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-resource "huaweicloud_gaussdb_opengauss_instance" "test" {
+resource "hcso_gaussdb_opengauss_instance" "test" {
   vpc_id            = var.vpc_id
   subnet_id         = var.subnet_network_id
   security_group_id = var.security_group_id
@@ -29,7 +29,7 @@ resource "huaweicloud_gaussdb_opengauss_instance" "test" {
   password          = var.instance_password
   sharding_num      = 1
   coordinator_num   = 2
-  availability_zone = join(",", slice(data.huaweicloud_availability_zones.test.names, 0, 3))
+  availability_zone = join(",", slice(data.hcso_availability_zones.test.names, 0, 3))
 
   ha {
     mode             = "enterprise"
@@ -52,16 +52,16 @@ variable "instance_password" {}
 variable "vpc_id" {}
 variable "subnet_network_id" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-resource "huaweicloud_gaussdb_opengauss_instance" "instance_acc" {
+resource "hcso_gaussdb_opengauss_instance" "instance_acc" {
   vpc_id            = var.vpc_id
   subnet_id         = var.subnet_network_id
   security_group_id = var.security_group_id
   name              = var.instance_name
   password          = var.instance_password
   flavor            = "gaussdb.opengauss.ee.m6.2xlarge.x868.ha"
-  availability_zone = join(",", slice(data.huaweicloud_availability_zones.myaz.names, 0, 3))
+  availability_zone = join(",", slice(data.hcso_availability_zones.myaz.names, 0, 3))
 
   replica_num = 3
 
@@ -275,5 +275,5 @@ This resource provides the following timeouts configuration options:
 OpenGaussDB instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_gaussdb_opengauss_instance.test 1f2c4f48adea4ae684c8edd8818fa349in14
+$ terraform import hcso_gaussdb_opengauss_instance.test 1f2c4f48adea4ae684c8edd8818fa349in14
 ```

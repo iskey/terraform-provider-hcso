@@ -2,14 +2,14 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_configuration
+# hcso_gaussdb_mysql_configuration
 
 Use this data source to get available HuaweiCloud gaussdb mysql configuration.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_mysql_configuration" "this" {
+data "hcso_gaussdb_mysql_configuration" "this" {
   name = "Default-GaussDB-for-MySQL 8.0"
 }
 ```

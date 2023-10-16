@@ -2,7 +2,7 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_dms_group
+# hcso_dms_group
 
 Manages a DMS group in the huaweicloud DMS Service.
 
@@ -13,7 +13,7 @@ Manages a DMS group in the huaweicloud DMS Service.
 ### Automatically detect the correct network
 
 ```hcl
-resource "huaweicloud_dms_queue" "queue_1" {
+resource "hcso_dms_queue" "queue_1" {
   name              = "queue_1"
   description       = "test create dms queue"
   queue_mode        = "FIFO"
@@ -21,9 +21,9 @@ resource "huaweicloud_dms_queue" "queue_1" {
   max_consume_count = 80
 }
 
-resource "huaweicloud_dms_group" "group_1" {
+resource "hcso_dms_group" "group_1" {
   name     = "group_1"
-  queue_id = huaweicloud_dms_queue.queue_1.id
+  queue_id = hcso_dms_queue.queue_1.id
 }
 ```
 

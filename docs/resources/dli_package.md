@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_package
+# hcso_dli_package
 
 Manages DLI package resource within HuaweiCloud
 
@@ -14,7 +14,7 @@ Manages DLI package resource within HuaweiCloud
 variable "group_name" {}
 variable "access_domain_name" {}
 
-resource "huaweicloud_dli_package" "queue" {
+resource "hcso_dli_package" "queue" {
   group_name  = var.group_name
   object_path = "https://${var.access_domain_name}/dli/packages/object_file.py"
   type        = "pyFile"
@@ -60,4 +60,4 @@ In addition to all arguments above, the following attributes are exported:
 
 * `created_at` - Time when a queue is created.
 
-* `updated_at` - The last time when the package configuration update has complated.
+* `updated_at` - The last time when the package hcso_configuration update has complated.

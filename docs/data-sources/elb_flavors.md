@@ -2,14 +2,14 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_flavors
+# hcso_elb_flavors
 
 Use this data source to get the available ELB Flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_elb_flavors" "flavors" {
+data "hcso_elb_flavors" "flavors" {
   type            = "L7"
   max_connections = 200000
   cps             = 2000
@@ -18,8 +18,8 @@ data "huaweicloud_elb_flavors" "flavors" {
 
 # Create Dedicated Load Balancer with the first matched flavor
 
-resource "huaweicloud_elb_loadbalancer" "lb" {
-  l7_flavor_id = data.huaweicloud_elb_flavors.flavors.ids[0]
+resource "hcso_elb_loadbalancer" "lb" {
+  l7_flavor_id = data.hcso_elb_flavors.flavors.ids[0]
 
   # Other properties...
 }

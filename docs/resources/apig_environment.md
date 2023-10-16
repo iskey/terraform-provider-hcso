@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_environment
+# hcso_apig_environment
 
 Manages an APIG environment resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "instance_id" {}
 variable "environment_name" {}
 variable "description" {}
 
-resource "huaweicloud_apig_environment" "test" {
+resource "hcso_apig_environment" "test" {
   instance_id = var.instance_id
   name        = var.environment_name
   description = var.description
@@ -52,5 +52,5 @@ In addition to all arguments above, the following attributes are exported:
 Environments can be imported using their `name` and the ID of the related dedicated instance, separated by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_apig_environment.test &ltinstance_id&gt/&ltname&gt
+$ terraform import hcso_apig_environment.test &ltinstance_id&gt/&ltname&gt
 ```

@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_vip
+# hcso_iec_vip
 
 Manages a VIP resource within HuaweiCloud IEC.
 
@@ -11,7 +11,7 @@ Manages a VIP resource within HuaweiCloud IEC.
 ```hcl
 variable "iec_subnet_id" {}
 
-resource "huaweicloud_iec_vip" "vip_test" {
+resource "hcso_iec_vip" "vip_test" {
   subnet_id = var.iec_subnet_id
 }
 ```
@@ -51,5 +51,5 @@ This resource provides the following timeouts configuration options:
 IEC VIP can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iec_vip.vip_test 61fd8d31-8f92-4526-a5f5-07ec303e69e7
+$ terraform import hcso_iec_vip.vip_test 61fd8d31-8f92-4526-a5f5-07ec303e69e7
 ```

@@ -2,7 +2,7 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_csms_secret
+# hcso_csms_secret
 
 Manages CSMS(Cloud Secret Management Service) secrets within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages CSMS(Cloud Secret Management Service) secrets within HuaweiCloud.
 ### Encrypt Plaintext
 
 ```hcl
-resource "huaweicloud_csms_secret" "test1" {
+resource "hcso_csms_secret" "test1" {
   name        = "test_secret"
   secret_text = "this is a password"
 }
@@ -20,7 +20,7 @@ resource "huaweicloud_csms_secret" "test1" {
 ### Encrypt JSON Data
 
 ```hcl
-resource "huaweicloud_csms_secret" "test2" {
+resource "hcso_csms_secret" "test2" {
   name        = "mysql_admin"
   secret_text = jsonencode({
     username = "admin"
@@ -47,7 +47,7 @@ The following arguments are supported:
   If this parameter is not specified when creating the secret, the default master key csms/default will be used.
   The default key is automatically created by the CSMS.
   Use this data source
-  [huaweicloud_kms_key](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/kms_key)
+  [hcso_kms_key](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/kms_key)
   to get the KMS key.
 
 * `description` - (Optional, String) The description of a secret.
@@ -73,5 +73,5 @@ In addition to all arguments above, the following attributes are exported:
 CSMS secret can be imported using the ID and the name of secret, separated by a slash, e.g.
 
 ```sh
-terraform import huaweicloud_csms_secret.test 93cba7f5-550b-45dc-912e-277b3296fb27/test_secret
+terraform import hcso_csms_secret.test 93cba7f5-550b-45dc-912e-277b3296fb27/test_secret
 ```

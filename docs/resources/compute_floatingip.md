@@ -2,9 +2,9 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_compute_floatingip_v2
+# hcso_compute_floatingip_v2
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc_eip` instead.
+!> **WARNING:** It has been deprecated, use `hcso_vpc_eip` instead.
 
 Manages a V2 floating IP resource within HuaweiCloud Nova (compute)
 that can be used for compute instances.
@@ -12,7 +12,7 @@ that can be used for compute instances.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_compute_floatingip_v2" "floatip_1" {
+resource "hcso_compute_floatingip_v2" "floatip_1" {
 }
 ```
 
@@ -41,5 +41,5 @@ In addition to all arguments above, the following attributes are exported:
 Floating IPs can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_compute_floatingip_v2.floatip_1 89c60255-9bd6-460c-822a-e2b959ede9d2
+$ terraform import hcso_compute_floatingip_v2.floatip_1 89c60255-9bd6-460c-822a-e2b959ede9d2
 ```

@@ -2,7 +2,7 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_csbs_backup_policy
+# hcso_csbs_backup_policy
 
 !> **WARNING:** It has been deprecated.
 
@@ -15,7 +15,7 @@ variable "name" {}
 variable "id" {}
 variable "resource_name" {}
 
-resource "huaweicloud_csbs_backup_policy" "backup_policy" {
+resource "hcso_csbs_backup_policy" "backup_policy" {
   name = var.name
   resource {
     id   = var.id
@@ -104,5 +104,5 @@ In addition to all arguments above, the following attributes are exported:
 Backup Policy can be imported using  `id`, e.g.
 
 ```
-$ terraform import huaweicloud_csbs_backup_policy.backup_policy 7056d636-ac60-4663-8a6c-82d3c32c1c64
+$ terraform import hcso_csbs_backup_policy.backup_policy 7056d636-ac60-4663-8a6c-82d3c32c1c64
 ```

@@ -2,7 +2,7 @@
 subcategory: "NAT Gateway (NAT)"
 ---
 
-# huaweicloud_nat_snat_rule
+# hcso_nat_snat_rule
 
 Manages an SNAT rule resource of the **public** NAT within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "gateway_id" {}
 variable "publicip_id" {}
 variable "subent_id" {}
 
-resource "huaweicloud_nat_snat_rule" "test" {
+resource "hcso_nat_snat_rule" "test" {
   nat_gateway_id = var.gateway_id
   floating_ip_id = var.publicip_id
   subnet_id      = var.subent_id
@@ -28,7 +28,7 @@ resource "huaweicloud_nat_snat_rule" "test" {
 variable "gateway_id" {}
 variable "publicip_id" {}
 
-resource "huaweicloud_nat_snat_rule" "test" {
+resource "hcso_nat_snat_rule" "test" {
   nat_gateway_id = var.gateway_id
   floating_ip_id = var.publicip_id
   source_type    = 1
@@ -85,5 +85,5 @@ This resource provides the following timeouts configuration options:
 SNAT rules can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_nat_snat_rule.test 9e0713cb-0a2f-484e-8c7d-daecbb61dbe4
+$ terraform import hcso_nat_snat_rule.test 9e0713cb-0a2f-484e-8c7d-daecbb61dbe4
 ```

@@ -2,14 +2,14 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_parametergroup
+# hcso_rds_parametergroup
 
 Manages a RDS ParameterGroup resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_rds_parametergroup" "pg_1" {
+resource "hcso_rds_parametergroup" "pg_1" {
   name        = "pg_1"
   description = "description_1"
   values      = {
@@ -81,5 +81,5 @@ This resource provides the following timeouts configuration options:
 Parameter groups can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_rds_parametergroup.pg_1 7117d38e-4c8f-4624-a505-bd96b97d024c
+$ terraform import hcso_rds_parametergroup.pg_1 7117d38e-4c8f-4624-a505-bd96b97d024c
 ```

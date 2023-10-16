@@ -2,7 +2,7 @@
 subcategory: "Direct Connect (DC)"
 ---
 
-# huaweicloud_dc_virtual_interface
+# hcso_dc_virtual_interface
 
 Manages a virtual interface resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "direct_connect_id" {}
 variable "gateway_id" {}
 variable "interface_name" {}
 
-resource "huaweicloud_dc_virtual_interface" "test" {
+resource "hcso_dc_virtual_interface" "test" {
   direct_connect_id = var.direct_connect_id
   vgw_id            = var.gateway_id
   name              = var.interface_name
@@ -147,5 +147,5 @@ In addition to all arguments above, the following attributes are exported:
 Virtual interfaces can be imported using their `id`, e.g.
 
 ```shell
-$ terraform import huaweicloud_dc_virtual_interface.test 5bb22e82-5b07-4845-bd1b-b064eca92e0a
+$ terraform import hcso_dc_virtual_interface.test 5bb22e82-5b07-4845-bd1b-b064eca92e0a
 ```

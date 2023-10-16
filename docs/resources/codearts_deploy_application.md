@@ -2,7 +2,7 @@
 subcategory: "CodeArts Deploy"
 ---
 
-# huaweicloud_codearts_deploy_application
+# hcso_codearts_deploy_application
 
 Manages a CodeArts deploy application resource within HuaweiCloud.
 
@@ -18,7 +18,7 @@ variable "operation_entrance" {}
 variable "operation_version" {}
 variable "operation_module_id" {}
 
-resource "huaweicloud_codearts_deploy_application" "test" {
+resource "hcso_codearts_deploy_application" "test" {
   project_id     = var.project_id
   name           = "test_name"
   description    = "test description"
@@ -170,7 +170,7 @@ In addition to all arguments above, the following attributes are exported:
 The CodeArts deploy application resource can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_codearts_deploy_application.test <id>
+$ terraform import hcso_codearts_deploy_application.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -181,7 +181,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also, you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_codearts_deploy_application" "test" {
+resource "hcso_codearts_deploy_application" "test" {
   ...
   
   lifecycle {

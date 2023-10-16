@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_channel
+# hcso_apig_channel
 
 Manages a channel resource within HuaweiCloud.
 
@@ -23,7 +23,7 @@ variable "backend_servers" {
   }))
 }
 
-resource "huaweicloud_apig_channel" "test" {
+resource "hcso_apig_channel" "test" {
   instance_id = var.instance_id
   name        = var.channel_name
   port        = 8080
@@ -59,7 +59,7 @@ variable "backend_servers" {
   }))
 }
 
-resource "huaweicloud_apig_channel" "test" {
+resource "hcso_apig_channel" "test" {
   instance_id = var.instance_id
   name        = var.channel_name
   port        = 8080
@@ -103,7 +103,7 @@ variable "member_groups_config" {
   }))
 }
 
-resource "huaweicloud_apig_channel" "test" {
+resource "hcso_apig_channel" "test" {
   instance_id      = var.instance_id
   name             = var.channel_name
   port             = 80
@@ -333,5 +333,5 @@ In addition to all arguments above, the following attributes are exported:
 Channels can be imported using their `id` and the ID of the related dedicated instance, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_channel.test <instance_id>/<id>
+$ terraform import hcso_apig_channel.test <instance_id>/<id>
 ```

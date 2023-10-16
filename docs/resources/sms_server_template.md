@@ -2,7 +2,7 @@
 subcategory: "Server Migration Service (SMS)"
 ---
 
-# huaweicloud_sms_server_template
+# hcso_sms_server_template
 
 Manages an SMS server template resource within HuaweiCloud.
 
@@ -11,11 +11,11 @@ Manages an SMS server template resource within HuaweiCloud.
 ### A template will create networks during migration
 
 ```hcl
-data "huaweicloud_availability_zones" "demo" {}
+data "hcso_availability_zones" "demo" {}
 
-resource "huaweicloud_sms_server_template" "demo" {
+resource "hcso_sms_server_template" "demo" {
   name              = "demo"
-  availability_zone = data.huaweicloud_availability_zones.demo.names[0]
+  availability_zone = data.hcso_availability_zones.demo.names[0]
 }
 ```
 
@@ -26,11 +26,11 @@ variable "vpc_id" {}
 variable "subent_id" {}
 variable "secgroup_id" {}
 
-data "huaweicloud_availability_zones" "demo" {}
+data "hcso_availability_zones" "demo" {}
 
-resource "huaweicloud_sms_server_template" "demo" {
+resource "hcso_sms_server_template" "demo" {
   name               = "demo"
-  availability_zone  = data.huaweicloud_availability_zones.demo.names[0]
+  availability_zone  = data.hcso_availability_zones.demo.names[0]
   vpc_id             = var.vpc_id
   subnet_ids         = [ var.subent_id ]
   security_group_ids = [ var.secgroup_id ]
@@ -91,5 +91,5 @@ This resource provides the following timeouts configuration options:
 SMS server templates can be imported by `id`, e.g.
 
 ```sh
-terraform import huaweicloud_sms_server_template.demo 4618ccaf-b4d7-43b9-b958-3df3b885126d
+terraform import hcso_sms_server_template.demo 4618ccaf-b4d7-43b9-b958-3df3b885126d
 ```

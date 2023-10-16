@@ -2,14 +2,14 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_kms_key
+# hcso_kms_key
 
 Manages a KMS key resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_kms_key" "key_1" {
+resource "hcso_kms_key" "key_1" {
   key_alias       = "key_1"
   pending_days    = "7"
   key_description = "first test key"
@@ -68,7 +68,7 @@ In addition to all arguments above, the following attributes are exported:
 KMS Keys can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_kms_key.key_1 7056d636-ac60-4663-8a6c-82d3c32c1c64
+$ terraform import hcso_kms_key.key_1 7056d636-ac60-4663-8a6c-82d3c32c1c64
 ```
 
 Note that the imported state may not be identical to your resource definition,
@@ -78,7 +78,7 @@ You can then decide if changes should be applied to the KMS Key, or the resource
 definition should be updated to align with the KMS Key. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_kms_key" "key_1" {
+resource "hcso_kms_key" "key_1" {
     ...
 
   lifecycle {

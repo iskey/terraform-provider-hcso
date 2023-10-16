@@ -2,7 +2,7 @@
 subcategory: "Live"
 ---
 
-# huaweicloud_live_snapshot
+# hcso_live_snapshot
 
 Manages a Live snapshot resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "storage_bucket" {}
 variable "storage_path" {}
 variable "domain_name" {}
 
-resource "huaweicloud_live_snapshot" "test"{
+resource "hcso_live_snapshot" "test"{
   domain_name    = var.domain_name
   app_name       = "live"
   frequency      = 10
@@ -79,5 +79,5 @@ In addition to all arguments above, the following attributes are exported:
 The live snapshot can be imported using the `domain_name` and `app_name` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_live_snapshot.test <domain_name>/<app_name>
+$ terraform import hcso_live_snapshot.test <domain_name>/<app_name>
 ```

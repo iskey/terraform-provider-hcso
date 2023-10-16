@@ -2,14 +2,14 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_keypair
+# hcso_iec_keypair
 
 Use this data source to get the details of a specific IEC keypair.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_iec_keypair" "kp_1" {
+data "hcso_iec_keypair" "kp_1" {
   name = "iec-keypair-demo"
 }
 ```

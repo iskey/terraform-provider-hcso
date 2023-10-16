@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc_subnet
+# hcso_vpc_subnet
 
 Provides details about a specific VPC subnet.
 
@@ -12,12 +12,12 @@ determine the id of the VPC that the subnet belongs to.
 ## Example Usage
 
 ```hcl
-data "huaweicloud_vpc_subnet" "subnet" {
+data "hcso_vpc_subnet" "subnet" {
   id = var.subnet_id
 }
 
 output "subnet_vpc_id" {
-  value = data.huaweicloud_vpc_subnet.subnet.vpc_id
+  value = data.hcso_vpc_subnet.subnet.vpc_id
 }
 ```
 

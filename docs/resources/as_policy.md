@@ -2,7 +2,7 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_policy
+# hcso_as_policy
 
 Manages an AS policy resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an AS policy resource within HuaweiCloud.
 ```hcl
 variable "as_group_id" {}
 
-resource "huaweicloud_as_policy" "my_aspolicy" {
+resource "hcso_as_policy" "my_aspolicy" {
   scaling_policy_name = "my_aspolicy"
   scaling_policy_type = "RECURRENCE"
   scaling_group_id    = var.as_group_id
@@ -36,7 +36,7 @@ resource "huaweicloud_as_policy" "my_aspolicy" {
 ```hcl
 variable "as_group_id" {}
 
-resource "huaweicloud_as_policy" "my_aspolicy_1" {
+resource "hcso_as_policy" "my_aspolicy_1" {
   scaling_policy_name = "my_aspolicy_1"
   scaling_policy_type = "SCHEDULED"
   scaling_group_id    = var.as_group_id
@@ -56,7 +56,7 @@ resource "huaweicloud_as_policy" "my_aspolicy_1" {
 ```hcl
 variable "as_group_id" {}
 
-resource "huaweicloud_ces_alarmrule" "alarm_rule" {
+resource "hcso_ces_alarmrule" "alarm_rule" {
   alarm_name = "as_alarm_rule"
 
   metric {
@@ -81,11 +81,11 @@ resource "huaweicloud_ces_alarmrule" "alarm_rule" {
   }
 }
 
-resource "huaweicloud_as_policy" "my_aspolicy_2" {
+resource "hcso_as_policy" "my_aspolicy_2" {
   scaling_policy_name = "my_aspolicy_2"
   scaling_policy_type = "ALARM"
   scaling_group_id    = var.as_group_id
-  alarm_id            = huaweicloud_ces_alarmrule.alarm_rule.id
+  alarm_id            = hcso_ces_alarmrule.alarm_rule.id
   cool_down_time      = 900
 
   scaling_policy_action {
@@ -114,7 +114,7 @@ The following arguments are supported:
 
 * `alarm_id` - (Optional, String) Specifies the alarm rule ID. This parameter is mandatory when `scaling_policy_type`
   is set to `ALARM`. You can create an alarm rule with
-  [huaweicloud_ces_alarmrule](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/ces_alarmrule).
+  [hcso_ces_alarmrule](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/ces_alarmrule).
 
 * `scheduled_policy` - (Optional, List) Specifies the periodic or scheduled AS policy.
   This parameter is mandatory when `scaling_policy_type` is set to `SCHEDULED` or `RECURRENCE`.
@@ -167,5 +167,5 @@ In addition to all arguments above, the following attributes are exported:
 AS policies can be imported by their `id`, e.g.
 
 ```
-$ terraform import huaweicloud_as_policy.test 9fcb65fe-fd79-4407-8fa0-07602044e1c3
+$ terraform import hcso_as_policy.test 9fcb65fe-fd79-4407-8fa0-07602044e1c3
 ```

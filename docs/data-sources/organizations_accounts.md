@@ -2,7 +2,7 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_accounts
+# hcso_organizations_accounts
 
 Use this data source to get the list of accounts in an organization.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of accounts in an organization.
 ```hcl
 variable "parent_id" {}
 
-data "huaweicloud_organizations_accounts" "test" {
+data "hcso_organizations_accounts" "test" {
   parent_id = var.parent_id
 }
 ```

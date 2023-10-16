@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Network (VPN)"
 ---
 
-# huaweicloud_vpn_gateway
+# hcso_vpn_gateway
 
 Manages a VPN gateway resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "subnet_id" {}
 variable "eip_id1" {}
 variable "eip_id2" {}
 
-resource "huaweicloud_vpn_gateway" "test" {
+resource "hcso_vpn_gateway" "test" {
   name               = var.name
   vpc_id             = var.vpc_id
   local_subnets      = ["192.168.0.0/24", "192.168.1.0/24"]
@@ -43,7 +43,7 @@ variable "subnet_id" {}
 variable "bandwidth_name1" {}
 variable "bandwidth_name2" {}
 
-resource "huaweicloud_vpn_gateway" "test" {
+resource "hcso_vpn_gateway" "test" {
   name               = var.name
   vpc_id             = var.vpc_id
   local_subnets      = ["192.168.0.0/24", "192.168.1.0/24"]
@@ -74,7 +74,7 @@ variable "er_id" {}
 variable "access_vpc_id" {}
 variable "access_subnet_id" {}
 
-resource "huaweicloud_vpn_gateway" "test" {
+resource "hcso_vpn_gateway" "test" {
   name               = var.name
   network_type       = "private"
   attachment_type    = "er"
@@ -234,5 +234,5 @@ This resource provides the following timeouts configuration options:
 The gateway can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_vpn_gateway.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_vpn_gateway.test 0ce123456a00f2591fabc00385ff1234
 ```

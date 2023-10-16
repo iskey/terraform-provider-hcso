@@ -2,51 +2,51 @@
 subcategory: "Distributed Database Middleware (DDM)"
 ---
 
-# huaweicloud_ddm_instance
+# hcso_ddm_instance
 
 Manages DDM instance resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_vpc" "test" {
+resource "hcso_vpc" "test" {
   name = "test_vpc"
   cidr = "192.168.0.0/24"
 }
 
-resource "huaweicloud_vpc_subnet" "test" {
+resource "hcso_vpc_subnet" "test" {
   name       = "test_subnet"
   cidr       = "192.168.0.0/24"
   gateway_ip = "192.168.0.1"
-  vpc_id     = huaweicloud_vpc.test.id
+  vpc_id     = hcso_vpc.test.id
 }
 
-resource "huaweicloud_networking_secgroup" "test" {
+resource "hcso_networking_secgroup" "test" {
   name = "test_secgroup"
 }
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-data "huaweicloud_ddm_engines" test {
+data "hcso_ddm_engines" test {
   version = "3.0.8.5"
 }
 
-data "huaweicloud_ddm_flavors" test {
-  engine_id = data.huaweicloud_ddm_engines.test.engines[0].id
+data "hcso_ddm_flavors" test {
+  engine_id = data.hcso_ddm_engines.test.engines[0].id
   cpu_arch  = "X86"
 }
 
-resource "huaweicloud_ddm_instance" "test" {
+resource "hcso_ddm_instance" "test" {
   name              = "ddm_test"
-  flavor_id         = data.huaweicloud_ddm_flavors.test.flavors[0].id
+  flavor_id         = data.hcso_ddm_flavors.test.flavors[0].id
   node_num          = 2
-  engine_id         = data.huaweicloud_ddm_engines.test.engines[0].id
-  vpc_id            = huaweicloud_vpc.test.id
-  subnet_id         = huaweicloud_vpc_subnet.test.id
-  security_group_id = huaweicloud_networking_secgroup.test.id
+  engine_id         = data.hcso_ddm_engines.test.engines[0].id
+  vpc_id            = hcso_vpc.test.id
+  subnet_id         = hcso_vpc_subnet.test.id
+  security_group_id = hcso_networking_secgroup.test.id
   
   availability_zones = [
-    data.huaweicloud_availability_zones.test.names[0]
+    data.hcso_availability_zones.test.names[0]
   ]
 }
 ```
@@ -168,5 +168,5 @@ This resource provides the following timeouts configuration options:
 The ddm instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_ddm_instance.test 4bc36477c36642479acf2d90751c8c29in09
+$ terraform import hcso_ddm_instance.test 4bc36477c36642479acf2d90751c8c29in09
 ```

@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_throttling_policy
+# hcso_apig_throttling_policy
 
 Manages an APIG (API) throttling policy resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "instance_id" {}
 variable "policy_name" {}
 variable "description" {}
 
-resource "huaweicloud_apig_throttling_policy" "test" {
+resource "hcso_apig_throttling_policy" "test" {
   instance_id       = var.instance_id
   name              = var.policy_name
   description       = var.description
@@ -36,7 +36,7 @@ variable "instance_id" {}
 variable "policy_name" {}
 variable "application_id" {}
 
-resource "huaweicloud_apig_throttling_policy" "test" {
+resource "hcso_apig_throttling_policy" "test" {
   instance_id      = var.instance_id
   name             = var.policy_name
   type             = "API-based"
@@ -139,5 +139,5 @@ The `user_throttles` and `user_throttles` blocks support:
 API Throttling Policies can be imported using their `name` and related dedicated instance ID, separated by a slash, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_throttling_policy.test <instance_id>/<name>
+$ terraform import hcso_apig_throttling_policy.test <instance_id>/<name>
 ```

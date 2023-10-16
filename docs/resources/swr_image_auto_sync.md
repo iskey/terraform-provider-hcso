@@ -2,7 +2,7 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_image_auto_sync
+# hcso_swr_image_auto_sync
 
 Manages a SWR image auto sync within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a SWR image auto sync within HuaweiCloud.
 variable "organization_name" {}
 variable "repository_name" {}
 
-resource "huaweicloud_swr_image_auto_sync" "test"{
+resource "hcso_swr_image_auto_sync" "test"{
   organization        = var.organization_name
   repository          = var.repository_name
   target_region       = "cn-north-4"
@@ -65,5 +65,5 @@ The SWR image auto sync can be imported using the organization name, repository 
 target region and target organization separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_swr_image_auto_sync.test <organization_name>/<repository_name>/<target_region>/<target_organization>
+$ terraform import hcso_swr_image_auto_sync.test <organization_name>/<repository_name>/<target_region>/<target_organization>
 ```

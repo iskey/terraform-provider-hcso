@@ -2,7 +2,7 @@
 subcategory: "Enterprise Project Management Service (EPS)"
 ---
 
-# huaweicloud_enterprise_project
+# hcso_enterprise_project
 
 Use this resource to manage an enterprise project within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Use this resource to manage an enterprise project within HuaweiCloud.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_enterprise_project" "test" {
+resource "hcso_enterprise_project" "test" {
   name        = "test"
   description = "example project"
 }
@@ -53,7 +53,7 @@ In addition to all arguments above, the following attributes are exported:
 Enterprise projects can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_enterprise_project.test 88f889c7-270e-4e77-8230-bf7db08d9b0e
+$ terraform import hcso_enterprise_project.test 88f889c7-270e-4e77-8230-bf7db08d9b0e
 ```
 
 ## Timeouts

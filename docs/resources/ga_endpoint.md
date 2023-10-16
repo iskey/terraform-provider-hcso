@@ -2,7 +2,7 @@
 subcategory: "Global Accelerator (GA)"
 ---
 
-# huaweicloud_ga_endpoint
+# hcso_ga_endpoint
 
 Manages a GA endpoint resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "endpoint_group_id" {}
 variable "resource_id" {}
 variable "ip_address" {}
 
-resource "huaweicloud_ga_endpoint" "test" {
+resource "hcso_ga_endpoint" "test" {
   endpoint_group_id = var.endpoint_group_id
   resource_id       = var.resource_id
   ip_address        = var.ip_address
@@ -80,5 +80,5 @@ This resource provides the following timeouts configuration options:
 The endpoint can be imported using `endpoint_group_id`, `id`, separated by slashes, e.g.
 
 ```
-$ terraform import huaweicloud_ga_endpoint.test &ltendpoint_group_id&gt/&ltid&gt
+$ terraform import hcso_ga_endpoint.test &ltendpoint_group_id&gt/&ltid&gt
 ```

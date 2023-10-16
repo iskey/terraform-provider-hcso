@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Instance (CCI)"
 ---
 
-# huaweicloud_cci_namespace
+# hcso_cci_namespace
 
 Manages a CCI namespace resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a CCI namespace resource within HuaweiCloud.
 ```hcl
 variable "namespace_name" {}
 
-resource "huaweicloud_cci_namespace" "test" {
+resource "hcso_cci_namespace" "test" {
   name         = var.namespace_name
   type         = "gpu-accelerated"
   rbac_enabled = true
@@ -74,7 +74,7 @@ In addition to all arguments above, the following attributes are exported:
 CCI Namespaces can be imported using their `name`, e.g.,
 
 ```
-$ terraform import huaweicloud_cci_namespace.test terraform-test
+$ terraform import hcso_cci_namespace.test terraform-test
 ```
 
 ## Timeouts

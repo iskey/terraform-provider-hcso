@@ -2,7 +2,7 @@
 subcategory: "Data Warehouse Service (DWS)"
 ---
 
-# huaweicloud_dws_snapshot_policy
+# hcso_dws_snapshot_policy
 
 Manages a DWS automated snapshot policy resource within HuaweiCloud.  
 
@@ -13,7 +13,7 @@ Manages a DWS automated snapshot policy resource within HuaweiCloud.
 ```hcl
 variable "cluster_id" {}
 
-resource "huaweicloud_dws_snapshot_policy" "test" {
+resource "hcso_dws_snapshot_policy" "test" {
   name       = "demo"
   cluster_id = var.cluster_id
   type       = "full"
@@ -26,7 +26,7 @@ resource "huaweicloud_dws_snapshot_policy" "test" {
 ```hcl
   variable "cluster_id" {}
 
-  resource "huaweicloud_dws_snapshot_policy" "test" {
+  resource "hcso_dws_snapshot_policy" "test" {
     name       = "demo"
     cluster_id = var.cluster_id
     type       = "full"
@@ -39,7 +39,7 @@ resource "huaweicloud_dws_snapshot_policy" "test" {
 ```hcl
   variable "cluster_id" {}
 
-  resource "huaweicloud_dws_snapshot_policy" "test" {
+  resource "hcso_dws_snapshot_policy" "test" {
     name       = "demo"
     cluster_id = var.cluster_id
     type       = "increment"
@@ -87,5 +87,5 @@ In addition to all arguments above, the following attributes are exported:
 The DWS snapshot policy can be imported using `cluster_id`, `id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_dws_snapshot_policy.test <cluster_id>/<id>
+$ terraform import hcso_dws_snapshot_policy.test <cluster_id>/<id>
 ```

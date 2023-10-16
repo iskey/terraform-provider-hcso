@@ -2,7 +2,7 @@
 subcategory: "ServiceStage"
 ---
 
-# huaweicloud_servicestage_component_instance
+# hcso_servicestage_component_instance
 
 This resource is used to deploy a component under specified application within HuaweiCloud ServiceStage service.
 
@@ -21,7 +21,7 @@ variable "swr_image_url" {}
 variable "cce_cluster_id" {}
 variable "cse_engine_id" {}
 
-resource "huaweicloud_servicestage_component_instance" "default" {
+resource "hcso_servicestage_component_instance" "default" {
   application_id = var.app_id
   component_id   = var.component_id
   environment_id = var.env_id
@@ -87,7 +87,7 @@ variable "obs_bucket_endpoint" {}
 variable "obs_object_key" {}
 variable "ecs_instance_id" {}
 
-resource "huaweicloud_servicestage_component_instance" "test" {
+resource "hcso_servicestage_component_instance" "test" {
   application_id = var.app_id
   component_id   = var.component_id
   environment_id = var.env_id
@@ -500,5 +500,5 @@ This resource provides the following timeouts configuration options:
 Instances can be imported using their related `application_id`, `component_id` and `id`, separated by a slash (/), e.g.
 
 ```
-terraform import huaweicloud_servicestage_component_instance.test 4e65a759-e7b1-4e9e-8277-857f8e261f3c/4e65a759-e7b1-4e9e-8277-857f8e261f3c/c0a13d88-d4e3-11ec-93a9-0255ac101d30
+terraform import hcso_servicestage_component_instance.test 4e65a759-e7b1-4e9e-8277-857f8e261f3c/4e65a759-e7b1-4e9e-8277-857f8e261f3c/c0a13d88-d4e3-11ec-93a9-0255ac101d30
 ```

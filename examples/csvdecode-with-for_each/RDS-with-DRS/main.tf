@@ -8,15 +8,15 @@ variable "password" {
   default = "12345"
 }
 
-data "huaweicloud_vpc" "vpc" {
+data "hcso_vpc" "vpc" {
   id = "VPCID"
 }
 
-data "huaweicloud_networking_secgroup" "sg" {
+data "hcso_networking_secgroup" "sg" {
   secgroup_id = "SGID"
 }
 
-data "huaweicloud_vpc_subnet" "subnet" {
+data "hcso_vpc_subnet" "subnet" {
   id = "SubnetID"
 }
 
@@ -24,14 +24,14 @@ locals {
   rg = csvdecode(file("mysql.csv"))
 }
 
-resource "huaweicloud_rds_instance" "mysql" {
+resource "hcso_rds_instance" "mysql" {
   for_each            = { for rg in local.rg : rg.name => rg }
   name                = each.value.name
   flavor              = each.value.flavor
   ha_replication_mode = each.value.ha
-  vpc_id              = data.huaweicloud_vpc.vpc.id
-  subnet_id           = data.huaweicloud_vpc_subnet.subnet.id
-  security_group_id   = data.huaweicloud_networking_secgroup.sg.secgroup_id
+  vpc_id              = data.hcso_vpc.vpc.id
+  subnet_id           = data.hcso_vpc_subnet.subnet.id
+  security_group_id   = data.hcso_networking_secgroup.sg.secgroup_id
   param_group_id      = var.param_group_id
   availability_zone   = [each.value.az]
 
@@ -52,7 +52,7 @@ resource "huaweicloud_rds_instance" "mysql" {
   }
 }
 
-resource "huaweicloud_drs_job" "test" {
+resource "hcso_drs_job" "test" {
   for_each       = { for rg in local.rg : rg.name => rg }
   name           = each.value.name1
   type           = "migration"
@@ -73,12 +73,12 @@ resource "huaweicloud_drs_job" "test" {
 
   destination_db {
     region      = "cn-east-3"
-    ip          = huaweicloud_rds_instance.mysql[each.value.name].fixed_ip
+    ip          = hcso_rds_instance.mysql[each.value.name].fixed_ip
     port        = 3306
     engine_type = "mysql"
     user        = "root"
     password    = var.password
-    instance_id = huaweicloud_rds_instance.mysql[each.value.name].id
-    subnet_id   = data.huaweicloud_vpc_subnet.subnet.id
+    instance_id = hcso_rds_instance.mysql[each.value.name].id
+    subnet_id   = data.hcso_vpc_subnet.subnet.id
   }
 }

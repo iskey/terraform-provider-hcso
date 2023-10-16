@@ -2,10 +2,10 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_permission
+# hcso_dli_permission
 
-Manages the usage permissions of those resources: `huaweicloud_dli_queue`, `huaweicloud_dli_database`,
- `huaweicloud_dli_table`, `huaweicloud_dli_package`, `huaweicloud_dli_flinksql_job`, `huaweicloud_dli_flinkjar_job`
+Manages the usage permissions of those resources: `hcso_dli_queue`, `hcso_dli_database`,
+ `hcso_dli_table`, `hcso_dli_package`, `hcso_dli_flinksql_job`, `hcso_dli_flinkjar_job`
   within HuaweiCloud DLI.
 
 ## Example Usage
@@ -16,7 +16,7 @@ Manages the usage permissions of those resources: `huaweicloud_dli_queue`, `huaw
 variable "user_name" {}
 variable "queue_name" {}
 
-resource "huaweicloud_dli_permission" "test" {
+resource "hcso_dli_permission" "test" {
   user_name  = var.user_name
   object     = "queues.${var.queue_name}"
   privileges = ["SUBMIT_JOB","DROP_QUEUE"]
@@ -29,7 +29,7 @@ resource "huaweicloud_dli_permission" "test" {
 variable "user_name" {}
 variable "database_name" {}
 
-resource "huaweicloud_dli_permission" "test" {
+resource "hcso_dli_permission" "test" {
   user_name  = var.user_name
   object     = "databases.${var.database_name}"
   privileges = ["SELECT"]
@@ -101,5 +101,5 @@ In addition to all arguments above, the following attributes are exported:
 The permission can be imported by `id`, it is composed of `object` and `user_name`, separated by a slash. e.g.:
 
 ```
-terraform import huaweicloud_dli_permission.test databases.database_name/user_name
+terraform import hcso_dli_permission.test databases.database_name/user_name
 ```

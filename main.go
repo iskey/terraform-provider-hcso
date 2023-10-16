@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-	"github.com/huaweicloud/terraform-provider-huaweicloud/huaweicloud"
+	"github.com/huaweicloud/terraform-provider-hcso/internal"
 )
 
 func main() {
@@ -13,5 +13,5 @@ func main() {
 	log.SetFlags(log.Flags() &^ (log.Ldate | log.Ltime))
 
 	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: huaweicloud.Provider})
+		ProviderFunc: internal.Provider})
 }

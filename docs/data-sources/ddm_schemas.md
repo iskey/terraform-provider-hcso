@@ -2,7 +2,7 @@
 subcategory: "Distributed Database Middleware (DDM)"
 ---
 
-# huaweicloud_ddm_schemas
+# hcso_ddm_schemas
 
 Use this data source to get the list of DDM schemas.
 
@@ -12,7 +12,7 @@ Use this data source to get the list of DDM schemas.
 variable "ddm_instance_id" {}
 variable "ddm_schema_name" {}
 
-data "huaweicloud_ddm_schemas" test {
+data "hcso_ddm_schemas" test {
   instance_id = var.ddm_instance_id
   name        = var.ddm_schema_name
 }

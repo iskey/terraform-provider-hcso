@@ -2,7 +2,7 @@
 subcategory: "Image Management Service (IMS)"
 ---
 
-# huaweicloud_images_image_copy
+# hcso_images_image_copy
 
 Manages an IMS image copy resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "source_image_id" {}
 variable "name" {}
 variable "kms_key_id" {}
 
-resource "huaweicloud_images_image_copy" "test" {
+resource "hcso_images_image_copy" "test" {
   source_image_id = var.source_image_id
   name            = var.name
   kms_key_id      = var.kms_key_id
@@ -30,7 +30,7 @@ variable "name" {}
 variable "target_region" {}
 variable "agency_name" {}
 
-resource "huaweicloud_images_image_copy" "test" {
+resource "hcso_images_image_copy" "test" {
   source_image_id = var.source_image_id
   name            = var.name
   target_region   = var.target_region

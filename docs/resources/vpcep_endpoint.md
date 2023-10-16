@@ -2,7 +2,7 @@
 subcategory: "VPC Endpoint (VPCEP)"
 ---
 
-# huaweicloud_vpcep_endpoint
+# hcso_vpcep_endpoint
 
 Provides a resource to manage a VPC endpoint resource.
 
@@ -14,12 +14,12 @@ Provides a resource to manage a VPC endpoint resource.
 variable "vpc_id" {}
 variable "network_id" {}
 
-data "huaweicloud_vpcep_public_services" "cloud_service" {
+data "hcso_vpcep_public_services" "cloud_service" {
   service_name = "dis"
 }
 
-resource "huaweicloud_vpcep_endpoint" "myendpoint" {
-  service_id       = data.huaweicloud_vpcep_public_services.cloud_service.services[0].id
+resource "hcso_vpcep_endpoint" "myendpoint" {
+  service_id       = data.hcso_vpcep_public_services.cloud_service.services[0].id
   vpc_id           = var.vpc_id
   network_id       = var.network_id
   enable_dns       = true
@@ -36,7 +36,7 @@ variable "vm_port" {}
 variable "vpc_id" {}
 variable "network_id" {}
 
-resource "huaweicloud_vpcep_service" "demo" {
+resource "hcso_vpcep_service" "demo" {
   name        = "demo-service"
   server_type = "VM"
   vpc_id      = var.service_vpc_id
@@ -48,8 +48,8 @@ resource "huaweicloud_vpcep_service" "demo" {
   }
 }
 
-resource "huaweicloud_vpcep_endpoint" "demo" {
-  service_id  = huaweicloud_vpcep_service.demo.id
+resource "hcso_vpcep_endpoint" "demo" {
+  service_id  = hcso_vpcep_service.demo.id
   vpc_id      = var.vpc_id
   network_id  = var.network_id
   enable_dns  = true
@@ -120,5 +120,5 @@ This resource provides the following timeouts configuration options:
 VPC endpoint can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_vpcep_endpoint.test <id>
+$ terraform import hcso_vpcep_endpoint.test <id>
 ```

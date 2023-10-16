@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_rule_blacklist
+# hcso_waf_rule_blacklist
 
 Manages a WAF blacklist and whitelist rule resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ used. The blacklist and whitelist rule resource can be used in Cloud Mode, Dedic
 ```hcl
 variable "policy_id" {}
 
-resource "huaweicloud_waf_rule_blacklist" "rule" {
+resource "hcso_waf_rule_blacklist" "rule" {
   policy_id   = var.policy_id
   ip_address  = "192.168.0.0/24"
   action      = 0
@@ -32,7 +32,7 @@ variable "policy_id" {}
 variable "address_group_id" {}
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_rule_blacklist" "rule" {
+resource "hcso_waf_rule_blacklist" "rule" {
   policy_id             = var.policy_id
   address_group_id      = var.address_group_id
   enterprise_project_id = var.enterprise_project_id
@@ -90,11 +90,11 @@ There are two ways to import WAF rule blacklist state.
 * Using `policy_id` and `rule_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_blacklist.test <policy_id>/<rule_id>
+$ terraform import hcso_waf_rule_blacklist.test <policy_id>/<rule_id>
 ```
 
 * Using `policy_id`, `rule_id` and `enterprise_project_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_blacklist.test <policy_id>/<rule_id>/<enterprise_project_id>
+$ terraform import hcso_waf_rule_blacklist.test <policy_id>/<rule_id>/<enterprise_project_id>
 ```

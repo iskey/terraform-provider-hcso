@@ -2,7 +2,7 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_account_privilege
+# hcso_gaussdb_mysql_account_privilege
 
 Manages a GaussDB MySQL account privilege resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a GaussDB MySQL account privilege resource within HuaweiCloud.
 ```hcl
 variable "instance_id" {}
 
-resource "huaweicloud_gaussdb_mysql_account_privilege" "test" {
+resource "hcso_gaussdb_mysql_account_privilege" "test" {
   instance_id  = var.instance_id
   account_name = "test_db_name1"
   host         = "10.10.10.10"
@@ -73,5 +73,5 @@ This resource provides the following timeouts configuration options:
 The GaussDB MySQL account privilege can be imported using the `instance_id`, `name` and `host` separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_gaussdb_mysql_account_privilege.test <instance_id>/<account_name>/<host>
+$ terraform import hcso_gaussdb_mysql_account_privilege.test <instance_id>/<account_name>/<host>
 ```

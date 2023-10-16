@@ -2,7 +2,7 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_device_linkage_rule
+# hcso_iotda_device_linkage_rule
 
 Manages an IoTDA device linkage rule within HuaweiCloud.
 
@@ -14,11 +14,11 @@ variable "trigger_device_id" {}
 variable "action_device_id" {}
 
 
-resource "huaweicloud_smn_topic" "topic" {
+resource "hcso_smn_topic" "topic" {
   name = "iot-demo"
 }
 
-resource "huaweicloud_iotda_device_linkage_rule" "test" {
+resource "hcso_iotda_device_linkage_rule" "test" {
   space_id = var.space_id
   name     = "demoLinkageRule"
   
@@ -53,9 +53,9 @@ resource "huaweicloud_iotda_device_linkage_rule" "test" {
   actions {
     type = "SMN_FORWARDING"
     smn_forwarding {
-      region          = huaweicloud_smn_topic.topic.region
-      topic_name      = huaweicloud_smn_topic.topic.name
-      topic_urn       = huaweicloud_smn_topic.topic.topic_urn
+      region          = hcso_smn_topic.topic.region
+      topic_name      = hcso_smn_topic.topic.name
+      topic_urn       = hcso_smn_topic.topic.topic_urn
       message_title   = "message_title"
       message_content = "message_content"
     }
@@ -277,5 +277,5 @@ In addition to all arguments above, the following attributes are exported:
 Device linkage rules can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_device_linkage_rule.test 62b6cc5aa367f403fea86127
+$ terraform import hcso_iotda_device_linkage_rule.test 62b6cc5aa367f403fea86127
 ```

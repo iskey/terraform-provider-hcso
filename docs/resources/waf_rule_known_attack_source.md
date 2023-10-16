@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_rule_known_attack_source
+# hcso_waf_rule_known_attack_source
 
 Manages a WAF rule known attack source resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ used. The known attack source rule resource can be used in Cloud Mode, Dedicated
 variable policy_id {}
 variable enterprise_project_id {}
 
-resource "huaweicloud_waf_rule_known_attack_source" "test" {
+resource "hcso_waf_rule_known_attack_source" "test" {
   policy_id             = var.policy_id
   enterprise_project_id = var.enterprise_project_id
   block_type            = "long_ip_block"
@@ -71,11 +71,11 @@ There are two ways to import WAF rule known attack source state.
 * Using `policy_id` and `rule_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_known_attack_source.test <policy_id>/<rule_id>
+$ terraform import hcso_waf_rule_known_attack_source.test <policy_id>/<rule_id>
 ```
 
 * Using `policy_id`, `rule_id` and `enterprise_project_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_rule_known_attack_source.test <policy_id>/<rule_id>/<enterprise_project_id>
+$ terraform import hcso_waf_rule_known_attack_source.test <policy_id>/<rule_id>/<enterprise_project_id>
 ```

@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_pvc
+# hcso_cce_pvc
 
 Manages a CCE Persistent Volume Claim resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "cluster_id" {}
 variable "namespace" {}
 variable "pvc_name" {}
 
-resource "huaweicloud_cce_pvc" "test" {
+resource "hcso_cce_pvc" "test" {
   cluster_id  = var.cluster_id
   namespace   = var.namespace
   name        = var.pvc_name
@@ -35,7 +35,7 @@ variable "cluster_id" {}
 variable "namespace" {}
 variable "pvc_name" {}
 
-resource "huaweicloud_cce_pvc" "test" {
+resource "hcso_cce_pvc" "test" {
   cluster_id  = var.cluster_id
   namespace   = var.namespace
   name        = var.pvc_name
@@ -56,7 +56,7 @@ variable "cluster_id" {}
 variable "namespace" {}
 variable "pvc_name" {}
 
-resource "huaweicloud_cce_pvc" "test" {
+resource "hcso_cce_pvc" "test" {
   cluster_id  = var.cluster_id
   namespace   = var.namespace
   name        = var.pvc_name
@@ -127,7 +127,7 @@ This resource provides the following timeouts configuration options:
 CCE PVC can be imported using the cluster ID, namespace and ID separated by slashes, e.g.
 
 ```
-$ terraform import huaweicloud_cce_pvc.test 5c20fdad-7288-11eb-b817-0255ac10158b/default/fa540f3b-12d9-40e5-8268-04bcfed95a46
+$ terraform import hcso_cce_pvc.test 5c20fdad-7288-11eb-b817-0255ac10158b/default/fa540f3b-12d9-40e5-8268-04bcfed95a46
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -137,7 +137,7 @@ You can then decide if changes should be applied to the PVC, or the resource
 definition should be updated to align with the PVC. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cce_pvc" "test" {
+resource "hcso_cce_pvc" "test" {
     ...
 
   lifecycle {

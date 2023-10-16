@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_cloud_instance
+# hcso_waf_cloud_instance
 
 Using this resource to manage a cloud WAF in HuaweiCloud.
 
@@ -13,7 +13,7 @@ Using this resource to manage a cloud WAF in HuaweiCloud.
 ```hcl
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_cloud_instance" "test" {
+resource "hcso_waf_cloud_instance" "test" {
   resource_spec_code = "professional"
 
   bandwidth_expack_product {
@@ -39,7 +39,7 @@ resource "huaweicloud_waf_cloud_instance" "test" {
 ```hcl
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_cloud_instance" "test" {
+resource "hcso_waf_cloud_instance" "test" {
   charging_mode         = "postPaid"
   website               = "hec-hk"
   enterprise_project_id = var.enterprise_project_id
@@ -156,13 +156,13 @@ There are two ways to import WAF cloud instance state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_cloud_instance.test <id>
+$ terraform import hcso_waf_cloud_instance.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_cloud_instance.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_cloud_instance.test <id>/<enterprise_project_id>
 ```
 
 Note that the imported state is not identical to your resource definition, due to API response reason.
@@ -171,7 +171,7 @@ For prepaid cloud WAF, the missing attributes include `enterprise_project_id`, `
 You can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_waf_cloud_instance" "test" {
+resource "hcso_waf_cloud_instance" "test" {
   ...
 
   lifecycle {
@@ -189,7 +189,7 @@ For postPaid cloud WAF, the missing attributes include `enterprise_project_id` a
 You can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_waf_cloud_instance" "test" {
+resource "hcso_waf_cloud_instance" "test" {
   ...
 
   lifecycle {

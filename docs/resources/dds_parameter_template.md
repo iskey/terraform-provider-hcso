@@ -2,7 +2,7 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_parameter_template
+# hcso_dds_parameter_template
 
 Manages a DDS parameter template resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "parameter_values" {}
 variable "node_type" {}
 variable "node_version" {}
 
-resource "huaweicloud_dds_parameter_template" "test"{
+resource "hcso_dds_parameter_template" "test"{
   name             = var.name
   parameter_values = var.parameter_values
   node_type        = var.node_type
@@ -89,5 +89,5 @@ The `Parameter` block supports:
 The DDS parameter template can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_dds_parameter_template.test <tempalate_id>
+$ terraform import hcso_dds_parameter_template.test <tempalate_id>
 ```

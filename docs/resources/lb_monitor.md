@@ -2,7 +2,7 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_monitor
+# hcso_lb_monitor
 
 Manages an ELB monitor resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an ELB monitor resource within HuaweiCloud.
 ### TCP Health Check
 
 ```hcl
-resource "huaweicloud_lb_monitor" "monitor_tcp" {
+resource "hcso_lb_monitor" "monitor_tcp" {
   pool_id     = var.pool_id
   type        = "TCP"
   delay       = 5
@@ -23,7 +23,7 @@ resource "huaweicloud_lb_monitor" "monitor_tcp" {
 ### UDP Health Check
 
 ```hcl
-resource "huaweicloud_lb_monitor" "monitor_udp" {
+resource "hcso_lb_monitor" "monitor_udp" {
   pool_id     = var.pool_id
   type        = "UDP_CONNECT"
   delay       = 5
@@ -35,7 +35,7 @@ resource "huaweicloud_lb_monitor" "monitor_udp" {
 ### HTTP Health Check
 
 ```hcl
-resource "huaweicloud_lb_monitor" "monitor_http" {
+resource "hcso_lb_monitor" "monitor_http" {
   pool_id        = var.pool_id
   type           = "HTTP"
   delay          = 5
@@ -106,5 +106,5 @@ This resource provides the following timeouts configuration options:
 ELB monitor can be imported using the monitor ID, e.g.
 
 ```
-$ terraform import huaweicloud_lb_monitor.monitor_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_lb_monitor.monitor_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```

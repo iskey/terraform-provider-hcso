@@ -2,7 +2,7 @@
 subcategory: "Log Tank Service (LTS)"
 ---
 
-# huaweicloud_lts_transfer
+# hcso_lts_transfer
 
 Manages an LTS transfer task resource within HuaweiCloud.  
 
@@ -15,7 +15,7 @@ variable "lts_group_id" {}
 variable "lts_stream_id" {}
 variable "obs_buket" {}
 
-resource "huaweicloud_lts_transfer" "test" {
+resource "hcso_lts_transfer" "test" {
   log_group_id = var.lts_group_id
 
   log_streams {
@@ -49,7 +49,7 @@ variable "lts_stream_id" {}
 variable "dis_stream_id" {}
 variable "dis_stream_name" {}
 
-resource "huaweicloud_lts_transfer" "test" {
+resource "hcso_lts_transfer" "test" {
   log_group_id = var.lts_group_id
 
   log_streams {
@@ -78,7 +78,7 @@ variable "lts_stream_id" {}
 variable "kafaka_instance_id" {}
 variable "kafaka_topic" {}
 
-resource "huaweicloud_lts_transfer" "test" {
+resource "hcso_lts_transfer" "test" {
   log_group_id = var.lts_group_id
 
   log_streams {
@@ -110,7 +110,7 @@ variable "agency_domain_name" {}
 variable "agency_name" {}
 variable "agency_project_id" {}
 
-resource "huaweicloud_lts_transfer" "obs_agency" {
+resource "hcso_lts_transfer" "obs_agency" {
   log_group_id = var.lts_group_id
 
   log_streams {
@@ -307,5 +307,5 @@ In addition to all arguments above, the following attributes are exported:
 The LTS transfer task can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_lts_transfer.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_lts_transfer.test 0ce123456a00f2591fabc00385ff1234
 ```

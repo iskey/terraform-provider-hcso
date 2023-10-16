@@ -2,7 +2,7 @@
 subcategory: "Cloud Data Migration (CDM)"
 ---
 
-# huaweicloud_cdm_cluster
+# hcso_cdm_cluster
 
 Manages CDM cluster resource within HuaweiCloud.
 
@@ -18,12 +18,12 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "secgroup_id" {}
 
-data "huaweicloud_cdm_flavors" "test" {}
+data "hcso_cdm_flavors" "test" {}
 
-resource "huaweicloud_cdm_cluster" "cluster" {
+resource "hcso_cdm_cluster" "cluster" {
   name              = var.name
   availability_zone = var.availability_zone
-  flavor_id         = data.huaweicloud_cdm_flavors.test.flavors[0].id
+  flavor_id         = data.hcso_cdm_flavors.test.flavors[0].id
   subnet_id         = var.subnet_id
   vpc_id            = var.vpc_id
   security_group_id = var.secgroup_id
@@ -123,7 +123,7 @@ This resource provides the following timeouts configuration options:
 Clusters can be imported by `id`. For example,
 
 ```bash
-terraform import huaweicloud_cdm_cluster.test b11b407c-e604-4e8d-8bc4-92398320b847
+terraform import hcso_cdm_cluster.test b11b407c-e604-4e8d-8bc4-92398320b847
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -133,7 +133,7 @@ API response, security or some other reason. The missing attributes include: `em
 should be updated to align with the cluster. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_cdm_cluster" "test" {
+resource "hcso_cdm_cluster" "test" {
     ...
 
   lifecycle {

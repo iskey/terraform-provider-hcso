@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_server
+# hcso_iec_server
 
 Use this data source to get the details of a specified IEC server.
 
@@ -11,7 +11,7 @@ Use this data source to get the details of a specified IEC server.
 ```hcl
 variable "server_name" {}
 
-data "huaweicloud_iec_server" "demo" {
+data "hcso_iec_server" "demo" {
   name = var.server_name
 }
 ```

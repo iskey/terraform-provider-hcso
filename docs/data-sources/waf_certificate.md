@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_certificate
+# hcso_waf_certificate
 
 Get the certificate in the WAF, including the one pushed from SCM.
 
@@ -11,7 +11,7 @@ Get the certificate in the WAF, including the one pushed from SCM.
 ```hcl
 variable enterprise_project_id {}
 
-data "huaweicloud_waf_certificate" "certificate_1" {
+data "hcso_waf_certificate" "certificate_1" {
   name                  = "certificate name"
   enterprise_project_id = var.enterprise_project_id
 }

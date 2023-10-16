@@ -13,7 +13,7 @@ Provides an VBS Backup Policy resource.
 ### Basic Backup Policy
 
 ```hcl
-resource "huaweicloud_vbs_backup_policy" "vbs_policy1" {
+resource "hcso_vbs_backup_policy" "vbs_policy1" {
   name                = "policy_001"
   status              = "ON"
   start_time          = "12:00"
@@ -31,7 +31,7 @@ resource "huaweicloud_vbs_backup_policy" "vbs_policy1" {
 
 ```hcl
 variable "volume_id" {}
-resource "huaweicloud_vbs_backup_policy" "vbs_policy2" {
+resource "hcso_vbs_backup_policy" "vbs_policy2" {
   name                = "policy_002"
   status              = "ON"
   start_time          = "12:00"
@@ -106,5 +106,5 @@ This resource provides the following timeouts configuration options:
 Backup Policy can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vbs_backup_policy.vbs 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
+$ terraform import hcso_vbs_backup_policy.vbs 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
 ```

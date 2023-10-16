@@ -2,7 +2,7 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_instance
+# hcso_compute_instance
 
 Manages an ECS VM instance resource within HuaweiCloud.
 
@@ -13,33 +13,33 @@ Manages an ECS VM instance resource within HuaweiCloud.
 ```hcl
 variable "secgroup_id" {}
 
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-data "huaweicloud_compute_flavors" "myflavor" {
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+data "hcso_compute_flavors" "myflavor" {
+  availability_zone = data.hcso_availability_zones.myaz.names[0]
   performance_type  = "normal"
   cpu_core_count    = 2
   memory_size       = 4
 }
 
-data "huaweicloud_vpc_subnet" "mynet" {
+data "hcso_vpc_subnet" "mynet" {
   name = "subnet-default"
 }
 
-data "huaweicloud_images_image" "myimage" {
+data "hcso_images_image" "myimage" {
   name        = "Ubuntu 18.04 server 64bit"
   most_recent = true
 }
 
-resource "huaweicloud_compute_instance" "basic" {
+resource "hcso_compute_instance" "basic" {
   name               = "basic"
-  image_id           = data.huaweicloud_images_image.myimage.id
-  flavor_id          = data.huaweicloud_compute_flavors.myflavor.ids[0]
+  image_id           = data.hcso_images_image.myimage.id
+  flavor_id          = data.hcso_compute_flavors.myflavor.ids[0]
   security_group_ids = [var.secgroup_id]
-  availability_zone  = data.huaweicloud_availability_zones.myaz.names[0]
+  availability_zone  = data.hcso_availability_zones.myaz.names[0]
 
   network {
-    uuid = data.huaweicloud_vpc_subnet.mynet.id
+    uuid = data.hcso_vpc_subnet.mynet.id
   }
 }
 ```
@@ -49,7 +49,7 @@ resource "huaweicloud_compute_instance" "basic" {
 ```hcl
 variable "secgroup_id" {}
 
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name               = "myinstance"
   image_id           = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor_id          = "s6.small.1"
@@ -62,7 +62,7 @@ resource "huaweicloud_compute_instance" "myinstance" {
   }
 }
 
-resource "huaweicloud_vpc_eip" "myeip" {
+resource "hcso_vpc_eip" "myeip" {
   publicip {
     type = "5_bgp"
   }
@@ -74,9 +74,9 @@ resource "huaweicloud_vpc_eip" "myeip" {
   }
 }
 
-resource "huaweicloud_compute_eip_associate" "associated" {
-  public_ip   = huaweicloud_vpc_eip.myeip.address
-  instance_id = huaweicloud_compute_instance.myinstance.id
+resource "hcso_compute_eip_associate" "associated" {
+  public_ip   = hcso_vpc_eip.myeip.address
+  instance_id = hcso_compute_instance.myinstance.id
 }
 ```
 
@@ -85,14 +85,14 @@ resource "huaweicloud_compute_eip_associate" "associated" {
 ```hcl
 variable "secgroup_id" {}
 
-resource "huaweicloud_evs_volume" "myvolume" {
+resource "hcso_evs_volume" "myvolume" {
   name              = "myvolume"
   availability_zone = "cn-north-4a"
   volume_type       = "SAS"
   size              = 10
 }
 
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name               = "myinstance"
   image_id           = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor_id          = "s6.small.1"
@@ -105,9 +105,9 @@ resource "huaweicloud_compute_instance" "myinstance" {
   }
 }
 
-resource "huaweicloud_compute_volume_attach" "attached" {
-  instance_id = huaweicloud_compute_instance.myinstance.id
-  volume_id   = huaweicloud_evs_volume.myvolume.id
+resource "hcso_compute_volume_attach" "attached" {
+  instance_id = hcso_compute_instance.myinstance.id
+  volume_id   = hcso_evs_volume.myvolume.id
 }
 ```
 
@@ -119,7 +119,7 @@ ensure the volume attached order. So it's recommended to use `Instance With Atta
 ```hcl
 variable "secgroup_id" {}
 
-resource "huaweicloud_compute_instance" "multi-disk" {
+resource "hcso_compute_instance" "multi-disk" {
   name               = "multi-net"
   image_id           = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor_id          = "s6.small.1"
@@ -152,7 +152,7 @@ resource "huaweicloud_compute_instance" "multi-disk" {
 ```hcl
 variable "secgroup_id" {}
 
-resource "huaweicloud_compute_instance" "multi-net" {
+resource "hcso_compute_instance" "multi-net" {
   name               = "multi-net"
   image_id           = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor_id          = "s6.small.1"
@@ -175,7 +175,7 @@ resource "huaweicloud_compute_instance" "multi-net" {
 ```hcl
 variable "secgroup_id" {}
 
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name               = "instance"
   image_id           = "ad091b52-742f-469e-8f3c-fd81cadf0743"
   flavor_id          = "s6.small.1"
@@ -507,7 +507,7 @@ This resource provides the following timeouts configuration options:
 Instances can be imported by their `id`. For example,
 
 ```
-terraform import huaweicloud_compute_instance.my_instance b11b407c-e604-4e8d-8bc4-92398320b847
+terraform import hcso_compute_instance.my_instance b11b407c-e604-4e8d-8bc4-92398320b847
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -520,7 +520,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
     ...
 
   lifecycle {

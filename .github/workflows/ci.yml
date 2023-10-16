@@ -73,7 +73,7 @@ jobs:
       - name: Checkout provider
         uses: actions/checkout@v3
         with:
-          path: terraform-provider-huaweicloud
+          path: terraform-provider-hcso
 
       - name: Checkout tfproviderlint
         uses: actions/checkout@v3
@@ -92,9 +92,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      # when HW_SCHEMA is not empty, custom schema config will be contained in the description of parameters
+      # when HCSO_SCHEMA is not empty, custom schema config will be contained in the description of parameters
       # for the schema-markdown-check
-      HW_SCHEMA: "true"
+      HCSO_SCHEMA: "true"
 
     steps:
       - uses: actions/checkout@v3
@@ -109,11 +109,11 @@ jobs:
           go build -o markdown_check main.go
           ./markdown_check >check_result.log
 
-          # There are three known issues for huaweicloud_mapreduce_cluster
+          # There are three known issues for hcso_mapreduce_cluster
           ret=$(($?-3))
           if [ $ret -gt 0 ]; then
             echo "ERROR: find $ret inconsistencies between schemas and markdown docs"
-            echo -e "please ignore the errors in huaweicloud_mapreduce_cluster\n"
+            echo -e "please ignore the errors in hcso_mapreduce_cluster\n"
             grep -B1 "\[ERROR\]" check_result.log
           fi
           exit $ret

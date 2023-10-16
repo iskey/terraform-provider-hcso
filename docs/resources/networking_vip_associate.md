@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_networking_vip_associate
+# hcso_networking_vip_associate
 
 Using this resource, one or more NICs (to which the ECS instance belongs) can be bound to the VIP.
 
@@ -16,7 +16,7 @@ variable "nic_port_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_networking_vip_associate" "vip_associated" {
+resource "hcso_networking_vip_associate" "vip_associated" {
   vip_id   = var.vip_id
   port_ids = var.nic_port_ids
 }
@@ -48,5 +48,5 @@ Vip associate can be imported using the `vip_id` and port IDs separated by slash
 port IDs), e.g.
 
 ```
-$ terraform import huaweicloud_networking_vip_associate.vip_associated vip_id/port1_id/port2_id
+$ terraform import hcso_networking_vip_associate.vip_associated vip_id/port1_id/port2_id
 ```

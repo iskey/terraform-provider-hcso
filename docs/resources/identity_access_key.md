@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_access_key
+# hcso_identity_access_key
 
 Manages a permanent Access Key resource within HuaweiCloud IAM service.
 
@@ -11,14 +11,14 @@ Manages a permanent Access Key resource within HuaweiCloud IAM service.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_identity_user" "user_1" {
+resource "hcso_identity_user" "user_1" {
   name        = "user_1"
   description = "A user"
   password    = "password123!"
 }
 
-resource "huaweicloud_identity_access_key" "key_1" {
-  user_id = huaweicloud_identity_user.user_1.id
+resource "hcso_identity_access_key" "key_1" {
+  user_id = hcso_identity_user.user_1.id
 }
 ```
 

@@ -2,7 +2,7 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_database_user
+# hcso_dds_database_user
 
 Manages a database user resource within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "user_password" {}
 variable "owned_role_name" {}
 variable "owned_role_db_name" {}
 
-resource "huaweicloud_dds_database_user" "test" {
+resource "hcso_dds_database_user" "test" {
   instance_id = var.instance_id
 
   name     = var.user_name
@@ -109,7 +109,7 @@ Database users can be imported using their `id` (combination of `instance_id`, `
 slash (/), e.g.
 
 ```
-terraform import huaweicloud_dds_database_user.test &ltinstance_id&gt/&ltdb_name&gt/&ltname&gt
+terraform import hcso_dds_database_user.test &ltinstance_id&gt/&ltdb_name&gt/&ltname&gt
 ```
 
 Due to security reason, the imported state may not be identical to your resource definition (`password` parameter).
@@ -118,7 +118,7 @@ You can then decide if changes should be applied to the user, or the resource de
 the user. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dds_database_user" "test" {
+resource "hcso_dds_database_user" "test" {
   ...
 
   lifecycle {

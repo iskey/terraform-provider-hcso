@@ -2,7 +2,7 @@
 subcategory: "Cloud Firewall (CFW)"
 ---
 
-# huaweicloud_cfw_black_white_list
+# hcso_cfw_black_white_list
 
 Manages a CFW black white list resource within HuaweiCloud.
 
@@ -16,10 +16,10 @@ variable "address" {}
 variable "protocol" {}
 variable "port" {}
 
-data "huaweicloud_cfw_firewalls" "test" {}
+data "hcso_cfw_firewalls" "test" {}
 
-resource "huaweicloud_cfw_black_white_list" "test" {
-  object_id    = data.huaweicloud_cfw_firewalls.test.records[0].protect_objects[0].object_id
+resource "hcso_cfw_black_white_list" "test" {
+  object_id    = data.hcso_cfw_firewalls.test.records[0].protect_objects[0].object_id
   list_type    = var.list_type
   direction    = var.direction
   address_type = var.address_type
@@ -74,5 +74,5 @@ In addition to all arguments above, the following attributes are exported:
 The blackwhitelist can be imported using `object_id`, `list_type`, `address`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_cfw_black_white_list.test <object_id>/<list_type>/<address>
+$ terraform import hcso_cfw_black_white_list.test <object_id>/<list_type>/<address>
 ```

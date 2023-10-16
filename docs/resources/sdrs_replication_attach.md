@@ -2,7 +2,7 @@
 subcategory: "Storage Disaster Recovery Service (SDRS)"
 ---
 
-# huaweicloud_sdrs_replication_attach
+# hcso_sdrs_replication_attach
 
 Manages an SDRS replication attach resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "protected_instance_id" {}
 variable "replication_id" {}
 variable "device" {}
 
-resource "huaweicloud_sdrs_replication_attach" "test" {
+resource "hcso_sdrs_replication_attach" "test" {
   instance_id    = var.protected_instance_id
   replication_id = var.replication_id
   device         = var.device
@@ -77,5 +77,5 @@ The SDRS replication attach can be imported using the `protected_instance_id` an
 by a slash , e.g.
 
 ```bash
-$ terraform import huaweicloud_sdrs_replication_attach.test <protected_instance_id>/<replication_id>
+$ terraform import hcso_sdrs_replication_attach.test <protected_instance_id>/<replication_id>
 ```

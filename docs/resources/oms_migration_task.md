@@ -2,7 +2,7 @@
 subcategory: "Object Storage Migration Service (OMS)"
 ---
 
-# huaweicloud_oms_migration_task
+# hcso_oms_migration_task
 
 Manages an OMS migration task resource within HuaweiCloud.
 
@@ -19,7 +19,7 @@ variable "dest_access_key" {}
 variable "dest_secret_key" {}
 variable "topic_urn" {}
 
-resource "huaweicloud_oms_migration_task" "test" {
+resource "hcso_oms_migration_task" "test" {
   source_object {
     data_source = "Aliyun"
     region      = var.source_region

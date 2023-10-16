@@ -2,7 +2,7 @@
 subcategory: "IAM Identity Center"
 ---
 
-# huaweicloud_identitycenter_user
+# hcso_identitycenter_user
 
 Manages an Identity Center user resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an Identity Center user resource within HuaweiCloud.
 ```hcl
 variable "identity_store_id" {}
 
-resource "huaweicloud_identitycenter_user" "test"{
+resource "hcso_identitycenter_user" "test"{
   identity_store_id = var.identity_store_id
   user_name         = "test_user"
   password_mode     = "OTP"
@@ -62,7 +62,7 @@ In addition to all arguments above, the following attributes are exported:
 The IdentityCenter user can be imported using the `identity_store_id` and `id` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_identitycenter_user.test <identity_store_id>/<id>
+$ terraform import hcso_identitycenter_user.test <identity_store_id>/<id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -72,7 +72,7 @@ applied to the IdentityCenter user, or the resource definition should be updated
 can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_identitycenter_user" "user" {
+resource "hcso_identitycenter_user" "user" {
   ...
 
   lifecycle {

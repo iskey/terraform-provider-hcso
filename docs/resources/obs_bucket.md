@@ -2,7 +2,7 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_bucket
+# hcso_obs_bucket
 
 Provides an OBS bucket resource.
 
@@ -11,7 +11,7 @@ Provides an OBS bucket resource.
 ### Private Bucket with Tags
 
 ```hcl
-resource "huaweicloud_obs_bucket" "b" {
+resource "hcso_obs_bucket" "b" {
   bucket = "my-tf-test-bucket"
   acl    = "private"
 
@@ -25,7 +25,7 @@ resource "huaweicloud_obs_bucket" "b" {
 ### Enable versioning
 
 ```hcl
-resource "huaweicloud_obs_bucket" "b" {
+resource "hcso_obs_bucket" "b" {
   bucket     = "my-tf-test-bucket"
   acl        = "private"
   versioning = true
@@ -35,17 +35,17 @@ resource "huaweicloud_obs_bucket" "b" {
 ### Enable Logging
 
 ```hcl
-resource "huaweicloud_obs_bucket" "log_bucket" {
+resource "hcso_obs_bucket" "log_bucket" {
   bucket = "my-tf-log-bucket"
   acl    = "log-delivery-write"
 }
 
-resource "huaweicloud_obs_bucket" "b" {
+resource "hcso_obs_bucket" "b" {
   bucket = "my-tf-test-bucket"
   acl    = "private"
 
   logging {
-    target_bucket = huaweicloud_obs_bucket.log_bucket.id
+    target_bucket = hcso_obs_bucket.log_bucket.id
     target_prefix = "log/"
   }
 }
@@ -54,7 +54,7 @@ resource "huaweicloud_obs_bucket" "b" {
 ### Static Website Hosting
 
 ```hcl
-resource "huaweicloud_obs_bucket" "b" {
+resource "hcso_obs_bucket" "b" {
   bucket = "obs-website-test.hashicorp.com"
   acl    = "public-read"
 
@@ -79,7 +79,7 @@ EOF
 ### Using CORS
 
 ```hcl
-resource "huaweicloud_obs_bucket" "b" {
+resource "hcso_obs_bucket" "b" {
   bucket = "obs-website-test.hashicorp.com"
   acl    = "public-read"
 
@@ -96,7 +96,7 @@ resource "huaweicloud_obs_bucket" "b" {
 ### Using object lifecycle
 
 ```hcl
-resource "huaweicloud_obs_bucket" "bucket" {
+resource "hcso_obs_bucket" "bucket" {
   bucket     = "my-bucket"
   acl        = "private"
   versioning = true
@@ -326,13 +326,13 @@ The `storage_info` block supports:
 OBS bucket can be imported using the `bucket`, e.g.
 
 ```
-$ terraform import huaweicloud_obs_bucket.bucket <bucket-name>
+$ terraform import hcso_obs_bucket.bucket <bucket-name>
 ```
 
 OBS bucket with S3 foramt bucket policy can be imported using the `bucket` and "s3" by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_obs_bucket.bucket_with_s3_policy <bucket-name>/s3
+$ terraform import hcso_obs_bucket.bucket_with_s3_policy <bucket-name>/s3
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -340,7 +340,7 @@ API response. The missing attributes include `acl` and `force_destroy`. It is ge
 running `terraform plan` after importing an OBS bucket. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_obs_bucket" "bucket" {
+resource "hcso_obs_bucket" "bucket" {
     ...
 
   lifecycle {

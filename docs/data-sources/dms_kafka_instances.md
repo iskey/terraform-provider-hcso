@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_kafka_instances
+# hcso_dms_kafka_instances
 
 Use this data source to query the available instances within HuaweiCloud DMS service.
 
@@ -13,7 +13,7 @@ Use this data source to query the available instances within HuaweiCloud DMS ser
 ```hcl
 variable "keyword" {}
 
-data "huaweicloud_dms_kafka_instances" "test" {
+data "hcso_dms_kafka_instances" "test" {
   name        = var.keyword
   fuzzy_match = true
 }
@@ -24,7 +24,7 @@ data "huaweicloud_dms_kafka_instances" "test" {
 ```hcl
 variable "instance_name" {}
 
-data "huaweicloud_dms_kafka_instances" "test" {
+data "hcso_dms_kafka_instances" "test" {
   name = var.instance_name
 }
 ```

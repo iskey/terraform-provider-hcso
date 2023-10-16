@@ -2,14 +2,14 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_cassandra_flavors
+# hcso_gaussdb_cassandra_flavors
 
 Use this data source to get available HuaweiCloud gaussdb cassandra flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_cassandra_flavors" "flavors" {
+data "hcso_gaussdb_cassandra_flavors" "flavors" {
 }
 ```
 

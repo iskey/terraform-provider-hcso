@@ -6,12 +6,12 @@ subcategory: "Deprecated"
 
 Use this data source to get the ID of an available HuaweiCloud network.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc_subnet` instead.
+!> **WARNING:** It has been deprecated, use `hcso_vpc_subnet` instead.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_networking_network_v2" "network" {
+data "hcso_networking_network_v2" "network" {
   name = "tf_test_network"
 }
 ```

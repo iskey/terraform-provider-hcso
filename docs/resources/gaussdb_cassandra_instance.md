@@ -2,7 +2,7 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_cassandra_instance
+# hcso_gaussdb_cassandra_instance
 
 GaussDB for Cassandra instance management within HuaweiCoud.
 
@@ -11,7 +11,7 @@ GaussDB for Cassandra instance management within HuaweiCoud.
 ### create a gaussdb for cassandra instance with tags
 
 ```hcl
-resource "huaweicloud_gaussdb_cassandra_instance" "instance_1" {
+resource "hcso_gaussdb_cassandra_instance" "instance_1" {
   name              = "gaussdb_cassandra_instance_1"
   password          = var.password
   flavor            = "geminidb.cassandra.xlarge.4"
@@ -31,7 +31,7 @@ resource "huaweicloud_gaussdb_cassandra_instance" "instance_1" {
 ### create a gaussdb cassandra instance with backup strategy
 
 ```hcl
-resource "huaweicloud_gaussdb_cassandra_instance" "instance_1" {
+resource "hcso_gaussdb_cassandra_instance" "instance_1" {
   name              = "gaussdb_cassandra_instance_1"
   password          = var.password
   flavor            = "geminidb.cassandra.xlarge.4"
@@ -181,5 +181,5 @@ This resource provides the following timeouts configuration options:
 GaussDB Cassandra instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_gaussdb_cassandra_instance.instance_1 749112383d5342e9acb6c7825801b452in06
+$ terraform import hcso_gaussdb_cassandra_instance.instance_1 749112383d5342e9acb6c7825801b452in06
 ```

@@ -2,7 +2,7 @@
 subcategory: "Storage Disaster Recovery Service (SDRS)"
 ---
 
-# huaweicloud_sdrs_protection_group
+# hcso_sdrs_protection_group
 
 Manages an SDRS protection group resource within HuaweiCloud.
 
@@ -13,15 +13,15 @@ variable "source_availability_zone" {}
 variable "target_availability_zone" {}
 variable "source_vpc_id" {}
 
-data "huaweicloud_sdrs_domain" "test" {}
+data "hcso_sdrs_domain" "test" {}
 
-resource "huaweicloud_sdrs_protection_group" "test" {
+resource "hcso_sdrs_protection_group" "test" {
   name                     = "test_protection_group"
   description              = "test description"
   source_availability_zone = var.source_availability_zone
   target_availability_zone = var.target_availability_zone
   source_vpc_id            = var.source_vpc_id
-  domain_id                = data.huaweicloud_sdrs_domain.test.id
+  domain_id                = data.hcso_sdrs_domain.test.id
 } 
 ```
 
@@ -47,7 +47,7 @@ The following arguments are supported:
   Changing this parameter will create a new resource.
 
 * `domain_id` - (Required, String, ForceNew) Specifies the ID of an active-active domain.
-  You can search `domain_id` with data source `huaweicloud_sdrs_domain`.
+  You can search `domain_id` with data source `hcso_sdrs_domain`.
 
   Changing this parameter will create a new resource.
 
@@ -88,5 +88,5 @@ This resource provides the following timeouts configuration options:
 The SDRS protection group can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_sdrs_protection_group.test <id>
+$ terraform import hcso_sdrs_protection_group.test <id>
 ```

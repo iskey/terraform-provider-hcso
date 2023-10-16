@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_namespace
+# hcso_cce_namespace
 
 Manages a CCE namespace resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages a CCE namespace resource within HuaweiCloud.
 ```hcl
 variable "cluster_id" {}
 
-resource "huaweicloud_cce_namespace" "test" {
+resource "hcso_cce_namespace" "test" {
   cluster_id = var.cluster_id
   name       = "test-namespace"
 }
@@ -66,5 +66,5 @@ This resource provides the following timeouts configuration options:
 CCE namespace can be imported using the cluster ID and namespace name separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_cce_namespace.test bb6923e4-b16e-11eb-b0cd-0255ac101da1/test-namespace
+$ terraform import hcso_cce_namespace.test bb6923e4-b16e-11eb-b0cd-0255ac101da1/test-namespace
 ```

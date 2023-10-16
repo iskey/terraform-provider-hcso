@@ -2,14 +2,14 @@
 subcategory: "Cloud Certificate Manager (CCM)"
 ---
 
-# huaweicloud_scm_certificates
+# hcso_scm_certificates
 
 Use this data source to get the list of SCM certificates.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_scm_certificates" "test" {
+data "hcso_scm_certificates" "test" {
   status = "ALL"
 }
 ```

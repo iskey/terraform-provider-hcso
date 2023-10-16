@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_api_publishment
+# hcso_apig_api_publishment
 
 Using this resource to publish an API to the environment or manage a historical publish version within HuaweiCloud.
 
@@ -18,7 +18,7 @@ variable "instance_id" {}
 variable "env_id" {}
 variable "api_id" {}
 
-resource "huaweicloud_apig_api_publishment" "default" {
+resource "hcso_apig_api_publishment" "default" {
   instance_id = var.instance_id
   env_id      = var.env_id
   api_id      = var.api_id
@@ -33,7 +33,7 @@ variable "env_id" {}
 variable "api_id" {}
 variable "version_id" {}
 
-resource "huaweicloud_apig_api_publishment" "default" {
+resource "hcso_apig_api_publishment" "default" {
   instance_id = var.instance_id
   env_id      = var.env_id
   api_id      = var.api_id
@@ -90,5 +90,5 @@ The `histories` block supports:
 The publishments can be imported using their related `instance_id`, `env_id` and `api_id`, separated by slashes, e.g.
 
 ```shell
-$ terraform import huaweicloud_apig_api_publishment.test <instance_id>/<env_id>/<api_id>
+$ terraform import hcso_apig_api_publishment.test <instance_id>/<env_id>/<api_id>
 ```

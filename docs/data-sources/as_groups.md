@@ -2,12 +2,12 @@
 subcategory: "Auto Scaling"
 ---
 
-# huaweicloud_as_groups
+# hcso_as_groups
 
 Use this data source to get a list of AS groups.
 
 ```hcl
-data "huaweicloud_as_groups" "groups" {
+data "hcso_as_groups" "groups" {
 }
 ```
 

@@ -2,14 +2,14 @@
 subcategory: "Distributed Cache Service (DCS)"
 ---
 
-# huaweicloud_dcs_flavors
+# hcso_dcs_flavors
 
 Use this data source to get a list of available DCS flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_dcs_flavors" "flavors" {
+data "hcso_dcs_flavors" "flavors" {
   capacity = "4"
 }
 ```

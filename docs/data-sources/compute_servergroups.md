@@ -2,7 +2,7 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_servergroups
+# hcso_compute_servergroups
 
 Use this data source to get the list of the compute server groups.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of the compute server groups.
 ```hcl
 variable "name" {}
 
-data "huaweicloud_compute_servergroups" "test" {
+data "hcso_compute_servergroups" "test" {
   name = var.name
 }
 ```

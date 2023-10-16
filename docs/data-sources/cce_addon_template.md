@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_addon_template
+# hcso_cce_addon_template
 
 Use this data source to get available HuaweiCloud CCE add-on template.
 
@@ -15,7 +15,7 @@ variable "addon_name" {}
 
 variable "addon_version" {}
 
-data "huaweicloud_cce_addon_template" "test" {
+data "hcso_cce_addon_template" "test" {
   cluster_id = var.cluster_id
   name       = var.addon_name
   version    = var.addon_version

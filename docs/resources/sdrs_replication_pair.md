@@ -2,7 +2,7 @@
 subcategory: "Storage Disaster Recovery Service (SDRS)"
 ---
 
-# huaweicloud_sdrs_replication_pair
+# hcso_sdrs_replication_pair
 
 Manages an SDRS replication pair resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages an SDRS replication pair resource within HuaweiCloud.
 variable "protection_group_id" {}
 variable "volume_id" {}
 
-resource "huaweicloud_sdrs_replication_pair" "test" {
+resource "hcso_sdrs_replication_pair" "test" {
   name                 = "test-replication-pair"
   group_id             = var.protection_group_id
   volume_id            = var.volume_id
@@ -81,7 +81,7 @@ This resource provides the following timeouts configuration options:
 The SDRS replication pair can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_sdrs_replication_pair.test <id>
+$ terraform import hcso_sdrs_replication_pair.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -91,7 +91,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also, you can ignore changes as below.
 
 ```
-resource "huaweicloud_sdrs_replication_pair" "test" {
+resource "hcso_sdrs_replication_pair" "test" {
   ...
   
   lifecycle {

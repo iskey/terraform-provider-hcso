@@ -2,7 +2,7 @@
 subcategory: "Image Management Service (IMS)"
 ---
 
-# huaweicloud_images_image_share_accepter
+# hcso_images_image_share_accepter
 
 Manages an IMS image share accepter resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an IMS image share accepter resource within HuaweiCloud.
 ```hcl
 variable "image_id" {}
 
-resource "huaweicloud_images_image_share_accepter" "test" {
+resource "hcso_images_image_share_accepter" "test" {
   image_id = var.image_id
 }
 ```

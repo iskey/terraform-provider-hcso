@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_clusters
+# hcso_cce_clusters
 
 Use this data source to get a list of CCE clusters.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of CCE clusters.
 ```hcl
 variable "cluster_name" {}
 
-data "huaweicloud_cce_clusters" "clusters" {
+data "hcso_cce_clusters" "clusters" {
   name   = var.cluster_name
   status = "Available"
 }

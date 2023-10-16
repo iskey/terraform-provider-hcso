@@ -2,21 +2,21 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_kms_data_key
+# hcso_kms_data_key
 
 Use this data source to get the plaintext and the ciphertext of an available HuaweiCloud KMS DEK (data encryption key).
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_kms_key" "key1" {
+resource "hcso_kms_key" "key1" {
   key_alias       = "key_1"
   pending_days    = "7"
   key_description = "first test key"
 }
 
-data "huaweicloud_kms_data_key" "kms_datakey1" {
-  key_id         = huaweicloud_kms_key.key1.id
+data "hcso_kms_data_key" "kms_datakey1" {
+  key_id         = hcso_kms_key.key1.id
   datakey_length = "512"
 }
 ```

@@ -2,7 +2,7 @@
 subcategory: "Live"
 ---
 
-# huaweicloud_live_record_callback
+# hcso_live_record_callback
 
 Manages a callback configuration within HuaweiCloud Live.
 
@@ -15,12 +15,12 @@ Manages a callback configuration within HuaweiCloud Live.
 ```hcl
 variable "ingest_domain_name" {}
 
-resource "huaweicloud_live_domain" "ingestDomain" {
+resource "hcso_live_domain" "ingestDomain" {
   name = var.ingest_domain_name
   type = "push"
 }
 
-resource "huaweicloud_live_record_callback" "callback" {
+resource "hcso_live_record_callback" "callback" {
   domain_name = var.ingest_domain_name
   url         = "http://mycallback.com.cn/record_notify"
   types       = ["RECORD_NEW_FILE_START"]
@@ -57,5 +57,5 @@ In addition to all arguments above, the following attributes are exported:
 Callback configurations can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_live_record_callback.test 55534eaa-533a-419d-9b40-ec427ea7195a
+$ terraform import hcso_live_record_callback.test 55534eaa-533a-419d-9b40-ec427ea7195a
 ```

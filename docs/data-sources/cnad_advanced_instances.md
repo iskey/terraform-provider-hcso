@@ -2,7 +2,7 @@
 subcategory: "Cloud Native Anti-DDoS Advanced"
 ---
 
-# huaweicloud_cnad_advanced_instances
+# hcso_cnad_advanced_instances
 
 Use this data source to get the list of CNAD advanced instances.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of CNAD advanced instances.
 ```hcl
 variable "instance_name" {}
 
-data "huaweicloud_cnad_advanced_instances" "test" {
+data "hcso_cnad_advanced_instances" "test" {
   instance_name = var.instance_name
 }
 ```

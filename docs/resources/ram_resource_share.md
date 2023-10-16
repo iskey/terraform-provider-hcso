@@ -2,7 +2,7 @@
 subcategory: "Resource Access Manager (RAM)"
 ---
 
-# huaweicloud_ram_resource_share
+# hcso_ram_resource_share
 
 Manages a RAM resource share resource within HuaweiCloud.
 
@@ -12,17 +12,17 @@ Manages a RAM resource share resource within HuaweiCloud.
 variable "account_id" {}
 variable "resource_urn" {}
 
-data "huaweicloud_ram_resource_permissions" "test" {
+data "hcso_ram_resource_permissions" "test" {
   resource_type = "vpc:subnets"
 }
 
-resource "huaweicloud_ram_resource_share" "test" {
+resource "hcso_ram_resource_share" "test" {
   name        = "demo-share"
   description = "test description information"
 
   resource_urns  = [var.resource_urn]
   principals     = [var.account_id]
-  permission_ids = [huaweicloud_ram_resource_permissions.test.permissions[0].id]
+  permission_ids = [hcso_ram_resource_permissions.test.permissions[0].id]
 
   tags = {
     foo = "bar"
@@ -53,7 +53,7 @@ The following arguments are supported:
   share. A resource type can be associated with only one RAM permission. If you do not specify a permission ID,
   RAM automatically associates the default permission for each resource type.
   
-  You can find permission IDs through data source `huaweicloud_ram_resource_permissions`.
+  You can find permission IDs through data source `hcso_ram_resource_permissions`.
 
   -> The field `permission_ids` does not support updating due to RAM API limitations. You can specify this field when
   creating a resource, and nothing will happen when you change this field after apply.
@@ -95,7 +95,7 @@ The `associated_permissions` block supports:
 The ram share can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ram_resource_share.test <id>
+$ terraform import hcso_ram_resource_share.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -105,7 +105,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also, you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_ram_resource_share" "test" {
+resource "hcso_ram_resource_share" "test" {
   ...
   
   lifecycle {

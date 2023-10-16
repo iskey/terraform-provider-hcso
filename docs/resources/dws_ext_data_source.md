@@ -2,7 +2,7 @@
 subcategory: "Data Warehouse Service (DWS)"
 ---
 
-# huaweicloud_dws_ext_data_source
+# hcso_dws_ext_data_source
 
 Manages a DWS external data source resource within HuaweiCloud.  
 
@@ -15,7 +15,7 @@ variable "mrs_id" {}
 variable "mrs_username" {}
 variable "mrs_password" {}
 
-resource "huaweicloud_dws_ext_data_source" "test" {
+resource "hcso_dws_ext_data_source" "test" {
   type           = "MRS"
   name           = "demo"
   data_source_id = var.mrs_id
@@ -31,7 +31,7 @@ resource "huaweicloud_dws_ext_data_source" "test" {
 variable "dws_agency_obs" {}
 variable "dws_database" {}
 
-resource "huaweicloud_dws_ext_data_source" "test" {
+resource "hcso_dws_ext_data_source" "test" {
   type         = "OBS"
   name         = "demo"
   user_name    = var.dws_agency_obs
@@ -115,7 +115,7 @@ This resource provides the following timeouts configuration options:
 The dws external data source can be imported using `cluster_id`, `id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_dws_ext_data_source.test <cluster_id>/<id>
+$ terraform import hcso_dws_ext_data_source.test <cluster_id>/<id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -125,7 +125,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_dws_ext_data_source" "test" {
+resource "hcso_dws_ext_data_source" "test" {
     ...
 
   lifecycle {

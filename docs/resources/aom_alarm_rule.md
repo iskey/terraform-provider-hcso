@@ -2,14 +2,14 @@
 subcategory: "Application Operations Management (AOM)"
 ---
 
-# huaweicloud_aom_alarm_rule
+# hcso_aom_alarm_rule
 
 Manages an AOM alarm rule resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_aom_alarm_rule" "alarm_rule" {  
+resource "hcso_aom_alarm_rule" "alarm_rule" {  
   name        = "test-rule"
   alarm_level = 3
   description = "test rule"
@@ -118,5 +118,5 @@ This resource provides the following timeouts configuration options:
 AOM alarm rules can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_aom_alarm_rule.alarm_rule 966746116613832710
+$ terraform import hcso_aom_alarm_rule.alarm_rule 966746116613832710
 ```

@@ -2,12 +2,12 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_bucket_object
+# hcso_obs_bucket_object
 
 Use this data source to get info of special HuaweiCloud obs object.
 
 ```hcl
-data "huaweicloud_obs_bucket_object" "object" {
+data "hcso_obs_bucket_object" "object" {
   bucket = "my-test-bucket"
   key    = "new-key"
 }

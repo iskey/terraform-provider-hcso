@@ -2,7 +2,7 @@
 subcategory: "Video on Demand (VOD)"
 ---
 
-# huaweicloud_vod_media_asset
+# hcso_vod_media_asset
 
 Manages a VOD media asset resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages a VOD media asset resource within HuaweiCloud.
 variable "bucket_name" {}
 variable "object_path" {}
 
-resource "huaweicloud_vod_media_asset" "test" {
+resource "hcso_vod_media_asset" "test" {
   name         = "test"
   media_type   = "MP4"
   input_bucket = var.bucket_name
@@ -34,7 +34,7 @@ resource "huaweicloud_vod_media_asset" "test" {
 ```hcl
 variable "media_url" {}
 
-resource "huaweicloud_vod_media_asset" "test" {
+resource "hcso_vod_media_asset" "test" {
   name        = "test"
   media_type  = "MP4"
   url         = var.media_url
@@ -161,7 +161,7 @@ In addition to all arguments above, the following attributes are exported:
 The media asset can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vod_media_asset.test 8754976729b8a2ba745d01036edded2b
+$ terraform import hcso_vod_media_asset.test 8754976729b8a2ba745d01036edded2b
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -173,7 +173,7 @@ You can then decide if changes should be applied to the media asset, or the reso
 definition should be updated to align with the media asset. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_vod_media_asset" "test" {
+resource "hcso_vod_media_asset" "test" {
     ...
   lifecycle {
     ignore_changes = [

@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_agency
+# hcso_dli_agency
 
 Assign Agency Permissions of DLI service within HuaweiCloud.  
 Once service authorization has succeeded, an agency named **dli_admin_agency** on IAM will be created.
@@ -11,7 +11,7 @@ You can only create one this resource.
 ## Example Usage
 
 ```hcl
-  resource "huaweicloud_dli_agency" "test" {
+  resource "hcso_dli_agency" "test" {
     roles = [
       "obs_adm",
       "dis_adm",
@@ -60,5 +60,5 @@ In addition to all arguments above, the following attributes are exported:
 The agency can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_dli_agency.test dli_admin_agency
+$ terraform import hcso_dli_agency.test dli_admin_agency
 ```

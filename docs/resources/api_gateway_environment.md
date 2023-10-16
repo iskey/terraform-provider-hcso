@@ -2,14 +2,14 @@
 subcategory: "API Gateway (Shared APIG)"
 ---
 
-# huaweicloud_api_gateway_environment
+# hcso_api_gateway_environment
 
 Manages a shared APIG environment resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_api_gateway_environment" "test_env" {
+resource "hcso_api_gateway_environment" "test_env" {
   name        = "test"
   description = "test env"
 }
@@ -43,5 +43,5 @@ In addition to all arguments above, the following attributes are exported:
 APIG environments can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_api_gateway_environment.test_env 774438a28a574ac8a496325d1bf51807
+$ terraform import hcso_api_gateway_environment.test_env 774438a28a574ac8a496325d1bf51807
 ```

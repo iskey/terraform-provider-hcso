@@ -2,14 +2,14 @@
 subcategory: "Cloud Performance Test Service (CPTS)"
 ---
 
-# huaweicloud_cpts_project
+# hcso_cpts_project
 
 Manages a project resource within HuaweiCloud CPTS.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_cpts_project" "test" {
+resource "hcso_cpts_project" "test" {
   name        = "project_name"
   description = "cpts project description"
 }
@@ -42,5 +42,5 @@ In addition to all arguments above, the following attributes are exported:
 Projects can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_cpts_project.test 1090
+$ terraform import hcso_cpts_project.test 1090
 ```

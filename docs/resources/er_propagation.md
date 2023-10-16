@@ -2,7 +2,7 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_propagation
+# hcso_er_propagation
 
 Manages a propagation resource under the route table for ER service within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "instance_id" {}
 variable "route_table_id" {}
 variable "attachment_id" {}
 
-resource "huaweicloud_er_propagation" "test" {
+resource "hcso_er_propagation" "test" {
   instance_id    = var.instance_id
   route_table_id = var.route_table_id
   attachment_id  = var.attachment_id
@@ -65,5 +65,5 @@ Propagations can be imported using their `id` and the related `instance_id` and 
 slashes (/), e.g.
 
 ```
-$ terraform import huaweicloud_er_propagation.test &ltinstance_id&gt/&ltroute_table_id&gt/&ltid&gt
+$ terraform import hcso_er_propagation.test &ltinstance_id&gt/&ltroute_table_id&gt/&ltid&gt
 ```

@@ -2,7 +2,7 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_loadbalancer
+# hcso_lb_loadbalancer
 
 Manages an ELB loadbalancer resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages an ELB loadbalancer resource within HuaweiCloud.
 ```hcl
 variable "ipv4_subnet_id" {}
 
-resource "huaweicloud_lb_loadbalancer" "lb_1" {
+resource "hcso_lb_loadbalancer" "lb_1" {
   vip_subnet_id = var.ipv4_subnet_id
 
   tags = {
@@ -27,13 +27,13 @@ resource "huaweicloud_lb_loadbalancer" "lb_1" {
 ```hcl
 variable "ipv4_subnet_id" {}
 
-resource "huaweicloud_lb_loadbalancer" "lb_1" {
+resource "hcso_lb_loadbalancer" "lb_1" {
   vip_subnet_id = var.ipv4_subnet_id
 }
 
-resource "huaweicloud_vpc_eip_associate" "eip_1" {
+resource "hcso_vpc_eip_associate" "eip_1" {
   public_ip = "1.2.3.4"
-  port_id   = huaweicloud_lb_loadbalancer.lb_1.vip_port_id
+  port_id   = hcso_lb_loadbalancer.lb_1.vip_port_id
 }
 ```
 
@@ -80,5 +80,5 @@ This resource provides the following timeouts configuration options:
 Load balancers can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_lb_loadbalancer.test 3e3632db-36c6-4b28-a92e-e72e6562daa6
+$ terraform import hcso_lb_loadbalancer.test 3e3632db-36c6-4b28-a92e-e72e6562daa6
 ```

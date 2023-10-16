@@ -2,7 +2,7 @@
 subcategory: "Document Database Service (DDS)"
 ---
 
-# huaweicloud_dds_instances
+# hcso_dds_instances
 
 Use this data source to get the list of DDS instances.
 
@@ -12,7 +12,7 @@ Use this data source to get the list of DDS instances.
 variable "vpc_id" {}
 variable "subnet_id" {}
 
-data "huaweicloud_dds_instances" "test" {
+data "hcso_dds_instances" "test" {
   name      = "test_name"
   mode      = "Sharding"
   vpc_id    = var.vpc_id

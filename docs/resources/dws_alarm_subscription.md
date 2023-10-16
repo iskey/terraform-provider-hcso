@@ -2,7 +2,7 @@
 subcategory: "Data Warehouse Service (DWS)"
 ---
 
-# huaweicloud_dws_alarm_subscription
+# hcso_dws_alarm_subscription
 
 Manages a DWS alarm subscription resource within HuaweiCloud.  
 
@@ -12,7 +12,7 @@ Manages a DWS alarm subscription resource within HuaweiCloud.
 variable "smn_urn" {}
 variable "smn_name" {}
 
-resource "huaweicloud_dws_alarm_subscription" "test" {
+resource "hcso_dws_alarm_subscription" "test" {
   name                     = "demo"
   enable                   = 1
   notification_target      = var.smn_urn
@@ -61,5 +61,5 @@ In addition to all arguments above, the following attributes are exported:
 The DWS alarm subscription can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_dws_alarm_subscription.test 535d9c3c-e135-4a6f-bcbf-4db51446f471
+$ terraform import hcso_dws_alarm_subscription.test 535d9c3c-e135-4a6f-bcbf-4db51446f471
 ```

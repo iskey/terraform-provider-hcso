@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Instance (CCI)"
 ---
 
-# huaweicloud_cci_namespaces
+# hcso_cci_namespaces
 
 Use this data source to obtain CCI namespaces within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Use this data source to obtain CCI namespaces within HuaweiCloud.
 ```hcl
 variable "namespace_name" {}
 
-data "huaweicloud_cci_namespaces" "test" {
+data "hcso_cci_namespaces" "test" {
   name = var.namespace_name
 }
 ```

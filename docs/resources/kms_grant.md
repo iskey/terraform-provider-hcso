@@ -2,7 +2,7 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_kms_grant
+# hcso_kms_grant
 
 Users can create authorizations for other IAM users or accounts,
 granting them permission to use their own master key (CMK),
@@ -14,7 +14,7 @@ and a maximum of 100 authorizations can be created under one master key.
 variable "key_id" {}
 variable "user_id" {}
 
-resource "huaweicloud_kms_grant" "test" {
+resource "hcso_kms_grant" "test" {
   key_id            = var.key_id
   type              = "user"
   grantee_principal = var.user_id
@@ -69,5 +69,5 @@ The kms grant can be imported using
 `key_id`, `grant_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_kms_grant.test <key_id>/<grant_id>
+$ terraform import hcso_kms_grant.test <key_id>/<grant_id>
 ```

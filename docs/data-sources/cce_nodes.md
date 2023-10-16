@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Engine (CCE)"
 ---
 
-# huaweicloud_cce_nodes
+# hcso_cce_nodes
 
 Use this data source to get a list of CCE nodes.
 
@@ -12,7 +12,7 @@ Use this data source to get a list of CCE nodes.
 variable "cluster_id" {}
 variable "node_name" {}
 
-data "huaweicloud_cce_nodes" "node" {
+data "hcso_cce_nodes" "node" {
   cluster_id = var.cluster_id
   name       = var.node_name
 }

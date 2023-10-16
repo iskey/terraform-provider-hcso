@@ -11,7 +11,7 @@ Provides an VBS Backup resource.
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_evs_volume" "volume" {
+resource "hcso_evs_volume" "volume" {
   name              = "volume"
   description       = "my volume"
   volume_type       = "SATA"
@@ -19,15 +19,15 @@ resource "huaweicloud_evs_volume" "volume" {
   availability_zone = "cn-north-4a"
 }
 
-resource "huaweicloud_evs_snapshot" "snapshot_1" {
+resource "hcso_evs_snapshot" "snapshot_1" {
   name        = "snapshot-001"
   description = "for vbs backup"
-  volume_id   = huaweicloud_evs_volume.volume.id
+  volume_id   = hcso_evs_volume.volume.id
 }
 
-resource "huaweicloud_vbs_backup" "backup_1" {
-  volume_id   = huaweicloud_evs_volume.volume.id
-  snapshot_id = huaweicloud_evs_snapshot.snapshot_1.id
+resource "hcso_vbs_backup" "backup_1" {
+  volume_id   = hcso_evs_volume.volume.id
+  snapshot_id = hcso_evs_snapshot.snapshot_1.id
   name        = "vbs-backup"
   description = "Backup_Demo"
   tags {
@@ -87,7 +87,7 @@ In addition to all arguments above, the following attributes are exported:
 VBS Backup can be imported using the `backup id`, e.g.
 
 ```
- $ terraform import huaweicloud_vbs_backup.backup_1 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
+ $ terraform import hcso_vbs_backup.backup_1 4779ab1c-7c1a-44b1-a02e-93dfc361b32d
 ```
 
 ## Timeouts

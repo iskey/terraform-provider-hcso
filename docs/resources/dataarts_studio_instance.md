@@ -2,7 +2,7 @@
 subcategory: "DataArts Studio"
 ---
 
-# huaweicloud_dataarts_studio_instance
+# hcso_dataarts_studio_instance
 
 Manages DataArts Studio instance resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "vpc_id" {}
 variable "subnet_id" {}
 variable "secgroup_id" {}
 
-resource "huaweicloud_dataarts_studio_instance" "my_demo" {
+resource "hcso_dataarts_studio_instance" "my_demo" {
   name                  = "DataArts-demo"
   version               = "dayu.starter"
   vpc_id                = var.vpc_id
@@ -100,7 +100,7 @@ This resource provides the following timeouts configuration options:
 DataArts Studio instances can be imported using their `id`, e.g.
 
 ```sh
-terraform import huaweicloud_dataarts_studio_instance.instance e60361de2cfd42d7a6b673f0ae58db82
+terraform import hcso_dataarts_studio_instance.instance e60361de2cfd42d7a6b673f0ae58db82
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -111,7 +111,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_dataarts_studio_instance" "instance" {
+resource "hcso_dataarts_studio_instance" "instance" {
     ...
 
   lifecycle {

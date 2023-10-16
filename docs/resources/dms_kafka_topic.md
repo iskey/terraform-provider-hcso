@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_kafka_topic
+# hcso_dms_kafka_topic
 
 Manages a DMS kafka topic resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a DMS kafka topic resource within HuaweiCloud.
 ```hcl
 variable "kafka_instance_id" {}
 
-resource "huaweicloud_dms_kafka_topic" "topic" {
+resource "hcso_dms_kafka_topic" "topic" {
   instance_id = var.kafka_instance_id
   name        = "topic_1"
   partitions  = 20
@@ -54,5 +54,5 @@ In addition to all arguments above, the following attributes are exported:
 DMS kafka topics can be imported using the kafka instance ID and topic name separated by a slash, e.g.:
 
 ```sh
-terraform import huaweicloud_dms_kafka_topic.topic c8057fe5-23a8-46ef-ad83-c0055b4e0c5c/topic_1
+terraform import hcso_dms_kafka_topic.topic c8057fe5-23a8-46ef-ad83-c0055b4e0c5c/topic_1
 ```

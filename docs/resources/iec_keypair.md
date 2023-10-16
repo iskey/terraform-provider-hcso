@@ -2,14 +2,14 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_keypair
+# hcso_iec_keypair
 
 Manages a keypair resource within HuaweiCloud IEC.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_iec_keypair" "test_keypair" {
+resource "hcso_iec_keypair" "test_keypair" {
   name = "iec-keypair-demo"
 }
 ```
@@ -41,5 +41,5 @@ In addition to all arguments above, the following attributes are exported:
 Keypairs can be imported using the `name`, e.g.
 
 ```
-$ terraform import huaweicloud_iec_keypair.test_keypair iec-keypair-demo
+$ terraform import hcso_iec_keypair.test_keypair iec-keypair-demo
 ```

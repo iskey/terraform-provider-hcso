@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_dataset_version
+# hcso_modelarts_dataset_version
 
 Manages ModelArts dataset version resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages ModelArts dataset version resource within HuaweiCloud.
 ```hcl
 variable "dataset_id" {}
 
-resource "huaweicloud_modelarts_dataset_version" "v001" {
+resource "hcso_modelarts_dataset_version" "v001" {
   name        = "v001"
   dataset_id  = var.dataset_id
   description = "Created by demo"
@@ -90,7 +90,7 @@ This resource provides the following timeouts configuration options:
 The dataset versions can be imported by dataset ID and version ID, separated by a slash, e.g.
 
 ```bash
-terraform import huaweicloud_modelarts_dataset_version.test yiROKoTTjtwjvP71yLG/wieeeoTrtrtjvn67yLm
+terraform import hcso_modelarts_dataset_version.test yiROKoTTjtwjvP71yLG/wieeeoTrtrtjvn67yLm
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -99,7 +99,7 @@ recommended running `terraform plan` after importing a dataset. You can then dec
 dataset, or the resource definition should be updated to align with the dataset. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_modelarts_dataset_version" "test" {
+resource "hcso_modelarts_dataset_version" "test" {
     ...
 
   lifecycle {

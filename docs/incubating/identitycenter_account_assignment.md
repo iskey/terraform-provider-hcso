@@ -2,7 +2,7 @@
 subcategory: "IAM Identity Center"
 ---
 
-# huaweicloud_identitycenter_account_assignment
+# hcso_identitycenter_account_assignment
 
 Manages an Identity Center account assignment resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "permission_set_id" {}
 variable "principal_id" {}
 variable "target_id" {}
 
-resource "huaweicloud_identitycenter_account_assignment" "test"{
+resource "hcso_identitycenter_account_assignment" "test"{
   instance_id       = var.instance_id
   permission_set_id = var.permission_set_id
   principal_id      = var.principal_id
@@ -73,5 +73,5 @@ The Identity Center account permission can be imported using the `instance_id`, 
 and `principal_id` separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_identitycenter_account_assignment.test <instance_id>/<permission_set_id>/<target_id>/<principal_id>
+$ terraform import hcso_identitycenter_account_assignment.test <instance_id>/<permission_set_id>/<target_id>/<principal_id>
 ```

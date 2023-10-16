@@ -2,17 +2,17 @@
 subcategory: "IAM Identity Center"
 ---
 
-# huaweicloud_identitycenter_permission_set
+# hcso_identitycenter_permission_set
 
 Manages an Identity Center permission set resource within HuaweiCloud.  
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identitycenter_instance" "system" {}
+data "hcso_identitycenter_instance" "system" {}
 
-resource "huaweicloud_identitycenter_permission_set" "demo" {
-  instance_id      = data.huaweicloud_identitycenter_instance.system.id
+resource "hcso_identitycenter_permission_set" "demo" {
+  instance_id      = data.hcso_identitycenter_instance.system.id
   name             = "demo"
   session_duration = "PT8H"
 }
@@ -53,5 +53,5 @@ In addition to all arguments above, the following attributes are exported:
 The Identity Center permission set can be imported using the `instance_id` and `id` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_identitycenter_permission_set.demo <instance_id>/<id>
+$ terraform import hcso_identitycenter_permission_set.demo <instance_id>/<id>
 ```

@@ -2,7 +2,7 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_sql_control_rule
+# hcso_gaussdb_mysql_sql_control_rule
 
 Manages a GaussDB MySQL SQL concurrency control rule resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a GaussDB MySQL SQL concurrency control rule resource within HuaweiCloud
 variable "instance_id" {}
 variable "node_id" {}
 
-resource "huaweicloud_gaussdb_mysql_sql_control_rule" "test" {
+resource "hcso_gaussdb_mysql_sql_control_rule" "test" {
   instance_id     = var.instance_id
   node_id         = var.node_id
   sql_type        = "SELECT"
@@ -70,5 +70,5 @@ The GaussDB MySQL SQL concurrency control rule can be imported using the `instan
 `pattern` separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_gaussdb_mysql_sql_control_rule.test <instance_id>/<node_id>/<sql_type>/<pattern>
+$ terraform import hcso_gaussdb_mysql_sql_control_rule.test <instance_id>/<node_id>/<sql_type>/<pattern>
 ```

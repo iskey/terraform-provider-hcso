@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_certificate
+# hcso_apig_certificate
 
 Manages an APIG SSL certificate resource within HuaweiCloud.
 
@@ -21,7 +21,7 @@ variable "certificate_private_key" {
   default = "'-----BEGIN PRIVATE KEY-----THIS IS YOUR PRIVATE KEY-----END PRIVATE KEY-----'"
 }
 
-resource "huaweicloud_apig_certificate" "test" {
+resource "hcso_apig_certificate" "test" {
   name        = var.certificate_name
   content     = var.certificate_content
   private_key = var.certificate_private_key
@@ -42,7 +42,7 @@ variable "certificate_private_key" {
 }
 variable "dedicated_instance_id" {}
 
-resource "huaweicloud_apig_certificate" "test" {
+resource "hcso_apig_certificate" "test" {
   name        = var.certificate_name
   content     = var.certificate_content
   private_key = var.certificate_private_key
@@ -69,7 +69,7 @@ variable "root_ca_certificate_content" {
 }
 variable "dedicated_instance_id" {}
 
-resource "huaweicloud_apig_certificate" "test" {
+resource "hcso_apig_certificate" "test" {
   name            = var.certificate_name
   content         = var.certificate_content
   private_key     = var.certificate_private_key
@@ -130,7 +130,7 @@ In addition to all arguments above, the following attributes are exported:
 Certificates can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_certificate.test <id>
+$ terraform import hcso_apig_certificate.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -140,7 +140,7 @@ You can then decide if changes should be applied to the certificate, or the reso
 align with the certificate. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_apig_certificate" "test" {
+resource "hcso_apig_certificate" "test" {
   ...
 
   lifecycle {

@@ -2,14 +2,14 @@
 subcategory: "Enterprise Project Management Service (EPS)"
 ---
 
-# huaweicloud_enterprise_project
+# hcso_enterprise_project
 
 Use this data source to get an enterprise project from HuaweiCloud
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_enterprise_project" "test" {
+data "hcso_enterprise_project" "test" {
   name = "test"
 }
 ```
@@ -19,33 +19,33 @@ data "huaweicloud_enterprise_project" "test" {
 <!-- markdownlint-disable MD033 -->
 Service Name | Resource Name | Sub Resource Name
 ---- | --- | ---
-AS  | huaweicloud_as_group |
-BCS | huaweicloud_bcs_instance |
-BMS | huaweicloud_bms_instance |
-CBR | huaweicloud_cbr_vault |
-CCE | huaweicloud_cce_cluster | huaweicloud_cce_node<br>huaweicloud_cce_node_pool<br>huaweicloud_cce_addon
-CDM | huaweicloud_cdm_cluster |
-CDN | huaweicloud_cdn_domain |
-CES | huaweicloud_ces_alarmrule |
-DCS | huaweicloud_dcs_instance |
-DDS | huaweicloud_dds_instance |
-DMS | huaweicloud_dms_kafka_instance<br>huaweicloud_dms_rabbitmq_instance |
-DNS | huaweicloud_dns_ptrrecord<br>huaweicloud_dns_zone |
-ECS | huaweicloud_compute_instance |
-EIP | huaweicloud_vpc_eip<br>huaweicloud_vpc_bandwidth |
-ELB | huaweicloud_lb_loadbalancer |
-Dedicated ELB | huaweicloud_elb_certificate<br>huaweicloud_elb_ipgroup<br>huaweicloud_elb_loadbalancer |
-EVS | huaweicloud_evs_volume |
-FGS | huaweicloud_fgs_function |
-GaussDB | huaweicloud_gaussdb_cassandra_instance<br>huaweicloud_gaussdb_mysql_instance<br>huaweicloud_gaussdb_opengauss_instance |
-IMS | huaweicloud_images_image |
-KMS | huaweicloud_kms_key |
-NAT | huaweicloud_nat_gateway | huaweicloud_nat_snat_rule<br>huaweicloud_nat_dnat_rule
-OBS | huaweicloud_obs_bucket | huaweicloud_obs_bucket_object<br>huaweicloud_obs_bucket_policy
-RDS | huaweicloud_rds_instance<br>huaweicloud_rds_read_replica_instance |
-SFS | huaweicloud_sfs_file_system<br>huaweicloud_sfs_turbo | huaweicloud_sfs_access_rule
-SMN | huaweicloud_smn_topic |
-VPC | huaweicloud_vpc<br>huaweicloud_networking_secgroup | huaweicloud_vpc_subnet<br>huaweicloud_vpc_route<br>huaweicloud_networking_secgroup_rule
+AS  | hcso_as_group |
+BCS | hcso_bcs_instance |
+BMS | hcso_bms_instance |
+CBR | hcso_cbr_vault |
+CCE | hcso_cce_cluster | hcso_cce_node<br>hcso_cce_node_pool<br>hcso_cce_addon
+CDM | hcso_cdm_cluster |
+CDN | hcso_cdn_domain |
+CES | hcso_ces_alarmrule |
+DCS | hcso_dcs_instance |
+DDS | hcso_dds_instance |
+DMS | hcso_dms_kafka_instance<br>hcso_dms_rabbitmq_instance |
+DNS | hcso_dns_ptrrecord<br>hcso_dns_zone |
+ECS | hcso_compute_instance |
+EIP | hcso_vpc_eip<br>hcso_vpc_bandwidth |
+ELB | hcso_lb_loadbalancer |
+Dedicated ELB | hcso_elb_certificate<br>hcso_elb_ipgroup<br>hcso_elb_loadbalancer |
+EVS | hcso_evs_volume |
+FGS | hcso_fgs_function |
+GaussDB | hcso_gaussdb_cassandra_instance<br>hcso_gaussdb_mysql_instance<br>hcso_gaussdb_opengauss_instance |
+IMS | hcso_images_image |
+KMS | hcso_kms_key |
+NAT | hcso_nat_gateway | hcso_nat_snat_rule<br>hcso_nat_dnat_rule
+OBS | hcso_obs_bucket | hcso_obs_bucket_object<br>hcso_obs_bucket_policy
+RDS | hcso_rds_instance<br>hcso_rds_read_replica_instance |
+SFS | hcso_sfs_file_system<br>hcso_sfs_turbo | hcso_sfs_access_rule
+SMN | hcso_smn_topic |
+VPC | hcso_vpc<br>hcso_networking_secgroup | hcso_vpc_subnet<br>hcso_vpc_route<br>hcso_networking_secgroup_rule
 <!-- markdownlint-enable MD033 -->
 
 ## Argument Reference

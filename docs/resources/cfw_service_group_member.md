@@ -2,7 +2,7 @@
 subcategory: "Cloud Firewall (CFW)"
 ---
 
-# huaweicloud_cfw_service_group_member
+# hcso_cfw_service_group_member
 
 Manages a CFW service group member resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ variable "protocol" {}
 variable "source_port" {}
 variable "dest_port" {}
 
-resource "huaweicloud_cfw_service_group" "test" {
+resource "hcso_cfw_service_group" "test" {
   group_id    = var.group_id
   protocol    = var.protocol
   source_port = var.source_port
@@ -70,5 +70,5 @@ In addition to all arguments above, the following attributes are exported:
 The service group member can be imported using service group ID and member ID, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_cfw_service_group_member.test <group_id>/<member_id>
+$ terraform import hcso_cfw_service_group_member.test <group_id>/<member_id>
 ```

@@ -2,7 +2,7 @@
 subcategory: "Live"
 ---
 
-# huaweicloud_live_bucket_authorization
+# hcso_live_bucket_authorization
 
 Manages a Live bucket authorization resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a Live bucket authorization resource within HuaweiCloud.
 ```hcl
 variable "bucket" {}
 
-resource "huaweicloud_live_bucket_authorization" "test"{
+resource "hcso_live_bucket_authorization" "test"{
   bucket = var.bucket
 }
 ```
@@ -38,5 +38,5 @@ In addition to all arguments above, the following attributes are exported:
 The live bucket authorize can be imported using the `bucket`, e.g.
 
 ```bash
-$ terraform import huaweicloud_live_bucket_authorization.test <bucket>
+$ terraform import hcso_live_bucket_authorization.test <bucket>
 ```

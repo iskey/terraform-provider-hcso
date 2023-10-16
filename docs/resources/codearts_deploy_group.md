@@ -2,7 +2,7 @@
 subcategory: "CodeArts Deploy"
 ---
 
-# huaweicloud_codearts_deploy_group
+# hcso_codearts_deploy_group
 
 Manages a CodeArts deploy group resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages a CodeArts deploy group resource within HuaweiCloud.
 ```hcl
 variable "project_id" {}
 
-resource "huaweicloud_codearts_deploy_group" "test" {
+resource "hcso_codearts_deploy_group" "test" {
   project_id  = var.project_id
   name        = "test_group"
   os_type     = "linux"
@@ -26,7 +26,7 @@ resource "huaweicloud_codearts_deploy_group" "test" {
 ```hcl
 variable "project_id" {}
 
-resource "huaweicloud_codearts_deploy_group" "test" {
+resource "hcso_codearts_deploy_group" "test" {
   project_id    = var.project_id
   name          = "test_group"
   os_type       = "linux"
@@ -115,5 +115,5 @@ The `permission` block supports:
 The CodeArts deploy group resource can be imported using the `project_id` and `id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_codearts_deploy_group.test <project_id>/<id>
+$ terraform import hcso_codearts_deploy_group.test <project_id>/<id>
 ```

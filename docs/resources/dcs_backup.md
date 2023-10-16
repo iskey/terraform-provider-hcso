@@ -2,7 +2,7 @@
 subcategory: "Distributed Cache Service (DCS)"
 ---
 
-# huaweicloud_dcs_backup
+# hcso_dcs_backup
 
 Manages a DCS backup resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a DCS backup resource within HuaweiCloud.
 ```hcl
 variable "dcs_instance_id" {}
 
-resource "huaweicloud_dcs_backup" "test"{
+resource "hcso_dcs_backup" "test"{
   instance_id = var.dcs_instance_id
 }
 ```
@@ -78,5 +78,5 @@ This resource provides the following timeouts configuration options:
 The DCS backup can be imported using the DCS instance ID and backup ID separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_dcs_backup.test <instance_id>/<backup_id>
+$ terraform import hcso_dcs_backup.test <instance_id>/<backup_id>
 ```

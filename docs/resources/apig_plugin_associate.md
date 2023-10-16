@@ -2,11 +2,11 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_plugin_associate
+# hcso_apig_plugin_associate
 
 Use this resource to bind the APIs to the plugin within HuaweiCloud.
 
--> A published API can only create one `huaweicloud_apig_plugin_associate` resource.
+-> A published API can only create one `hcso_apig_plugin_associate` resource.
    For each type of plugin, the API can only bind at most one.
 
 ## Example Usage
@@ -19,7 +19,7 @@ variable "bind_api_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_apig_plugin_associate" "test" {
+resource "hcso_apig_plugin_associate" "test" {
   instance_id = var.instance_id
   plugin_id   = var.plugin_id
   env_id      = var.publish_environment_id
@@ -58,5 +58,5 @@ Associate resources can be imported using their related dedicated instance ID of
 `env_id`, separated by slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_plugin_associate.test <instance_id>/<plugin_id>/<env_id>
+$ terraform import hcso_apig_plugin_associate.test <instance_id>/<plugin_id>/<env_id>
 ```

@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_models
+# hcso_modelarts_models
 
 Use this data source to get models of ModelArts.
 
@@ -11,7 +11,7 @@ Use this data source to get models of ModelArts.
 ```hcl
 variable "model_name" {}
 
-data "huaweicloud_modelart_models" "test" {
+data "hcso_modelart_models" "test" {
   name        = var.model_name
   exact_match = "true"
 }

@@ -2,11 +2,11 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_signature_associate
+# hcso_apig_signature_associate
 
 Use this resource to bind the APIs to the signature within HuaweiCloud.
 
--> A signature can only create one `huaweicloud_apig_signature_associate` resource.
+-> A signature can only create one `hcso_apig_signature_associate` resource.
    And a published ID for API can only bind a signature.
 
 ## Example Usage
@@ -18,7 +18,7 @@ variable "api_publish_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_apig_signature_associate" "test" {
+resource "hcso_apig_signature_associate" "test" {
   instance_id  = var.instance_id
   signature_id = var.signature_id
   publish_ids  = var.api_publish_ids
@@ -53,5 +53,5 @@ Associate resources can be imported using their `signature_id` and the APIG dedi
 belongs, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_signature_associate.test <instance_id>/<signature_id>
+$ terraform import hcso_apig_signature_associate.test <instance_id>/<signature_id>
 ```

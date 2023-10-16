@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_instance_group_associate
+# hcso_waf_instance_group_associate
 
 Associate ELB instances to a WAF instance group.
 
@@ -12,7 +12,7 @@ Associate ELB instances to a WAF instance group.
 variable "group_id" {}
 variable "elb_instance_id" {}
 
-resource "huaweicloud_waf_instance_group_associate" "group_associate" {
+resource "hcso_waf_instance_group_associate" "group_associate" {
   group_id       = var.group_id
   load_balancers = [var.elb_instance_id]
 }
@@ -42,5 +42,5 @@ In addition to all arguments above, the following attributes are exported:
 The instance group associate can be imported using the group ID, e.g.:
 
 ```sh
-terraform import huaweicloud_waf_instance_group_associate.group_associate 0be1e69d-1987-4d9c-9dc5-fc7eed592398
+terraform import hcso_waf_instance_group_associate.group_associate 0be1e69d-1987-4d9c-9dc5-fc7eed592398
 ```

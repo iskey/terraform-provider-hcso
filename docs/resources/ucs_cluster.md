@@ -2,7 +2,7 @@
 subcategory: "Ubiquitous Cloud Native Service (UCS)"
 ---
 
-# huaweicloud_ucs_cluster
+# hcso_ucs_cluster
 
 Manages a UCS cluster resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages a UCS cluster resource within HuaweiCloud.
 variable "cluster_name" {}
 variable "kubeconfig" {}
 
-resource "huaweicloud_ucs_cluster" "test" {
+resource "hcso_ucs_cluster" "test" {
   category     = "attachedcluster"
   cluster_type = "privatek8s"
   cluster_name = var.cluster_name
@@ -35,7 +35,7 @@ variable "cluster_id" {}
 variable "cluster_region" {}
 variable "cluster_project_id" {}
 
-resource "huaweicloud_ucs_cluster" "test" {
+resource "hcso_ucs_cluster" "test" {
   category           = "self"
   cluster_type       = "cce"
   fleet_id           = var.fleet_id
@@ -110,7 +110,7 @@ In addition to all arguments above, the following attributes are exported:
 The UCS cluster can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ucs_cluster.test b84c0d09-26cc-11ee-b6b2-0255ac100263
+$ terraform import hcso_ucs_cluster.test b84c0d09-26cc-11ee-b6b2-0255ac100263
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -120,7 +120,7 @@ You can then decide if changes should be applied to the cluster, or the resource
 should be updated to align with the cluster. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_ucs_cluster" "test" {
+resource "hcso_ucs_cluster" "test" {
     ...
 
   lifecycle {

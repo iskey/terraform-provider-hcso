@@ -2,7 +2,7 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_eip_associate
+# hcso_compute_eip_associate
 
 * Associates the **IPv4** address of an ECS instance to a specified EIP.
 * Associates the **IPv6** address of an ECS instance to a specified **Shared** Bandwidth.
@@ -12,7 +12,7 @@ subcategory: "Elastic Cloud Server (ECS)"
 ### Automatically detect the correct network
 
 ```hcl
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name = "instance"
   ...
 
@@ -21,7 +21,7 @@ resource "huaweicloud_compute_instance" "myinstance" {
   }
 }
 
-resource "huaweicloud_vpc_eip" "myeip" {
+resource "hcso_vpc_eip" "myeip" {
   publicip {
     type = "5_bgp"
   }
@@ -33,16 +33,16 @@ resource "huaweicloud_vpc_eip" "myeip" {
   }
 }
 
-resource "huaweicloud_compute_eip_associate" "associated" {
-  public_ip   = huaweicloud_vpc_eip.myeip.address
-  instance_id = huaweicloud_compute_instance.myinstance.id
+resource "hcso_compute_eip_associate" "associated" {
+  public_ip   = hcso_vpc_eip.myeip.address
+  instance_id = hcso_compute_instance.myinstance.id
 }
 ```
 
 ### Explicitly set the network to attach to
 
 ```hcl
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name = "instance"
   ...
 
@@ -55,7 +55,7 @@ resource "huaweicloud_compute_instance" "myinstance" {
   }
 }
 
-resource "huaweicloud_vpc_eip" "myeip" {
+resource "hcso_vpc_eip" "myeip" {
   publicip {
     type = "5_bgp"
   }
@@ -67,10 +67,10 @@ resource "huaweicloud_vpc_eip" "myeip" {
   }
 }
 
-resource "huaweicloud_compute_eip_associate" "associated" {
-  public_ip   = huaweicloud_vpc_eip.myeip.address
-  instance_id = huaweicloud_compute_instance.myinstance.id
-  fixed_ip    = huaweicloud_compute_instance.myinstance.network.1.fixed_ip_v4
+resource "hcso_compute_eip_associate" "associated" {
+  public_ip   = hcso_vpc_eip.myeip.address
+  instance_id = hcso_compute_instance.myinstance.id
+  fixed_ip    = hcso_compute_instance.myinstance.network.1.fixed_ip_v4
 }
 ```
 
@@ -80,7 +80,7 @@ resource "huaweicloud_compute_eip_associate" "associated" {
 variable "subnet_id" {}
 variable "bandwidth_id" {}
 
-resource "huaweicloud_compute_instance" "myinstance" {
+resource "hcso_compute_instance" "myinstance" {
   name      = "instance"
   flavor_id = "c6.large.2"
   ...
@@ -91,10 +91,10 @@ resource "huaweicloud_compute_instance" "myinstance" {
   }
 }
 
-resource "huaweicloud_compute_eip_associate" "associated" {
+resource "hcso_compute_eip_associate" "associated" {
   bandwidth_id = var.bandwidth_id
-  instance_id  = huaweicloud_compute_instance.myinstance.id
-  fixed_ip     = huaweicloud_compute_instance.myinstance.network.0.fixed_ip_v6
+  instance_id  = hcso_compute_instance.myinstance.id
+  fixed_ip     = hcso_compute_instance.myinstance.network.0.fixed_ip_v6
 }
 ```
 
@@ -132,5 +132,5 @@ This resource can be imported using the related `eip address` or `bandwidth_id`,
 separated by slashes, e.g.
 
 ```shell
-$ terraform import huaweicloud_compute_eip_associate.bind <eip address or bandwidth_id>/<instance_id>/<fixed_ip>
+$ terraform import hcso_compute_eip_associate.bind <eip address or bandwidth_id>/<instance_id>/<fixed_ip>
 ```

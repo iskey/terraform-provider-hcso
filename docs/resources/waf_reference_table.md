@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_reference_table
+# hcso_waf_reference_table
 
 Manages a WAF reference table resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ used. The reference table resource can be used in Cloud Mode (professional versi
 ```hcl
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_reference_table" "ref_table" {
+resource "hcso_waf_reference_table" "ref_table" {
   name                  = "tf_ref_table_demo"
   type                  = "url"
   enterprise_project_id = var.enterprise_project_id
@@ -62,11 +62,11 @@ There are two ways to import WAF reference table state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_reference_table.test <id>
+$ terraform import hcso_waf_reference_table.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_reference_table.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_reference_table.test <id>/<enterprise_project_id>
 ```

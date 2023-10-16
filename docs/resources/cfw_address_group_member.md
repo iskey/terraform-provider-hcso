@@ -2,7 +2,7 @@
 subcategory: "Cloud Firewall (CFW)"
 ---
 
-# huaweicloud_cfw_address_group_member
+# hcso_cfw_address_group_member
 
 Manages a CFW IP address group member resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "group_id" {}
 variable "name" {}
 variable "address" {}
 
-resource "huaweicloud_cfw_address_group_member" "test" {
+resource "hcso_cfw_address_group_member" "test" {
   group_id = var.group_id
   name     = var.name
   address  = var.address
@@ -58,5 +58,5 @@ The ipaddressgroupmember can be imported using
 `group_id`, `address`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_cfw_address_group_member.test <group_id>/<address>
+$ terraform import hcso_cfw_address_group_member.test <group_id>/<address>
 ```

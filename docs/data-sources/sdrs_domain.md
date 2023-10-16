@@ -2,14 +2,14 @@
 subcategory: "Storage Disaster Recovery Service (SDRS)"
 ---
 
-# huaweicloud_sdrs_domain
+# hcso_sdrs_domain
 
 Use this data source to get an available SDRS domain.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_sdrs_domain" "test" {}
+data "hcso_sdrs_domain" "test" {}
 ```
 
 ## Argument Reference

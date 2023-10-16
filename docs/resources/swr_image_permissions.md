@@ -2,7 +2,7 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_image_permissions
+# hcso_swr_image_permissions
 
 Manages a SWR image permissions within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a SWR image permissions within HuaweiCloud.
 variable "organization_name" {}
 variable "repository_name" {}
 
-resource "huaweicloud_swr_image_permissions" "test"{
+resource "hcso_swr_image_permissions" "test"{
   organization = var.organization_name
   repository   = var.repository_name
 
@@ -79,5 +79,5 @@ The `SelfPermission` block supports:
 The SWR image permissions can be imported using the organization name and repository name separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_swr_image_permissions.test <organization_name>/<repository_name>
+$ terraform import hcso_swr_image_permissions.test <organization_name>/<repository_name>
 ```

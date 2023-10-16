@@ -2,7 +2,7 @@
 subcategory: "NAT Gateway (NAT)"
 ---
 
-# huaweicloud_nat_private_transit_ip
+# hcso_nat_private_transit_ip
 
 Manages a transit IP resource of the **private** NAT within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "subnet_id" {}
 variable "ipv4_address" {}
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_nat_private_transit_ip" "test" {
+resource "hcso_nat_private_transit_ip" "test" {
   subnet_id             = var.subnet_id
   ip_address            = var.ipv4_address
   enterprise_project_id = var.enterprise_project_id
@@ -62,5 +62,5 @@ In addition to all arguments above, the following attributes are exported:
 Transit IPs can be imported using their `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_nat_private_transit_ip.test 5a1d921c-1df5-477d-8481-317b3fb47b5d
+$ terraform import hcso_nat_private_transit_ip.test 5a1d921c-1df5-477d-8481-317b3fb47b5d
 ```

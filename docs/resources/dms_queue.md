@@ -2,7 +2,7 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_dms_queue
+# hcso_dms_queue
 
 Manages a DMS queue in the huaweicloud DMS Service.
 
@@ -13,7 +13,7 @@ Manages a DMS queue in the huaweicloud DMS Service.
 ### Automatically detect the correct network
 
 ```hcl
-resource "huaweicloud_dms_queue" "queue_1" {
+resource "hcso_dms_queue" "queue_1" {
   name              = "queue_1"
   description       = "test create dms queue"
   queue_mode        = "FIFO"

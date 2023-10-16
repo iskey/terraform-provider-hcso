@@ -2,14 +2,14 @@
 subcategory: "GaussDB"
 ---
 
-# huaweicloud_gaussdb_opengauss_instances
+# hcso_gaussdb_opengauss_instances
 
 Use this data source to get available HuaweiCloud gaussdb opengauss instances.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_opengauss_instances" "this" {
+data "hcso_gaussdb_opengauss_instances" "this" {
   name = "gaussdb-instance"
 }
 ```

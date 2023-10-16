@@ -1,14 +1,14 @@
-# huaweicloud_account
+# hcso_account
 
 Use this data source to get information about the current account.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_account" "current" {}
+data "hcso_account" "current" {}
 
 output "current_account_id" {
-  value = data.huaweicloud_account.current.id
+  value = data.hcso_account.current.id
 }
 ```
 

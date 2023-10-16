@@ -8,7 +8,7 @@ To run, configure your Huaweicloud provider as described in the
 
 ## Configuration
 
-The data source [`huaweicloud_rds_engine_versions`](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/rds_engine_versions)
+The data source [`hcso_rds_engine_versions`](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/rds_engine_versions)
 provides a way to query the list of available engine versions of SQL Server database.
 
 These examples assumes that you have created a random password. For more details about random password resource, please

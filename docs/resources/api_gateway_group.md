@@ -2,14 +2,14 @@
 subcategory: "API Gateway (Shared APIG)"
 ---
 
-# huaweicloud_api_gateway_group
+# hcso_api_gateway_group
 
 Provides an API gateway group resource.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_api_gateway_group" "apigw_group" {
+resource "hcso_api_gateway_group" "apigw_group" {
   name        = "apigw_group"
   description = "your descpiption"
 }

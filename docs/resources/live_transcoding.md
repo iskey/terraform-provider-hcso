@@ -2,7 +2,7 @@
 subcategory: "Live"
 ---
 
-# huaweicloud_live_transcoding
+# hcso_live_transcoding
 
 Manages a Live transcoding within HuaweiCloud.
 
@@ -13,13 +13,13 @@ Manages a Live transcoding within HuaweiCloud.
 ```hcl
 variable "ingest_domain_name" {}
 
-resource "huaweicloud_live_domain" "ingestDomain" {
+resource "hcso_live_domain" "ingestDomain" {
   name = var.ingest_domain_name
   type = "push"
 }
 
-resource "huaweicloud_live_transcoding" "test" {
-  domain_name    = huaweicloud_live_domain.ingestDomain.name
+resource "hcso_live_transcoding" "test" {
+  domain_name    = hcso_live_domain.ingestDomain.name
   app_name       = "live"
   video_encoding = "H264"
 
@@ -86,5 +86,5 @@ separated by a slash.
 Transcodings can be imported using the `domain_name` and `app_name`, separated by a slash. e.g.
 
 ```
-$ terraform import huaweicloud_live_transcoding.test play.example.demo.com/live
+$ terraform import hcso_live_transcoding.test play.example.demo.com/live
 ```

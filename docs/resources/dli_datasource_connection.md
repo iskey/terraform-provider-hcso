@@ -2,7 +2,7 @@
 subcategory: "Data Lake Insight (DLI)"
 ---
 
-# huaweicloud_dli_datasource_connection
+# hcso_dli_datasource_connection
 
 Manages a DLI datasource **enhanced** connection resource within HuaweiCloud.  
 
@@ -13,7 +13,7 @@ Manages a DLI datasource **enhanced** connection resource within HuaweiCloud.
   variable "vpc_id" {}
   variable "subnet_id" {}
 
-  resource "huaweicloud_dli_datasource_connection" "test" {
+  resource "hcso_dli_datasource_connection" "test" {
     name      = var.name
     vpc_id    = var.vpc_id
     subnet_id = var.subnet_id
@@ -87,7 +87,7 @@ In addition to all arguments above, the following attributes are exported:
 The DLI datasource connection can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_dli_datasource_connection.test 0ce123456a00f2591fabc00385ff1234
+$ terraform import hcso_dli_datasource_connection.test 0ce123456a00f2591fabc00385ff1234
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -97,7 +97,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 align with the resource. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_dli_datasource_connection" "test" {
+resource "hcso_dli_datasource_connection" "test" {
     ...
 
     lifecycle {

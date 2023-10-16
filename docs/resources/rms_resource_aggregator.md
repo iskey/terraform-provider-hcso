@@ -2,7 +2,7 @@
 subcategory: "Config"
 ---
 
-# huaweicloud_rms_resource_aggregator
+# hcso_rms_resource_aggregator
 
 Manages a RMS aggregator resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "source_account_list" {
   type = list(string)
 }
 
-resource "huaweicloud_rms_resource_aggregator" "account" {
+resource "hcso_rms_resource_aggregator" "account" {
   name        = var.name
   type        = "ACCOUNT"
   account_ids = var.source_account_list
@@ -28,7 +28,7 @@ resource "huaweicloud_rms_resource_aggregator" "account" {
 ```hcl
 variable "name" {}
 
-resource "huaweicloud_rms_resource_aggregator" "organization" {
+resource "hcso_rms_resource_aggregator" "organization" {
   name = var.name
   type = "ORGANIZATION"
 }
@@ -60,5 +60,5 @@ In addition to all arguments above, the following attributes are exported:
 The aggregator can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_rms_resource_aggregator.example 5dbcb2e0804f46cfabea2a6a1a68b0ae
+$ terraform import hcso_rms_resource_aggregator.example 5dbcb2e0804f46cfabea2a6a1a68b0ae
 ```

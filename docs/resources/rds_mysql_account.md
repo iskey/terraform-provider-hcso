@@ -2,7 +2,7 @@
 subcategory: "Relational Database Service (RDS)"
 ---
 
-# huaweicloud_rds_mysql_account
+# hcso_rds_mysql_account
 
 Manages RDS Mysql account resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages RDS Mysql account resource within HuaweiCloud.
 ```hcl
 variable "instance_id" {}
 
-resource "huaweicloud_rds_mysql_account" "test" {
+resource "hcso_rds_mysql_account" "test" {
   instance_id = var.instance_id
   name        = "test"
   password    = "Test@12345678"
@@ -66,7 +66,7 @@ This resource provides the following timeouts configuration options:
 RDS account can be imported using the `instance_id` and `name` separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_rds_mysql_account.account_1 <instance_id>/<name>
+$ terraform import hcso_rds_mysql_account.account_1 <instance_id>/<name>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -76,7 +76,7 @@ the RDS Mysql account, or the resource definition should be updated to align wit
 can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_rds_mysql_account" "account_1" {
+resource "hcso_rds_mysql_account" "account_1" {
     ...
 
   lifecycle {

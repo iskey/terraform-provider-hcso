@@ -2,17 +2,17 @@
 subcategory: "IAM Identity Center"
 ---
 
-# huaweicloud_identitycenter_groups
+# hcso_identitycenter_groups
 
 Use this data source to get the Identity Center groups.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_identitycenter_instance" "system" {}
+data "hcso_identitycenter_instance" "system" {}
 
-data "huaweicloud_identitycenter_groups" "test"{
-  identity_store_id = data.huaweicloud_identitycenter_instance.system.identity_store_id
+data "hcso_identitycenter_groups" "test"{
+  identity_store_id = data.hcso_identitycenter_instance.system.identity_store_id
 }
 ```
 

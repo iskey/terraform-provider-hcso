@@ -8,13 +8,13 @@ jobs:
     if: ${{ contains(github.event.pull_request.labels.*.name, 'safe to test') }}
     runs-on: ubuntu-latest
     env:
-      HW_ACCESS_KEY: ${{ secrets.HW_ACCESS_KEY }}
-      HW_SECRET_KEY: ${{ secrets.HW_SECRET_KEY }}
-      HW_DOMAIN_NAME: ${{ secrets.HW_DOMAIN_NAME }}
-      HW_REGION_NAME: "cn-north-4"
-      HW_ADMIN: "true"
-      HW_ENTERPRISE_PROJECT_ID: "0"
-      HW_ENTERPRISE_PROJECT_ID_TEST: "0"
+      HCSO_ACCESS_KEY: ${{ secrets.HCSO_ACCESS_KEY }}
+      HCSO_SECRET_KEY: ${{ secrets.HCSO_SECRET_KEY }}
+      HCSO_DOMAIN_NAME: ${{ secrets.HCSO_DOMAIN_NAME }}
+      HCSO_REGION_NAME: "cn-north-4"
+      HCSO_ADMIN: "true"
+      HCSO_ENTERPRISE_PROJECT_ID: "0"
+      HCSO_ENTERPRISE_PROJECT_ID_TEST: "0"
     steps:
       - run:  echo "${{github.event.pull_request.head.repo.full_name}}"
       - uses: actions/checkout@v3

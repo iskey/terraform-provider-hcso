@@ -2,7 +2,7 @@
 subcategory: "Application Operations Management (AOM)"
 ---
 
-# huaweicloud_aom_service_discovery_rule
+# hcso_aom_service_discovery_rule
 
 Manages an AOM service discovery rule resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an AOM service discovery rule resource within HuaweiCloud.
 ### Basic example
 
 ```hcl
-resource "huaweicloud_aom_service_discovery_rule" "discovery_rule" {
+resource "hcso_aom_service_discovery_rule" "discovery_rule" {
   name                   = "test-rule"
   priority               = 9999
   detect_log_enabled     = "true"
@@ -143,5 +143,5 @@ This resource provides the following timeouts configuration options:
 AOM service discovery rules can be imported using the `name`, e.g.
 
 ```
-$ terraform import huaweicloud_aom_service_discovery_rule.alarm_rule rule_name
+$ terraform import hcso_aom_service_discovery_rule.alarm_rule rule_name
 ```

@@ -2,7 +2,7 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_role_assignment
+# hcso_identity_role_assignment
 
 Manages a Role assignment within group on HuaweiCloud IAM Service.
 
@@ -12,18 +12,18 @@ Manages a Role assignment within group on HuaweiCloud IAM Service.
 ## Example Usage: Assign Role On Project Level
 
 ```hcl
-data "huaweicloud_identity_role" "role_1" {
+data "hcso_identity_role" "role_1" {
   # RDS Administrator
   name = "rds_adm"
 }
 
-resource "huaweicloud_identity_group" "group_1" {
+resource "hcso_identity_group" "group_1" {
   name = "group_1"
 }
 
-resource "huaweicloud_identity_role_assignment" "role_assignment_1" {
-  role_id    = data.huaweicloud_identity_role.role_1.id
-  group_id   = huaweicloud_identity_group.group_1.id
+resource "hcso_identity_role_assignment" "role_assignment_1" {
+  role_id    = data.hcso_identity_role.role_1.id
+  group_id   = hcso_identity_group.group_1.id
   project_id = var.project_id
 }
 ```
@@ -31,18 +31,18 @@ resource "huaweicloud_identity_role_assignment" "role_assignment_1" {
 ## Example Usage: Assign Role On Domain Level
 
 ```hcl
-data "huaweicloud_identity_role" "role_1" {
+data "hcso_identity_role" "role_1" {
   # Security Administrator
   name = "secu_admin"
 }
 
-resource "huaweicloud_identity_group" "group_1" {
+resource "hcso_identity_group" "group_1" {
   name = "group_1"
 }
 
-resource "huaweicloud_identity_role_assignment" "role_assignment_1" {
-  role_id   = data.huaweicloud_identity_role.role_1.id
-  group_id  = huaweicloud_identity_group.group_1.id
+resource "hcso_identity_role_assignment" "role_assignment_1" {
+  role_id   = data.hcso_identity_role.role_1.id
+  group_id  = hcso_identity_group.group_1.id
   domain_id = var.domain_id
 }
 ```

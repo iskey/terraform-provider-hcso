@@ -2,7 +2,7 @@
 subcategory: "GaussDB(for MySQL)"
 ---
 
-# huaweicloud_gaussdb_mysql_instance
+# hcso_gaussdb_mysql_instance
 
 GaussDB mysql instance management within HuaweiCoud.
 
@@ -11,7 +11,7 @@ GaussDB mysql instance management within HuaweiCoud.
 ### create a basic instance
 
 ```hcl
-resource "huaweicloud_gaussdb_mysql_instance" "instance_1" {
+resource "hcso_gaussdb_mysql_instance" "instance_1" {
   name              = "gaussdb_instance_1"
   password          = var.password
   flavor            = "gaussdb.mysql.4xlarge.x86.4"
@@ -24,7 +24,7 @@ resource "huaweicloud_gaussdb_mysql_instance" "instance_1" {
 ### create a gaussdb mysql instance with backup strategy
 
 ```hcl
-resource "huaweicloud_gaussdb_mysql_instance" "instance_1" {
+resource "hcso_gaussdb_mysql_instance" "instance_1" {
   name              = "gaussdb_instance_1"
   password          = var.password
   flavor            = "gaussdb.mysql.4xlarge.x86.4"
@@ -181,5 +181,5 @@ This resource provides the following timeouts configuration options:
 GaussDB instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_gaussdb_mysql_instance.instance_1 1a801c1e01e6458d8eed810912e29d0cin07
+$ terraform import hcso_gaussdb_mysql_instance.instance_1 1a801c1e01e6458d8eed810912e29d0cin07
 ```

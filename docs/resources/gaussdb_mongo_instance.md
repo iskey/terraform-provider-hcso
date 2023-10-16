@@ -2,7 +2,7 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_mongo_instance
+# hcso_gaussdb_mongo_instance
 
 GaussDB for mongo instance management within HuaweiCoud.
 
@@ -11,7 +11,7 @@ GaussDB for mongo instance management within HuaweiCoud.
 ### create a gaussdb for mongo instance with tags
 
 ```hcl
-resource "huaweicloud_gaussdb_mongo_instance" "instance_1" {
+resource "hcso_gaussdb_mongo_instance" "instance_1" {
   name              = "gaussdb_mongo_instance_1"
   password          = var.password
   flavor            = "geminidb.mongodb.repset.xlarge.4"
@@ -31,7 +31,7 @@ resource "huaweicloud_gaussdb_mongo_instance" "instance_1" {
 ### create a gaussdb mongo instance with backup strategy
 
 ```hcl
-resource "huaweicloud_gaussdb_mongo_instance" "instance_1" {
+resource "hcso_gaussdb_mongo_instance" "instance_1" {
   name              = "gaussdb_mongo_instance_1"
   password          = var.password
   flavor            = "geminidb.mongodb.repset.xlarge.4"
@@ -180,5 +180,5 @@ This resource provides the following timeouts configuration options:
 GaussDB mongo instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_gaussdb_mongo_instance.instance_1 2d3cb29c73754417bbbf46b1f856b371in10
+$ terraform import hcso_gaussdb_mongo_instance.instance_1 2d3cb29c73754417bbbf46b1f856b371in10
 ```

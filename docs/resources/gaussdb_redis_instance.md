@@ -2,7 +2,7 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_redis_instance
+# hcso_gaussdb_redis_instance
 
 GaussDB for Redis instance management within HuaweiCoud.
 
@@ -11,7 +11,7 @@ GaussDB for Redis instance management within HuaweiCoud.
 ### create a gaussdb for redis instance with tags
 
 ```hcl
-resource "huaweicloud_gaussdb_redis_instance" "test" {
+resource "hcso_gaussdb_redis_instance" "test" {
   name              = "gaussdb_redis_instance_1"
   password          = var.password
   flavor            = "geminidb.redis.xlarge.4"
@@ -31,7 +31,7 @@ resource "huaweicloud_gaussdb_redis_instance" "test" {
 ### create a gaussdb redis instance with backup strategy
 
 ```hcl
-resource "huaweicloud_gaussdb_redis_instance" "test" {
+resource "hcso_gaussdb_redis_instance" "test" {
   name              = "gaussdb_redis_instance_1"
   password          = var.password
   flavor            = "geminidb.redis.xlarge.4"
@@ -180,5 +180,5 @@ This resource provides the following timeouts configuration options:
 GaussDB Redis instance can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_gaussdb_redis_instance.instance_1 d54b21f037ed447aad4bfd20927711c6in12
+$ terraform import hcso_gaussdb_redis_instance.instance_1 d54b21f037ed447aad4bfd20927711c6in12
 ```

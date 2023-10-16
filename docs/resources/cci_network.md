@@ -2,7 +2,7 @@
 subcategory: "Cloud Container Instance (CCI)"
 ---
 
-# huaweicloud_cci_network
+# hcso_cci_network
 
 Manages a CCI Network resource within HuaweiCloud.
 
@@ -14,10 +14,10 @@ variable "network_name" {}
 variable "vpc_network_id" {}
 variable "security_group_id" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-resource "huaweicloud_cci_network" "test" {
-  availability_zone = data.huaweicloud_availability_zones.test.names[0]
+resource "hcso_cci_network" "test" {
+  availability_zone = data.hcso_availability_zones.test.names[0]
   namespace         = var.namespace_name
   name              = var.network_name
   network_id        = var.vpc_network_id
@@ -71,7 +71,7 @@ In addition to all arguments above, the following attributes are exported:
 Networks can be imported using their `namespace` and `id`, separated by a slash, e.g.:
 
 ```
-$ terraform import huaweicloud_cci_network.test <namespace>/<id>
+$ terraform import hcso_cci_network.test <namespace>/<id>
 ```
 
 ## Timeouts

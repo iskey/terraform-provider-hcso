@@ -2,7 +2,7 @@
 subcategory: "Cloud Data Migration (CDM)"
 ---
 
-# huaweicloud_cdm_link
+# hcso_cdm_link
 
 Manages a link resource within HuaweiCloud. A link enables the CDM cluster to read data from and write data to
  a data source.
@@ -18,20 +18,20 @@ variable "cdm_cluster_id" {}
 variable "access_key" {}
 variable "secret_key" {}
 
-resource "huaweicloud_obs_bucket" "bucket" {
+resource "hcso_obs_bucket" "bucket" {
   bucket        = var.obs_name
   acl           = "private"
   force_destroy = true
 }
 
-resource "huaweicloud_cdm_link" "obsLink" {
+resource "hcso_cdm_link" "obsLink" {
   name       = var.obs_link_name
   connector  = "obs-connector"
   cluster_id = var.cdm_cluster_id
 
   config = {
     "storageType" = "OBS"
-    "server"      = trimprefix(huaweicloud_obs_bucket.bucket.bucket_domain_name, "${huaweicloud_obs_bucket.bucket.bucket}.")
+    "server"      = trimprefix(hcso_obs_bucket.bucket.bucket_domain_name, "${hcso_obs_bucket.bucket.bucket}.")
     "port"        = "443"
   }
   access_key   = var.access_key
@@ -48,7 +48,7 @@ variable "mysql_host" {}
 variable "db_name" {}
 variable "db_password" {}
 
-resource "huaweicloud_cdm_link" "mysqlLink" {
+resource "hcso_cdm_link" "mysqlLink" {
   name       = var.mysql_link_name
   connector  = "generic-jdbc-connector"
   cluster_id = var.cdm_cluster_id
@@ -141,7 +141,7 @@ The link can be imported by `id`, It is composed of the ID of CDM cluster and th
  For example,
 
 ```bash
-terraform import huaweicloud_cdm_link.test b11b407c-e604-4e8d-8bc4-92398320b847/linkName
+terraform import hcso_cdm_link.test b11b407c-e604-4e8d-8bc4-92398320b847/linkName
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -151,7 +151,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 align with the instance. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_cdm_link" "test" {
+resource "hcso_cdm_link" "test" {
     ...
 
   lifecycle {

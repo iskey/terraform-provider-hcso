@@ -2,7 +2,7 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_route_tables
+# hcso_er_route_tables
 
 Use this data source to query the route tables under the ER instance within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Use this data source to query the route tables under the ER instance within Huaw
 variable "instance_id" {}
 variable "route_table_name" {}
 
-data "huaweicloud_er_route_tables" "test" {
+data "hcso_er_route_tables" "test" {
   instance_id = var.instance_id
   name        = var.route_table_name
 }
@@ -25,7 +25,7 @@ data "huaweicloud_er_route_tables" "test" {
 ```hcl
 variable "instance_id" {}
 
-data "huaweicloud_er_route_tables" "test" {
+data "hcso_er_route_tables" "test" {
   instance_id = var.instance_id
 
   tags = {

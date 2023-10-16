@@ -2,7 +2,7 @@
 subcategory: "Elastic IP (EIP)"
 ---
 
-# huaweicloud_vpc_eips
+# hcso_vpc_eips
 
 Use this data source to get a list of EIPs.
 
@@ -13,7 +13,7 @@ An example filter by name and tag
 ```hcl
 variable "public_ip" {}
 
-data "huaweicloud_vpc_eips" "eip" {
+data "hcso_vpc_eips" "eip" {
   public_ips = [var.public_ip]
 
   tags = {
@@ -22,7 +22,7 @@ data "huaweicloud_vpc_eips" "eip" {
 }
 
 output "eip_ids" {
-  value = data.huaweicloud_vpc_eips.eip.eips[*].id
+  value = data.hcso_vpc_eips.eip.eips[*].id
 }
 ```
 

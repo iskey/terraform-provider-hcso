@@ -2,19 +2,19 @@
 subcategory: "Distributed Database Middleware (DDM)"
 ---
 
-# huaweicloud_ddm_flavors
+# hcso_ddm_flavors
 
 Use this data source to get the list of DDM flavors.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_ddm_engines" test {
+data "hcso_ddm_engines" test {
   version = "3.0.8.5"
 }
 
-data "huaweicloud_ddm_flavors" test {
-  engine_id = data.huaweicloud_ddm_engines.test.engines[0].id
+data "hcso_ddm_flavors" test {
+  engine_id = data.hcso_ddm_engines.test.engines[0].id
   cpu_arch  = "X86"
 }
 ```

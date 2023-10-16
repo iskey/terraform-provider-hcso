@@ -2,34 +2,34 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_networking_router_interface_v2
+# hcso_networking_router_interface_v2
 
 Manages a V2 router interface resource within HuaweiCloud.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_vpc` instead.
+!> **WARNING:** It has been deprecated, use `hcso_vpc` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_networking_network_v2" "network_1" {
+resource "hcso_networking_network_v2" "network_1" {
   name           = "tf_test_network"
   admin_state_up = "true"
 }
 
-resource "huaweicloud_networking_subnet_v2" "subnet_1" {
-  network_id = huaweicloud_networking_network_v2.network_1.id
+resource "hcso_networking_subnet_v2" "subnet_1" {
+  network_id = hcso_networking_network_v2.network_1.id
   cidr       = "192.168.199.0/24"
   ip_version = 4
 }
 
-resource "huaweicloud_networking_router_v2" "router_1" {
+resource "hcso_networking_router_v2" "router_1" {
   name                = "my_router"
   external_network_id = "f67f0d72-0ddf-11e4-9d95-e1f29f417e2f"
 }
 
-resource "huaweicloud_networking_router_interface_v2" "router_interface_1" {
-  router_id = huaweicloud_networking_router_v2.router_1.id
-  subnet_id = huaweicloud_networking_subnet_v2.subnet_1.id
+resource "hcso_networking_router_interface_v2" "router_interface_1" {
+  router_id = hcso_networking_router_v2.router_1.id
+  subnet_id = hcso_networking_subnet_v2.subnet_1.id
 }
 ```
 
@@ -69,5 +69,5 @@ Router Interfaces can be imported using the port `id`, e.g.
 
 ```
 $ openstack port list --router <router name or id>
-$ terraform import huaweicloud_networking_router_interface_v2.int_1 <port id from above output>
+$ terraform import hcso_networking_router_interface_v2.int_1 <port id from above output>
 ```

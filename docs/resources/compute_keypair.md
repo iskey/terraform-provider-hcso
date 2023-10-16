@@ -2,9 +2,9 @@
 subcategory: "Elastic Cloud Server (ECS)"
 ---
 
-# huaweicloud_compute_keypair
+# hcso_compute_keypair
 
--> **DEPRECATED:**  This resource  has been deprecated. Please use [huaweicloud_kps_keypair](https://www.terraform.io/docs/providers/huaweicloud/r/kps_keypair).
+-> **DEPRECATED:**  This resource  has been deprecated. Please use [hcso_kps_keypair](https://www.terraform.io/docs/providers/huaweicloud/r/kps_keypair).
 
 Manages a keypair resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ Manages a keypair resource within HuaweiCloud.
 ### Create a new keypair and export private key to current folder
 
 ```hcl
-resource "huaweicloud_compute_keypair" "test-keypair" {
+resource "hcso_compute_keypair" "test-keypair" {
   name     = "my-keypair"
   key_file = "private_key.pem"
 }
@@ -22,7 +22,7 @@ resource "huaweicloud_compute_keypair" "test-keypair" {
 ### Import an exist keypair
 
 ```hcl
-resource "huaweicloud_compute_keypair" "test-keypair" {
+resource "hcso_compute_keypair" "test-keypair" {
   name       = "my-keypair"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAlJq5Pu+eizhou7nFFDxXofr2ySF8k/yuA9OnJdVF9Fbf85Z59CWNZBvcAT... root@terra-dev"
 }
@@ -60,5 +60,5 @@ In addition to all arguments above, the following attributes are exported:
 Keypairs can be imported using the `name`, e.g.
 
 ```
-$ terraform import huaweicloud_compute_keypair.my-keypair test-keypair
+$ terraform import hcso_compute_keypair.my-keypair test-keypair
 ```

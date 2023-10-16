@@ -2,7 +2,7 @@
 subcategory: "Data Encryption Workshop (DEW)"
 ---
 
-# huaweicloud_kps_keypairs
+# hcso_kps_keypairs
 
 Use this data source to get a list of keypairs.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of keypairs.
 ```hcl
 variable "keypair_name" {}
 
-data "huaweicloud_kps_keypairs" "test" {
+data "hcso_kps_keypairs" "test" {
   name = var.keypair_name
 }
 ```

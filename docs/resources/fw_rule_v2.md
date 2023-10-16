@@ -6,12 +6,12 @@ subcategory: "Deprecated"
 
 Manages a v2 firewall rule resource within HuaweiCloud.
 
-!> **WARNING:** It has been deprecated, use `huaweicloud_network_acl_rule` instead.
+!> **WARNING:** It has been deprecated, use `hcso_network_acl_rule` instead.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_fw_rule_v2" "rule_1" {
+resource "hcso_fw_rule_v2" "rule_1" {
   name             = "my_rule"
   description      = "drop TELNET traffic"
   action           = "deny"
@@ -78,5 +78,5 @@ In addition to all arguments above, the following attributes are exported:
 Firewall Rules can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_fw_rule_v2.rule_1 8dbc0c28-e49c-463f-b712-5c5d1bbac327
+$ terraform import hcso_fw_rule_v2.rule_1 8dbc0c28-e49c-463f-b712-5c5d1bbac327
 ```

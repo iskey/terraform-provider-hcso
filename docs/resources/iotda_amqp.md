@@ -2,14 +2,14 @@
 subcategory: "IoT Device Access (IoTDA)"
 ---
 
-# huaweicloud_iotda_amqp
+# hcso_iotda_amqp
 
 Manages an IoTDA AMQP queue within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_iotda_amqp" "queue" {
+resource "hcso_iotda_amqp" "queue" {
   name = "queue_name"
 }
 ```
@@ -36,5 +36,5 @@ In addition to all arguments above, the following attributes are exported:
 AMQP queues can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iotda_amqp.test 10022532f4f94f26b01daa1e424853e1
+$ terraform import hcso_iotda_amqp.test 10022532f4f94f26b01daa1e424853e1
 ```

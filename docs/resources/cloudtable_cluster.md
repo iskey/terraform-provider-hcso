@@ -2,7 +2,7 @@
 subcategory: "CloudTable"
 ---
 
-# huaweicloud_cloudtable_cluster
+# hcso_cloudtable_cluster
 
 Manages a CloudTable cluster resource within HuaweiCloud.
 
@@ -14,19 +14,19 @@ variable "vpc_id" {}
 variable "network_id" {}
 variable "security_group_id" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-resource "huaweicloud_vpc_subnet" "test" {
+resource "hcso_vpc_subnet" "test" {
   vpc_id = var.vpc_id
   ...
 }
 
-resource "huaweicloud_cloudtable_cluster" "test" {
-  availability_zone = data.huaweicloud_availability_zones.test.names[0]
+resource "hcso_cloudtable_cluster" "test" {
+  availability_zone = data.hcso_availability_zones.test.names[0]
   name              = var.cluster_name
   storage_type      = "ULTRAHIGH"
   vpc_id            = var.vpc_id
-  network_id        = huaweicloud_vpc_subnet.test.id
+  network_id        = hcso_vpc_subnet.test.id
   security_group_id = var.security_group_id
   hbase_version     = "1.0.6"
   rs_num            = 4
@@ -97,7 +97,7 @@ In addition to all arguments above, the following attributes are exported:
 Clusters can be imported by their `id`. e.g.:
 
 ```
-terraform import huaweicloud_cloudtable_cluster.test 4c2d38b6-6fb0-480c-8813-5f536b5ba6a4
+terraform import hcso_cloudtable_cluster.test 4c2d38b6-6fb0-480c-8813-5f536b5ba6a4
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -108,7 +108,7 @@ You can then decide if changes should be applied to the cluster, or the resource
 align with the cluster. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cloudtable_cluster" "test" {
+resource "hcso_cloudtable_cluster" "test" {
     ...
 
   lifecycle {

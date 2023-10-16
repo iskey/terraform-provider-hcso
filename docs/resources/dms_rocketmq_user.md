@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_rocketmq_user
+# hcso_dms_rocketmq_user
 
 Manages DMS RocketMQ user resources within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages DMS RocketMQ user resources within HuaweiCloud.
 ```hcl
 variable "instance_id" {}
 
-resource "huaweicloud_dms_rocketmq_user" "test" {
+resource "hcso_dms_rocketmq_user" "test" {
   instance_id          = var.instance_id
   access_key           = "user_test"
   secret_key           = "abcdefg"
@@ -91,5 +91,5 @@ In addition to all arguments above, the following attributes are exported:
 The rocketmq user can be imported using the rocketMQ `instance_id` and user `access_key` separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_dms_rocketmq_user.test <instance_id>/<access_key>
+$ terraform import hcso_dms_rocketmq_user.test <instance_id>/<access_key>
 ```

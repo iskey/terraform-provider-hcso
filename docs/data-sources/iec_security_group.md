@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_security_group
+# hcso_iec_security_group
 
 Use this data source to get the details of a specific IEC security group.
 
@@ -11,7 +11,7 @@ Use this data source to get the details of a specific IEC security group.
 ```hcl
 variable "sg_name" {}
 
-data "huaweicloud_iec_security_group" "my_sg" {
+data "hcso_iec_security_group" "my_sg" {
   name = var.sg_name
 }
 ```

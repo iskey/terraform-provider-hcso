@@ -2,7 +2,7 @@
 subcategory: "Cloud Trace Service (CTS)"
 ---
 
-# huaweicloud_cts_data_tracker
+# hcso_cts_data_tracker
 
 Manages CTS **data** tracker resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages CTS **data** tracker resource within HuaweiCloud.
 variable "data_bucket" {}
 variable "transfer_bucket" {}
 
-resource "huaweicloud_cts_data_tracker" "tracker" {
+resource "hcso_cts_data_tracker" "tracker" {
   name        = "data-tracker"
   data_bucket = var.data_bucket
   bucket_name = var.transfer_bucket
@@ -73,5 +73,5 @@ This resource provides the following timeouts configuration options:
 CTS data tracker can be imported using `name`, e.g.:
 
 ```
-$ terraform import huaweicloud_cts_data_tracker.tracker your_tracker_name
+$ terraform import hcso_cts_data_tracker.tracker your_tracker_name
 ```

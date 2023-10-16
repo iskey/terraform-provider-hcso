@@ -2,7 +2,7 @@
 subcategory: "Virtual Private Cloud (VPC)"
 ---
 
-# huaweicloud_vpc
+# hcso_vpc
 
 Manages a VPC resource within HuaweiCloud.
 
@@ -10,19 +10,19 @@ Manages a VPC resource within HuaweiCloud.
 
 ```hcl
 variable "vpc_name" {
-  default = "huaweicloud_vpc"
+  default = "hcso_vpc"
 }
 
 variable "vpc_cidr" {
   default = "192.168.0.0/16"
 }
 
-resource "huaweicloud_vpc" "vpc" {
+resource "hcso_vpc" "vpc" {
   name = var.vpc_name
   cidr = var.vpc_cidr
 }
 
-resource "huaweicloud_vpc" "vpc_with_tags" {
+resource "hcso_vpc" "vpc_with_tags" {
   name = var.vpc_name
   cidr = var.vpc_cidr
 
@@ -79,14 +79,14 @@ This resource provides the following timeouts configuration options:
 VPCs can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_vpc.vpc_v1 7117d38e-4c8f-4624-a505-bd96b97d024c
+$ terraform import hcso_vpc.vpc_v1 7117d38e-4c8f-4624-a505-bd96b97d024c
 ```
 
 Note that the imported state may not be identical to your resource definition when `secondary_cidr` was set.
 You you can ignore changes as below.
 
 ```
-resource "huaweicloud_vpc" "vpc_v1" {
+resource "hcso_vpc" "vpc_v1" {
     ...
 
   lifecycle {

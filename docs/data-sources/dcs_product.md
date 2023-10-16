@@ -2,17 +2,17 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_dcs_product
+# hcso_dcs_product
 
 Use this data source to get the ID of an available DCS product.
 
 !> **WARNING:** It has been deprecated. This data source is used for the `product_id` of the
-`huaweicloud_dcs_instance` resource. Now `product_id` has been deprecated and this data source is no longer used.
+`hcso_dcs_instance` resource. Now `product_id` has been deprecated and this data source is no longer used.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_dcs_product" "product1" {
+data "hcso_dcs_product" "product1" {
   spec_code = "redis.cluster.xu1.large.r2.4"
 }
 ```

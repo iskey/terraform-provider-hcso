@@ -2,7 +2,7 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_organization_permissions
+# hcso_swr_organization_permissions
 
 Manages user permissions for the SWR organization resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "organization_name" {}
 variable "user_1" {}
 variable "user_2" {}
 
-resource "huaweicloud_swr_organization_permissions" "test" {
+resource "hcso_swr_organization_permissions" "test" {
   organization = var.organization_name
 
   users {
@@ -82,5 +82,5 @@ This resource provides the following timeouts configuration options:
 Organization Permissions can be imported using the `id` (organization name), e.g.
 
 ```
-$ terraform import huaweicloud_swr_organization_permissions.test terraform-test
+$ terraform import hcso_swr_organization_permissions.test terraform-test
 ```

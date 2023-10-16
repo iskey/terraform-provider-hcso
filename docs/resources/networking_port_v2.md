@@ -2,20 +2,20 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_networking_port
+# hcso_networking_port
 
 Manages a Port resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_vpc_subnet" "mynet" {
+data "hcso_vpc_subnet" "mynet" {
   name = "subnet-default"
 }
 
-resource "huaweicloud_networking_port" "myport" {
+resource "hcso_networking_port" "myport" {
   name           = "port"
-  network_id     = data.huaweicloud_vpc_subnet.mynet.id
+  network_id     = data.hcso_vpc_subnet.mynet.id
   admin_state_up = "true"
 }
 ```
@@ -103,5 +103,5 @@ This resource provides the following timeouts configuration options:
 Ports can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_networking_port.port_1 eae26a3e-1c33-4cc1-9c31-0cd729c438a1
+$ terraform import hcso_networking_port.port_1 eae26a3e-1c33-4cc1-9c31-0cd729c438a1
 ```

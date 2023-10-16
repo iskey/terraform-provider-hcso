@@ -2,7 +2,7 @@
 subcategory: "Cloud Bastion Host (CBH)"
 ---
 
-# huaweicloud_cbh_instance
+# hcso_cbh_instance
 
 Manages a CBH instance resource within HuaweiCloud.
 
@@ -16,7 +16,7 @@ variable "security_group_id" {}
 variable "password" {}
 variable "availability_zone" {}
 
-resource "huaweicloud_cbh_instance" "test" {
+resource "hcso_cbh_instance" "test" {
   flavor_id         = "cbh.basic.10"
   name              = var.name
   vpc_id            = var.vpc_id
@@ -118,7 +118,7 @@ This resource provides the following timeouts configuration options:
 The CBH instance can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_cbh_instance.test <instance_id>
+$ terraform import hcso_cbh_instance.test <instance_id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -129,7 +129,7 @@ You can then decide if changes should be applied to the instance, or the resourc
 to align with the instance. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_cbh_instance" "test" {
+resource "hcso_cbh_instance" "test" {
     ...
 
   lifecycle {

@@ -2,19 +2,19 @@
 subcategory: "Deprecated"
 ---
 
-# huaweicloud_dms_az
+# hcso_dms_az
 
 Use this data source to get the ID of an available HuaweiCloud dms az.
 
 !> **WARNING:** It has been deprecated. This data source is used for the `available_zones` of the
-`huaweicloud_dms_kafka_instance` and `huaweicloud_dms_rabbitmq_instance` resource.
+`hcso_dms_kafka_instance` and `hcso_dms_rabbitmq_instance` resource.
 Now argument `available_zones` has been deprecated, instead `availability_zones`,
 this data source will no longer be used.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_dms_az" "az1" {
+data "hcso_dms_az" "az1" {
   code = "cn-north-4a"
 }
 ```

@@ -2,7 +2,7 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_dataset
+# hcso_modelarts_dataset
 
 Manages ModelArts dataset resource within HuaweiCloud.
 
@@ -13,7 +13,7 @@ variable "name" {}
 variable "output_obs_path" {}
 variable "input_obs_path" {}
 
-resource "huaweicloud_modelarts_dataset" "test" {
+resource "hcso_modelarts_dataset" "test" {
   name        = var.name
   type        = 1
   output_path = var.output_obs_path
@@ -179,7 +179,7 @@ This resource provides the following timeouts configuration options:
 The datasets can be imported by `id`.
 
 ```bash
-terraform import huaweicloud_modelarts_dataset.test yiROKoTTjtwjvP71yLG
+terraform import hcso_modelarts_dataset.test yiROKoTTjtwjvP71yLG
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -190,7 +190,7 @@ importing a dataset. You can then decide if changes should be applied to the dat
 should be updated to align with the dataset. Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_modelarts_dataset" "test" {
+resource "hcso_modelarts_dataset" "test" {
     ...
 
   lifecycle {

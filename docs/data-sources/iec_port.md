@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_port
+# hcso_iec_port
 
 Use this data source to get the details of a specific IEC subnet port.
 
@@ -11,7 +11,7 @@ Use this data source to get the details of a specific IEC subnet port.
 ```hcl
 variable "subnet_id" {}
 
-data "huaweicloud_iec_port" "port_1" {
+data "hcso_iec_port" "port_1" {
   subnet_id = var.subnet_id
   fixed_ip  = "192.168.1.123"
 }

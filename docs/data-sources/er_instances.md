@@ -2,14 +2,14 @@
 subcategory: "Enterprise Router (ER)"
 ---
 
-# huaweicloud_er_instances
+# hcso_er_instances
 
 Use this data source to filter ER instances within Huaweicloud.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_er_instances" "test" {
+data "hcso_er_instances" "test" {
   tags = {
     foo = "bar"
   }

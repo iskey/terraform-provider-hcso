@@ -2,14 +2,14 @@
 subcategory: "Organizations"
 ---
 
-# huaweicloud_organizations_trusted_service
+# hcso_organizations_trusted_service
 
 Manages an Organizations trusted service resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_organizations_trusted_service" "test"{
+resource "hcso_organizations_trusted_service" "test"{
   service = "service.AOM"
 }
 ```
@@ -35,5 +35,5 @@ In addition to all arguments above, the following attributes are exported:
 The organizations trusted service can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_organizations_trusted_service.test <id>
+$ terraform import hcso_organizations_trusted_service.test <id>
 ```

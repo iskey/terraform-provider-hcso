@@ -2,14 +2,14 @@
 subcategory: "AI Development Platform (ModelArts)"
 ---
 
-# huaweicloud_modelarts_notebook_flavors
+# hcso_modelarts_notebook_flavors
 
 Use this data source to get available flavors of ModelArts notebook.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_modelarts_notebook_flavors" "flavors" {
+data "hcso_modelarts_notebook_flavors" "flavors" {
   category = "CPU"
 }
 ```

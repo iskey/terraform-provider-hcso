@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_acl_policy
+# hcso_apig_acl_policy
 
 Manages an ACL policy resource within HuaweiCloud.
 
@@ -17,7 +17,7 @@ variable "ip_addresses" {
   type = list(stirng)
 }
 
-resource "huaweicloud_apig_acl_policy" "ip_rule" {
+resource "hcso_apig_acl_policy" "ip_rule" {
   instance_id = var.instance_id
   name        = var.policy_name
   type        = "PERMIT"
@@ -35,7 +35,7 @@ variable "domain_names" {
   type = list(stirng)
 }
 
-resource "huaweicloud_apig_acl_policy" "domain_rule" {
+resource "hcso_apig_acl_policy" "domain_rule" {
   instance_id = var.instance_id
   name        = var.policy_name
   type        = "PERMIT"
@@ -53,7 +53,7 @@ variable "domain_ids" {
   type = list(stirng)
 }
 
-resource "huaweicloud_apig_acl_policy" "domain_id_rule" {
+resource "hcso_apig_acl_policy" "domain_id_rule" {
   instance_id = var.instance_id
   name        = var.policy_name
   type        = "PERMIT"
@@ -106,5 +106,5 @@ In addition to all arguments above, the following attributes are exported:
 ACL Policies can be imported using their `id` and related dedicated instance ID, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_acl_policy.test <instance_id>/<id>
+$ terraform import hcso_apig_acl_policy.test <instance_id>/<id>
 ```

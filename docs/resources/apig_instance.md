@@ -2,7 +2,7 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_instance
+# hcso_apig_instance
 
 Manages an APIG dedicated instance resource within HuaweiCloud.
 
@@ -16,9 +16,9 @@ variable "security_group_id" {}
 variable "eip_id" {}
 variable "enterprise_project_id" {}
 
-data "huaweicloud_availability_zones" "test" {}
+data "hcso_availability_zones" "test" {}
 
-resource "huaweicloud_apig_instance" "test" {
+resource "hcso_apig_instance" "test" {
   name                  = var.instance_name
   edition               = "BASIC"
   vpc_id                = var.vpc_id
@@ -31,8 +31,8 @@ resource "huaweicloud_apig_instance" "test" {
   eip_id                = var.eip_id
 
   available_zones = [
-    data.huaweicloud_availability_zones.test.names[0],
-    data.huaweicloud_availability_zones.test.names[1],
+    data.hcso_availability_zones.test.names[0],
+    data.hcso_availability_zones.test.names[1],
   ]
 
   tags = {
@@ -143,5 +143,5 @@ This resource provides the following timeouts configuration options:
 Dedicated instances can be imported by their `id`, e.g.
 
 ```
-$ terraform import huaweicloud_apig_instance.test de379eed30aa4d31a84f426ea3c7ef4e
+$ terraform import hcso_apig_instance.test de379eed30aa4d31a84f426ea3c7ef4e
 ```

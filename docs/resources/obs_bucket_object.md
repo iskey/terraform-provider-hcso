@@ -2,7 +2,7 @@
 subcategory: "Object Storage Service (OBS)"
 ---
 
-# huaweicloud_obs_bucket_object
+# hcso_obs_bucket_object
 
 Provides an OBS bucket object resource.
 
@@ -11,7 +11,7 @@ Provides an OBS bucket object resource.
 ### Uploading to a bucket
 
 ```hcl
-resource "huaweicloud_obs_bucket_object" "object" {
+resource "hcso_obs_bucket_object" "object" {
   bucket       = "your_bucket_name"
   key          = "new_key_from_content"
   content      = "some object content"
@@ -22,13 +22,13 @@ resource "huaweicloud_obs_bucket_object" "object" {
 ### Uploading a file to a bucket
 
 ```hcl
-resource "huaweicloud_obs_bucket" "examplebucket" {
+resource "hcso_obs_bucket" "examplebucket" {
   bucket = "examplebuckettftest"
   acl    = "private"
 }
 
-resource "huaweicloud_obs_bucket_object" "object" {
-  bucket = huaweicloud_obs_bucket.examplebucket.bucket
+resource "hcso_obs_bucket_object" "object" {
+  bucket = hcso_obs_bucket.examplebucket.bucket
   key    = "new_key_from_file"
   source = "index.html"
 }
@@ -37,7 +37,7 @@ resource "huaweicloud_obs_bucket_object" "object" {
 ### Server Side Encryption with OBS Default Master Key
 
 ```hcl
-resource "huaweicloud_obs_bucket_object" "examplebucket_object" {
+resource "hcso_obs_bucket_object" "examplebucket_object" {
   bucket     = "your_bucket_name"
   key        = "someobject"
   source     = "index.html"
@@ -92,7 +92,7 @@ In addition to all arguments above, the following attributes are exported:
 OBS bucket object can be imported using the bucket and key separated by a slash, e.g.
 
 ```
-$ terraform import huaweicloud_obs_bucket_object.object bucket/key
+$ terraform import hcso_obs_bucket_object.object bucket/key
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -102,7 +102,7 @@ You can then decide if changes should be applied to the object, or the resource
 definition should be updated to align with the object. Also you can ignore changes as below.
 
 ```
-resource "huaweicloud_obs_bucket_object" "object" {
+resource "hcso_obs_bucket_object" "object" {
     ...
 
   lifecycle {

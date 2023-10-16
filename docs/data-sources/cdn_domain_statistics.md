@@ -2,7 +2,7 @@
 subcategory: Content Delivery Network (CDN)
 ---
 
-# huaweicloud_cdn_domain_statistics
+# hcso_cdn_domain_statistics
 
 Use this data source to get the statistics of CDN domain.
 
@@ -11,8 +11,8 @@ Use this data source to get the statistics of CDN domain.
 ```hcl
 variable "domain_name" {}
 
-data "huaweicloud_cdn_domain_statistics" "test" {
-  domain_name = "terraform.test.huaweicloud.com"
+data "hcso_cdn_domain_statistics" "test" {
+  domain_name = "terraform.test.internal.com"
   action      = "location_detail"
   start_time  = 1662019200000
   end_time    = 1662021000000

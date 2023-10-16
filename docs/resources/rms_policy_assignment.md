@@ -2,7 +2,7 @@
 subcategory: "Config"
 ---
 
-# huaweicloud_rms_policy_assignment
+# hcso_rms_policy_assignment
 
 Using this resource to assign the policy and evaluate HuaweiCloud resources.
 
@@ -16,14 +16,14 @@ variable "region_name" {}
 variable "ecs_instance_id" {}
 variable "compliant_flavor" {}
 
-data "huaweicloud_rms_policy_definitions" "test" {
+data "hcso_rms_policy_definitions" "test" {
   name = "allowed-ecs-flavors"
 }
 
-resource "huaweicloud_rms_policy_assignment" "test" {
+resource "hcso_rms_policy_assignment" "test" {
   name                 = var.policy_assignment_name
   description          = "An ECS is noncompliant if its flavor is not in the specified flavor list (filter by resource ID)."
-  policy_definition_id = try(data.huaweicloud_rms_policy_definitions.test.definitions[0].id, "")
+  policy_definition_id = try(data.hcso_rms_policy_definitions.test.definitions[0].id, "")
   status               = "Enabled"
 
   policy_filter {
@@ -45,15 +45,15 @@ resource "huaweicloud_rms_policy_assignment" "test" {
 variable "policy_assignment_name" {}
 variable "bucket_name" {}
 
-data "huaweicloud_rms_policy_definitions" "test" {
+data "hcso_rms_policy_definitions" "test" {
   name = "cts-obs-bucket-track"
 }
 
-resource "huaweicloud_rms_policy_assignment" "test" {
+resource "hcso_rms_policy_assignment" "test" {
   name                 = var.policy_assignment_name
   description          = "An account is noncompliant if none of its CTS trackers track specified OBS buckets."
   period               = "Six_Hours"
-  policy_definition_id = try(data.huaweicloud_rms_policy_definitions.test.definitions[0].id, "")
+  policy_definition_id = try(data.hcso_rms_policy_definitions.test.definitions[0].id, "")
   status               = "Enabled"
 
   parameters = {
@@ -70,7 +70,7 @@ variable "function_urn" {}
 variable "function_version" {}
 variable "rms_admin_trust_agency" {}
 
-resource "huaweicloud_rms_policy_assignment" "test" {
+resource "hcso_rms_policy_assignment" "test" {
   name        = var.policy_assignment_name
   description = "The ECS instances that do not conform to the custom function logic are considered non-compliant."
   status      = "Enabled"
@@ -184,5 +184,5 @@ This resource provides the following timeouts configuration options:
 Policy assignments can be imported using their `id`, e.g.
 
 ```
-$ terraform import huaweicloud_rms_policy_assignment.test 63f48e3762ce955981ab7e25
+$ terraform import hcso_rms_policy_assignment.test 63f48e3762ce955981ab7e25
 ```

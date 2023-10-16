@@ -2,7 +2,7 @@
 subcategory: "Simple Message Notification (SMN)"
 ---
 
-# huaweicloud_smn_topics
+# hcso_smn_topics
 
 Use this data source to get a list of SMN topics.
 
@@ -11,7 +11,7 @@ Use this data source to get a list of SMN topics.
 ```hcl
 variable "topic_name" {}
 
-data "huaweicloud_smn_topics" "tpoic_1" {
+data "hcso_smn_topics" "tpoic_1" {
   name = var.topic_name
 }
 ```

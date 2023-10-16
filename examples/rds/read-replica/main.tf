@@ -1,19 +1,19 @@
-data "huaweicloud_availability_zones" "myaz" {}
+data "hcso_availability_zones" "myaz" {}
 
-resource "huaweicloud_vpc" "myvpc" {
+resource "hcso_vpc" "myvpc" {
   name = var.vpc_name
   cidr = var.vpc_cidr
 }
 
-resource "huaweicloud_vpc_subnet" "mysubnet" {
-  vpc_id      = huaweicloud_vpc.myvpc.id
+resource "hcso_vpc_subnet" "mysubnet" {
+  vpc_id      = hcso_vpc.myvpc.id
   name        = var.subnet_name
   cidr        = var.subnet_cidr
   gateway_ip  = var.subnet_gateway
   primary_dns = var.primary_dns
 }
 
-resource "huaweicloud_networking_secgroup" "mysecgroup" {
+resource "hcso_networking_secgroup" "mysecgroup" {
   name        = "mysecgroup"
   description = "a basic security group"
 }
@@ -24,16 +24,16 @@ resource "random_password" "mypassword" {
   override_special = "!@#%^*-_=+"
 }
 
-resource "huaweicloud_rds_instance" "myinstance" {
+resource "hcso_rds_instance" "myinstance" {
   name                = "mysql_instance"
   flavor              = "rds.mysql.c2.large.ha"
   ha_replication_mode = "async"
-  vpc_id              = huaweicloud_vpc.myvpc.id
-  subnet_id           = huaweicloud_vpc_subnet.mysubnet.id
-  security_group_id   = huaweicloud_networking_secgroup.mysecgroup.id
+  vpc_id              = hcso_vpc.myvpc.id
+  subnet_id           = hcso_vpc_subnet.mysubnet.id
+  security_group_id   = hcso_networking_secgroup.mysecgroup.id
   availability_zone = [
-    data.huaweicloud_availability_zones.myaz.names[0],
-    data.huaweicloud_availability_zones.myaz.names[1]
+    data.hcso_availability_zones.myaz.names[0],
+    data.hcso_availability_zones.myaz.names[1]
   ]
 
   db {
@@ -47,11 +47,11 @@ resource "huaweicloud_rds_instance" "myinstance" {
   }
 }
 
-resource "huaweicloud_rds_read_replica_instance" "myreplica" {
+resource "hcso_rds_read_replica_instance" "myreplica" {
   name                = "myreplica"
   flavor              = "rds.mysql.c2.large.rr"
-  primary_instance_id = huaweicloud_rds_instance.myinstance.id
-  availability_zone   = data.huaweicloud_availability_zones.myaz.names[1]
+  primary_instance_id = hcso_rds_instance.myinstance.id
+  availability_zone   = data.hcso_availability_zones.myaz.names[1]
   volume {
     type = "ULTRAHIGH"
   }

@@ -2,7 +2,7 @@
 subcategory: "Anti-DDoS"
 ---
 
-# huaweicloud_antiddos_basic
+# hcso_antiddos_basic
 
 Manages Cloud Native Anti-DDos Basic resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages Cloud Native Anti-DDos Basic resource within HuaweiCloud.
 ```hcl
 variable "eip_id" {}
 
-resource "huaweicloud_antiddos_basic" "antiddos_1" {
+resource "hcso_antiddos_basic" "antiddos_1" {
   eip_id            = var.eip_id
   traffic_threshold = 150
 }
@@ -52,5 +52,5 @@ This resource provides the following timeouts configuration options:
 Cloud Native Anti-DDos Basic resources can be imported using `eip_id`. e.g.
 
 ```
-$ terraform import huaweicloud_antiddos_basic.antiddos_1 c5256d47-8f9e-4ae7-9943-6e77e3d8bd2d
+$ terraform import hcso_antiddos_basic.antiddos_1 c5256d47-8f9e-4ae7-9943-6e77e3d8bd2d
 ```

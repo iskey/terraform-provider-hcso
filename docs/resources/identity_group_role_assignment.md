@@ -2,10 +2,10 @@
 subcategory: "Identity and Access Management (IAM)"
 ---
 
-# huaweicloud_identity_group_role_assignment
+# hcso_identity_group_role_assignment
 
 Manages an IAM user group role assignment within HuaweiCloud IAM Service.
-This is an alternative to `huaweicloud_identity_role_assignment`
+This is an alternative to `hcso_identity_role_assignment`
 
 -> **NOTE:** 1. You *must* have admin privileges to use this resource.
   <br/>2. When the resource is created, the permissions will take effect after 15 to 30 minutes.
@@ -17,18 +17,18 @@ This is an alternative to `huaweicloud_identity_role_assignment`
 ```hcl
 variable "project_id" {}
 
-data "huaweicloud_identity_role" "test" {
+data "hcso_identity_role" "test" {
   # RDS Administrator
   name = "rds_adm"
 }
 
-resource "huaweicloud_identity_group" "test" {
+resource "hcso_identity_group" "test" {
   name = "group_1"
 }
 
-resource "huaweicloud_identity_group_role_assignment" "test" {
-  group_id   = huaweicloud_identity_group.test.id
-  role_id    = data.huaweicloud_identity_role.test.id
+resource "hcso_identity_group_role_assignment" "test" {
+  group_id   = hcso_identity_group.test.id
+  role_id    = data.hcso_identity_role.test.id
   project_id = var.project_id
 }
 ```
@@ -38,18 +38,18 @@ resource "huaweicloud_identity_group_role_assignment" "test" {
 ```hcl
 variable "project_id" {}
 
-data "huaweicloud_identity_role" "test" {
+data "hcso_identity_role" "test" {
   # RDS Administrator
   name = "rds_adm"
 }
 
-resource "huaweicloud_identity_group" "test" {
+resource "hcso_identity_group" "test" {
   name = "group_1"
 }
 
-resource "huaweicloud_identity_group_role_assignment" "all" {
-  group_id   = huaweicloud_identity_group.test.id
-  role_id    = data.huaweicloud_identity_role.test.id
+resource "hcso_identity_group_role_assignment" "all" {
+  group_id   = hcso_identity_group.test.id
+  role_id    = data.hcso_identity_role.test.id
   project_id = "all"
 }
 ```
@@ -59,18 +59,18 @@ resource "huaweicloud_identity_group_role_assignment" "all" {
 ```hcl
 variable "domain_id" {}
 
-data "huaweicloud_identity_role" "test" {
+data "hcso_identity_role" "test" {
   # OBS Administrator
   name = "obs_adm"
 }
 
-resource "huaweicloud_identity_group" "test" {
+resource "hcso_identity_group" "test" {
   name = "group_1"
 }
 
-resource "huaweicloud_identity_group_role_assignment" "test" {
-  group_id  = huaweicloud_identity_group.test.id
-  role_id   = data.huaweicloud_identity_role.test.id
+resource "hcso_identity_group_role_assignment" "test" {
+  group_id  = hcso_identity_group.test.id
+  role_id   = data.hcso_identity_role.test.id
   domain_id = var.domain_id
 }
 ```
@@ -80,18 +80,18 @@ resource "huaweicloud_identity_group_role_assignment" "test" {
 ```hcl
 variable "enterprise_project_id" {}
 
-data "huaweicloud_identity_role" "test" {
+data "hcso_identity_role" "test" {
   # RDS Administrator
   name = "rds_adm"
 }
 
-resource "huaweicloud_identity_group" "test" {
+resource "hcso_identity_group" "test" {
   name = "group_1"
 }
 
-resource "huaweicloud_identity_group_role_assignment" "test" {
-  group_id              = huaweicloud_identity_group.test.id
-  role_id               = data.huaweicloud_identity_role.test.id
+resource "hcso_identity_group_role_assignment" "test" {
+  group_id              = hcso_identity_group.test.id
+  role_id               = data.hcso_identity_role.test.id
   enterprise_project_id = var.enterprise_project_id
 }
 ```
@@ -134,23 +134,23 @@ The role assignments can be imported using the `group_id`, `role_id` and  `domai
   `enterprise_project_id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_identity_group_role_assignment.test <group_id>/<role_id>/<domain_id>
+$ terraform import hcso_identity_group_role_assignment.test <group_id>/<role_id>/<domain_id>
 ```
 
 or
 
 ```bash
-$ terraform import huaweicloud_identity_group_role_assignment.test <group_id>/<role_id>/<project_id>
+$ terraform import hcso_identity_group_role_assignment.test <group_id>/<role_id>/<project_id>
 ```
 
 or
 
 ```bash
-$ terraform import huaweicloud_identity_group_role_assignment.test <group_id>/<role_id>/all
+$ terraform import hcso_identity_group_role_assignment.test <group_id>/<role_id>/all
 ```
 
 or
 
 ```bash
-$ terraform import huaweicloud_identity_group_role_assignment.test <group_id>/<role_id>/<enterprise_project_id>
+$ terraform import hcso_identity_group_role_assignment.test <group_id>/<role_id>/<enterprise_project_id>
 ```

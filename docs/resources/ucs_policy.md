@@ -2,7 +2,7 @@
 subcategory: "Ubiquitous Cloud Native Service (UCS)"
 ---
 
-# huaweicloud_ucs_policy
+# hcso_ucs_policy
 
 Manages a UCS policy resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ Manages a UCS policy resource within HuaweiCloud.
 variable "user_id_1" {}
 variable "user_id_2" {}
 
-resource "huaweicloud_ucs_policy" "test" {
+resource "hcso_ucs_policy" "test" {
   name         = "policy-1"
   iam_user_ids = [var.user_id_1, var.user_id_2]
   type         = "admin"
@@ -28,7 +28,7 @@ resource "huaweicloud_ucs_policy" "test" {
 variable "user_id_1" {}
 variable "user_id_2" {}
 
-resource "huaweicloud_ucs_policy" "test" {
+resource "hcso_ucs_policy" "test" {
   name         = "policy-1"
   iam_user_ids = [var.user_id_1, var.user_id_2]
   type         = "custom"
@@ -84,5 +84,5 @@ In addition to all arguments above, the following attributes are exported:
 The UCS policy can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_ucs_policy.test 8b12072c-0c25-11ee-b6b2-0255ac1000de
+$ terraform import hcso_ucs_policy.test 8b12072c-0c25-11ee-b6b2-0255ac1000de
 ```

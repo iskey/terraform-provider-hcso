@@ -2,7 +2,7 @@
 subcategory: "Storage Disaster Recovery Service (SDRS)"
 ---
 
-# huaweicloud_sdrs_protected_instance
+# hcso_sdrs_protected_instance
 
 Manages an SDRS protected instance resource within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages an SDRS protected instance resource within HuaweiCloud.
 variable "protection_group_id" {}
 variable "server_id" {}
 
-resource "huaweicloud_sdrs_protected_instance" "test" {
+resource "hcso_sdrs_protected_instance" "test" {
   name                 = "test-name"
   group_id             = var.protection_group_id
   server_id            = var.server_id
@@ -101,7 +101,7 @@ This resource provides the following timeouts configuration options:
 The SDRS protected instance can be imported using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_sdrs_protected_instance.test <id>
+$ terraform import hcso_sdrs_protected_instance.test <id>
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -112,7 +112,7 @@ You can then decide if changes should be applied to the resource, or the resourc
 with the resource. Also, you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_sdrs_protected_instance" "test" {
+resource "hcso_sdrs_protected_instance" "test" {
   ...
   
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "Dedicated Load Balance (Dedicated ELB)"
 ---
 
-# huaweicloud_elb_monitor
+# hcso_elb_monitor
 
 Manages an ELB monitor resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages an ELB monitor resource within HuaweiCloud.
 ```hcl
 variable "pool_id" {}
 
-resource "huaweicloud_elb_monitor" "monitor_1" {
+resource "hcso_elb_monitor" "monitor_1" {
   pool_id     = var.pool_id
   protocol    = "HTTPS"
   interval    = 30
@@ -85,5 +85,5 @@ In addition to all arguments above, the following attributes are exported:
 ELB monitor can be imported using the monitor `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_elb_monitor.test <id>
+$ terraform import hcso_elb_monitor.test <id>
 ```

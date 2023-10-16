@@ -2,7 +2,7 @@
 subcategory: "Web Application Firewall (WAF)"
 ---
 
-# huaweicloud_waf_domain
+# hcso_waf_domain
 
 Manages a WAF domain resource within HuaweiCloud.
 
@@ -14,7 +14,7 @@ used. The domain name resource can be used in Cloud Mode.
 ```hcl
 variable "enterprise_project_id" {}
 
-resource "huaweicloud_waf_certificate" "certificate_1" {
+resource "hcso_waf_certificate" "certificate_1" {
   name                  = "cert_1"
   enterprise_project_id = var.enterprise_project_id
   
@@ -37,10 +37,10 @@ he8Y4IWS6wY7bCkjCWDcRQJMEhg76fsO3txE+FiYruq9RUWhiF1myv4Q6W+CyBFC
 EOT
 }
 
-resource "huaweicloud_waf_domain" "domain_1" {
+resource "hcso_waf_domain" "domain_1" {
   domain                = "www.example.com"
-  certificate_id        = huaweicloud_waf_certificate.certificate_1.id
-  certificate_name      = huaweicloud_waf_certificate.certificate_1.name
+  certificate_id        = hcso_waf_certificate.certificate_1.id
+  certificate_name      = hcso_waf_certificate.certificate_1.name
   proxy                 = true
   enterprise_project_id = var.enterprise_project_id
 
@@ -117,11 +117,11 @@ There are two ways to import WAF domain state.
 * Using the `id`, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_domain.test <id>
+$ terraform import hcso_waf_domain.test <id>
 ```
 
 * Using `id` and `enterprise_project_id`, separated by a slash, e.g.
 
 ```bash
-$ terraform import huaweicloud_waf_domain.test <id>/<enterprise_project_id>
+$ terraform import hcso_waf_domain.test <id>/<enterprise_project_id>
 ```

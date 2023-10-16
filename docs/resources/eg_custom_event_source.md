@@ -2,7 +2,7 @@
 subcategory: "EventGrid (EG)"
 ---
 
-# huaweicloud_eg_custom_event_source
+# hcso_eg_custom_event_source
 
 Using this resource to manage an EG custom event source within Huaweicloud.
 
@@ -12,7 +12,7 @@ Using this resource to manage an EG custom event source within Huaweicloud.
 variable "channel_id" {}
 variable "source_name" {}
 
-resource "huaweicloud_eg_custom_event_source" "test" {
+resource "hcso_eg_custom_event_source" "test" {
   channel_id  = var.channel_id
   type        = "RABBITMQ"
   name        = var.source_name
@@ -65,5 +65,5 @@ In addition to all arguments above, the following attributes are exported:
 Custom event sources can be imported by their `id`, e.g.
 
 ```bash
-terraform import huaweicloud_eg_custom_event_source.test <id>
+terraform import hcso_eg_custom_event_source.test <id>
 ```

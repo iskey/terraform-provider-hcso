@@ -2,14 +2,14 @@
 subcategory: "Cloud Search Service (CSS)"
 ---
 
-# huaweicloud_css_flavors
+# hcso_css_flavors
 
 Use this data source to get available flavors of HuaweiCloud CSS node instance.
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_css_flavors" "test" {
+data "hcso_css_flavors" "test" {
   type    = "ess"
   version = "7.9.3"
   vcpus   = 4
@@ -44,7 +44,7 @@ In addition to all arguments above, the following attributes are exported:
 
 The `flavors` block contains:
 
-* `name` - The name of the CSS flavor. It is referenced by `node_config.flavor` in `huaweicloud_css_cluster`.
+* `name` - The name of the CSS flavor. It is referenced by `node_config.flavor` in `hcso_css_cluster`.
 * `id` - The ID of CSS flavor.
 * `region` - The region where the node resides.
 * `type` - The node instance type.

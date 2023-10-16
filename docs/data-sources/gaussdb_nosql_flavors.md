@@ -2,15 +2,15 @@
 subcategory: "GaussDB NoSQL"
 ---
 
-# huaweicloud_gaussdb_nosql_flavors
+# hcso_gaussdb_nosql_flavors
 
 Use this data source to get available HuaweiCloud GaussDB (for NoSQL) flavors.
-This is an alternative to `huaweicloud_gaussdb_cassandra_flavors`
+This is an alternative to `hcso_gaussdb_cassandra_flavors`
 
 ## Example Usage
 
 ```hcl
-data "huaweicloud_gaussdb_nosql_flavors" "flavors" {
+data "hcso_gaussdb_nosql_flavors" "flavors" {
   vcpus  = 4
   memory = 8
 }

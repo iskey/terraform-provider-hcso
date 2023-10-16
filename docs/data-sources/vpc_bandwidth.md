@@ -2,7 +2,7 @@
 subcategory: "Elastic IP (EIP)"
 ---
 
-# huaweicloud_vpc_bandwidth
+# hcso_vpc_bandwidth
 
 Provides details about a specific bandwidth.
 
@@ -11,7 +11,7 @@ Provides details about a specific bandwidth.
 ```hcl
 variable "bandwidth_name" {}
 
-data "huaweicloud_vpc_bandwidth" "bandwidth_1" {
+data "hcso_vpc_bandwidth" "bandwidth_1" {
   name = var.bandwidth_name
 }
 ```

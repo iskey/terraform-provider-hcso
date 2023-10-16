@@ -2,14 +2,14 @@
 subcategory: "Elastic Load Balance (ELB)"
 ---
 
-# huaweicloud_lb_listener
+# hcso_lb_listener
 
 Manages an ELB listener resource within HuaweiCloud.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_lb_listener" "listener_1" {
+resource "hcso_lb_listener" "listener_1" {
   protocol        = "HTTP"
   protocol_port   = 8080
   loadbalancer_id = "d9415786-5f1a-428b-b35f-2f1523e146d2"
@@ -77,5 +77,5 @@ This resource provides the following timeouts configuration options:
 ELB listener can be imported using the listener ID, e.g.
 
 ```
-$ terraform import huaweicloud_lb_listener.listener_1 5c20fdad-7288-11eb-b817-0255ac10158b
+$ terraform import hcso_lb_listener.listener_1 5c20fdad-7288-11eb-b817-0255ac10158b
 ```

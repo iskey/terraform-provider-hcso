@@ -2,7 +2,7 @@
 subcategory: "Resource Formation (RFS)"
 ---
 
-# huaweicloud_rfs_stack
+# hcso_rfs_stack
 
 Provides an RFS resource stack.
 
@@ -16,12 +16,12 @@ variable "agency_name" {}
 variable "template_obs_uri" {}
 variable "variable_obs_uri" {}
 
-resource "huaweicloud_rfs_stack" "test" {
+resource "hcso_rfs_stack" "test" {
   name = var.stack_name
 
   agency {
     name          = var.agency_name
-    provider_name = "huaweicloud"
+    provider_name = "internal"
   }
 
   template_uri = var.template_obs_uri
@@ -36,12 +36,12 @@ variable "agency_name" {}
 variable "template_path" {}
 variable "variable_path" {}
 
-resource "huaweicloud_rfs_stack" "test" {
+resource "hcso_rfs_stack" "test" {
   name = var.stack_name
 
   agency {
     name          = var.agency_name
-    provider_name = "huaweicloud"
+    provider_name = "internal"
   }
 
   template_body = file(var.template_path) // local storage path of HCL/JSON script
@@ -57,7 +57,7 @@ The content of the template file (in JSON format) is as follows:
     "required_providers": [
       {
         "huaweicloud": {
-          "source": "huawei.com/provider/huaweicloud",
+          "source": "huawei.com/provider/internal",
           "version": "&gt= 1.41.0"
         }
       }
@@ -69,18 +69,18 @@ The content of the template file (in JSON format) is as follows:
     }
   },
   "resource": {
-    "huaweicloud_vpc": {
+    "hcso_vpc": {
       "test": {
         "name": "${var.vpc_name}",
         "cidr": "192.168.0.0/16"
       }
     },
-    "huaweicloud_vpc_subnet": {
+    "hcso_vpc_subnet": {
       "test": {
-        "vpc_id": "${huaweicloud_vpc.test.id}",
+        "vpc_id": "${hcso_vpc.test.id}",
         "name": "${var.subnet_name}",
-        "cidr": "${cidrsubnet(huaweicloud_vpc.test.cidr, 4, 1)}",
-        "gateway_ip": "${cidrhost(cidrsubnet(huaweicloud_vpc.test.cidr, 4, 1), 1)}"
+        "cidr": "${cidrsubnet(hcso_vpc.test.cidr, 4, 1)}",
+        "gateway_ip": "${cidrhost(cidrsubnet(hcso_vpc.test.cidr, 4, 1), 1)}"
       }
     }
   },
@@ -181,7 +181,7 @@ For most HCL templates, the timeout parameters needs to be manually configured b
 be deployed successfully on the RFS resource stack, e.g.
 
 ```hcl
-resource "huaweicloud_rfs_stack" "test" {
+resource "hcso_rfs_stack" "test" {
   ...
 
   timeouts {
@@ -196,7 +196,7 @@ resource "huaweicloud_rfs_stack" "test" {
 Stacks can be imported using their `id`, e.g.
 
 ```
-$ terraform import huaweicloud_rfs_stack.test edd2f099-e1ac-4bd0-be32-8b2185620a90
+$ terraform import hcso_rfs_stack.test edd2f099-e1ac-4bd0-be32-8b2185620a90
 ```
 
 Note that the imported state may not be identical to your resource definition, due to some attributes missing from the
@@ -206,7 +206,7 @@ importing a stack. You can keep the resource the same with its definition bo cho
 Also you can ignore changes as below.
 
 ```hcl
-resource "huaweicloud_rfs_stack" "test" {
+resource "hcso_rfs_stack" "test" {
   ...
 
   lifecycle {

@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_product
+# hcso_dms_product
 
 Use this data source to get the ID of an available HuaweiCloud DMS product.
 
@@ -11,7 +11,7 @@ Use this data source to get the ID of an available HuaweiCloud DMS product.
 ### Filter DMS kafka product list by I/O specification
 
 ```hcl
-data "huaweicloud_dms_product" "product1" {
+data "hcso_dms_product" "product1" {
   engine            = "kafka"
   version           = "1.1.0"
   instance_type     = "cluster"
@@ -24,7 +24,7 @@ data "huaweicloud_dms_product" "product1" {
 ### Filter DMS kafka product list by underlying VM specification
 
 ```
-data "huaweicloud_dms_product" "product2" {
+data "hcso_dms_product" "product2" {
   engine           = "kafka"
   version          = "2.3.0"
   instance_type    = "cluster"

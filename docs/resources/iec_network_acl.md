@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_network_acl
+# hcso_iec_network_acl
 
 Manages a network ACL resource within HuaweiCloud IEC.
 
@@ -12,7 +12,7 @@ Manages a network ACL resource within HuaweiCloud IEC.
 variable "iec_vpc_id" {}
 variable "iec_subnet_id" {}
 
-resource "huaweicloud_iec_network_acl" "acl_test" {
+resource "hcso_iec_network_acl" "acl_test" {
   name        = "acl_demo"
   description = "This is a network ACL of IEC with networks."
   networks {
@@ -66,5 +66,5 @@ This resource provides the following timeouts configuration options:
 Network ACL can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_iec_network_acl.acl_test 40b1159c-4e6e-11eb-a00e-fa165c365e51
+$ terraform import hcso_iec_network_acl.acl_test 40b1159c-4e6e-11eb-a00e-fa165c365e51
 ```

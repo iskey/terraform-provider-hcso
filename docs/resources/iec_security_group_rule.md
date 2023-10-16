@@ -2,7 +2,7 @@
 subcategory: "Intelligent EdgeCloud (IEC)"
 ---
 
-# huaweicloud_iec_security_group_rule
+# hcso_iec_security_group_rule
 
 Manages a IEC security group rule resource within HuaweiCloud.
 
@@ -11,7 +11,7 @@ Manages a IEC security group rule resource within HuaweiCloud.
 ```hcl
 var "iec_security_group_id" {}
 
-resource "huaweicloud_iec_security_group_rule" "secgroup_rule_test" {
+resource "hcso_iec_security_group_rule" "secgroup_rule_test" {
   direction         = "ingress"
   port_range_min    = 22
   port_range_max    = 22

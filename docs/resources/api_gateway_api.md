@@ -2,20 +2,20 @@
 subcategory: "API Gateway (Shared APIG)"
 ---
 
-# huaweicloud_api_gateway_api
+# hcso_api_gateway_api
 
 Provides an API gateway API resource.
 
 ## Example Usage
 
 ```hcl
-resource "huaweicloud_api_gateway_group" "tf_apigw_group" {
+resource "hcso_api_gateway_group" "tf_apigw_group" {
   name        = "tf_apigw_group"
   description = "your descpiption"
 }
 
-resource "huaweicloud_api_gateway_api" "tf_apigw_api" {
-  group_id                 = huaweicloud_api_gateway_group.tf_apigw_group.id
+resource "hcso_api_gateway_api" "tf_apigw_api" {
+  group_id                 = hcso_api_gateway_group.tf_apigw_group.id
   name                     = "tf_apigw_api"
   description              = "your descpiption"
   tags                     = ["tag1", "tag2"]
@@ -183,5 +183,5 @@ This resource provides the following timeouts configuration options:
 API can be imported using the `id`, e.g.
 
 ```
-$ terraform import huaweicloud_api_gateway_api.api "774438a28a574ac8a496325d1bf51807"
+$ terraform import hcso_api_gateway_api.api "774438a28a574ac8a496325d1bf51807"
 ```

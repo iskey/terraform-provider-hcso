@@ -1,4 +1,8 @@
-Terraform HuaweiCloud Provider
+<a href="https://www.huaweicloud.com/intl/en-us/product/huaweicloudstack.html"><img width="225px" height="38px" align="right" src="./docs/img/huaweicloudstack_log.png"></a>
+<a href="https://www.huaweicloud.com/intl/en-us/product/huaweicloudstack.html"><img width="225px" height="38px" align="left" src="https://camo.githubusercontent.com/1a4ed08978379480a9b1ca95d7f4cc8eb80b45ad47c056a7cfb5c597e9315ae5/68747470733a2f2f7777772e6461746f636d732d6173736574732e636f6d2f323838352f313632393934313234322d6c6f676f2d7465727261666f726d2d6d61696e2e737667"></a>
+<br/><br/>
+
+HUAWEI CLOUD Stack Online Provider
 ==============================
 
 <!-- markdownlint-disable-next-line MD034 -->
@@ -6,9 +10,6 @@ Terraform HuaweiCloud Provider
 * [![Documentation](https://img.shields.io/badge/documentation-blue)](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs)
 * [![Gitter chat](https://badges.gitter.im/hashicorp-terraform/Lobby.png)](https://gitter.im/hashicorp-terraform/Lobby)
 * Mailing list: [Google Groups](http://groups.google.com/group/terraform-tool)
-
-<!-- markdownlint-disable-next-line MD033 -->
-<a href="https://www.huaweicloud.com/"><img width="450px" height="102px" src="https://console-static.huaweicloud.com/static/authui/20210202115135/public/custom/images/logo-en.svg"></a>
 
 Requirements
 ------------
@@ -19,17 +20,17 @@ Requirements
 Building The Provider
 ---------------------
 
-Clone repository to: `$GOPATH/src/github.com/huaweicloud/terraform-provider-huaweicloud`
+Clone repository to: `$GOPATH/src/github.com/huaweicloud/terraform-provider-hcso`
 
 ```sh
-$ mkdir -p $GOPATH/src/github.com/huaweicloud; cd $GOPATH/src/github.com/huaweicloud
-$ git clone https://github.com/huaweicloud/terraform-provider-huaweicloud
+$ mkdir -p $GOPATH/src/github.com/hcso; cd $GOPATH/src/github.com/hcso
+$ git clone https://github.com/huaweicloud/terraform-provider-hcso
 ```
 
 Enter the provider directory and build the provider
 
 ```sh
-$ cd $GOPATH/src/github.com/huaweicloud/terraform-provider-huaweicloud
+$ cd $GOPATH/src/github.com/huaweicloud/terraform-provider-hcso
 $ make build
 ```
 
@@ -38,7 +39,7 @@ Using the provider
 
 Please see the documentation at [provider usage](docs/index.md).
 
-Or you can browse the documentation within this repo [here](https://github.com/huaweicloud/terraform-provider-huaweicloud/tree/master/docs).
+Or you can browse the documentation within this repo [here](https://github.com/huaweicloud/terraform-provider-hcso/tree/master/docs).
 
 Developing the Provider
 -----------------------
@@ -54,7 +55,7 @@ This will build the provider and put the provider binary in the `$GOPATH/bin` di
 ```sh
 $ make build
 ...
-$ $GOPATH/bin/terraform-provider-huaweicloud
+$ $GOPATH/bin/terraform-provider-hcso
 ...
 ```
 
@@ -75,4 +76,4 @@ $ make testacc
 License
 -------
 
-Terraform-Provider-Huaweicloud is under the Mozilla Public License 2.0. See the [LICENSE](LICENSE) file for details.
+Terraform-Provider-HCSO is under the Mozilla Public License 2.0. See the [LICENSE](LICENSE) file for details.

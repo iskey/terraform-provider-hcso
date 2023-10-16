@@ -2,11 +2,11 @@
 subcategory: "API Gateway (Dedicated APIG)"
 ---
 
-# huaweicloud_apig_application_authorization
+# hcso_apig_application_authorization
 
 Using this resoruce to authorize APIs for application, allowing it to access the published APIs within HuaweiCloud.
 
--> For an application, an environment can only create one `huaweicloud_apig_application_authorization` resource (all
+-> For an application, an environment can only create one `hcso_apig_application_authorization` resource (all
    published APIs must belong to an environment).
 
 ## Example Usage
@@ -19,7 +19,7 @@ variable "published_api_ids" {
   type = list(string)
 }
 
-resource "huaweicloud_apig_application_authorization" "test" {
+resource "hcso_apig_application_authorization" "test" {
   instance_id    = var.instance_id
   application_id = var.application_id
   env_id         = var.published_env_id
@@ -66,5 +66,5 @@ Authorize relationships of application can be imported using related `instance_i
 `env_id` and `application_id`), separated by the slashes, e.g.
 
 ```bash
-$ terraform import huaweicloud_apig_application_authorization.test <instance_id>/<env_id>/<application_id>
+$ terraform import hcso_apig_application_authorization.test <instance_id>/<env_id>/<application_id>
 ```

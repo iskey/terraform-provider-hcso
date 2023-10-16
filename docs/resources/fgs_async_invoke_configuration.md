@@ -2,7 +2,7 @@
 subcategory: "FunctionGraph"
 ---
 
-# huaweicloud_fgs_async_invoke_configuration
+# hcso_fgs_async_invoke_configuration
 
 Using this resource to manage the configuration of the asynchronous invocation within HuaweiCloud.
 
@@ -15,7 +15,7 @@ variable "function_urn" {}
 variable "bucket_name" {}
 variable "topic_urn" {}
 
-resource "huaweicloud_fgs_async_invoke_configuration" "test" {
+resource "hcso_fgs_async_invoke_configuration" "test" {
   function_urn                   = var.function_urn
   max_async_event_age_in_seconds = 3500
   max_async_retry_attempts       = 2
@@ -94,5 +94,5 @@ In addition to all arguments above, the following attributes are exported:
 The configurations can be imported using their related `function_urn`, e.g.
 
 ```bash
-$ terraform import huaweicloud_fgs_function.test <function_urn>
+$ terraform import hcso_fgs_function.test <function_urn>
 ```

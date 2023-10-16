@@ -2,7 +2,7 @@
 subcategory: "Software Repository for Container (SWR)"
 ---
 
-# huaweicloud_swr_image_retention_policy
+# hcso_swr_image_retention_policy
 
 Manages a SWR image retention policy within HuaweiCloud.
 
@@ -12,7 +12,7 @@ Manages a SWR image retention policy within HuaweiCloud.
 variable "organization_name" {}
 variable "repository_name" {}
 
-resource "huaweicloud_swr_image_retention_policy" "test"{
+resource "hcso_swr_image_retention_policy" "test"{
   organization = var.organization_name
   repository   = var.repository_name
   type         = "date_rule"
@@ -78,5 +78,5 @@ The swr image retention policy can be imported using the organization name, repo
 and retention id separated by a slash, e.g.:
 
 ```bash
-$ terraform import huaweicloud_swr_image_retention_policy.test <organization_name>/<repository_name>/<retention_id>
+$ terraform import hcso_swr_image_retention_policy.test <organization_name>/<repository_name>/<retention_id>
 ```

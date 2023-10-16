@@ -2,7 +2,7 @@
 subcategory: "Distributed Message Service (DMS)"
 ---
 
-# huaweicloud_dms_rocketmq_broker
+# hcso_dms_rocketmq_broker
 
 Use this data source to get the list of DMS rocketMQ broker.
 
@@ -11,7 +11,7 @@ Use this data source to get the list of DMS rocketMQ broker.
 ```hcl
 var "instance_id" {}
 
-data "huaweicloud_dms_rocketmq_broker" "test" {
+data "hcso_dms_rocketmq_broker" "test" {
   instance_id = var.instance_id
 }
 ```
